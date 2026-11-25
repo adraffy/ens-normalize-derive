@@ -2,15 +2,7 @@
 // Files are read exactly as downloaded from unicode.org (see scripts/download-unicode.ts).
 
 import {readFileSync} from 'node:fs';
-import {
-	type CodePoint,
-	MAX_CP,
-	explodeCp,
-	hexCp,
-	parseCp,
-	parseCpRange,
-	parseCpSequence,
-} from './utils.ts';
+import {type CodePoint, explodeCp, getOrInsert, hexCp, MAX_CP, parseCp, parseCpRange, parseCpSequence} from './utils.ts';
 
 export const DATA_DIR = new URL('../data/', import.meta.url);
 
@@ -87,14 +79,16 @@ function parseRangeBuckets(file: URL): Record<string, CodePoint[]> {
 	const root: Record<string, CodePoint[]> = {};
 	parseSemicolonFile(file, ([src, key]) => {
 		if (!src || !key) throw new Error('expected src + key');
-		(root[key] ??= []).push(...parseCpRange(src));
+		root[key] ??= [];
+		root[key].push(...parseCpRange(src));
 	});
 	return root;
 }
 
 function bucket<T>(root: Record<string, T[]>, key: string | undefined): T[] {
 	if (!key) throw new Error(`empty bucket key`);
-	return (root[key] ??= []);
+	root[key] ??= [];
+	return root[key];
 }
 
 function parseEmojiVersion(comment: string | undefined): string {
@@ -143,7 +137,7 @@ export class UnicodeChar {
 		c.cp = parseCp(v[0]!);
 		c.name = v[1]!;
 		c.gc = v[2]!;
-		c.cc = parseInt(v[3]!);
+		c.cc = parseInt(v[3]!, 10);
 		c.bidiClass = v[4]!;
 		// "" | "<tag>" | "XXXX YYYY" | "<tag>XXXX YYYY"
 		let temp = v[5]!;
@@ -200,8 +194,12 @@ export class UnicodeScript {
 	get description() {
 		let desc = `[${this.abbr}] ${this.name}`;
 		switch (this.type) {
-			case SCRIPT_TYPE_EXCLUDED: desc += ' [X]'; break;
-			case SCRIPT_TYPE_LIMITED_USE: desc += ' [L]'; break;
+			case SCRIPT_TYPE_EXCLUDED:
+				desc += ' [X]';
+				break;
+			case SCRIPT_TYPE_LIMITED_USE:
+				desc += ' [L]';
+				break;
 		}
 		return desc;
 	}
@@ -274,10 +272,10 @@ export class UnicodeSpec {
 	}
 	/** release = "current" | "prior" (tag), "17" | "17.0.0" (unicode version), "#3" (index) */
 	static fromRelease(release = 'current'): UnicodeSpec {
-		const v = this.releases();
+		const v = UnicodeSpec.releases();
 		let info: Release | undefined;
 		if (/^#\d+$/.test(release)) {
-			info = v[parseInt(release.slice(1))];
+			info = v[parseInt(release.slice(1), 10)];
 		} else if (/^[\d.]+$/.test(release)) {
 			const want = release.split('.').concat('0', '0').slice(0, 3).join('.');
 			info = v.findLast((x) => x.unicode === want);
@@ -285,7 +283,7 @@ export class UnicodeSpec {
 			info = v.find((x) => x.tag === release);
 		}
 		if (!info) throw new Error(`unknown release: ${release}`);
-		return this.fromVersions(info);
+		return UnicodeSpec.fromVersions(info);
 	}
 	static fromVersions({unicode, cldr}: {unicode: string; cldr: string}): UnicodeSpec {
 		return new this(new URL(`unicode/${unicode}/`, DATA_DIR), new URL(`cldr/${cldr}/`, DATA_DIR));
@@ -533,8 +531,7 @@ export class UnicodeSpec {
 		const map = new Map<number, CodePoint[]>();
 		for (const {cp, cc} of this.charMap.values()) {
 			if (cc > 0) {
-				let v = map.get(cc);
-				if (!v) map.set(cc, (v = []));
+				const v = getOrInsert(map, cc, () => []);
 				v.push(cp);
 			}
 		}
@@ -544,8 +541,7 @@ export class UnicodeSpec {
 	combiningClasses(): [number, CodePoint[]][] {
 		const map = new Map<number, CodePoint[]>();
 		for (const {cp, cc} of this.charMap.values()) {
-			let v = map.get(cc);
-			if (!v) map.set(cc, (v = []));
+			const v = getOrInsert(map, cc, () => []);
 			v.push(cp);
 		}
 		return [...map].sort((a, b) => a[0] - b[0]);
@@ -620,10 +616,16 @@ export class UnicodeSpec {
 			}
 		});
 		const known: (keyof IdnaTable)[] = [
-			'valid', 'valid_NV8', 'valid_XV8',
-			'deviation_mapped', 'deviation_ignored',
-			'disallowed', 'disallowed_STD3_mapped', 'disallowed_STD3_valid',
-			'ignored', 'mapped',
+			'valid',
+			'valid_NV8',
+			'valid_XV8',
+			'deviation_mapped',
+			'deviation_ignored',
+			'disallowed',
+			'disallowed_STD3_mapped',
+			'disallowed_STD3_valid',
+			'ignored',
+			'mapped',
 		];
 		const extra = Object.keys(root).filter((k) => !known.includes(k as keyof IdnaTable));
 		if (extra.length) throw new Error(`unknown IDNA keys: ${extra}`);
@@ -687,12 +689,10 @@ export class UnicodeSpec {
 				root.push({cps: parseCpSequence(src!), type: type!, group, subgroup});
 			},
 			(s) => {
-				let match: RegExpMatchArray | null;
-				if ((match = s.match(/^group:(.*)$/))) {
-					group = match[1]!.trim();
-				} else if ((match = s.match(/^subgroup:(.*)$/))) {
-					subgroup = match[1]!.trim();
-				}
+				const g = s.match(/^group:(.*)$/);
+				const sg = s.match(/^subgroup:(.*)$/);
+				if (g) group = g[1]!.trim();
+				if (sg) subgroup = sg[1]!.trim();
 			},
 		);
 		return root;
@@ -707,8 +707,7 @@ export class UnicodeSpec {
 		const map = new Map<string, CodePoint[]>();
 		parseSemicolonFile(this.file('confusables.txt'), ([src, target]) => {
 			const key = String.fromCodePoint(...parseCpSequence(target!));
-			let v = map.get(key);
-			if (!v) map.set(key, (v = []));
+			const v = getOrInsert(map, key, () => []);
 			v.push(parseCp(src!));
 		});
 		return [...map].map(([key, cps]) => [explodeCp(key), cps]);

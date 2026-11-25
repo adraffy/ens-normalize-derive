@@ -19,6 +19,6 @@ export class Logger {
 		for (const line of formatTable(cols, rows)) this.log(line);
 	}
 	toString() {
-		return this.lines.map((x) => x + '\n').join('');
+		return this.lines.map((x) => `${x}\n`).join('');
 	}
 }

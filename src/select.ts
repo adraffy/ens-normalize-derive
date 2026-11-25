@@ -40,8 +40,7 @@ export interface Rule extends Selector {
 	reason?: string;
 }
 
-const many = <T>(x: OneOrMany<T> | undefined): readonly T[] | undefined =>
-	x === undefined ? undefined : Array.isArray(x) ? x : [x as T];
+const many = <T>(x: OneOrMany<T> | undefined): readonly T[] | undefined => (x === undefined ? undefined : Array.isArray(x) ? x : [x as T]);
 
 const propCache = new WeakMap<UnicodeSpec, Record<string, CodePoint[]>>();
 function properties(unicode: UnicodeSpec): Record<string, CodePoint[]> {
@@ -147,7 +146,8 @@ export function resolveRules(unicode: UnicodeSpec, rules: readonly Rule[]): Reso
 		if (!v.length) warnings.push(`${describeSelector(rule)}: selects nothing`);
 		for (const cp of v) {
 			const prev = owner.get(cp);
-			if (prev) {
+			// overlapping property rules are fine; an explicit cp that another rule already covers is redundant
+			if (prev && (prev.cps !== undefined || rule.cps !== undefined)) {
 				warnings.push(`${hexCp(cp)} (${unicode.getName(cp)}) selected twice: ${describeSelector(prev)} + ${describeSelector(rule)}`);
 			} else {
 				owner.set(cp, rule);

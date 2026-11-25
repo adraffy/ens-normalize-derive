@@ -31,7 +31,9 @@ const t0 = performance.now();
 const log = new Logger(args.verbose);
 const unicode = UnicodeSpec.fromRelease(args.release);
 const out = derive({unicode, rules: await loadRules(), log});
-console.log(`Derived Unicode ${unicode.unicodeVersion.version} + CLDR ${unicode.cldrVersion.version} in ${Math.round(performance.now() - t0)}ms`);
+console.log(
+	`Derived Unicode ${unicode.unicodeVersion.version} + CLDR ${unicode.cldrVersion.version} in ${Math.round(performance.now() - t0)}ms`,
+);
 
 /** stable comparison key: drops the volatile "created" field */
 function contentKey(json: unknown): string {

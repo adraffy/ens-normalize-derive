@@ -23,7 +23,9 @@ function expand(u: UnicodeSpec): Record<string, Diffable> {
 		'chars/gc': new Map([...u.charMap.values()].map((x) => [hexCp(x.cp), x.gc])),
 		'chars/cc': new Map([...u.charMap.values()].map((x) => [hexCp(x.cp), String(x.cc)])),
 		'chars/script': new Map([...u.charMap.values()].map((x) => [hexCp(x.cp), x.script.abbr])),
-		'chars/script-ext': new Map([...u.charMap.values()].filter((x) => x.extended).map((x) => [hexCp(x.cp), x.extended!.map((s) => s.abbr).join(' ')])),
+		'chars/script-ext': new Map(
+			[...u.charMap.values()].filter((x) => x.extended).map((x) => [hexCp(x.cp), x.extended!.map((s) => s.abbr).join(' ')]),
+		),
 		'chars/short': new Map([...u.charMap.values()].filter((x) => x.short).map((x) => [hexCp(x.cp), x.short!])),
 		decompositions: new Map(u.decompositions().map(([k, v]) => [hexCp(k), hexCps(v)])),
 		regions: new Set(u.readRegions()),

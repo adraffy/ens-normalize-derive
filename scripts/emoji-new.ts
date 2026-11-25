@@ -3,7 +3,7 @@
 
 import {describer} from '../src/describe.ts';
 import {UnicodeSpec} from '../src/ucd.ts';
-import {type CodePoint, compareVersions} from '../src/utils.ts';
+import {type CodePoint, compareVersions, getOrInsert} from '../src/utils.ts';
 
 const unicode = UnicodeSpec.fromRelease(process.argv[2] ?? 'current');
 const d = describer(unicode, new Set());
@@ -13,8 +13,7 @@ const found = new Map<string, {cps: CodePoint[]; name: string; version: string; 
 function add(cps: CodePoint[], info: {type: string; name: string; version: string}) {
 	if (compareVersions(info.version, threshold) < 0) return;
 	const key = String.fromCodePoint(...cps);
-	let rec = found.get(key);
-	if (!rec) found.set(key, (rec = {cps, name: info.name, version: info.version, types: []}));
+	const rec = getOrInsert(found, key, () => ({cps, name: info.name, version: info.version, types: []}));
 	rec.types.push(info.type);
 }
 

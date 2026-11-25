@@ -11,9 +11,12 @@
 		"names": "bun scripts/names.ts",
 		"unicode-diff": "bun scripts/unicode-diff.ts",
 		"test": "bun test",
+		"lint": "biome check . && bun scripts/lint-rules.ts",
+		"format": "biome check --write .",
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^2.6.9",
 		"@types/bun": "^1.4.4",
 		"typescript": "^7.0.2"
 	}

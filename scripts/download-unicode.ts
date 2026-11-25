@@ -11,7 +11,7 @@
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {fetchScriptKinds} from '../src/script-kinds.ts';
 import {DATA_DIR} from '../src/ucd.ts';
-import {type Version, parseVersion, versionString} from '../src/utils.ts';
+import {parseVersion, type Version, versionString} from '../src/utils.ts';
 
 // each entry is a list of candidate locations (first that exists wins)
 // 20250910: unicode 17+ moved the {emoji, idna, security} directories inside the spec directory

@@ -2,7 +2,7 @@ import type {CodePoint} from '../src/utils.ts';
 
 // characters that can't be first/last/touching
 // eg. can't be a fence post: X---X---X
-// format: [cp, name]
+// format: [cp, name] (name is used in error messages)
 export default [
 	[
 		0x2019, // (’) RIGHT SINGLE QUOTATION MARK
@@ -16,4 +16,4 @@ export default [
 		0x30FB, // (・) KATAKANA MIDDLE DOT
 		'middle dot',
 	],
-] satisfies [CodePoint, string?][];
+] satisfies [CodePoint, string][];

@@ -64,7 +64,7 @@ for (const [k, v] of Object.entries(buckets)) {
 }
 const report = lines.join('\n');
 if (opts.out) {
-	writeFileSync(opts.out, report + '\n');
+	writeFileSync(opts.out, `${report}\n`);
 	console.log(lines.slice(0, 6 + reasons.size + 2).join('\n'));
 	console.log(`\nWrote: ${opts.out}`);
 } else {

@@ -2,16 +2,32 @@
 
 Findings from porting `ens-normalize.js/derive` (`unicode-18` branch) and running the result against every known ENS label. Numbers are for Unicode 18.0.0 + CLDR 48.2 as of `d6f2bc4`.
 
+## Status (2026-11-25)
+
+Decided or done since the first review:
+
+- **Bopomofo:** accepted. Bopo is Limited Use, so it doesn't mix with Han. The 34 Bopomofo+Han registrations (§1) break in the Unicode 18 release.
+- **chars-disallow:** replaced by [rules/disallow/](../rules/disallow/). There are 13 area files with one entry per block, about 2,450 lines instead of 8,560. Blocks that are mostly disallowed are written as `{block, except}`. Duplicates, IDNA no-ops and the unassigned 1FB93 are gone. Every pre-18 character resolves exactly as before.
+- **New in 18.0:** 222 new characters are now disallowed. The old process had let them through as valid, with no review:
+  - 127 come from deny-policy blocks: Musical Symbols, Supplemental Punctuation, Geometric Shapes Extended, and the IPA-style Latin Extended-G digraphs.
+  - 95 are Common/Inherited symbols in new or mostly-allowed blocks. These are covered by [unreviewed.ts](../rules/disallow/unreviewed.ts).
+  - As a side effect, 33 IDNA mappings of new 18.0 capitals and Kana ligatures drop out, because their targets are now disallowed.
+  - None of these can break a registration; they weren't normalizable before.
+- **Still to review:** 47 new letters/marks are valid and listed under "Review: New in 18.0.0" in `output/log.txt`: Arabic Extended-C (39), Hebrew (2), Oriya (2), Bengali (2), Devanagari (1), Kana (1, small archaic ye) and Han (1).
+- **chars-escape / unprintables:** now derived from properties (§2). 32 format characters were missing and are now escaped.
+- **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
+- **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
+
 ## 1. Registration impact of Unicode 18 (needs a decision)
 
 `bun scripts/registrations.ts` (new spec vs released 1.11.1, 3,422,100 labels):
 
-| bucket | count |
-|---|---|
-| BROKEN (valid → error) | **34** |
-| CHANGED (different normalization) | 0 |
-| ALLOWED (error → valid) | 5 (new emoji 🫝 🫫) |
-| MESSAGE (error text only) | 29 |
+| bucket                            | count               |
+| --------------------------------- | ------------------- |
+| BROKEN (valid → error)            | **34**              |
+| CHANGED (different normalization) | 0                   |
+| ALLOWED (error → valid)           | 5 (new emoji 🫝 🫫) |
+| MESSAGE (error text only)         | 29                  |
 
 All 34 breaks are one rule change: **Bopomofo moved from its own group (`test: Bopo, rest: Hani`) to restricted**, because UAX-31 made Bopo Limited Use in 17.0. Bopomofo+Han mixes now fail with `illegal mixture: Han + Restricted[Bopo]`.
 
@@ -41,7 +57,7 @@ Still present (rules content, left untouched):
 
 - `chars-disallow`: **16 duplicate entries** (e.g. 0964 DEVANAGARI DANDA, 060C ARABIC COMMA, 2AF6), **4 entries already disallowed by IDNA** (FE52, FE12, FE19, FE30), and **1 unassigned codepoint** (1FB93).
 - **827 `chars-disallow` entries are also `confuse.ts` members.** Since they are disallowed first, those confuse entries are dead weight and make the confusable tables harder to read.
-- `spec.json.unicode` embeds the *download timestamp* (`"18.0.0 (2026-11-25T…)"`). Re-downloading changes the spec, and its hash, even when no data changed. The version alone is enough. If provenance matters, use the file header dates or a hash of the data files.
+- `spec.json.unicode` embeds the _download timestamp_ (`"18.0.0 (2026-11-25T…)"`). Re-downloading changes the spec, and its hash, even when no data changed. The version alone is enough. If provenance matters, use the file header dates or a hash of the data files.
 - Group ordering uses `order = indexOf + 1 || Infinity` and `a.order - b.order`. Two groups missing from `group-order` give `NaN`, which only works because `sort` is stable and treats `NaN` as 0.
 - `Remove Invalid Mappings` TODO: mappings to non-NFC sequences of valid characters (İ → i + ◌̇) are not caught.
 
@@ -49,14 +65,14 @@ Still present (rules content, left untouched):
 
 The file holds 6,811 entries across 168 blocks:
 
-| what | entries |
-|---|---|
-| Common (Zyyy) symbols: So 3,046, Sm 877, Po 349, … | 4,347 |
-| letters/marks of group scripts (Latin 671, Hira 286, Grek 189, Cyrl 186, …) | ~1,850 |
-| Inherited (combining marks) | 330 |
-| restricted-script-only | 282 |
+| what                                                                        | entries |
+| --------------------------------------------------------------------------- | ------- |
+| Common (Zyyy) symbols: So 3,046, Sm 877, Po 349, …                          | 4,347   |
+| letters/marks of group scripts (Latin 671, Hira 286, Grek 189, Cyrl 186, …) | ~1,850  |
+| Inherited (combining marks)                                                 | 330     |
+| restricted-script-only                                                      | 282     |
 
-The work is mostly a **denylist of Common symbols**. Every Common character joins every group that includes Zyyy (Latin, Japanese, Korean, Han, Cyrillic, Greek). Removing `chars-disallow` (except ASCII/escapes) would add about 4,200–4,500 characters to *each* of those groups. Of the 6,884 IDNA-valid Common-only characters, just **1,200 survive** (So 1,017, Sm 82, Sc 30, …). So the allowlist is about a fifth the size of the denylist.
+The work is mostly a **denylist of Common symbols**. Every Common character joins every group that includes Zyyy (Latin, Japanese, Korean, Han, Cyrillic, Greek). Removing `chars-disallow` (except ASCII/escapes) would add about 4,200–4,500 characters to _each_ of those groups. Of the 6,884 IDNA-valid Common-only characters, just **1,200 survive** (So 1,017, Sm 82, Sc 30, …). So the allowlist is about a fifth the size of the denylist.
 
 **30 blocks are disallowed entirely** (every IDNA-valid/mapped char): IPA Extensions, Phonetic Extensions (+Supplement), Box Drawing, Kana Supplement, Byzantine Musical Symbols, Domino Tiles, Ancient Greek Numbers, Yijing Hexagram Symbols, Cyrillic Extended-A/D, …. The largest per-block lists that remain are Symbols for Legacy Computing Supplement (593), Supplemental Mathematical Operators (259), Musical Symbols (232) and Misc Technical (211).
 
@@ -73,7 +89,7 @@ Suggestions, roughly by payoff:
 `confuse.ts` is derived from UTS-39 `confusables.txt`. That file is skeleton-based and built for cross-script spoof detection. ENSIP-15 uses it in two ways:
 
 - **Cross-group (whole-script):** a confusable in group A and its twin in group B. The resolution is `primary`, `allow` (+ whole-script check), or removal. This works well for Latin/Greek/Cyrillic.
-- **Same-group:** two confusables valid in the *same* group. The only tool is removing one, and for CJK both characters are real and heavily used.
+- **Same-group:** two confusables valid in the _same_ group. The only tool is removing one, and for CJK both characters are real and heavily used.
 
 That second case is the CJK problem. `confusables.txt` covers more CJK than you'd expect: 1,456 of its 6,712 entries touch Hani/Hira/Kana/Hang/Bopo, and ロ/口, カ/力, エ/工, ニ/二, ー/一, タ/夕, ト/卜, ハ/八, へ/ヘ are all listed. But Kana and Han live in the same Japanese group, so these pairs end up **Unresolved** (344 unresolved lines in the log: 113 Japanese+Korean+Han, 73 Korean, 9 Japanese) and are effectively allowed by `CONFUSE_DEFAULT_ALLOW`.
 
@@ -82,7 +98,7 @@ What's **missing** from `confusables.txt` is exactly what shows up in registrati
 Options:
 
 1. **Mine the registrations.** Find labels that are mostly Han/Bopo/Hangul from a small "faux-Latin" alphabet and transliterate to a plausible ASCII word. That gives a concrete list (about 30 characters) and a count of who uses it.
-2. **Add a "looks-Latin" whole for those characters.** Treat 卂乃匚丂… as confusable with Latin. Han can't simply be removed, but the existing whole-script machinery could flag a label made *only* of faux-Latin Han/Bopo characters (a label-level rule rather than a character rule). This would break existing spoofs, which you may or may not want; `registrations.ts` gives the exact count.
+2. **Add a "looks-Latin" whole for those characters.** Treat 卂乃匚丂… as confusable with Latin. Han can't simply be removed, but the existing whole-script machinery could flag a label made _only_ of faux-Latin Han/Bopo characters (a label-level rule rather than a character rule). This would break existing spoofs, which you may or may not want; `registrations.ts` gives the exact count.
 3. **Visual-similarity mining for same-group pairs.** Render candidates with the fonts wallets actually use (Noto Sans CJK, system fonts) and score pairs by perceptual hash or SSIM. The output is a review list in `confuse.ts` format. This scales to Kana/Han and Hangul/Han, which UTS-39 only partly covers.
 4. **Contextual rules for Kana/Han lookalikes** (ロ/口, カ/力, ー/一). Mapping is out, since both are valid. A rule could require that a Katakana-lookalike Han character appears next to Han, or vice versa. Precedent: ー (30FC) is already context-sensitive in IDNA2008 (CONTEXTO). Measure against registrations before committing.
 5. **Accept same-group CJK confusables at the protocol level** and leave them to UIs (display a warning). This is honest about the limits of normalization. Document it in ENSIP-15.

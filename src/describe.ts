@@ -20,10 +20,10 @@ export interface Describer {
 	comment(cp: CodePoint): string;
 }
 
-/** `escape`: cps that are never printed raw (spec.escape); unassigned cps are always escaped */
-export function describer(unicode: UnicodeSpec, escape: ReadonlySet<CodePoint>): Describer {
+/** `escapes`: cps that are never printed raw (spec.escape); unassigned cps are always escaped */
+export function describer(unicode: UnicodeSpec, escapes: ReadonlySet<CodePoint>): Describer {
 	const name = (cp: CodePoint) => unicode.getName(cp);
-	const escaped = (cp: CodePoint) => escape.has(cp) || !unicode.charMap.has(cp);
+	const escaped = (cp: CodePoint) => escapes.has(cp) || !unicode.charMap.has(cp);
 	const d: Describer = {
 		str(cps) {
 			let s = '';

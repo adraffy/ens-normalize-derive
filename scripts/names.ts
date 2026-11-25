@@ -55,11 +55,21 @@ switch (args[0]) {
 		});
 		break;
 	}
-	case 'idna-valid': cps = ensIdnaRules(unicode).valid; break;
-	case 'idna-ignored': cps = ensIdnaRules(unicode).ignored; break;
-	case 'idna-mapped': cps = ensIdnaRules(unicode).mapped.map((x) => x[0]); break;
-	case 'cm': cps = [...unicode.cm]; break;
-	case 'block': cps = unicode.requireBlock(args.slice(1).join(' ')).chars.map((x) => x.cp); break;
+	case 'idna-valid':
+		cps = ensIdnaRules(unicode).valid;
+		break;
+	case 'idna-ignored':
+		cps = ensIdnaRules(unicode).ignored;
+		break;
+	case 'idna-mapped':
+		cps = ensIdnaRules(unicode).mapped.map((x) => x[0]);
+		break;
+	case 'cm':
+		cps = [...unicode.cm];
+		break;
+	case 'block':
+		cps = unicode.requireBlock(args.slice(1).join(' ')).chars.map((x) => x.cp);
+		break;
 	case 'new': {
 		const age = unicode.unicodeVersion.version.split('.').slice(0, 2).join('.');
 		cps = [...unicode.charMap.values()].filter((x) => x.age === age).map((x) => x.cp);

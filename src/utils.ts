@@ -80,12 +80,21 @@ export function sortedCps(v: Iterable<CodePoint>): CodePoint[] {
 	return [...v].sort((a, b) => a - b);
 }
 
+/** map.get(key), inserting make() first if missing */
+export function getOrInsert<K, V>(map: Map<K, V>, key: K, make: () => V): V {
+	let v = map.get(key);
+	if (v === undefined) {
+		v = make();
+		map.set(key, v);
+	}
+	return v;
+}
+
 export function groupBy<T, K>(iterable: Iterable<T>, fn: (x: T) => K): Map<K, T[]> {
 	const map = new Map<K, T[]>();
 	for (const x of iterable) {
 		const key = fn(x);
-		let bucket = map.get(key);
-		if (!bucket) map.set(key, (bucket = []));
+		const bucket = getOrInsert(map, key, () => []);
 		bucket.push(x);
 	}
 	return map;
@@ -124,9 +133,9 @@ export function parseVersion(s: string): Version {
 	const match = s.match(/^(\d+)(?:\.(\d+)(?:\.(\d+))?)?$/);
 	if (!match) throw new Error(`expected version string: ${s}`);
 	return {
-		major: parseInt(match[1]!),
-		minor: parseInt(match[2] ?? '0'),
-		patch: parseInt(match[3] ?? '0'),
+		major: parseInt(match[1]!, 10),
+		minor: parseInt(match[2] ?? '0', 10),
+		patch: parseInt(match[3] ?? '0', 10),
 	};
 }
 
@@ -143,7 +152,8 @@ export function compareVersions(a: string | Version, b: string | Version): numbe
 /** deterministic PRNG: https://gist.github.com/tommyettinger/46a874533244883189143505d203312c */
 export function mulberry32(seed: number): () => number {
 	return () => {
-		let t = (seed = (seed + 0x6d2b79f5) | 0);
+		seed = (seed + 0x6d2b79f5) | 0;
+		let t = seed;
 		t = Math.imul(t ^ (t >>> 15), t | 1);
 		t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
 		return ((t ^ (t >>> 14)) >>> 0) / 0x100000000;

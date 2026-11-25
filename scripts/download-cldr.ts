@@ -43,8 +43,10 @@ export function parseRegions(xml: string): string[] {
 		switch (match[2]) {
 			case 'regular':
 			// case 'deprecated': // 20220922: these dont have platform support
-			case 'macroregion': break;
-			default: continue;
+			case 'macroregion':
+				break;
+			default:
+				continue;
 		}
 		for (const s of match[3]!.split(/\s+/)) {
 			const m = s.trim().match(/^([A-Z]{2})(?:~([A-Z]))?$/);

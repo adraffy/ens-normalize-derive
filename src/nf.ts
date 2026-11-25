@@ -2,7 +2,7 @@
 // https://unicode.org/reports/tr15/
 
 import type {UnicodeSpec} from './ucd.ts';
-import {type CodePoint, compareArrays, explodeCp, mulberry32, permutations} from './utils.ts';
+import {type CodePoint, compareArrays, explodeCp, getOrInsert, mulberry32, permutations} from './utils.ts';
 
 // algorithmic hangul
 // https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf (page 144)
@@ -48,8 +48,7 @@ export function createNF(unicode: UnicodeSpec): NF {
 		DECOMP.set(cp, cps.toReversed());
 		if (!EXCLUSIONS.has(cp) && cps.length === 2) {
 			const [a, b] = cps as [CodePoint, CodePoint];
-			let m = RECOMP.get(a);
-			if (!m) RECOMP.set(a, (m = new Map()));
+			const m = getOrInsert(RECOMP, a, () => new Map());
 			m.set(b, cp);
 		}
 	}

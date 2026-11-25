@@ -37,7 +37,7 @@ export async function fetchScriptKinds(version: string, draft = false): Promise<
 		if (/<h1>.*?Draft.*?<\/h1>/im.test(html)) {
 			reportName = 'proposed';
 		} else {
-			const revision = Math.max(0, ...[...html.matchAll(/\/tr31\/tr31-(\d+)\.html/g)].map((m) => parseInt(m[1]!)));
+			const revision = Math.max(0, ...[...html.matchAll(/\/tr31\/tr31-(\d+)\.html/g)].map((m) => parseInt(m[1]!, 10)));
 			if (!revision) throw new Error(`Unable to determine tr31 revision for ${version}`);
 			reportName = `tr31-${revision}`;
 		}

@@ -36,7 +36,7 @@ export interface Rules {
 	charsMapped: [CodePoint, CodePoint[]][];
 	charsDisallowed: Rule[];
 	charsEscape: Rule[];
-	charsFenced: [CodePoint, string?][];
+	charsFenced: [CodePoint, string][];
 	groupOrder: string[];
 	cmWhitelist: string[];
 	confuseGroups: ConfuseGroup[];
@@ -53,11 +53,11 @@ export interface Rules {
 }
 
 export async function loadRules(): Promise<Rules> {
-	const [valid, ignored, mapped, disallowed, escape, fenced, order, cm, confuse, emoji, scripts] = await Promise.all([
+	const [valid, ignored, mapped, disallowed, escapes, fenced, order, cm, confuse, emoji, scripts] = await Promise.all([
 		import('../rules/chars-valid.ts'),
 		import('../rules/chars-ignored.ts'),
 		import('../rules/chars-mapped.ts'),
-		import('../rules/chars-disallow.ts'),
+		import('../rules/disallow/index.ts'),
 		import('../rules/chars-escape.ts'),
 		import('../rules/chars-fenced.ts'),
 		import('../rules/group-order.ts'),
@@ -70,9 +70,8 @@ export async function loadRules(): Promise<Rules> {
 		charsValid: valid.default,
 		charsIgnored: ignored.default,
 		charsMapped: mapped.default,
-		// TEMP: wrap the legacy codepoint list until rules/disallow/ exists
-		charsDisallowed: [{cps: disallowed.default, reason: "legacy chars-disallow"}],
-		charsEscape: escape.default,
+		charsDisallowed: disallowed.default,
+		charsEscape: escapes.default,
 		charsFenced: fenced.default,
 		groupOrder: order.default,
 		cmWhitelist: cm.CM_WHITELIST,

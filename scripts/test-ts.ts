@@ -37,7 +37,11 @@ function run(...cmd: string[]): number {
 }
 
 const results: [string, number][] = [];
-for (const cmd of [['bun', 'install'], ['bun', 'scripts/make.ts'], ['bun', 'test']]) {
+for (const cmd of [
+	['bun', 'install'],
+	['bun', 'scripts/make.ts'],
+	['bun', 'test'],
+]) {
 	const code = run(...cmd);
 	results.push([cmd.join(' '), code]);
 	if (code && cmd[1] !== 'test') break;

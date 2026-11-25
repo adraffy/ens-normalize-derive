@@ -10,14 +10,14 @@
 //   6. confusables (rules/confuse.ts) are resolved per group into "wholes"
 //   7. leftovers are pruned, invariants are asserted, and the payloads are built
 
-import {createNF, type NF} from './nf.ts';
+import {describer} from './describe.ts';
 import {ensIdnaRules} from './idna.ts';
 import {Logger} from './log.ts';
-import {describer} from './describe.ts';
-import {describeSelector, resolveRules} from './select.ts';
+import {createNF, type NF} from './nf.ts';
 import {CONFUSE_TYPE_ALLOW, CONFUSE_TYPE_VALID, type ConfuseType, type Rules} from './rules.ts';
+import {describeSelector, resolveRules} from './select.ts';
 import type {UnicodeScript, UnicodeSpec, VersionInfo} from './ucd.ts';
-import {type CodePoint, compareArrays, explodeCp, groupBy, parseCpSequence, sortedCps} from './utils.ts';
+import {type CodePoint, compareArrays, explodeCp, getOrInsert, groupBy, parseCpSequence, sortedCps} from './utils.ts';
 
 const STOP = 0x2e; // label separator
 const FE0F = 0xfe0f; // emoji style
@@ -138,8 +138,7 @@ class Whole {
 		readonly valid: CodePoint[],
 	) {}
 	add(cp: CodePoint, g: ScriptGroup) {
-		let set = this.map.get(cp);
-		if (!set) this.map.set(cp, (set = new Set()));
+		const set = getOrInsert(this.map, cp, () => new Set());
 		set.add(g);
 	}
 }
@@ -476,11 +475,14 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				}
 			}
 			for (const g of gs) {
-				let v = g.cmMap.get(base);
-				if (!v) g.cmMap.set(base, (v = []));
+				const v = getOrInsert(g.cmMap, base, () => []);
 				v.push(cms);
 			}
-			log.log(`${desc.seq(cps)} <${cms.length}> "${NF.nfd(cps).map((cp) => desc.str([cp])).join('+')}" [${gs.map((g) => g.name)}]`);
+			log.log(
+				`${desc.seq(cps)} <${cms.length}> "${NF.nfd(cps)
+					.map((cp) => desc.str([cp]))
+					.join('+')}" [${gs.map((g) => g.name)}]`,
+			);
 		} catch (err) {
 			throw new Error(`Whitelist CM "${form}": ${(err as Error).message}`);
 		}
@@ -532,8 +534,10 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				switch (type) {
 					case undefined:
 					case CONFUSE_TYPE_VALID:
-					case CONFUSE_TYPE_ALLOW: break;
-					default: throw new Error(`Unknown confusable type "${type}": ${desc.cp(cp)}`);
+					case CONFUSE_TYPE_ALLOW:
+						break;
+					default:
+						throw new Error(`Unknown confusable type "${type}": ${desc.cp(cp)}`);
 				}
 				// find the groups that COULD contain this character
 				let gs = groups.filter((g) => parts.get(g)!.has(cp));
@@ -554,7 +558,11 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				}
 			}
 
-			const whole = new Whole(target, defs, defs.filter((x) => x.type === CONFUSE_TYPE_VALID).map((x) => x.cp));
+			const whole = new Whole(
+				target,
+				defs,
+				defs.filter((x) => x.type === CONFUSE_TYPE_VALID).map((x) => x.cp),
+			);
 			wholes.push(whole);
 
 			const unresolved = new Map<string, ScriptGroup[]>();
@@ -564,9 +572,13 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 					// if there's any decisions, use them
 					for (const def of confuse) {
 						switch (def.type) {
-							case CONFUSE_TYPE_VALID: break; // char can be used freely
-							case CONFUSE_TYPE_ALLOW: whole.add(def.cp, g); break; // char requires additional hints
-							default: g.validSet.delete(def.cp); // char is single-script confusable
+							case CONFUSE_TYPE_VALID:
+								break; // char can be used freely
+							case CONFUSE_TYPE_ALLOW:
+								whole.add(def.cp, g);
+								break; // char requires additional hints
+							default:
+								g.validSet.delete(def.cp); // char is single-script confusable
 						}
 					}
 					continue;
@@ -577,9 +589,11 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 					continue;
 				}
 				// there are 2+ confusables without a decision for the same group
-				const key = confuse.map((x) => x.cp).toSorted().join(); // note: lexicographic, only used as a key
-				let v = unresolved.get(key);
-				if (!v) unresolved.set(key, (v = []));
+				const key = confuse
+					.map((x) => x.cp)
+					.toSorted()
+					.join(); // note: lexicographic, only used as a key
+				const v = getOrInsert(unresolved, key, () => []);
 				v.push(g);
 				for (const def of confuse) {
 					if (rules.confuseDefaultAllow) {
@@ -593,13 +607,15 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			for (const def of defs) {
 				if (def.type !== CONFUSE_TYPE_VALID) continue;
 				if (def.auto) {
-					log.log(`Auto-Override: ${desc.cp(def.cp)} [${[...def.groups].map((g) => g.name)} vs ${[...union].filter((g) => !def.groups.has(g)).map((g) => g.name)}]`);
+					log.log(
+						`Auto-Override: ${desc.cp(def.cp)} [${[...def.groups].map((g) => g.name)} vs ${[...union].filter((g) => !def.groups.has(g)).map((g) => g.name)}]`,
+					);
 				} else {
 					log.log(`Override: ${desc.cp(def.cp)} [${[...def.groups].map((g) => g.name)}]`);
 				}
 			}
 			for (const [key, gs] of unresolved) {
-				const cps = key.split(',').map((s) => parseInt(s));
+				const cps = key.split(',').map((s) => parseInt(s, 10));
 				log.log(`Unresolved: [${gs.map((g) => g.name)}] ${cps.map((x) => desc.cp(x)).join(' vs ')}`);
 			}
 		}
@@ -692,7 +708,8 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	const fencedMap = new Map<CodePoint, string>();
 	for (const [cp, name] of rules.charsFenced) {
 		if (!valid.has(cp)) throw new Error(`Fenced character is not valid: ${desc.cp(cp)}`);
-		fencedMap.set(cp, name || unicode.getName(cp, true));
+		if (!name) throw new Error(`Fenced character needs a name: ${desc.cp(cp)}`);
+		fencedMap.set(cp, name);
 	}
 	log.checked('Fenced are Valid');
 
@@ -797,7 +814,12 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		const primary: CodePoint[] = [];
 		const secondary: CodePoint[] = [];
 		for (const cp of sortedCps(g.validSet)) {
-			if (unicode.requireChar(cp).getExtended().some((s) => g.testScripts.has(s))) {
+			if (
+				unicode
+					.requireChar(cp)
+					.getExtended()
+					.some((s) => g.testScripts.has(s))
+			) {
 				primary.push(cp);
 			} else {
 				secondary.push(cp);
@@ -809,7 +831,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.section('Order Groups');
 	for (const g of groups) g.order = 1 + rules.groupOrder.indexOf(g.name) || Infinity;
 	groups.sort((a, b) => Number(!!a.restricted) - Number(!!b.restricted) || a.order - b.order || 0);
-	groups.forEach((g, i) => (g.index = i));
+	for (const [i, g] of groups.entries()) g.index = i;
 	log.checked(`All Unrestricted before Restricted`);
 	log.checked(`Ordered by Registration Likelihood`);
 
@@ -846,9 +868,17 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	{
 		const age = unicode.unicodeVersion.version.split('.').slice(0, 2).join('.');
 		const fresh = sortedCps(validUnion).filter((cp) => unicode.requireChar(cp).age === age);
+		// restricted groups are single-script by construction, so summarize them
+		const restricted = new Map<string, number>();
 		for (const cp of fresh) {
-			log.log(`${desc.cp(cp)} [${groups.filter((g) => g.validSet.has(cp)).map((g) => g.name)}]`);
+			const gs = groups.filter((g) => g.validSet.has(cp));
+			if (gs.every((g) => g.restricted)) {
+				for (const g of gs) restricted.set(g.name, (restricted.get(g.name) ?? 0) + 1);
+			} else {
+				log.log(`${desc.cp(cp)} [${gs.map((g) => g.name)}]`);
+			}
 		}
+		for (const [name, n] of restricted) log.log(`Restricted ${name}: ${n}`);
 		log.log(`New Valid: ${fresh.length}`);
 	}
 
