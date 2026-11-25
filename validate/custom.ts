@@ -180,4 +180,12 @@ export default [
 	{name: 'ҥ', error: true, comment: 'Disallowed: Cyrillic ligature'},
 	{name: 'ӕ', error: true, comment: 'Whole-script confusable: Cyrillic ӕ alone looks Latin'},
 	{name: '♔', comment: 'Chess piece (used by registrations)'},
+
+	// Latin diacritics leaking into non-whitelisted groups through Script_Extensions (rules/scripts.ts)
+	{name: 'א\u{307}', error: true, comment: 'Script_Extensions: Hebrew + COMBINING DOT ABOVE'},
+	{name: 'א\u{308}', error: true, comment: 'Script_Extensions: Hebrew + COMBINING DIAERESIS'},
+	{name: 'ก\u{303}', error: true, comment: 'Script_Extensions: Thai + COMBINING TILDE'},
+	{name: 'ա\u{308}', error: true, comment: 'Script_Extensions: Armenian + COMBINING DIAERESIS'},
+	{name: 'ஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Tamil'},
+	{name: 'కஃ', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)'},
 ] satisfies TestCase[];

@@ -15,12 +15,14 @@ export const SCRIPT_TYPE_LIMITED_USE: ScriptType = 'LimitedUse';
 // https://www.unicode.org/reports/tr39/#def-augmented-script-set
 // 20240910: no change (16.0.0)
 // 20250914: no change (17.0.0)
-// 20260520: no change (18.0.0)
-// note: this is a UTS-39 (confusable detection) concept and is independent of the
-// UAX-31 identifier status, so Bopo => Hanb still holds even though Bopo is now Limited Use
+// 20261125: 18.0.0 (tr39-34) added Hntl (Traditional Han with Latin): Hani => Hntl, Latn => Hntl
+//   (the 20260520 note said "no change", which was based on the draft)
+// note: this is a UTS-39 (confusable detection) concept, independent of the UAX-31 identifier status;
+// derive doesn't use it, the equivalent policy is rules/scripts.ts (Japanese = Kana+Hira+Hani, ...)
 export function augmentScriptSet(set: Set<string>): Set<string> {
 	if (set.has('Hani')) {
 		set.add('Hanb');
+		set.add('Hntl');
 		set.add('Jpan');
 		set.add('Kore');
 	}
@@ -28,6 +30,7 @@ export function augmentScriptSet(set: Set<string>): Set<string> {
 	if (set.has('Kana')) set.add('Jpan');
 	if (set.has('Hang')) set.add('Kore');
 	if (set.has('Bopo')) set.add('Hanb');
+	if (set.has('Latn')) set.add('Hntl');
 	if (set.has('Zyyy') || set.has('Zinh')) {
 		set.clear();
 		set.add(AUGMENTED_ALL);
@@ -506,6 +509,14 @@ export class UnicodeSpec {
 			for (const cp of parseCpRange(src!)) root.push([cp, v]);
 		});
 		return root;
+	}
+	/** revision of each Unicode report for this version, eg. {tr39: 34} (reports.json, from the version page) */
+	readReportRevisions(): Record<string, number> {
+		try {
+			return this.readJSON(this.dataDir, 'reports.json');
+		} catch {
+			return {};
+		}
 	}
 	readScriptKinds(): {limited_use: string[]; excluded: string[]; recommended: string[]} {
 		const {limited_use, excluded, recommended} = this.readJSON<Record<string, string[]>>(this.dataDir, 'script-kinds.json');

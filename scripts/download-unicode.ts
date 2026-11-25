@@ -9,7 +9,7 @@
 // version.json records the download date; it is only bumped when a file changes.
 
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
-import {fetchScriptKinds} from '../src/script-kinds.ts';
+import {fetchReportRevisions, fetchScriptKinds} from '../src/script-kinds.ts';
 import {DATA_DIR} from '../src/ucd.ts';
 import {parseVersion, type Version, versionString} from '../src/utils.ts';
 
@@ -104,6 +104,16 @@ async function download(version: Version, draft: boolean, force: boolean) {
 		write('script-kinds.json', new TextEncoder().encode(JSON.stringify(kinds)), `<${kinds.report_url}>`);
 	} catch (err) {
 		failures.push(`script-kinds: ${(err as Error).message}`);
+	}
+	if (!draft) {
+		// the algorithms ENSIP-15 relies on are defined in report text (UAX-15/24/31, UTS-39/46/51),
+		// so record which revisions this release corresponds to; `bun run review` flags changes
+		try {
+			const reports = await fetchReportRevisions(v3);
+			write('reports.json', new TextEncoder().encode(JSON.stringify(reports, null, '\t')), `<reports: ${Object.keys(reports).length}>`);
+		} catch (err) {
+			failures.push(`reports: ${(err as Error).message}`);
+		}
 	}
 	if (failures.length) {
 		for (const x of failures) console.log(`FAIL ${x}`);

@@ -18,6 +18,23 @@ Decided or done since the first review:
 - **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
 - **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
 
+## Unicode text and data audit (2026-11-25)
+
+Behavior that comes only from report text, checked against the 18.0 revisions. Revisions are now recorded in `data/unicode/<v>/reports.json`, the reviewed ones in `rules/reports.ts`, and `bun run review` flags anything newer.
+
+- **UTS-39 rev 34 changed the augmented script set:** it adds Hntl (Traditional Han with Latin) for every Hani and every Latn character, so Han+Latin is now single-script under UTS-39. The upstream note "no change (18.0.0)" was based on the draft. `augmentScriptSet` is updated, but derive never used it. The ENS policy is hand-coded in `rules/scripts.ts`, and Han/Japanese/Korean already allow a–z, a strict subset of Hntl.
+- **UTS-39:** "nonspacing mark" is now explicitly Mn + Me, as derive already did. The joining-control context changed, which doesn't apply because ZWJ/ZWNJ are disallowed outside emoji.
+- **UTS-46 rev 36 and UAX-15 rev 58:** no changes. UAX-24 is explanatory only. UAX-31 adds the three new Excluded scripts. UTS-51 revises FE0F guidance, which doesn't apply because emoji are normalized without FE0F.
+- **UAX-31 kinds vs `rules/scripts.ts`:** consistent, and now enforced by derive. Every Limited Use or Excluded script must be restricted or disallowed, and groups can only be identified by Recommended scripts.
+- **Script_Extensions leaks (fixed):** Latin diacritics were valid in groups without a CM whitelist, where base + mark isn't checked. They are U+0303 in Thai, U+0307 in Hebrew, and U+0308 in Hebrew and Armenian, all present since before 17.0 and used by 0 registrations. They're removed with the new `{remove: [...]}` override.
+- **Script_Extensions changes 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Knda/Mlym/Telu and is pinned to Taml until reviewed. Vedic U+1CF5/1CF6 lost Deva, which has no effect.
+- **confusables.txt changed heavily in 18.0** (+1,457 / −1,310 pairs), and `confuse.ts` was never regenerated from it. 445 characters valid in unrestricted groups are confusables.txt sources but appear nowhere in `confuse.ts`. 415 of those predate Unicode 10, so this is an original gap; 113 are used by registrations. Most are Han, and most are confusables _within_ one group, which the whole-script model can't express:
+  - simplified vs traditional: 户/戶, 吴/吳, 娱/娛
+  - Katakana vs Han: ム/厶, ネ/礻, ヒ/匕, ヨ/彐
+  - CJK Radicals Supplement vs ideographs: ⺁/厂, ⺊/卜, ⺝/月
+
+  Also missing are some 17.0 additions (SAUDI RIYAL SIGN, ARABIC LETTER THIN NOON). This needs its own pass: a `confuse.ts` sync tool and a policy for same-group confusables.
+
 ## Validation (2026-11-25)
 
 - **Reference implementation:** `src/ensip15.ts` matches `@adraffy/ens-normalize@1.11.1` exactly on 3,460,714 names: all registered labels plus the 1.11.1 `tests.json`.

@@ -52,3 +52,14 @@ export async function fetchScriptKinds(version: string, draft = false): Promise<
 		report_url,
 	};
 }
+
+/** {tr39: 34, ...}: the report revisions listed on the version page */
+export async function fetchReportRevisions(version: string): Promise<Record<string, number>> {
+	const html = await fetchText(`https://www.unicode.org/versions/Unicode${version}/`);
+	const out: Record<string, number> = {};
+	for (const m of html.matchAll(/\/reports\/(tr\d+)\/tr\d+-(\d+)\.html/g)) {
+		out[m[1]!] = Math.max(out[m[1]!] ?? 0, parseInt(m[2]!, 10));
+	}
+	if (!Object.keys(out).length) throw new Error(`no report revisions found for ${version}`);
+	return Object.fromEntries(Object.entries(out).sort((a, b) => parseInt(a[0].slice(2), 10) - parseInt(b[0].slice(2), 10)));
+}

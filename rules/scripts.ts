@@ -83,7 +83,16 @@ export const SCRIPT_EXTENSIONS = [
 	// https://discuss.ens.domains/t/ens-name-normalization-2nd/14564/2
 	// 0x39E (Ξ) GREEK CAPITAL LETTER XI => 0x3BE (ξ) GREEK SMALL LETTER XI
 	[0x3BE, ['Zyyy']],
-] satisfies [CodePoint, string[]][];
+
+	// 20261125: Latin diacritics that Script_Extensions leak into groups without a CM whitelist,
+	// where base + mark sequences aren't checked (0 valid registrations use them)
+	[0x303, {remove: ['Thai']}], // (◌̃) COMBINING TILDE
+	[0x307, {remove: ['Hebr']}], // (◌̇) COMBINING DOT ABOVE
+	[0x308, {remove: ['Armn', 'Hebr']}], // (◌̈) COMBINING DIAERESIS
+
+	// 20261125: 18.0 added Knda Mlym Telu, keep the 17.0 value until reviewed
+	[0xB83, ['Taml']], // (ஃ) TAMIL SIGN VISARGA
+] satisfies [CodePoint, string[] | {remove: string[]}][];
 
 export const DISALLOWED_SCRIPTS = [
 	// https://discuss.ens.domains/t/ens-name-normalization/8652/88

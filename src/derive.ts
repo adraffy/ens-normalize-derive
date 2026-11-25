@@ -170,6 +170,16 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.log(`Unicode Version: ${versionStr(unicode.unicodeVersion)}`);
 	log.log(`CLDR Version: ${versionStr(unicode.cldrVersion)}`);
 
+	// behavior defined by report text: flag revisions nobody has read yet (rules/reports.ts)
+	for (const [tr, rev] of Object.entries(unicode.readReportRevisions())) {
+		const reviewed = rules.reviewedReports[tr];
+		if (reviewed !== undefined && rev > reviewed) {
+			log.log(
+				`*** Unreviewed report: ${tr}-${rev} (reviewed ${tr}-${reviewed}) https://www.unicode.org/reports/${tr}/${tr}-${rev}.html#Modifications`,
+			);
+		}
+	}
+
 	if (!skipNFTests) {
 		const errors = NF.runTests(unicode.readNFTests());
 		if (errors.length) throw new Error(`nf implementation wrong: ${errors.length} failures`);
@@ -372,12 +382,20 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	disallowChar(STOP);
 
 	log.section(`Apply ScriptExt`);
-	for (const [cp, abbrs] of rules.scriptExtensions) {
+	for (const [cp, change] of rules.scriptExtensions) {
 		try {
 			if (!valid.has(cp)) throw new Error(`Not Valid`);
+			const char = unicode.requireChar(cp);
+			let abbrs: string[];
+			if (Array.isArray(change)) {
+				abbrs = change;
+			} else {
+				const current = char.getExtended().map((x) => x.abbr);
+				for (const x of change.remove) if (!current.includes(x)) throw new Error(`Not present: ${x}`);
+				abbrs = current.filter((x) => !change.remove.includes(x));
+			}
 			if (!abbrs.length) throw new Error(`Empty`);
 			const scripts = [...new Set(abbrs.toSorted().map((x) => unicode.requireScript(x)))];
-			const char = unicode.requireChar(cp);
 			log.log(`${desc.cp(cp)} [${char.getExtended().map((x) => x.abbr)} => ${scripts.map((x) => x.abbr)}]`);
 			char.extended = scripts; // replace
 		} catch (err) {
@@ -429,6 +447,23 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		const g = new ScriptGroup(script.abbr, new Set([script]), new Set(), new Set(), false);
 		g.restricted = true;
 		groups.push(g);
+	}
+	// UAX-31: Limited Use and Excluded scripts can only be restricted (or disallowed),
+	// and groups can only be identified by Recommended scripts
+	{
+		const restrictedOrDisallowed = new Set([...rules.restrictedScripts, ...rules.disallowedScripts]);
+		for (const script of unicode.scriptMap.values()) {
+			if (script.type && script.abbr !== 'Zzzz' && script.map.size && !restrictedOrDisallowed.has(script.abbr)) {
+				throw new Error(`UAX-31 ${script.type} script must be restricted or disallowed: ${script.description}`);
+			}
+		}
+		for (const g of groups) {
+			for (const script of g.testScripts) {
+				if (!g.restricted && script.type)
+					throw new Error(`Group "${g.name}" is identified by a ${script.type} script: ${script.description}`);
+			}
+		}
+		log.checked('UAX-31 script kinds');
 	}
 	if (untested.size) {
 		throw new Error(`leftover scripts: ${[...untested].map((x) => x.description).join(', ')}`);

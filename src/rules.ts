@@ -47,13 +47,15 @@ export interface Rules {
 	emojiSeqBlacklist: (string | CodePoint)[];
 	nsmMax: number;
 	scriptGroups: ScriptGroupConfig[];
-	scriptExtensions: [CodePoint, string[]][];
+	/** replace a char's Script_Extensions, or remove scripts from it */
+	scriptExtensions: [CodePoint, string[] | {remove: string[]}][];
 	disallowedScripts: string[];
 	restrictedScripts: string[];
+	reviewedReports: Record<string, number>;
 }
 
 export async function loadRules(): Promise<Rules> {
-	const [valid, ignored, mapped, disallowed, escapes, fenced, order, cm, confuse, emoji, scripts] = await Promise.all([
+	const [valid, ignored, mapped, disallowed, escapes, fenced, order, cm, confuse, emoji, scripts, reports] = await Promise.all([
 		import('../rules/chars-valid.ts'),
 		import('../rules/chars-ignored.ts'),
 		import('../rules/chars-mapped.ts'),
@@ -65,6 +67,7 @@ export async function loadRules(): Promise<Rules> {
 		import('../rules/confuse.ts'),
 		import('../rules/emoji.ts'),
 		import('../rules/scripts.ts'),
+		import('../rules/reports.ts'),
 	]);
 	return {
 		charsValid: valid.default,
@@ -86,5 +89,6 @@ export async function loadRules(): Promise<Rules> {
 		scriptExtensions: scripts.SCRIPT_EXTENSIONS,
 		disallowedScripts: scripts.DISALLOWED_SCRIPTS,
 		restrictedScripts: scripts.RESTRICTED_SCRIPTS,
+		reviewedReports: reports.REVIEWED_REPORTS,
 	};
 }

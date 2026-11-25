@@ -108,12 +108,14 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 - [rules/disallow/](rules/disallow/): one file per area (latin, phonetic, symbols, math-arrows, music, cjk, scripts, …), one entry per block. A block that is mostly disallowed is written as `{block, except}`, so characters Unicode adds to it later are disallowed automatically.
 - [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable.
 - [rules/chars-escape.ts](rules/chars-escape.ts): derived from properties (it replaced the hand list and `unprintables`).
+- [rules/scripts.ts](rules/scripts.ts) `SCRIPT_EXTENSIONS`: replace a character's Script_Extensions (`[cp, ['Zyyy']]`) or remove scripts from it (`[cp, {remove: ['Hebr']}]`). Derive checks that removed scripts are actually present, and checks the script lists against UAX-31.
+- [rules/reports.ts](rules/reports.ts): the revisions of the Unicode reports whose text defines behavior (UAX-15/24/31, UTS-39/46/51) that have been read. `data/unicode/<v>/reports.json` records each release's revisions; derive and `bun run review` flag newer ones.
 - [rules/group-order.ts](rules/group-order.ts): a fixed group priority. The first matching group names a label and is the one named in "illegal mixture" errors, so the order is part of the output. Derive fails if an unrestricted group isn't listed. `bun run group-stats` compares it with registrations.
 
 ## Upgrading Unicode
 
 1. `bun run download:unicode <v>` and `bun run download:cldr`, then point `current` in `data/releases.json` at them and move the old one to `prior`.
-2. In `rules/disallow/unreviewed.ts`, bump `AGE` and empty `REVIEWED`. Add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
+2. In `rules/disallow/unreviewed.ts`, bump `AGE` and empty `REVIEWED`. Read the Modifications sections `bun run review` lists and update `rules/reports.ts`. Add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
 3. `bun run review`: paste the characters you allow into `REVIEWED`, then `bun run derive`.
 4. `bun run make-tests` (fix any FAILED/REVIEW lines), then `bun run registrations --expiry`. BROKEN and CHANGED must be empty or explicitly accepted. Add tests for the release's decisions to `validate/custom.ts`.
 5. `bun scripts/test-ts.ts ../ens-normalize.ts` to check the library build.

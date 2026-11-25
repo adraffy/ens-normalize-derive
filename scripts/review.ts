@@ -49,6 +49,22 @@ const validOpen = validGroups(open);
 const line = (cp: CodePoint, groups?: string[]) => `\t${d.comment(cp)}${groups ? ` [${groups.join(', ')}]` : ''}`;
 
 // ************************************************************
+// reports: behavior defined by text (rules/reports.ts)
+
+{
+	const prior = UnicodeSpec.fromRelease('prior').readReportRevisions();
+	const current = unicode.readReportRevisions();
+	console.log(`==== Reports (text-defined behavior) ====`);
+	for (const [tr, reviewed] of Object.entries(rules.reviewedReports)) {
+		const rev = current[tr];
+		const status = rev === undefined ? 'missing (re-download)' : rev > reviewed ? `UNREVIEWED (reviewed ${reviewed})` : 'reviewed';
+		const changed = prior[tr] !== undefined && rev !== undefined && prior[tr] !== rev ? ` (was ${prior[tr]})` : '';
+		console.log(`\t${tr}-${rev ?? '?'}${changed}: ${status}  https://www.unicode.org/reports/${tr}/${tr}-${rev}.html#Modifications`);
+	}
+	console.log();
+}
+
+// ************************************************************
 // pending
 
 const pending = sortedCps([...validOpen.keys()].filter((cp) => !validBase.has(cp)));

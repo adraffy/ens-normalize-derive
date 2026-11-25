@@ -3,7 +3,7 @@
 		"name": "version",
 		"unicode": "18.0.0 (2026-11-25T20:48:52.431Z)",
 		"cldr": "48.2 (2026-03-28T19:59:34.849Z)",
-		"spec_hash": "171fac169b6301d7daecd8dea83f96b496ad9bb3a69e156caddd3c1074ff29ff",
+		"spec_hash": "aea1f9e3bcaabd25b3f5fa1b691f379dcbb76660841ee3b3e0154014d053f511",
 		"nf_hash": "5656c9138a6daf981ff512be766d31ccbf254edd4b59bea29a5d0cb647fecbe3"
 	},
 	{
@@ -621,6 +621,35 @@
 	{
 		"name": "♔",
 		"comment": "Chess piece (used by registrations)"
+	},
+	{
+		"name": "א̇",
+		"error": true,
+		"comment": "Script_Extensions: Hebrew + COMBINING DOT ABOVE"
+	},
+	{
+		"name": "א̈",
+		"error": true,
+		"comment": "Script_Extensions: Hebrew + COMBINING DIAERESIS"
+	},
+	{
+		"name": "ก̃",
+		"error": true,
+		"comment": "Script_Extensions: Thai + COMBINING TILDE"
+	},
+	{
+		"name": "ա̈",
+		"error": true,
+		"comment": "Script_Extensions: Armenian + COMBINING DIAERESIS"
+	},
+	{
+		"name": "ஃ",
+		"comment": "Script_Extensions: TAMIL SIGN VISARGA in Tamil"
+	},
+	{
+		"name": "కஃ",
+		"error": true,
+		"comment": "Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)"
 	},
 	{
 		"name": "©"
@@ -62626,22 +62655,22 @@
 		"comment": "whole-script confusable: Tamil/Malayalam"
 	},
 	{
-		"name": "ஔ"
+		"name": "ஓ"
 	},
 	{
-		"name": "ஊ"
+		"name": "உ"
 	},
 	{
-		"name": "𑿋"
+		"name": "𑿊"
 	},
 	{
-		"name": "𑿈"
+		"name": "𑿇"
 	},
 	{
-		"name": "ய"
+		"name": "ம"
 	},
 	{
-		"name": "ஸ"
+		"name": "ஷ"
 	},
 	{
 		"name": "θ"
@@ -67589,11 +67618,6 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "࣫",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
 		"name": "̋",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
@@ -67605,11 +67629,6 @@
 	},
 	{
 		"name": "ࣰ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ٓ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
@@ -68956,6 +68975,9 @@
 		"comment": "whole-script confusable: Malayalam/Tamil"
 	},
 	{
+		"name": "ய"
+	},
+	{
 		"name": "௰"
 	},
 	{
@@ -68993,9 +69015,6 @@
 		"name": "ശ",
 		"error": true,
 		"comment": "whole-script confusable: Malayalam/Tamil"
-	},
-	{
-		"name": "ஷ"
 	},
 	{
 		"name": "௸"
@@ -70959,19 +70978,24 @@
 		"comment": "Invalid label \"xn--0-sfa\"‎: invalid label extension: \"xn--\""
 	},
 	{
-		"name": "à.א̈"
+		"name": "à.א̈",
+		"error": true,
+		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "à.א̈",
-		"norm": "à.א̈"
+		"error": true,
+		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "À.א̈",
-		"norm": "à.א̈"
+		"error": true,
+		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "À.א̈",
-		"norm": "à.א̈"
+		"error": true,
+		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "xn--0ca.xn--ssa73l",
@@ -71066,22 +71090,22 @@
 	{
 		"name": "à̈.א",
 		"error": true,
-		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Hebrew \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "à̈.א",
 		"error": true,
-		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Hebrew \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "À̈.א",
 		"error": true,
-		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Hebrew \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "À̈.א",
 		"error": true,
-		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Hebrew \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
 	},
 	{
 		"name": "xn--0ca81i.xn--4db",
@@ -73247,7 +73271,7 @@
 	{
 		"name": "𣳔̃.𑓂",
 		"error": true,
-		"comment": "Invalid label \"𣳔̃\"‎: illegal mixture: Han + Thai \"◌̃\"‎ {303}"
+		"comment": "Invalid label \"𣳔̃\"‎: illegal mixture: Han + Restricted[Glag] \"◌̃\"‎ {303}"
 	},
 	{
 		"name": "xn--nsa95820a.xn--wz1d",
@@ -102623,6 +102647,11 @@
 		"comment": "illegal mixture: Han + Restricted[Bopo] \"ㄧ\"‎ {3127}"
 	},
 	{
+		"name": "aci̇",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "dīng"
 	},
 	{
@@ -102706,6 +102735,11 @@
 		"name": "chrīs"
 	},
 	{
+		"name": "coi̇n",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "dannÿ"
 	},
 	{
@@ -102713,6 +102747,11 @@
 	},
 	{
 		"name": "davįd"
+	},
+	{
+		"name": "defi̇",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "degėn"
@@ -102731,6 +102770,11 @@
 	},
 	{
 		"name": "ethėr"
+	},
+	{
+		"name": "fi̇fa",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "fēijī"
@@ -103080,6 +103124,11 @@
 		"name": "calvīn"
 	},
 	{
+		"name": "coi̇ns",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "crypțo"
 	},
 	{
@@ -103107,6 +103156,11 @@
 		"name": "drėamy"
 	},
 	{
+		"name": "epi̇aş",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "galați"
 	},
 	{
@@ -103123,6 +103177,16 @@
 	},
 	{
 		"name": "incomė"
+	},
+	{
+		"name": "i̇hsan",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
+		"name": "i̇zmir",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "jīngyú"
@@ -103153,6 +103217,11 @@
 	},
 	{
 		"name": "oobįįh"
+	},
+	{
+		"name": "pari̇s",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "pusshī"
@@ -103328,6 +103397,11 @@
 		"name": "horațiu"
 	},
 	{
+		"name": "juli̇en",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "jīnjīng"
 	},
 	{
@@ -103482,6 +103556,11 @@
 		"name": "beșiktaș"
 	},
 	{
+		"name": "bi̇tcoin",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "brâncuși"
 	},
 	{
@@ -103519,6 +103598,11 @@
 	},
 	{
 		"name": "időjárás"
+	},
+	{
+		"name": "i̇brahim",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "jyōtishī"
@@ -103572,7 +103656,17 @@
 		"name": "predajňa"
 	},
 	{
+		"name": "spoti̇fy",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "sūpāhīrō"
+	},
+	{
+		"name": "twi̇tter",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "viesnīca"
@@ -103653,6 +103747,11 @@
 		"name": "ionțiriac"
 	},
 	{
+		"name": "i̇stanbul",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "laurențiu"
 	},
 	{
@@ -103710,6 +103809,11 @@
 		"name": "timișoara"
 	},
 	{
+		"name": "vi̇tali̇k",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "vladțepeș"
 	},
 	{
@@ -103739,6 +103843,11 @@
 		"comment": "disallowed character: \"◌ྀ\"‎ {F80}"
 	},
 	{
+		"name": "i̇nstagram",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "mastėrcard"
 	},
 	{
@@ -103765,6 +103874,11 @@
 	},
 	{
 		"name": "bucureștiro"
+	},
+	{
+		"name": "i̇mmutablex",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "kitīhowaito"
@@ -103886,12 +104000,22 @@
 		"name": "sūpāsentaishirīzu"
 	},
 	{
+		"name": "volkani̇mirzeoglu",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
+	},
+	{
 		"name": "乃ㄖ尺乇ᗪ卂卩乇ㄚ卂匚卄ㄒ匚ㄥㄩ乃",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Bopo] \"ㄖ\"‎ {3116}"
 	},
 	{
 		"name": "constantinbrâncuși"
+	},
+	{
+		"name": "receptayyi̇perdoğan",
+		"error": true,
+		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "sescentīsexāgintāsex"
@@ -155619,11 +155743,6 @@
 		"comment": "disallowed character: \"±\"‎ {B1}"
 	},
 	{
-		"name": "coi̇n",
-		"error": true,
-		"comment": "illegal mixture: Latin + Hebrew \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "100/100",
 		"error": true,
 		"comment": "disallowed character: \"/\"‎ {2F}"
@@ -165944,11 +166063,6 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "coi̇ns",
-		"error": true,
-		"comment": "illegal mixture: Latin + Hebrew \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "eͤᴛⷮhͪ",
 		"error": true,
 		"comment": "disallowed character: \"◌ͤ\"‎ {364}"
@@ -166117,11 +166231,6 @@
 		"name": "stephen·curry",
 		"error": true,
 		"comment": "disallowed character: \"·\"‎ {B7}"
-	},
-	{
-		"name": "i̇hsan",
-		"error": true,
-		"comment": "illegal mixture: Latin + Hebrew \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "#000",
@@ -174419,11 +174528,6 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "receptayyi̇perdoğan",
-		"error": true,
-		"comment": "illegal mixture: Latin + Hebrew \"◌̇\"‎ {307}"
-	},
-	{
 		"name": " 222",
 		"error": true,
 		"comment": "disallowed character: \" \"‎ {20}"
@@ -175117,21 +175221,21 @@
 		"norm": "שײַע"
 	},
 	{
-		"name": "󠅔֝יחחה",
+		"name": "󠅔֟יחחה",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ח₪שׁײעּאּחע",
-		"norm": "ח₪שׁײעּאּחע"
+		"name": "ח₪שׁײעֽאּחע",
+		"norm": "ח₪שׁײעֽאּחע"
 	},
 	{
-		"name": "צּע🐒️וֱֹ🦫️֭יפװ",
+		"name": "צּע🐒️וֱֹ🦫️֮יפװ",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🦫 + ◌֭\""
+		"comment": "illegal placement: emoji + combining mark: \"🦫 + ◌֮\""
 	},
 	{
-		"name": "קּץ֣זיֳא👨🏽‍🦳ֱׯ׳₪",
+		"name": "קּץ֤זיִא👨🏽‍🦳ֱׯ׳₪",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"👨🏽‍🦳 + ◌ֱ\""
 	},
@@ -175140,7 +175244,7 @@
 		"norm": "ףּ👨🏽‍🦱זשץזזפױהּׁטֽׄשׁ"
 	},
 	{
-		"name": "ג󠄓עד֪ב֑👨🏿‍❤️‍💋‍👨🏻ﬞ֥שּ־",
+		"name": "ג󠄓עד֫ב֓👨🏿‍❤️‍💋‍👨🏻ﬞ֦שּ־",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"👨🏿‍❤‍💋‍👨🏻 + ◌ﬞ\""
 	},
@@ -175157,20 +175261,20 @@
 		"norm": "ๆ๙เแ🤹🏼‍♂"
 	},
 	{
-		"name": "­ยำ์ำฺ็󠇨ีณผป",
-		"norm": "ยํา์ําฺ็ีณผป"
+		"name": "­ยำ์ำฺ่󠇨ึณผป",
+		"norm": "ยํา์ําฺ่ึณผป"
 	},
 	{
 		"name": "ฑก󠄕🏋🏼‍♂️󠅢🇧🇪󠅻󠅷งฦ",
 		"norm": "ฑก🏋🏼‍♂🇧🇪งฦ"
 	},
 	{
-		"name": "̃ำะำีย🕒️งภทฤทึ👴️ธำ",
+		"name": "ัำะำึย🕒️งภทฤทื👴️ธำ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "๔๓่ผ๐ิชฑอญำ๘บึำำ🐳️ำธเ",
+		"name": "๔๓่ผ๐ิชฑอญำ๘บืำำ🐳️ำธเ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🐳 + ◌ํ\""
 	},
@@ -175350,32 +175454,32 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "్ఞౣ",
+		"name": "్టౣ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "కొఘఱఽళ"
+		"name": "ఖొఙఱఽవ"
 	},
 	{
-		"name": "󠅐ోఄరౡ్ஃుఘ",
+		"name": "󠅐ోఄరౡ్అుఘ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "౿చ🧑🏾‍❤️‍🧑🏻టమ",
-		"norm": "౿చ🧑🏾‍❤‍🧑🏻టమ"
+		"name": "౿ఛ🧑🏾‍❤️‍🧑🏻టమ",
+		"norm": "౿ఛ🧑🏾‍❤‍🧑🏻టమ"
 	},
 	{
-		"name": "౨ఢయసొ🤷🏿‍♂️🤦️౹👮🏿‍♂️",
-		"norm": "౨ఢయసొ🤷🏿‍♂🤦౹👮🏿‍♂"
+		"name": "౨ణరసొ🤷🏿‍♂️🤦️౹👮🏿‍♂️",
+		"norm": "౨ణరసొ🤷🏿‍♂🤦౹👮🏿‍♂"
 	},
 	{
-		"name": "ఔ﻿ఄూజత🎁️ఘఱౝూైౕ౹వ󠆣ఫ",
-		"norm": "ఔఄూజత🎁ఘఱౝూైౕ౹వఫ"
+		"name": "ఔ﻿ఄూజథ🎁️ఙఱౝూైౕ౹శ󠆣ఫ",
+		"norm": "ఔఄూజథ🎁ఙఱౝూైౕ౹శఫ"
 	},
 	{
-		"name": "౬👧🏾ఋఌఊ౨౸ఛష౦ౌయఋౚఓీఄఖ౭ట"
+		"name": "౬👧🏾ఌఎఋ౨౸ఛష౦ౌయఌౚఔీఄగ౭ఠ"
 	},
 	{
 		"name": "ညꩨႊ"
@@ -175458,1024 +175562,1025 @@
 		"norm": "ძⴧჸⴭ😲კო👩🏼‍🍼ჩკგ🤞🏾ლუ🥊"
 	},
 	{
-		"name": "̈ա̈",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"name": "ֆաՕ",
+		"norm": "ֆաօ"
 	},
 	{
 		"name": "Եչչձծﬔ",
 		"norm": "եչչձծմե"
 	},
 	{
-		"name": "ը󠇨̈րԼ֏ﬕծԷ",
-		"norm": "ը̈րլ֏միծէ"
+		"name": "ը🧑🏽‍❤️‍🧑🏾",
+		"norm": "ը🧑🏽‍❤‍🧑🏾"
 	},
 	{
-		"name": "ևռ̈🥬️ֈ🧑🏽‍🦰խ󠄀",
-		"norm": "եւռ̈🥬ֈ🧑🏽‍🦰խ"
+		"name": "րԼ֏ﬕծԷտևռԳ🥬️",
+		"norm": "րլ֏միծէտեւռգ🥬"
 	},
 	{
-		"name": "Ռկհգ̈ֈ̈Նչծ👨🏽‍🫯‍👨🏾",
-		"norm": "ռկհգ̈ֈ̈նչծ👨🏽‍🫯‍👨🏾"
+		"name": "🧑🏽‍🦰խ󠄀խՌկհգՂֈﬔՆ",
+		"norm": "🧑🏽‍🦰խխռկհգղֈմեն"
 	},
 	{
-		"name": "դ֎լՊ̈վՅ💃🏿Չթ̈քֈԳ̈🦅️",
-		"norm": "դ֎լպ̈վյ💃🏿չթ̈քֈգ̈🦅"
+		"name": "ծ👨🏽‍🫯‍👨🏾Ղդ֎լՊԶվՅ💃🏿",
+		"norm": "ծ👨🏽‍🫯‍👨🏾ղդ֎լպզվյ💃🏿"
 	},
 	{
-		"name": "🧖🏿̈󠇈իչ̈ՉյՅՓջ🦵🏼̈󠇁կՀ🚞️֎",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧖🏿 + ◌̈\""
+		"name": "թթքֈ︈ռ🦅️ւ🧖🏿ժ󠇈իչՄՉյ󠅿Փջ",
+		"norm": "թթքֈռ🦅ւ🧖🏿ժիչմչյփջ"
 	},
 	{
-		"name": "᧿󠄢ឥ",
-		"norm": "᧿ឥ"
-	},
-	{
-		"name": "១ដះច󠆺🧑🏻‍🚒",
-		"norm": "១ដះច🧑🏻‍🚒"
-	},
-	{
-		"name": "៶ឪៜកក៩᧶᧮ៀ"
-	},
-	{
-		"name": "ឺ᧹ធឱ៤ទៃ᧰᧱នន៤",
+		"name": "ី󠇁ឦ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "᧣៨󠅕ឿ🏃🏿᧢󠅐᧾᧡់᧯᧪ពដ",
-		"norm": "᧣៨ឿ🏃🏿᧢᧾᧡់᧯᧪ពដ"
+		"name": "🚞️᧼៹᧿󠄢",
+		"norm": "🚞᧼៹᧿"
 	},
 	{
-		"name": "🎡️ៈ᧡᧤់២៲ែើឍយ᧥ដ៶᧹᧭᧸",
+		"name": "󠇐១ដះច󠆺🧑🏻‍🚒",
+		"norm": "១ដះច🧑🏻‍🚒"
+	},
+	{
+		"name": "៶ឪៜកក៩᧶᧮ៀ់ឺ᧹"
+	},
+	{
+		"name": "ឱ៤ទៃ᧰᧱នន៤ើ᧣៨󠅕ឿ🏃🏿",
+		"norm": "ឱ៤ទៃ᧰᧱នន៤ើ᧣៨ឿ🏃🏿"
+	},
+	{
+		"name": "󠅐᧾᧡់᧯᧪ពដ᧻🎡️ៈ᧡᧤់២៲ែ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🎡 + ◌ៈ\""
 	},
 	{
-		"name": "ឯ᧤ិ៩᧸👩🏾‍🦰ជ᧫᧥ឃឩ᧻᧡᧡ៅក៊យ"
+		"name": "ឍយ᧥ដ៶᧹᧭᧸󠇇ឯ᧤ិ៩᧸👩🏾‍🦰ជ᧫᧥",
+		"norm": "ឍយ᧥ដ៶᧹᧭᧸ឯ᧤ិ៩᧸👩🏾‍🦰ជ᧫᧥"
 	},
 	{
-		"name": "ಒ೭ಳ"
+		"name": "ಞ೯ಶ"
 	},
 	{
-		"name": "ೖಅ೨🧑🏿‍🦲",
+		"name": "ೈಀ್ಕ್ಓ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ಲಬಛಙಡಓಆಕ೫"
+		"name": "ಳೖೖಆ೨🧑🏿‍🦲"
 	},
 	{
-		"name": "ರೖೀೆೄ್ಅಊಪೲ󠄼೫",
-		"norm": "ರೖೀೆೄ್ಅಊಪೲ೫"
+		"name": "ಲಬಜಙಢಔಇಖ೫ೡಱೖ"
 	},
 	{
-		"name": "ಛಎ೨ೄಡಔ🏴󠁧󠁢󠁷󠁬󠁳󠁿೫ವ"
-	},
-	{
-		"name": "ೂ೮ರಹಜ🌍️ಟஃಳ೦󠇖ಪಐ🫱🏿‍🫲🏽",
+		"name": "ೆೄ್ಆಋಪೲ󠄼೫ಔಛಏ೨ೄಢ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🧑🏻‍⚖️ಊ🦂️󠅁೮ೋನ🧒🏼ಘ಼ೕಒಉ೬ಢ",
-		"norm": "🧑🏻‍⚖ಊ🦂೮ೋನ🧒🏼ಘ಼ೕಒಉ೬ಢ"
+		"name": "🏴󠁧󠁢󠁷󠁬󠁳󠁿೫ವಬೂ೮ಱಹಝ🌍️ಟ",
+		"norm": "🏴󠁧󠁢󠁷󠁬󠁳󠁿೫ವಬೂ೮ಱಹಝ🌍ಟ"
 	},
 	{
-		"name": "ം󠅦ഡ",
+		"name": "ಳ೦󠇖ಪಒ🫱🏿‍🫲🏽ಪ🧑🏻‍⚖️ಊ🦂️󠅁೮",
+		"norm": "ಳ೦ಪಒ🫱🏿‍🫲🏽ಪ🧑🏻‍⚖ಊ🦂೮"
+	},
+	{
+		"name": "സ🧒🏼"
+	},
+	{
+		"name": "ഃൌഛഐ൸ര",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ശപൢൂ൬൛"
-	},
-	{
-		"name": "🧘🏻‍♂️ഊഭഖയ",
-		"norm": "🧘🏻‍♂ഊഭഖയ"
-	},
-	{
-		"name": "ുചൌ൦ഫഽ🆙️൏ഃൡ൴",
+		"name": "ം󠅦ഡ൱ശഫൢൂ൬",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ഌ൬ൾചൖമഥൢ🔜️൫ിടഝശ",
-		"norm": "ഌ൬ൾചൖമഥൢ🔜൫ിടഝശ"
+		"name": "ധ🧘🏻‍♂️ഋഭഗയൄു",
+		"norm": "ധ🧘🏻‍♂ഋഭഗയൄു"
 	},
 	{
-		"name": "ള൸󠅫൲ഫ൦ഏെെള൨റ൘൏ഏ🐂️ച",
-		"norm": "ള൸൲ഫ൦ഏെെള൨റ൘൏ഏ🐂ച"
-	},
-	{
-		"name": "൨ീഘ󠆪󠆒ൎൂ󠅞ളഴഘകലഋൄ👨‍🏫൘ഃഈ",
-		"norm": "൨ീഘൎൂളഴഘകലഋൄ👨‍🏫൘ഃഈ"
-	},
-	{
-		"name": "ⷞጼዉ"
-	},
-	{
-		"name": "ጪሬ😰️ኽቋ",
-		"norm": "ጪሬ😰ኽቋ"
-	},
-	{
-		"name": "︍፝ቫꬓዷሾዤዋዒ",
+		"name": "ൌ൦ബൎ🆙️൏ഃ൦൴്എ൭ൾഛ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ቯⶱፐኺህ󠇁ፉዤቕል፝󠆪",
-		"norm": "ቯⶱፐኺህፉዤቕል፝"
+		"name": "മഥൢ🔜️൫ിഠഞഷ🫸🏻ള൹󠅫൲ബ൧",
+		"norm": "മഥൢ🔜൫ിഠഞഷ🫸🏻ള൹൲ബ൧"
 	},
 	{
-		"name": "ⶺ፝ⷋ𞟵፞፞ቐ፝ራꬊ𞟶፟ⷋ፟ጦ",
+		"name": "െെഴ൨ല൘൏ഏ🐂️ഛ൩൨ീങ󠆪󠆒ൎൂ󠅞ഴ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ቫቓዾ"
+	},
+	{
+		"name": "፞👨‍🏫ፒ፝",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "፟ⷞጼዉ፝ጪሬ😰️",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ቋꬌ︍፝ቫꬓዷሾዤዋዒ󠅋",
+		"norm": "ቋꬌ፝ቫꬓዷሾዤዋዒ"
+	},
+	{
+		"name": "ⶱፐኺህ󠇁ፉዤቕል፝󠆪🍠️ⶺ፝",
+		"norm": "ⶱፐኺህፉዤቕል፝🍠ⶺ፝"
+	},
+	{
+		"name": "𞟵፞፞ቐ፝ራꬊ𞟶፟ⷋ፟ጦ👨🏻‍🚀ⶮጶ",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌፞\"‎ {135E}"
 	},
 	{
-		"name": "ⶮጶ፻ቢꬬኰ፟፝ዔዃጚ፝ꬣ፝፝ላገለ",
+		"name": "ቢꬬኰ፟፝ዔዃጚ፝ꬣ፝፝ላገለሱ󠇨፝ጦ፞ⶮ",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌፝\"‎ {135D}"
 	},
 	{
-		"name": "󠇨፝ጦ፞ⶮⷆ︋󠇔󠅼ዐⶨኝፀ󠄉ፔ󠆊ቃ🦳️ፔሱ",
+		"name": "︋󠇔󠅼",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "empty label"
 	},
 	{
-		"name": "නඬඹ"
+		"name": "𑇡ජශ󠄉ළ󠆊",
+		"norm": "𑇡ජශළ"
 	},
 	{
-		"name": "🧜🏼෨🧎🏻‍♀️‍➡️",
-		"norm": "🧜🏼෨🧎🏻‍♀‍➡"
+		"name": "🦳️ළඍනනඬඹය",
+		"norm": "🦳ළඍනනඬඹය"
 	},
 	{
-		"name": "ඹෞඟඟඕෙෲඛ𑇲"
+		"name": "෨🧎🏻‍♀️‍➡️වඹෞ",
+		"norm": "෨🧎🏻‍♀‍➡වඹෞ"
 	},
 	{
-		"name": "ඊ෨𑇦෧ඨෞෞමට෭󠅞෪",
-		"norm": "ඊ෨𑇦෧ඨෞෞමට෭෪"
+		"name": "ඟඕෙෲඛ𑇲ඹඊ෨𑇦෧ඨෞෞම"
 	},
 	{
-		"name": "ඝ්󠆼ඛඐ🏓️ෞභ🇮🇸ජෘඟ𑇰",
+		"name": "෭󠅞෪ිඝ්󠆼ඛඐ🏓️ෞභ🇮🇸ජෘඟ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🏓 + ◌ෞ\""
 	},
 	{
-		"name": "ී󠇯ඃීළ𑇪𑇬ෳල💃🏿ඁං󠇐𑇦බ👩🏾‍🏫",
+		"name": "ේී󠇯ඃීළ𑇪𑇬ෳල💃🏿ඁං󠇐𑇦බ👩🏾‍🏫",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑇳තපඃ෫ඒ෭෫ංබෂබ්ීඩෳ𑇯ෞහළඡ"
-	},
-	{
-		"name": "︈ଳ󠄋",
-		"norm": "ଳ"
-	},
-	{
-		"name": "ଠଡ଼ତ🦔️ଣ",
-		"norm": "ଠଡ଼ତ🦔ଣ"
-	},
-	{
-		"name": "ୟଭଢ଼ଔଡ଼ଆ👇🏿୵",
-		"norm": "ୟଭଢ଼ଔଡ଼ଆ👇🏿୵"
-	},
-	{
-		"name": "ୄହୂଯଐ୯ଢ଼ଏୖ୮ଡ଼ଢ଼",
+		"name": "ୣଥୄ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ଋଢ଼ୠତ󠆀୧ଐ୷ଽଲଉୄ󠄎ଚଖ",
-		"norm": "ଋଢ଼ୠତ୧ଐ୷ଽଲଉୄଚଖ"
-	},
-	{
-		"name": "ୌଖଢ଼ଭୠହ🫱🏼‍🫲🏽ଉଡ଼🧛🏻୵ଂଖ",
+		"name": "ୌଐୡ୍ଂବ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ଡ଼ଛଔ󠅉ଢ଼ଊ🫘️୰ଡ଼ରଉୀ󠇞ଶ୳ଓ୕ଭ୮ଡ଼",
-		"norm": "ଡ଼ଛଔଢ଼ଊ🫘୰ଡ଼ରଉୀଶ୳ଓ୕ଭ୮ଡ଼"
+		"name": "ବ଼ଡ଼ଡଢ଼୳ୖଶଷ",
+		"norm": "ବ଼ଡ଼ଡଢ଼୳ୖଶଷ"
 	},
 	{
-		"name": "۲ރެ",
-		"norm": "٢ރެ"
+		"name": "ଊ︈ଳ󠄋୨ଠଡ଼ତ🦔️ଣକ",
+		"norm": "ଊଳ୨ଠଡ଼ତ🦔ଣକ"
 	},
 	{
-		"name": "󠇒ޒޠްް۱",
+		"name": "ଭଢ଼ଔଡ଼ଆ👇🏿୵ୠୄହୂଯଐ୯",
+		"norm": "ଭଢ଼ଔଡ଼ଆ👇🏿୵ୠୄହୂଯଐ୯"
+	},
+	{
+		"name": "ଏୖ୮ଡ଼ଢ଼ଏଋଢ଼ୠତ󠆀୧ଐ୷ଽଲଉୄ",
+		"norm": "ଏୖ୮ଡ଼ଢ଼ଏଋଢ଼ୠତ୧ଐ୷ଽଲଉୄ"
+	},
+	{
+		"name": "ଚଖଓୌଖଢ଼ଭୠହ🫱🏼‍🫲🏽ଉଡ଼🧛🏻୵ଂଖ",
+		"norm": "ଚଖଓୌଖଢ଼ଭୠହ🫱🏼‍🫲🏽ଉଡ଼🧛🏻୵ଂଖ"
+	},
+	{
+		"name": "۲ރ٨",
+		"norm": "٢ރ٨"
+	},
+	{
+		"name": "۷٣🫘️ޢ۰",
+		"norm": "٧٣🫘ޢ٠"
+	},
+	{
+		"name": "٣ީ󠇞ޕޤ٧ޮސޠ",
+		"norm": "٣ީޕޤ٧ޮސޠ"
+	},
+	{
+		"name": "ދ۲ރެޗ󠇒ޒޠްް۱ލ",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌ް\"‎ {7B0}"
 	},
 	{
-		"name": "🙋🏼‍♂️۰ީ۳ޭ",
-		"norm": "🙋🏼‍♂٠ީ٣ޭ"
+		"name": "۰ީ۳ޭޙ۲ީ٨ޣ📑️🧖🏾۰ޚ",
+		"norm": "٠ީ٣ޭޙ٢ީ٨ޣ📑🧖🏾٠ޚ"
 	},
 	{
-		"name": "۲ީ٨ޣ📑️🧖🏾۰ޚމޥ",
-		"norm": "٢ީ٨ޣ📑🧖🏾٠ޚމޥ"
-	},
-	{
-		"name": "ޑ۷ާޯްޯޠޣޑމޠސގޑޮ",
+		"name": "ޥ۱ޑ۷ާޯްޯޠޣޑމޠސގޑޮީ",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌ޯ\"‎ {7AF}"
 	},
 	{
-		"name": "🔔️٣ޏޓ١🇬🇷۲ޏޘ⁠٧ޮގކޮޞ",
-		"norm": "🔔٣ޏޓ١🇬🇷٢ޏޘ٧ޮގކޮޞ"
+		"name": "٣ޏޓ١🇬🇷۲ޏޘ⁠٧ޮގކޮޞޟ٠ޕގ٨",
+		"norm": "٣ޏޓ١🇬🇷٢ޏޘ٧ޮގކޮޞޟ٠ޕގ٨"
 	},
 	{
-		"name": "٠ޕގ٨۳ޝފށނޮ۰ޤް۹١󠅮ޚޤޓގފ",
-		"norm": "٠ޕގ٨٣ޝފށނޮ٠ޤް٩١ޚޤޓގފ"
+		"name": "ࡠܠܘ"
 	},
 	{
-		"name": "➰️ܞ",
-		"norm": "➰ܞ"
+		"name": "ݏًࡧࡧ݊܋"
 	},
 	{
-		"name": "ࡦܐܝܓ󠄾݁",
-		"norm": "ࡦܐܝܓ݁"
+		"name": "ݍࡧܩܥܡܐ➰️ܞ",
+		"norm": "ݍࡧܩܥܡܐ➰ܞ"
 	},
 	{
-		"name": "ܟ🛰️ܱܽࡤܯܦٍ",
+		"name": "ࡦܐܝܓ󠄾݂ܠܟ🛰️ܽܲ",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🛰 + ◌ܱ\""
+		"comment": "illegal placement: emoji + combining mark: \"🛰 + ◌ܽ\""
 	},
 	{
-		"name": "ܚࡥٓ݊ܕَ⛹🏾‍♂️܌",
-		"norm": "ܚࡥٓ݊ܕَ⛹🏾‍♂܌"
+		"name": "ܯܦَܩܚࡥٔ݊ܕُ⛹🏾‍♂️",
+		"norm": "ܯܦَܩܚࡥٔ݊ܕُ⛹🏾‍♂"
 	},
 	{
-		"name": "ܲܢܹࡡܖܫܩࡠ܊ܚ🤾🏼‍♂️",
+		"name": "󠅕ܳܢܺࡡܖܫܩࡠ܊ܚ🤾🏼‍♂️̄🧖🏾‍♂️",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🧖🏾‍♂️ࡩࡪܦٍܔ܍ࡪܕ݂ܺ̈ܢ󠆰",
-		"norm": "🧖🏾‍♂ࡩࡪܦٍܔ܍ࡪܕ݂ܺ̈ܢ"
+		"name": "ࡪܦَܔ܍ࡪܕ݂ܺ̊ܢ󠆰݃ܝࡡܱٕ܍ܜܥ݅",
+		"norm": "ࡪܦَܔ܍ࡪܕ݂ܺ̊ܢ݃ܝࡡܱٕ܍ܜܥ݅"
 	},
 	{
-		"name": "ܝࡡܱٕ܍ܜܥ݄ܗܕܬܬܖ👨🏻‍❤️‍💋‍👨🏼",
-		"norm": "ܝࡡܱٕ܍ܜܥ݄ܗܕܬܬܖ👨🏻‍❤‍💋‍👨🏼"
+		"name": "߇ߜߜ"
 	},
 	{
-		"name": "߶󠄽߲",
-		"norm": "߶߲"
+		"name": "߶󠄽߲߷ߒߓ߰ߠߜ",
+		"norm": "߶߲߷ߒߓ߰ߠߜ"
 	},
 	{
-		"name": "ߒߓ߰ߠߜߌ"
+		"name": "󠆭߷߇󠇔߶ߖߐ߳߭߷ߧ߽",
+		"norm": "߷߇߶ߖߐ߳߭߷ߧ߽"
 	},
 	{
-		"name": "߷߇󠇔߶ߖߐ߳߭߷",
-		"norm": "߷߇߶ߖߐ߳߭߷"
-	},
-	{
-		"name": "߽߆󠆠ߕ߳ߟ߂߱ߘ🥾️ߠ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "🤟🏼߳߿߰ߣߓߓ🕵🏼‍♀️ߜߏ",
+		"name": "󠆠ߕ߳ߟ߂߱ߘ🥾️ߠߓ🤟🏼߳߿",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🤟🏼 + ◌߳\""
 	},
 	{
-		"name": "ߙ߀ߊ߃߳ߐߣ󠅿󠅶߃ߔߦ߬ߞߔ߭߭ߑ",
+		"name": "ߣߓߓ🕵🏼‍♀️ߜߏߕߙ߀ߊ߃߳ߐߣ",
+		"norm": "ߣߓߓ🕵🏼‍♀ߜߏߕߙ߀ߊ߃߳ߐߣ"
+	},
+	{
+		"name": "󠅶߃ߔߦ߬ߞߔ߭߭ߑ߁߇ߝߋߙ߄ߣ߀߽ߠ߽",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌߭\"‎ {7ED}"
 	},
 	{
-		"name": "߇ߝߋߙ߄ߣ߀߽ߠ߽ߐߒ߶ߊ߂߯߱߂߿ߜߣ"
+		"name": "Ꮕ̌́"
 	},
 	{
-		"name": "ᏜᏓᏅ"
+		"name": "ꮖꮪᎤᏴᏗ̋",
+		"norm": "ᏆᏚᎤᏴᏗ̋"
 	},
 	{
-		"name": "ᎶᏊᏮ̌󠇗Ꮆ",
-		"norm": "ᎶᏊᏮ̌Ꮆ"
+		"name": "ᏜᏓᏅᏒᎶᏊᏮ̌󠇗",
+		"norm": "ᏜᏓᏅᏒᎶᏊᏮ̌"
 	},
 	{
-		"name": "ᎳᏐᏜᏮᏧ̄ᎷᏆᏟ"
+		"name": "ꮐᎳᏐᏜᏮᏧ̄ᎷᏆᏟᏆꮱ",
+		"norm": "ᏀᎳᏐᏜᏮᏧ̄ᎷᏆᏟᏆᏡ"
 	},
 	{
-		"name": "ꮱᎷᏵꮯᏂ👏🏻̂🛡️Ꮥ̌",
+		"name": "ᏵꮯᏂ👏🏻̂🛡️Ꮥ̌ꮘᏭᏠᏓ̌",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"👏🏻 + ◌̂\""
 	},
 	{
-		"name": "ᏭᏠᏓ̌ᏂᏠᎥᎰ̂Ᏹ̌ᏌᎨꮘᏢ",
-		"norm": "ᏭᏠᏓ̌ᏂᏠᎥᎰ̂Ᏹ̌ᏌᎨᏈᏢ"
+		"name": "ᏠᎥᎰ̂Ᏹ̌ᏌᎨꮘᏢᎦᏡᏥᎢᏤꮰ̄Ꮁ",
+		"norm": "ᏠᎥᎰ̂Ᏹ̌ᏌᎨᏈᏢᎦᏡᏥᎢᏤᏠ̄Ꮁ"
 	},
 	{
-		"name": "ᏡᏥᎢᏤꮰ̄Ꮁ👰🏻‍♀️ᎹᎳ󠆙ᎼᏅᏧ",
-		"norm": "ᏡᏥᎢᏤᏠ̄Ꮁ👰🏻‍♀ᎹᎳᎼᏅᏧ"
-	},
-	{
-		"name": "̄̀ᎶꭽꮲᏰᎵᏈᏅᎸ̀̄🫱🏿‍🫲🏼ᏐᏜ̀Ꮦ",
+		"name": "ᎹᎳ󠆙ᎼᏅᏧ🤦🏽̄̀ᎶꭽꮲᏰᎵᏈᏅᎸ̀̄🫱🏿‍🫲🏼",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal placement: emoji + combining mark: \"🤦🏽 + ◌̄\""
 	},
 	{
-		"name": "ᑾᔣ󠆥",
-		"norm": "ᑾᔣ"
+		"name": "ᘂᐽᗌ"
 	},
 	{
-		"name": "ᑠᙤᔨᘐ𑪾ᑊ"
+		"name": "ᑾᔣ󠆥󠄳ᑠᙤ",
+		"norm": "ᑾᔣᑠᙤ"
 	},
 	{
-		"name": "ᘌ󠆼ᘈᔾᓀᢲᒅᑚᣱ",
-		"norm": "ᘌᘈᔾᓀᢲᒅᑚᣱ"
+		"name": "ᘐ𑪾ᑊᢶᘌ󠆼ᘈᔾᓀ",
+		"norm": "ᘐ𑪾ᑊᢶᘌᘈᔾᓀ"
 	},
 	{
-		"name": "ᐫᗨᐷᙯᔂᗱᖸᕉᖈ👨🏾‍🦰"
+		"name": "ᒅᑚᣱᘧᐫᗨᐷᙯᔂᗱᖸᕉ"
 	},
 	{
-		"name": "ᔏᗢᓫ᙭ᖼᘉ👱🏻‍♂️ᐡᒚᔦᖣ",
-		"norm": "ᔏᗢᓫ᙭ᖼᘉ👱🏻‍♂ᐡᒚᔦᖣ"
+		"name": "👨🏾‍🦰⏰️ᔏᗢᓫ᙭ᖼᘉ👱🏻‍♂️",
+		"norm": "👨🏾‍🦰⏰ᔏᗢᓫ᙭ᖼᘉ👱🏻‍♂"
 	},
 	{
-		"name": "ᒭᔁᑌᓕᔰᒍᖜᔪᑃᑐᘏᘣ󠆹ᕤᙼᕂᓑᖵ",
-		"norm": "ᒭᔁᑌᓕᔰᒍᖜᔪᑃᑐᘏᘣᕤᙼᕂᓑᖵ"
+		"name": "ᒚᔦᖣᔌᒭᔁᑌᓕᔰᒍᖜᔪᑃᑐᘏᘣ󠆹ᕤ",
+		"norm": "ᒚᔦᖣᔌᒭᔁᑌᓕᔰᒍᖜᔪᑃᑐᘏᘣᕤ"
 	},
 	{
-		"name": "ᒚᔭᑡᒁᣮᕉᒯᖵᖃᑝᙕᑤᔔᙢᔶᙻᘎ󠄢ᒍᣅᙡ",
-		"norm": "ᒚᔭᑡᒁᣮᕉᒯᖵᖃᑝᙕᑤᔔᙢᔶᙻᘎᒍᣅᙡ"
+		"name": "ᕂᓑᖵᘷᒚᔭᑡᒁᣮᕉᒯᖵᖃᑝᙕᑤᔔᙢᔶᙻᘎ"
 	},
 	{
-		"name": "ᛰᚽᚯ"
+		"name": "ᚰᛱᛨ"
 	},
 	{
-		"name": "ᛩᛙᚹᛝᛁ🦀️",
-		"norm": "ᛩᛙᚹᛝᛁ🦀"
+		"name": "ᛰᚽᚯᛂᛩᛙ"
 	},
 	{
-		"name": "ᛇᛦᛠᛚᛚᛚᛏᚶᚶ"
+		"name": "ᛝᛁ🦀️ᛐᛇᛦᛠᛚ",
+		"norm": "ᛝᛁ🦀ᛐᛇᛦᛠᛚ"
 	},
 	{
-		"name": "ᚶ🚴🏿‍♀️ᚸᚰ👨🏾‍🦼‍➡️",
-		"norm": "ᚶ🚴🏿‍♀ᚸᚰ👨🏾‍🦼‍➡"
+		"name": "ᛚᛏᚶᚶᛃᚶ🚴🏿‍♀️ᚸ",
+		"norm": "ᛚᛏᚶᚶᛃᚶ🚴🏿‍♀ᚸ"
 	},
 	{
-		"name": "ᛕ🍋️ᛷ󠄆ᛋᛰᛅᛩᚵᛒᛛᛙᛦᛐ",
-		"norm": "ᛕ🍋ᛷᛋᛰᛅᛩᚵᛒᛛᛙᛦᛐ"
+		"name": "👨🏾‍🦼‍➡️ᛣᛕ🍋️ᛷ󠄆ᛋᛰ",
+		"norm": "👨🏾‍🦼‍➡ᛣᛕ🍋ᛷᛋᛰ"
 	},
 	{
-		"name": "ᛒ󠅕ᛁᛄ󠅵ᛡᛎᛤ󠇯👯🏿ᛑᛰᚼᚠ🧟‍♀️",
-		"norm": "ᛒᛁᛄᛡᛎᛤ👯🏿ᛑᛰᚼᚠ🧟‍♀"
+		"name": "ᛩᚵᛒᛛᛙᛦᛐᛓᛒ󠅕ᛁᛄ󠅵ᛡᛎᛤ󠇯👯🏿",
+		"norm": "ᛩᚵᛒᛛᛙᛦᛐᛓᛒᛁᛄᛡᛎᛤ👯🏿"
 	},
 	{
-		"name": "ᚽᚹᛂᛄᛎ󠆵ᚡᛥᚯᛰᚳᛳᛉ🙏️ᚡ🇦🇫ᚰ᠌ᛶ",
-		"norm": "ᚽᚹᛂᛄᛎᚡᛥᚯᛰᚳᛳᛉ🙏ᚡ🇦🇫ᚰᛶ"
+		"name": "ᛰᚼᚠ🧟‍♀️ᛨᚽᚹᛂᛄᛎ󠆵ᚡᛥᚯᛰᚳᛳᛉ",
+		"norm": "ᛰᚼᚠ🧟‍♀ᛨᚽᚹᛂᛄᛎᚡᛥᚯᛰᚳᛳᛉ"
 	},
 	{
-		"name": "ᢍ🍛️",
-		"norm": "ᢍ🍛"
+		"name": "᠒︆ᠳ",
+		"norm": "᠒ᠳ"
 	},
 	{
-		"name": "ᡎ👒️᠘ᡈ🚴🏻",
-		"norm": "ᡎ👒᠘ᡈ🚴🏻"
+		"name": "𑙨︀ᢍ🍛️𑙠",
+		"norm": "𑙨ᢍ🍛𑙠"
 	},
 	{
-		"name": "ᠼᢆᠾ᠙ᢆᢆᡑᢜ𑙬",
+		"name": "👒️᠘ᡈ🚴🏻ᡘᠼᢆ",
+		"norm": "👒᠘ᡈ🚴🏻ᡘᠼᢆ"
+	},
+	{
+		"name": "᠙ᢆᢆᡑᢜ𑙬ᢟᡊ﻿ᠸᠢᢪ",
 		"error": true,
 		"comment": "duplicate non-spacing marks: \"◌ᢆ\"‎ {1886}"
 	},
 	{
-		"name": "ᡊ﻿ᠸᠢᢪᢩᡧ😺️󠄎󠄚🙎‍♂️",
-		"norm": "ᡊᠸᠢᢪᢩᡧ😺🙎‍♂"
+		"name": "ᡧ😺️󠄎󠄚🙎‍♂️𑙬ᢟᢆᠥᢅᢈ",
+		"norm": "ᡧ😺🙎‍♂𑙬ᢟᢆᠥᢅᢈ"
 	},
 	{
-		"name": "ᢟᢆᠥᢅᢈ᠓ᡟ🖱️ᡨ᠙🛀🏽ᠹᠡ",
-		"norm": "ᢟᢆᠥᢅᢈ᠓ᡟ🖱ᡨ᠙🛀🏽ᠹᠡ"
+		"name": "ᡟ🖱️ᡨ᠙🛀🏽ᠹᠡ𑙠⏬️ᡨᢆᢪᡱᢁᢆ",
+		"norm": "ᡟ🖱ᡨ᠙🛀🏽ᠹᠡ𑙠⏬ᡨᢆᢪᡱᢁᢆ"
 	},
 	{
-		"name": "⏬️ᡨᢆᢪᡱᢁᢆ𑙡ᢅ𑙠ᢙᠽᢅ👩🏻‍🦽",
-		"norm": "⏬ᡨᢆᢪᡱᢁᢆ𑙡ᢅ𑙠ᢙᠽᢅ👩🏻‍🦽"
-	},
-	{
-		"name": "ᢅ🕵🏼🧑🏽‍🤝‍🧑🏻ᢩᢀ󠆞ᢅᢁᡎ󠆿ᢈ🙆🏻‍♀️",
+		"name": "ᢅ𑙠ᢙᠽᢅ👩🏻‍🦽ᢪᢅ🕵🏼🧑🏽‍🤝‍🧑🏻ᢩ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ᤜᤩ🪡️",
-		"norm": "ᤜᤩ🪡"
-	},
-	{
-		"name": "ᤕᤠᤝᤒᤂ᥈"
-	},
-	{
-		"name": "ᤧᤄᤘ᥇ᤆᤚᤈᤌᤄ",
+		"name": "󠆞ᤥᤛ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "᥀ᤝᤫᤍᤂ🇹🇫🇺🇿🚶🏽‍♀️",
-		"norm": "᥀ᤝᤫᤍᤂ🇹🇫🇺🇿🚶🏽‍♀"
+		"name": "󠆿ᤝ🙆🏻‍♀️",
+		"norm": "ᤝ🙆🏻‍♀"
 	},
 	{
-		"name": "ᤛ᥍᥉ᤁ᥀ᤀᤏᤕᤧᤖ᥌ᤁ᤹󠄶ᤜ",
-		"norm": "ᤛ᥍᥉ᤁ᥀ᤀᤏᤕᤧᤖ᥌ᤁ᤹ᤜ"
+		"name": "ᤜᤩ🪡️ᤝᤕᤠᤝᤒ",
+		"norm": "ᤜᤩ🪡ᤝᤕᤠᤝᤒ"
 	},
 	{
-		"name": "ᤅᤇ⁠ᤛ᥈ᤐᤈᤲᤘᤛᤓ᥌᥎᥎ᤆ󠅇ᤋᤣ",
-		"norm": "ᤅᤇᤛ᥈ᤐᤈᤲᤘᤛᤓ᥌᥎᥎ᤆᤋᤣ"
+		"name": "᥈󠇁ᤧᤄᤘ᥇ᤆᤚᤈᤌᤄᤔ",
+		"norm": "᥈ᤧᤄᤘ᥇ᤆᤚᤈᤌᤄᤔ"
 	},
 	{
-		"name": "ᤇᤑᤗᤁᤚᤗᤞᤉᤚᤙ᥎󠆹ᤈ᥌󠇜᤺ᤸ🏕️ᤇ🚴🏻",
-		"norm": "ᤇᤑᤗᤁᤚᤗᤞᤉᤚᤙ᥎ᤈ᥌᤺ᤸ🏕ᤇ🚴🏻"
+		"name": "ᤝᤫᤍᤂ🇹🇫🇺🇿🚶🏽‍♀️ᤆᤛ",
+		"norm": "ᤝᤫᤍᤂ🇹🇫🇺🇿🚶🏽‍♀ᤆᤛ"
 	},
 	{
-		"name": "ᧆ✊🏽"
+		"name": "᥉ᤁ᥀ᤀᤏᤕᤧᤖ᥌ᤁ᤹󠄶ᤜᤉᤅᤇ⁠ᤛ",
+		"norm": "᥉ᤁ᥀ᤀᤏᤕᤧᤖ᥌ᤁ᤹ᤜᤉᤅᤇᤛ"
 	},
 	{
-		"name": "︆👐🏼ᦻᦳᦖ",
-		"norm": "👐🏼ᦻᦳᦖ"
+		"name": "ᤐᤈᤲᤘᤛᤓ᥌᥎᥎ᤆ󠅇ᤋᤣᤝᤇᤑᤗᤁᤚᤗᤞ",
+		"norm": "ᤐᤈᤲᤘᤛᤓ᥌᥎᥎ᤆᤋᤣᤝᤇᤑᤗᤁᤚᤗᤞ"
 	},
 	{
-		"name": "ᦃᦰ💂🏿ᦑᦍᦿ󠇈ᦾ",
-		"norm": "ᦃᦰ💂🏿ᦑᦍᦿᦾ"
+		"name": "ᦸᦵ᧙"
 	},
 	{
-		"name": "ᧀᦜᧇᦻᦓᦦᦩᧄᦃ᧘🕵🏽"
+		"name": "ᦐ᧖🧑🏻‍🫯‍🧑🏾"
 	},
 	{
-		"name": "ᦛᦑᧂ󠄒ᦨᦀᧄ🙎🏽‍♀️❤️‍🔥",
-		"norm": "ᦛᦑᧂᦨᦀᧄ🙎🏽‍♀❤‍🔥"
+		"name": "󠇍🏕️ᦏ🚴🏻ᦱᧆ✊🏽",
+		"norm": "🏕ᦏ🚴🏻ᦱᧆ✊🏽"
 	},
 	{
-		"name": "ᦂᦀ🧑🏽‍🐰‍🧑🏼ᧀᦣᦺᦒᦣᦷᦴᧇ󠆿",
-		"norm": "ᦂᦀ🧑🏽‍🐰‍🧑🏼ᧀᦣᦺᦒᦣᦷᦴᧇ"
+		"name": "︆👐🏼ᦻᦳᦖᦤᦃᦰ💂🏿ᦑ",
+		"norm": "👐🏼ᦻᦳᦖᦤᦃᦰ💂🏿ᦑ"
 	},
 	{
-		"name": "ᦪ󠄧ᦢᦚ᧚ᦄᦱᦟᦚᦚ᧐᧔︋ᦎᧄ᠌ᧂᧄᦊᦎᦚ",
-		"norm": "ᦪᦢᦚ᧚ᦄᦱᦟᦚᦚ᧐᧔ᦎᧄᧂᧄᦊᦎᦚ"
+		"name": "ᦿ󠇈ᦾᦠᧀᦜᧇᦻᦓᦦᦩᧄᦃ᧘🕵🏽",
+		"norm": "ᦿᦾᦠᧀᦜᧇᦻᦓᦦᦩᧄᦃ᧘🕵🏽"
 	},
 	{
-		"name": "ᩥᩭ✊🏿",
+		"name": "ᦛᦑᧂ󠄒ᦨᦀᧄ🙎🏽‍♀️❤️‍🔥🙏️",
+		"norm": "ᦛᦑᧂᦨᦀᧄ🙎🏽‍♀❤‍🔥🙏"
+	},
+	{
+		"name": "ᦀ🧑🏽‍🐰‍🧑🏼ᧀᦣᦺᦒᦣᦷᦴᧇ󠆿ᦩᦪ󠄧ᦢ",
+		"norm": "ᦀ🧑🏽‍🐰‍🧑🏼ᧀᦣᦺᦒᦣᦷᦴᧇᦩᦪᦢ"
+	},
+	{
+		"name": "ᪧᨤᩍ"
+	},
+	{
+		"name": "ᨺᨺ᪗᩹ᩗᨮ"
+	},
+	{
+		"name": "ᩕᩴ᪑ᩚᨮᨺ᪙ᩥᩭ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ᩀ᪘ᨡ᩠ᨳ᪬"
+		"name": "ᨦᩀ᪘ᨡ᩠ᨳ᪬᪕ᩖᩇ󠄞ᨹ",
+		"norm": "ᨦᩀ᪘ᨡ᩠ᨳ᪬᪕ᩖᩇᨹ"
 	},
 	{
-		"name": "ᩖᩇ󠄞ᨹᨧᩇ᪙ᨩᩲ",
+		"name": "ᩇ᪙ᨩᩲᩏᨼ᩿ᨵᩛ᪕᪢ᩕᩐ🧑🏻‍🚀"
+	},
+	{
+		"name": "ᩜᩘᨳ᪥👩🏾‍❤️‍💋‍👩🏿ᨮ᪉᪉᪒",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ᨼ᩿ᨵᩛ᪕᪢ᩕᩐ🧑🏻‍🚀"
+		"name": "ᨿᨦᨨ᩵᪗ᩎᩏᩍᪧᨳ᪈ᨶ󠄵ᩅᩂ᪇🔮️ᨿᩈᨫ",
+		"norm": "ᨿᨦᨨ᩵᪗ᩎᩏᩍᪧᨳ᪈ᨶᩅᩂ᪇🔮ᨿᩈᨫ"
 	},
 	{
-		"name": "ᩜᩘᨳ᪥👩🏾‍❤️‍💋‍👩🏿ᨮ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "᪉᪒᪭ᨿᨦᨨ᩵᪗ᩎᩏᩍᪧᨳ᪈ᨶ󠄵ᩅᩂ",
-		"norm": "᪉᪒᪭ᨿᨦᨨ᩵᪗ᩎᩏᩍᪧᨳ᪈ᨶᩅᩂ"
-	},
-	{
-		"name": "🔮️ᨿᩈᨫᨵᩃᨬᩚᩊᩭᨼᩢᩊᩔᩊᩋᩂᨾᩉ💄️",
-		"norm": "🔮ᨿᩈᨫᨵᩃᨬᩚᩊᩭᨼᩢᩊᩔᩊᩋᩂᨾᩉ💄"
-	},
-	{
-		"name": "󠇦ㄝㄓ",
-		"norm": "ㄝㄓ"
-	},
-	{
-		"name": "ㆦㄅ･ㄔㄪㆴ",
-		"norm": "ㆦㄅ・ㄔㄪㆴ"
-	},
-	{
-		"name": "･ㄇ･ㄙ🩷️ㄊㄪ󠆩",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "･ㄫㄉㆥ･ㆹㄓ󠆱･ㄋㆸㆩ",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "ㆢㄊ･ㄆㆾㄜㆶ･ㆻㄯㄅㆵㄔ･･",
-		"error": true,
-		"comment": "illegal placement: middle dot + middle dot"
-	},
-	{
-		"name": "･ㆯ🇸🇪ㆹㄅㄟ・ㄫㆤㄯ󠇩ㆽ･ㆵㄖㆺㄬ",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "ㄏㆳㄛㄇ･･ㄬㄪ󠇖･ㆳ･ㄊ⁠･･ㆫㆨㄞ･⚪️",
-		"error": true,
-		"comment": "illegal placement: middle dot + middle dot"
-	},
-	{
-		"name": "･ꁒꇩ",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "ꃸꋞꅹꍣꊉꑺ"
-	},
-	{
-		"name": "ꏒ󠄍･ꂞꅱꂑꌫ･󠅊",
+		"name": "ㄣㄎ･",
 		"error": true,
 		"comment": "illegal placement: trailing middle dot"
 	},
 	{
-		"name": "ꈠ･･ꅩꍳ🧎🏿‍➡️👨🏽‍💻",
+		"name": "･ㄝ･ㄩㆣㄩ",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
+	},
+	{
+		"name": "ㄢㄟㄩ💄️ㄢ󠇦ㄝㄓ",
+		"norm": "ㄢㄟㄩ💄ㄢㄝㄓ"
+	},
+	{
+		"name": "ㆦㄅ･ㄔㄪㆴ⚽️･ㄇ･ㄙ",
+		"norm": "ㆦㄅ・ㄔㄪㆴ⚽・ㄇ・ㄙ"
+	},
+	{
+		"name": "ㄊㄪ󠆩･･ㄫㄉㆥ･ㆹㄓ󠆱･ㄋㆸ",
 		"error": true,
 		"comment": "illegal placement: middle dot + middle dot"
 	},
 	{
-		"name": "ꍝꊋꏙꁑꈭꁉ🦤️ꆺꂛꁂꊂꉽꇿꊶ",
-		"norm": "ꍝꊋꏙꁑꈭꁉ🦤ꆺꂛꁂꊂꉽꇿꊶ"
+		"name": "･ㆢㄊ･ㄆㆾㄜㆶ･ㆻㄯㄅㆵㄔ･･ㄛ･",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
 	},
 	{
-		"name": "🧏🏽‍♀️9️⃣ꎍꄈ･ꌵꅎꐲꅸꐲꂎꀗ",
-		"norm": "🧏🏽‍♀9⃣ꎍꄈ・ꌵꅎꐲꅸꐲꂎꀗ"
+		"name": "🇸🇪ㆹㄅㄟ・ㄫㆤㄯ󠇩ㆽ･ㆵㄖㆺㄬㆨㄏㆳㄛㄇ",
+		"norm": "🇸🇪ㆹㄅㄟ・ㄫㆤㄯㆽ・ㆵㄖㆺㄬㆨㄏㆳㄛㄇ"
 	},
 	{
-		"name": "ꌎꌺꄇꑖ󠄀󠆮ꀮꄨꀽꃡꅸ･ꐓ･ꉝꃕꐥꎂꑼꌅꀸ",
-		"norm": "ꌎꌺꄇꑖꀮꄨꀽꃡꅸ・ꐓ・ꉝꃕꐥꎂꑼꌅꀸ"
+		"name": "･ꊗꉸ",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
 	},
 	{
-		"name": "ꨓꨁ󠄠",
-		"norm": "ꨓꨁ"
+		"name": "･ꏽ･ꁴ⁠･",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
 	},
 	{
-		"name": "ꩅ꩖ꩀ󠇢ꨌ👨🏼‍🔬",
-		"norm": "ꩅ꩖ꩀꨌ👨🏼‍🔬"
+		"name": "ꍽꍆꇀ･⚪️ꄷ･ꁒ",
+		"norm": "ꍽꍆꇀ・⚪ꄷ・ꁒ"
 	},
 	{
-		"name": "ꨮꨒ🐙️ꨧꨮꩄꩊ꩖",
+		"name": "ꍳꃸꋞꅹꍣꊉꑺ･ꏒ󠄍･ꂞ",
+		"norm": "ꍳꃸꋞꅹꍣꊉꑺ・ꏒ・ꂞ"
+	},
+	{
+		"name": "ꂑꌫ･󠅊꒩ꈠ･･ꅩꍳ🧎🏿‍➡️",
+		"error": true,
+		"comment": "illegal placement: middle dot + middle dot"
+	},
+	{
+		"name": "ꆴꍝꊋꏙꁑꈭꁉ🦤️ꆺꂛꁂꊂꉽꇿꊶꍯ🧏🏽‍♀️",
+		"norm": "ꆴꍝꊋꏙꁑꈭꁉ🦤ꆺꂛꁂꊂꉽꇿꊶꍯ🧏🏽‍♀"
+	},
+	{
+		"name": "ꎍꄈ･ꌵꅎꐲꅸꐲꂎꀗꑏꌎꌺꄇꑖ󠄀󠆮ꀮꄨꀽꃡ",
+		"norm": "ꎍꄈ・ꌵꅎꐲꅸꐲꂎꀗꑏꌎꌺꄇꑖꀮꄨꀽꃡ"
+	},
+	{
+		"name": "ꩍ꩑ꩍ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ꨋ🐀️ꨣꨢꨑꨭꨗꨟꨄꨉꨴ",
-		"norm": "ꨋ🐀ꨣꨢꨑꨭꨗꨟꨄꨉꨴ"
+		"name": "ꨋ꩒ꩆ꩗ꨧꨂ"
 	},
 	{
-		"name": "ꨬꨊꨂꨪꨅꩃ꩘ꨁꨍ᠌ꨲ꩜ꨎꨪꨲ",
+		"name": "ꨓꨁ󠄠ꨴꩅ꩖ꩀ󠇢ꨌ",
+		"norm": "ꨓꨁꨴꩅ꩖ꩀꨌ"
+	},
+	{
+		"name": "ꨶꨮꨒ🐙️ꨧꨮꩄꩊ꩖ꩀꨋ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ꨴꨕꨐ꩜ꩃ󠆅ꨔꨪꨯꨋꨰꩍꨋꨌꩅꨫꨴꩌ",
+		"name": "ꨣꨢꨑꨭꨗꨟꨄꨉꨴꨇꨬꨊꨂꨪꨅ"
+	},
+	{
+		"name": "꩘ꨁꨍ᠌ꨲ꩜ꨎꨪꨲ󠅢ꨴꨕꨐ꩜ꩃ󠆅ꨔꨪ",
+		"norm": "꩘ꨁꨍꨲ꩜ꨎꨪꨲꨴꨕꨐ꩜ꩃꨔꨪ"
+	},
+	{
+		"name": "ꨋꨰꩍꨋꨌꩅꨫꨴꩌꨕꨃꩅꨰꨪ꩒ꨝꨍ꩘ꩅ꩜ꨅ"
+	},
+	{
+		"name": "𐤋👨🏻‍❤️‍👨🏼",
+		"norm": "𐤋👨🏻‍❤‍👨🏼"
+	},
+	{
+		"name": "𐤄𐤁󠅄𐤛𐤅𐤌",
+		"norm": "𐤄𐤁𐤛𐤅𐤌"
+	},
+	{
+		"name": "𐤗𐤑𐤇𐤇𐤅𐤊𐤟𐤓𐤚"
+	},
+	{
+		"name": "𐤛𐤉󠄺𐤍󠆿𐤈𐤋𐤒𐤋󠄗𐤂󠄙",
+		"norm": "𐤛𐤉𐤍𐤈𐤋𐤒𐤋𐤂"
+	},
+	{
+		"name": "𐤈𐤛👨🏼‍❤️‍💋‍👨🏿𐤀𐤉𐤐",
+		"norm": "𐤈𐤛👨🏼‍❤‍💋‍👨🏿𐤀𐤉𐤐"
+	},
+	{
+		"name": "𐤏𐤛𐤉𐤘𐤔🪑️𐤄𐤗𐤔𐤅𐤄𐤑𐤊𐤃𐤏𐤖󠇋",
+		"norm": "𐤏𐤛𐤉𐤘𐤔🪑𐤄𐤗𐤔𐤅𐤄𐤑𐤊𐤃𐤏𐤖"
+	},
+	{
+		"name": "𐤒𐤉𐤛𐤍𐤚𐤆𐤟𐤇𐤇𐤎𐤂𐤘𐤙𐤃𐤐𐤆𐤕𐤚𐤒𐤏𐤈"
+	},
+	{
+		"name": "󠆤𔀪𓑈",
+		"norm": "𔀪𓑈"
+	},
+	{
+		"name": "𓑀𓑒𓫉𓲽𓵤𔅷",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ꨃꩅꨰꨪ꩒ꨝꨍ꩘ꩅ꩜ꨅꨏꨘ󠇡ꩉꨊꨂ󠅄ꩌꨌꨛ",
-		"norm": "ꨃꩅꨰꨪ꩒ꨝꨍ꩘ꩅ꩜ꨅꨏꨘꩉꨊꨂꩌꨌꨛ"
+		"name": "𓁞󠆝𓯜𓪛𔀐𓑆𓝮𓰊󠄽",
+		"norm": "𓁞𓯜𓪛𔀐𓑆𓝮𓰊"
 	},
 	{
-		"name": "𐤗𐤑𐤇"
-	},
-	{
-		"name": "𐤅𐤊𐤟𐤓𐤚𐤍"
-	},
-	{
-		"name": "𐤉󠄺𐤍󠆿𐤈𐤋𐤒𐤋󠄗",
-		"norm": "𐤉𐤍𐤈𐤋𐤒𐤋"
-	},
-	{
-		"name": "󠄙𐤍𐤈𐤛👨🏼‍❤️‍💋‍👨🏿",
-		"norm": "𐤍𐤈𐤛👨🏼‍❤‍💋‍👨🏿"
-	},
-	{
-		"name": "𐤉𐤐𐤐𐤏𐤛𐤉𐤘𐤔🪑️𐤄𐤗𐤔𐤅𐤄",
-		"norm": "𐤉𐤐𐤐𐤏𐤛𐤉𐤘𐤔🪑𐤄𐤗𐤔𐤅𐤄"
-	},
-	{
-		"name": "𐤊𐤃𐤏𐤖󠇋𐤂𐤒𐤉𐤛𐤍𐤚𐤆𐤟𐤇𐤇𐤎𐤂𐤘",
-		"norm": "𐤊𐤃𐤏𐤖𐤂𐤒𐤉𐤛𐤍𐤚𐤆𐤟𐤇𐤇𐤎𐤂𐤘"
-	},
-	{
-		"name": "𐤃𐤐𐤆𐤕𐤚𐤒𐤏𐤈𐤔🧚‍♀️𐤗𐤅𐤄𐤁𐤖𐤏𐤒𐤓",
-		"norm": "𐤃𐤐𐤆𐤕𐤚𐤒𐤏𐤈𐤔🧚‍♀𐤗𐤅𐤄𐤁𐤖𐤏𐤒𐤓"
-	},
-	{
-		"name": "𓉼𓁞󠆝",
-		"norm": "𓉼𓁞"
-	},
-	{
-		"name": "𓪛𔀐𓑆𓝮𓰊󠄽",
-		"norm": "𓪛𔀐𓑆𓝮𓰊"
-	},
-	{
-		"name": "𓑕𓑌𓑕𔄞𓑈𓅩𓔯𓑎𓔯",
+		"name": "𓑕𓑌𓑕𔄞𓑈𓅩𓔯𓑎𓔯𓁋𔎵𓱡",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𔎵𓱡𓺹𓳧😎️𔌆𓺭𓑌𓫡𓂎𔏤",
-		"norm": "𔎵𓱡𓺹𓳧😎𔌆𓺭𓑌𓫡𓂎𔏤"
+		"name": "𓳧😎️𔌆𓺭𓑌𓫡𓂎𔏤𓈢𓑇𓯁𓽒𓑓𓩣",
+		"norm": "𓳧😎𔌆𓺭𓑌𓫡𓂎𔏤𓈢𓑇𓯁𓽒𓑓𓩣"
 	},
 	{
-		"name": "𓑇𓯁𓽒𓑓𓩣𓑒𓩞𓪸𓏠𓒚𓌙𓆮𓑇𓥅𓑒",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "🪩️🧑‍💻𓑇𓑏𓥉𓍹𓴨︂𓯍𓱹𓁍𓘐𓑒𓑊󠄋",
+		"name": "𓩞𓪸𓏠𓒚𓌙𓆮𓑇𓥅𓑒󠅇🪩️🧑‍💻𓑇𓑏𓥉",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🧑‍💻 + ◌𓑇\""
 	},
 	{
-		"name": "𓩪󠅄𓵖𓒣𓆵𓿤𓤀𓐚𓩰👟️󠇥󠇣𓑏𓑊𓲉𓾆𔇉𓵀𓴰𓠾",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"👟 + ◌𓑏\""
+		"name": "𓴨︂𓯍𓱹𓁍𓘐𓑒𓑊󠄋󠅬𓩪󠅄𓵖𓒣𓆵𓿤𓤀𓐚𓩰👟️",
+		"norm": "𓴨𓯍𓱹𓁍𓘐𓑒𓑊𓩪𓵖𓒣𓆵𓿤𓤀𓐚𓩰👟"
 	},
 	{
-		"name": "𐱀𐰝🎍️🔮️",
-		"norm": "𐱀𐰝🎍🔮"
+		"name": "𐰔𐰭𐰸𐱀𐰰𐰯"
 	},
 	{
-		"name": "𐰵󠅹𐰓𐰃𐰜𐰡𐰜𐰪𐰛",
-		"norm": "𐰵𐰓𐰃𐰜𐰡𐰜𐰪𐰛"
+		"name": "𐰰👩🏻‍🎤𐰿𐱀𐰝🎍️",
+		"norm": "𐰰👩🏻‍🎤𐰿𐱀𐰝🎍"
 	},
 	{
-		"name": "𐱁🌮️𐱈🇬🇭𐰑🧑🏾‍❤️‍💋‍🧑🏼",
-		"norm": "𐱁🌮𐱈🇬🇭𐰑🧑🏾‍❤‍💋‍🧑🏼"
+		"name": "𐱇𐰵󠅹𐰓𐰃𐰜𐰡𐰜𐰪𐰛𐰜𐱁",
+		"norm": "𐱇𐰵𐰓𐰃𐰜𐰡𐰜𐰪𐰛𐰜𐱁"
 	},
 	{
-		"name": "𐰃👨🏽‍🏭𐰤𐰞👮🏾‍♀️𐰮𐰵𐰯",
-		"norm": "𐰃👨🏽‍🏭𐰤𐰞👮🏾‍♀𐰮𐰵𐰯"
+		"name": "𐱈🇬🇭𐰑🧑🏾‍❤️‍💋‍🧑🏼𐰤",
+		"norm": "𐱈🇬🇭𐰑🧑🏾‍❤‍💋‍🧑🏼𐰤"
 	},
 	{
-		"name": "𐰱𐰣𐰖𐰲𐰎𐰫❔️𐱆𐰫𐰕𐰯𐱂🇨🇮󠄻︍𐰖",
-		"norm": "𐰱𐰣𐰖𐰲𐰎𐰫❔𐱆𐰫𐰕𐰯𐱂🇨🇮𐰖"
+		"name": "👨🏽‍🏭𐰤𐰞👮🏾‍♀️𐰮𐰵𐰯𐰴𐰱𐰣𐰖",
+		"norm": "👨🏽‍🏭𐰤𐰞👮🏾‍♀𐰮𐰵𐰯𐰴𐰱𐰣𐰖"
 	},
 	{
-		"name": "𐱈󠇮󠄕𐰨𐰫𐰾𐱅󠆒𐰝👎🏿𐰭𐰲𐰏𐰞☝🏾🇺🇿𐰑♥️",
-		"norm": "𐱈𐰨𐰫𐰾𐱅𐰝👎🏿𐰭𐰲𐰏𐰞☝🏾🇺🇿𐰑♥"
+		"name": "𐰎𐰫❔️𐱆𐰫𐰕𐰯𐱂🇨🇮󠄻︍𐰖𐰽𐱈󠇮󠄕𐰨𐰫𐰾",
+		"norm": "𐰎𐰫❔𐱆𐰫𐰕𐰯𐱂🇨🇮𐰖𐰽𐱈𐰨𐰫𐰾"
 	},
 	{
-		"name": "󠇚𒌗𒈝",
-		"norm": "𒌗𒈝"
+		"name": "󠆒𒈳👎🏿",
+		"norm": "𒈳👎🏿"
 	},
 	{
-		"name": "𒄃𒆤𒓏𒔫𒌁𒒱"
+		"name": "𒐫𒄭𒉁☝🏾🇺🇿"
 	},
 	{
-		"name": "𒈃𒆅­𒇾󠇌𒉛𒊹𒄴𒆴",
-		"norm": "𒈃𒆅𒇾𒉛𒊹𒄴𒆴"
+		"name": "♥️𒁐󠇚𒌗𒈝👨‍👨‍👧‍👧",
+		"norm": "♥𒁐𒌗𒈝👨‍👨‍👧‍👧"
 	},
 	{
-		"name": "𒂓𒇂𒙕𒖋𒓀𒓕𒂞𒉔𒅿𒊽👩‍👩‍👧‍👦"
+		"name": "𒆤𒓏𒔫𒌁𒒱𒔟𒈃𒆅­𒇾󠇌𒉛",
+		"norm": "𒆤𒓏𒔫𒌁𒒱𒔟𒈃𒆅𒇾𒉛"
 	},
 	{
-		"name": "𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍♀️𒍿𒄩",
-		"norm": "𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍♀𒍿𒄩"
+		"name": "𒄴𒆴𒓆𒂓𒇂𒙕𒖋𒓀𒓕𒂞𒉔𒅿𒊽👩‍👩‍👧‍👦"
 	},
 	{
-		"name": "𒃅𒇝𒑌𒍷𒃀𒅣🏃🏽‍➡️𒐚𒌽𒃰𒊩𒀂𒓱𒁭",
-		"norm": "𒃅𒇝𒑌𒍷𒃀𒅣🏃🏽‍➡𒐚𒌽𒃰𒊩𒀂𒓱𒁭"
+		"name": "𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍♀️𒍿𒄩𒎃𒃅𒇝",
+		"norm": "𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍♀𒍿𒄩𒎃𒃅𒇝"
 	},
 	{
-		"name": "🛀🏾𒎓𒓞𒎑𒄮𒒡󠄊𒍻󠆦𒃟𒊥𒕜𒂞𒑘𒉕𒔘𒌸𒂥𒄺𒌹",
-		"norm": "🛀🏾𒎓𒓞𒎑𒄮𒒡𒍻𒃟𒊥𒕜𒂞𒑘𒉕𒔘𒌸𒂥𒄺𒌹"
+		"name": "𒍷𒃀𒅣🏃🏽‍➡️𒐚𒌽𒃰𒊩𒀂𒓱𒁭𒂫🛀🏾𒎓𒓞𒎑",
+		"norm": "𒍷𒃀𒅣🏃🏽‍➡𒐚𒌽𒃰𒊩𒀂𒓱𒁭𒂫🛀🏾𒎓𒓞𒎑"
 	},
 	{
-		"name": "ᚁᚇᚓ"
+		"name": "ᚖ󠄊ᚒ",
+		"norm": "ᚖᚒ"
 	},
 	{
-		"name": "ᚉᚃᚄᚌᚔ🤎️",
-		"norm": "ᚉᚃᚄᚌᚔ🤎"
+		"name": "ᚅᚎᚚᚄᚕᚍ"
 	},
 	{
-		"name": "󠄇ᚄᚙ᚜ᚎᚖᚂᚙᚁ",
-		"norm": "ᚄᚙ᚜ᚎᚖᚂᚙᚁ"
+		"name": "ᚑᚄᚇᚑᚉᚁᚇᚓᚂ"
 	},
 	{
-		"name": "ᚄ᚜᚜ᚅᚇᚘ󠄅ᚙ💪🏼ᚘᚙ",
-		"norm": "ᚄ᚜᚜ᚅᚇᚘᚙ💪🏼ᚘᚙ"
+		"name": "ᚃᚄᚌᚔ🤎️ᚌ󠄇ᚄᚙ᚜ᚎ",
+		"norm": "ᚃᚄᚌᚔ🤎ᚌᚄᚙ᚜ᚎ"
 	},
 	{
-		"name": "ᚕ᚜ᚖᚕ󠅊ᚅᚆᚒᚆᚇᚎᚈᚃᚁᚆ",
-		"norm": "ᚕ᚜ᚖᚕᚅᚆᚒᚆᚇᚎᚈᚃᚁᚆ"
+		"name": "ᚂᚙᚁᚃᚄ᚜᚜ᚅᚇᚘ󠄅ᚙ💪🏼ᚘ",
+		"norm": "ᚂᚙᚁᚃᚄ᚜᚜ᚅᚇᚘᚙ💪🏼ᚘ"
 	},
 	{
-		"name": "ᚎᚋᚁᚂ󠇧ᚗᚃᚙᚌᚚᚍ᚛ᚊᚐᚄᚊᚋ💁🏻‍♂️",
-		"norm": "ᚎᚋᚁᚂᚗᚃᚙᚌᚚᚍ᚛ᚊᚐᚄᚊᚋ💁🏻‍♂"
+		"name": "ᚎᚕ᚜ᚖᚕ󠅊ᚅᚆᚒᚆᚇᚎᚈᚃᚁᚆ᚛ᚎ",
+		"norm": "ᚎᚕ᚜ᚖᚕᚅᚆᚒᚆᚇᚎᚈᚃᚁᚆ᚛ᚎ"
 	},
 	{
-		"name": "ᚋᚂᚃᚔᚗ᚛ᚇᚙᚑᚏᚙᚂᚁ᚛ᚉᚐ🙏️💂🏽‍♀️",
-		"norm": "ᚋᚂᚃᚔᚗ᚛ᚇᚙᚑᚏᚙᚂᚁ᚛ᚉᚐ🙏💂🏽‍♀"
+		"name": "ᚁᚂ󠇧ᚗᚃᚙᚌᚚᚍ᚛ᚊᚐᚄᚊᚋ💁🏻‍♂️ᚍ",
+		"norm": "ᚁᚂᚗᚃᚙᚌᚚᚍ᚛ᚊᚐᚄᚊᚋ💁🏻‍♂ᚍ"
 	},
 	{
-		"name": "ᜋᜎᜃ"
+		"name": "ᜀᜁᜍ"
 	},
 	{
-		"name": "ᜓᜁᜏ᜕ᜀᜒ",
+		"name": "ᜟᜄᜐ᜔ᜊ᜕"
+	},
+	{
+		"name": "ᜀ᜕ᜅᜊ🙏️💂🏽‍♀️",
+		"norm": "ᜀ᜕ᜅᜊ🙏💂🏽‍♀"
+	},
+	{
+		"name": "ᜋᜎᜃᜃᜓᜁᜏ᜕ᜀᜒᜊᜉ"
+	},
+	{
+		"name": "᜕ᜋᜀ🇮🇳ᜊᜒᜉᜌ🇱🇷ᜑ󠅯᜕ᜁ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ᜉᜃ᜕ᜋᜀ🇮🇳ᜊᜒ"
-	},
-	{
-		"name": "ᜌ🇱🇷ᜑ󠅯᜕ᜁᜋ᜔ᜁᜎᜋ",
-		"norm": "ᜌ🇱🇷ᜑ᜕ᜁᜋ᜔ᜁᜎᜋ"
-	},
-	{
-		"name": "ᜋᜎᜅ🚣🏾‍♀️ᜉᜊᜈᜇ᜕᜔ᜇ",
-		"norm": "ᜋᜎᜅ🚣🏾‍♀ᜉᜊᜈᜇ᜕᜔ᜇ"
-	},
-	{
-		"name": "ᜏᜀᜇ᜕ᜊᜑ󠆡ᜈᜇᜑᜆᜍᜐ᜕ᜇᜍᜟᜒ",
-		"norm": "ᜏᜀᜇ᜕ᜊᜑᜈᜇᜑᜆᜍᜐ᜕ᜇᜍᜟᜒ"
-	},
-	{
-		"name": "ᜂ᜕ᜃᜓᜒᜑ󠅶👩🏼‍❤️‍💋‍👨🏾᜔ᜅᜎᜎ",
+		"name": "᜔ᜁᜎᜋ᜔ᜋᜎᜅ🚣🏾‍♀️ᜉᜊᜈᜇ᜕",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"👩🏼‍❤‍💋‍👨🏾 + ◌᜔\""
+		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🇦🇬𞀍",
+		"name": "ᜇᜅᜏᜀᜇ᜕ᜊᜑ󠆡ᜈᜇᜑᜆᜍᜐ᜕ᜇᜍᜟᜒᜒ",
+		"error": true,
+		"comment": "duplicate non-spacing marks: \"◌ᜒ\"‎ {1712}"
+	},
+	{
+		"name": "𞀣ⰷⰖ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𞀧Ⱊ👩🏼‍❤️‍💋‍👨🏾",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ⰾ𞀞𞀠󠄹🇦🇬𞀍Ⱓⱇ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🇦🇬 + ◌𞀍\""
 	},
 	{
-		"name": "ⱇ𞀞󠅁ⱗⱒ𞀊",
-		"norm": "ⱇ𞀞ⱗⱒ𞀊"
+		"name": "󠅁ⱗⱒ𞀊󠇏ⱉⱎ🧙🏼‍♂️",
+		"norm": "ⱗⱒ𞀊ⱉⱎ🧙🏼‍♂"
 	},
 	{
-		"name": "ⱉⱎ🧙🏼‍♂️🏇🏽",
-		"norm": "ⱉⱎ🧙🏼‍♂🏇🏽"
-	},
-	{
-		"name": "ⰞⰝⰍ𞀦ⱚ𞀣ⱔⱂⰸ🧙🏾‍♀️",
-		"norm": "ⱎⱍⰽ𞀦ⱚ𞀣ⱔⱂⰸ🧙🏾‍♀"
-	},
-	{
-		"name": "ⰽⱅⰎⰪⱊ𞀗ⱘⱉ᠋Ⱗ󠄚𞀀ⱀⰅⰨ",
-		"norm": "ⰽⱅⰾⱚⱊ𞀗ⱘⱉⱗ𞀀ⱀⰵⱘ"
-	},
-	{
-		"name": "̃ⰳⱗ𞀂ⰼ󠄨ⱅⱈ🚶🏼‍♀️ⰴ👨🏿‍🫯‍👨🏻",
+		"name": "𞀁ⰞⰝⰍ𞀦ⱚ𞀣ⱔⱂⰸ🧙🏾‍♀️",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "󠆭ⰺⱝⰰⱂⱕ̃ⱈⱅⰟ𞀏ⱗⱎⱈⰸⱙⱔ󠆠Ⰵⱋⱎ",
-		"norm": "ⰺⱝⰰⱂⱕ̃ⱈⱅⱏ𞀏ⱗⱎⱈⰸⱙⱔⰵⱋⱎ"
+		"name": "ⰽⱅⰎⰪⱊ𞀗ⱘⱉ᠋Ⱗ󠄚𞀀ⱀⰅⰨⰺ̃ⰳ",
+		"norm": "ⰽⱅⰾⱚⱊ𞀗ⱘⱉⱗ𞀀ⱀⰵⱘⰺ̃ⰳ"
 	},
 	{
-		"name": "̄ⴵⵏ",
+		"name": "𞀂ⰼ󠄨ⱅⱈ🚶🏼‍♀️ⰴ👨🏿‍🫯‍👨🏻𞀟󠆭ⰺ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ⵇⵛⵛⵗⵯⵞ",
-		"norm": "ⵇⵛⵛⵗⵡⵞ"
+		"name": "ⴱⵅⵜ"
 	},
 	{
-		"name": "ⵈⴺⴸⴵⴳⴷⵑ̄ⵯ",
-		"norm": "ⵈⴺⴸⴵⴳⴷⵑ̄ⵡ"
+		"name": "ⵌⵉⵯ̆ⵞⵔ",
+		"norm": "ⵌⵉⵡ̆ⵞⵔ"
 	},
 	{
-		"name": "ⵯ👬🏼ⵅⵯⴰⵙ̆ⵯⵯⵒⴳ",
-		"norm": "ⵡ👬🏼ⵅⵡⴰⵙ̆ⵡⵡⵒⴳ"
+		"name": "ⴹⵡⵛ󠆠ⵯⵐⵔ̆̄",
+		"norm": "ⴹⵡⵛⵡⵐⵔ̆̄"
 	},
 	{
-		"name": "⵰ⴸⵑ󠆍ⵔ̄ⵅⴶ󠇐ⴳ󠅝ⵯⵛⵃⵂ",
-		"norm": "⵰ⴸⵑⵔ̄ⵅⴶⴳⵡⵛⵃⵂ"
+		"name": "ⵏⴶⵇⵛⵛⵗⵯⵞⵯⵈⴺⴸ",
+		"norm": "ⵏⴶⵇⵛⵛⵗⵡⵞⵡⵈⴺⴸ"
 	},
 	{
-		"name": "🧎🏾‍♂️‍➡️ⵯⵄⵁⵯⵌⵯ󠆏ⵚ🇲🇩",
-		"norm": "🧎🏾‍♂‍➡ⵡⵄⵁⵡⵌⵡⵚ🇲🇩"
+		"name": "ⴳⴷⵑ̄ⵯ󠆊ⵯ👬🏼ⵅⵯⴰⵙ̆ⵯ",
+		"norm": "ⴳⴷⵑ̄ⵡⵡ👬🏼ⵅⵡⴰⵙ̆ⵡ"
 	},
 	{
-		"name": "ⵁ💂‍♀️ⵁⵟ⵰ⵊⵅ🕹️ⵉⴱⵦⵜ👩🏼‍🤝‍👩🏻",
-		"norm": "ⵁ💂‍♀ⵁⵟ⵰ⵊⵅ🕹ⵉⴱⵦⵜ👩🏼‍🤝‍👩🏻"
+		"name": "ⵒⴳⵯ⵰ⴸⵑ󠆍ⵔ̄ⵅⴶ󠇐ⴳ󠅝ⵯⵛⵃⵂ",
+		"norm": "ⵒⴳⵡ⵰ⴸⵑⵔ̄ⵅⴶⴳⵡⵛⵃⵂ"
 	},
 	{
-		"name": "ꔵ️ꔿ",
-		"norm": "ꔵꔿ"
+		"name": "🧎🏾‍♂️‍➡️ⵯⵄⵁⵯⵌⵯ󠆏ⵚ🇲🇩🎅🏽ⵁ",
+		"norm": "🧎🏾‍♂‍➡ⵡⵄⵁⵡⵌⵡⵚ🇲🇩🎅🏽ⵁ"
 	},
 	{
-		"name": "ꖐꘖꕸꗉ꘩𛲡",
-		"norm": "ꖐꘖꕸꗉ꘩"
+		"name": "ꕙꗱ꘩"
 	},
 	{
-		"name": "ꕀ꘨ꘔꕟꖖꗩꘞ꘠ꖠ"
+		"name": "ꕭ🕹️ꖂꔆꘟ",
+		"norm": "ꕭ🕹ꖂꔆꘟ"
 	},
 	{
-		"name": "ꕙꖶꔪꗲꔅꔓꕬꖯꔕꕁꗷꖱ"
+		"name": "👩🏼‍🤝‍👩🏻󠅥ꔵ",
+		"norm": "👩🏼‍🤝‍👩🏻ꔵ"
 	},
 	{
-		"name": "ꔢꕩꖻꔚꕳ꘢ꖌꕀ👷🏼‍♂️ꗨꖔ",
-		"norm": "ꔢꕩꖻꔚꕳ꘢ꖌꕀ👷🏼‍♂ꗨꖔ"
+		"name": "ꔿꖉꖐꘖꕸꗉ꘩𛲡ꕔꕀ꘨ꘔ",
+		"norm": "ꔿꖉꖐꘖꕸꗉ꘩ꕔꕀ꘨ꘔ"
 	},
 	{
-		"name": "🦆️︈ꖢꖦꔥꕥꔩꕀꕌ󠇋ꖅꕞ󠄌ꕈꘌꖪꔊ",
-		"norm": "🦆ꖢꖦꔥꕥꔩꕀꕌꖅꕞꕈꘌꖪꔊ"
+		"name": "ꖖꗩꘞ꘠ꖠ😙️ꕙꖶꔪꗲꔅꔓꕬꖯ",
+		"norm": "ꖖꗩꘞ꘠ꖠ😙ꕙꖶꔪꗲꔅꔓꕬꖯ"
 	},
 	{
-		"name": "ꗪꖞ󠆜ꖔꖍꖃ︌ꔠꗏ🪦️ꖎ󠅳󠄰🇹🇿➖️ꕤꗣ🏌🏿‍♀️",
-		"norm": "ꗪꖞꖔꖍꖃꔠꗏ🪦ꖎ🇹🇿➖ꕤꗣ🏌🏿‍♀"
+		"name": "ꕁꗷꖱ󠆾ꔢꕩꖻꔚꕳ꘢ꖌꕀ👷🏼‍♂️ꗨ",
+		"norm": "ꕁꗷꖱꔢꕩꖻꔚꕳ꘢ꖌꕀ👷🏼‍♂ꗨ"
 	},
 	{
-		"name": "𐊳𐊪𐊷"
+		"name": "ꗮ🦆️︈ꖢꖦꔥꕥꔩꕀꕌ󠇋ꖅꕞ󠄌ꕈꘌꖪꔊꔀꗪ",
+		"norm": "ꗮ🦆ꖢꖦꔥꕥꔩꕀꕌꖅꕞꕈꘌꖪꔊꔀꗪ"
 	},
 	{
-		"name": "𐋐󠄦󠆇𐊢𐊦🤹‍♂️",
-		"norm": "𐋐𐊢𐊦🤹‍♂"
+		"name": "󠆜𐊸𐊷",
+		"norm": "𐊸𐊷"
 	},
 	{
-		"name": "𐋐𐊯𐊨𐊹𐊮𐊼𐋀𐊷𐊣"
+		"name": "︌𐊥𐋂🪦️𐊷",
+		"norm": "𐊥𐋂🪦𐊷"
 	},
 	{
-		"name": "𐊰𐋃𐊤𐊭🧏🏽‍♀️𐊫𐊴𐋄",
-		"norm": "𐊰𐋃𐊤𐊭🧏🏽‍♀𐊫𐊴𐋄"
+		"name": "󠄰🇹🇿➖️𐊰𐋆🏌🏿‍♀️",
+		"norm": "🇹🇿➖𐊰𐋆🏌🏿‍♀"
 	},
 	{
-		"name": "󠆍𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄👨🏾‍🦲𐊹",
-		"norm": "𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄👨🏾‍🦲𐊹"
+		"name": "𐊳𐊪𐊷𐊸𐋐󠄦󠆇𐊢𐊦🤹‍♂️",
+		"norm": "𐊳𐊪𐊷𐊸𐋐𐊢𐊦🤹‍♂"
 	},
 	{
-		"name": "󠅣𐊬🧑🏽‍🌾𐊯𐊡𐋊🚠️𐊰𐊽𐊰󠄏𐋉🦸‍♂️",
-		"norm": "𐊬🧑🏽‍🌾𐊯𐊡𐋊🚠𐊰𐊽𐊰𐋉🦸‍♂"
+		"name": "𐋐𐊯𐊨𐊹𐊮𐊼𐋀𐊷𐊣𐋃𐊰𐋃𐊤𐊭🧏🏽‍♀️",
+		"norm": "𐋐𐊯𐊨𐊹𐊮𐊼𐋀𐊷𐊣𐋃𐊰𐋃𐊤𐊭🧏🏽‍♀"
 	},
 	{
-		"name": "𐊱𐊦𐊤𐊲󠄌󠇧𐊷𐊥☃️𐊡𐋆𐋁🧀️𐊬𐋌𐊵𐊪󠅋💆🏿‍♂️",
-		"norm": "𐊱𐊦𐊤𐊲𐊷𐊥☃𐊡𐋆𐋁🧀𐊬𐋌𐊵𐊪💆🏿‍♂"
+		"name": "𐊴𐋄𐊪󠆍𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄👨🏾‍🦲𐊹",
+		"norm": "𐊴𐋄𐊪𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄👨🏾‍🦲𐊹"
 	},
 	{
-		"name": "𐌔𐌅𐌞"
+		"name": "󠅣𐊬🧑🏽‍🌾𐊯𐊡𐋊🚠️𐊰𐊽𐊰󠄏𐋉🦸‍♂️𐊿",
+		"norm": "𐊬🧑🏽‍🌾𐊯𐊡𐋊🚠𐊰𐊽𐊰𐋉🦸‍♂𐊿"
 	},
 	{
-		"name": "𐌕𐌭𐌣𐌐𐌞𐌘"
+		"name": "𐌅𐌃𐌎"
 	},
 	{
-		"name": "𐌎𐌛𐌁𐌁𐌚𐌓𐌠𐌗🧈️",
-		"norm": "𐌎𐌛𐌁𐌁𐌚𐌓𐌠𐌗🧈"
+		"name": "󠇧𐌒𐌄☃️𐌁",
+		"norm": "𐌒𐌄☃𐌁"
 	},
 	{
-		"name": "𐌌𐌯𐌭𐌓𐌈𐌈𐌐𐌟󠆛󠇯𐌖𐌞",
-		"norm": "𐌌𐌯𐌭𐌓𐌈𐌈𐌐𐌟𐌖𐌞"
+		"name": "𐌚🧀️𐌉𐌣𐌑𐌈󠅋💆🏿‍♂️",
+		"norm": "𐌚🧀𐌉𐌣𐌑𐌈💆🏿‍♂"
 	},
 	{
-		"name": "𐌑𐌝𐌟𐌅𐌍𐌘𐌑𐌎𐌆𐌚󠇫𐌠𐌜𐌞𐌈",
-		"norm": "𐌑𐌝𐌟𐌅𐌍𐌘𐌑𐌎𐌆𐌚𐌠𐌜𐌞𐌈"
+		"name": "𐌔𐌅𐌞🧑🏻‍⚖️𐌕𐌭𐌣𐌐",
+		"norm": "𐌔𐌅𐌞🧑🏻‍⚖𐌕𐌭𐌣𐌐"
 	},
 	{
-		"name": "👷️𐌕󠇔𐌛𐌚👩🏿‍🤝‍👩🏽𐌄𐌯𐌜𐌊󠄤",
-		"norm": "👷𐌕𐌛𐌚👩🏿‍🤝‍👩🏽𐌄𐌯𐌜𐌊"
+		"name": "𐌘𐌘𐌎𐌛𐌁𐌁𐌚𐌓𐌠𐌗🧈️𐌅𐌌𐌯",
+		"norm": "𐌘𐌘𐌎𐌛𐌁𐌁𐌚𐌓𐌠𐌗🧈𐌅𐌌𐌯"
 	},
 	{
-		"name": "𐌟𐌌🇲🇲𐌟𐌕𐌑𐌅𐌊󠇢𐌔󠅬𐌛𐌄𐌎󠇚𐌒𐌅𐌅𐌝𐌖",
-		"norm": "𐌟𐌌🇲🇲𐌟𐌕𐌑𐌅𐌊𐌔𐌛𐌄𐌎𐌒𐌅𐌅𐌝𐌖"
+		"name": "𐌓𐌈𐌈𐌐𐌟󠆛󠇯𐌖𐌞𐌇𐌑𐌝𐌟𐌅𐌍𐌘𐌑𐌎",
+		"norm": "𐌓𐌈𐌈𐌐𐌟𐌖𐌞𐌇𐌑𐌝𐌟𐌅𐌍𐌘𐌑𐌎"
 	},
 	{
-		"name": "𐎵𐏌𐎮"
+		"name": "𐌚󠇫𐌠𐌜𐌞𐌈𐌓👷️𐌕󠇔𐌛𐌚👩🏿‍🤝‍👩🏽𐌄",
+		"norm": "𐌚𐌠𐌜𐌞𐌈𐌓👷𐌕𐌛𐌚👩🏿‍🤝‍👩🏽𐌄"
 	},
 	{
-		"name": "𐏐𐎸🙇️🇨🇻",
-		"norm": "𐏐𐎸🙇🇨🇻"
+		"name": "𐏈𐎬󠄤",
+		"norm": "𐏈𐎬"
 	},
 	{
-		"name": "𐎻𐏂𐎿𐎮󠅤𐏕𐎩𐏃𐎸",
-		"norm": "𐎻𐏂𐎿𐎮𐏕𐎩𐏃𐎸"
+		"name": "𐏋𐎰🇲🇲𐏌𐎻"
 	},
 	{
-		"name": "𐏓𐎦💃🏼𐎠𐎮𐏌𐏋𐎨𐎤𐎦𐎥"
+		"name": "𐎧𐎭󠇢𐎹󠅬𐏂𐎦𐎲󠇚",
+		"norm": "𐎧𐎭𐎹𐏂𐎦𐎲"
 	},
 	{
-		"name": "𐏎󠅘󠇅𐎮𐎤󠅺𐎱𐎧𐎬𐎶💁🏿‍♂️",
-		"norm": "𐏎𐎮𐎤𐎱𐎧𐎬𐎶💁🏿‍♂"
+		"name": "𐎧𐎧𐏉𐎽𛲠𐎵𐏌𐎮𐏁𐏐𐎸🙇️",
+		"norm": "𐎧𐎧𐏉𐎽𐎵𐏌𐎮𐏁𐏐𐎸🙇"
 	},
 	{
-		"name": "󠆰𐎰𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀️",
-		"norm": "𐎰𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀"
+		"name": "𐎳𐎻𐏂𐎿𐎮󠅤𐏕𐎩𐏃𐎸𐎵𐏓𐎦💃🏼",
+		"norm": "𐎳𐎻𐏂𐎿𐎮𐏕𐎩𐏃𐎸𐎵𐏓𐎦💃🏼"
 	},
 	{
-		"name": "𐏎💆🏾𐎳👨🏿‍❤️‍💋‍👨🏼𐎿𐎨𐏁𐎩𐏐𐏍𐏈",
-		"norm": "𐏎💆🏾𐎳👨🏿‍❤‍💋‍👨🏼𐎿𐎨𐏁𐎩𐏐𐏍𐏈"
+		"name": "𐎮𐏌𐏋𐎨𐎤𐎦𐎥𐎤𐏎󠅘󠇅𐎮𐎤󠅺𐎱𐎧𐎬𐎶",
+		"norm": "𐎮𐏌𐏋𐎨𐎤𐎦𐎥𐎤𐏎𐎮𐎤𐎱𐎧𐎬𐎶"
 	},
 	{
-		"name": "𐑃𐐐𐐰",
-		"norm": "𐑃𐐸𐐰"
+		"name": "𐎷󠆰𐎰𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀️𐎱𐏎",
+		"norm": "𐎷𐎰𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀𐎱𐏎"
 	},
 	{
-		"name": "𐐉𐐖𐐙𐐰𐑂𐑅",
-		"norm": "𐐱𐐾𐑁𐐰𐑂𐑅"
+		"name": "𐐷👨🏿‍❤️‍💋‍👨🏼",
+		"norm": "𐐷👨🏿‍❤‍💋‍👨🏼"
 	},
 	{
-		"name": "𐐸󠄠𐑅𐐈𐐪𐑋🪃️🧚🏽‍♂️",
-		"norm": "𐐸𐑅𐐰𐐪𐑋🪃🧚🏽‍♂"
+		"name": "𐐮𐑂𐐯𐑋𐑉𐑅"
 	},
 	{
-		"name": "𐐼𐐻𐐰𐐁𐑊𐐱󠆘𐐼𐐳🇦🇲𐐓",
-		"norm": "𐐼𐐻𐐰𐐩𐑊𐐱𐐼𐐳🇦🇲𐐻"
+		"name": "𐑃𐐐𐐰𐐲𐐉𐐖𐐙𐐰𐑂",
+		"norm": "𐑃𐐸𐐰𐐲𐐱𐐾𐑁𐐰𐑂"
 	},
 	{
-		"name": "𐑎𐑉𐐺𐐩𐐣𐐈𐐍𐑂𐐻󠄷𐐨𐐰👨🏿‍🏫",
-		"norm": "𐑎𐑉𐐺𐐩𐑋𐐰𐐵𐑂𐐻𐐨𐐰👨🏿‍🏫"
+		"name": "𐑍𐐸󠄠𐑅𐐈𐐪𐑋🪃️🧚🏽‍♂️",
+		"norm": "𐑍𐐸𐑅𐐰𐐪𐑋🪃🧚🏽‍♂"
 	},
 	{
-		"name": "󠅷𐐬𐐸👩🏻‍🤝‍👨🏼𐐳𐑄𐑁🧛🏿‍♀️",
-		"norm": "𐐬𐐸👩🏻‍🤝‍👨🏼𐐳𐑄𐑁🧛🏿‍♀"
+		"name": "𐐼𐐻𐐰𐐁𐑊𐐱󠆘𐐼𐐳🇦🇲𐐓𐐚𐑎𐑉",
+		"norm": "𐐼𐐻𐐰𐐩𐑊𐐱𐐼𐐳🇦🇲𐐻𐑂𐑎𐑉"
 	},
 	{
-		"name": "𐐸𐐚𐐗👩🏼‍🔧𐐲𐐪𐐂𐐐𐑄𐐽𐐉𐐷𐐼𐐕𐑅𐐶𐐱𐐐",
-		"norm": "𐐸𐑂𐐿👩🏼‍🔧𐐲𐐪𐐪𐐸𐑄𐐽𐐱𐐷𐐼𐐽𐑅𐐶𐐱𐐸"
+		"name": "𐐩𐐣𐐈𐐍𐑂𐐻󠄷𐐨𐐰👨🏿‍🏫𐐱󠅷𐐬𐐸👩🏻‍🤝‍👨🏼",
+		"norm": "𐐩𐑋𐐰𐐵𐑂𐐻𐐨𐐰👨🏿‍🏫𐐱𐐬𐐸👩🏻‍🤝‍👨🏼"
 	},
 	{
-		"name": "𐦇🧆️",
-		"norm": "𐦇🧆"
+		"name": "𐑄𐑁🧛🏿‍♀️𐐸𐐸𐐚𐐗👩🏼‍🔧𐐲𐐪𐐂𐐐𐑄𐐽",
+		"norm": "𐑄𐑁🧛🏿‍♀𐐸𐐸𐑂𐐿👩🏼‍🔧𐐲𐐪𐐪𐐸𐑄𐐽"
 	},
 	{
-		"name": "𐦏𐦐𐦂𐦞𐦑𐦆"
+		"name": "𐦌𐦐𐦑"
 	},
 	{
-		"name": "𐦈𐦋𐦉𐦑𐦏⁠𐦈𐦛󠆁",
-		"norm": "𐦈𐦋𐦉𐦑𐦏𐦈𐦛"
+		"name": "𐦋𐦇𐦍𐦎𐦇🧆️",
+		"norm": "𐦋𐦇𐦍𐦎𐦇🧆"
 	},
 	{
-		"name": "🥋️𐦘𐦑𐦕𐦅𐦐𐦎𐦞𐦒𐦗𐦟",
-		"norm": "🥋𐦘𐦑𐦕𐦅𐦐𐦎𐦞𐦒𐦗𐦟"
+		"name": "𐦏𐦐𐦂𐦞𐦑𐦆𐦙𐦈𐦋"
 	},
 	{
-		"name": "𐦚👩🏽‍❤️‍💋‍👩🏼𐦕🌊️🫗️",
-		"norm": "𐦚👩🏽‍❤‍💋‍👩🏼𐦕🌊🫗"
+		"name": "𐦑𐦏⁠𐦈𐦛󠆁𐦄🥋️𐦘𐦑𐦕",
+		"norm": "𐦑𐦏𐦈𐦛𐦄🥋𐦘𐦑𐦕"
 	},
 	{
-		"name": "𐦘𐦏𐦊𐦙📵️𐦙𐦗𐦜𐦅𐦇𐦁𐦟𐦘󠅘𐦐𐦉󠆡",
-		"norm": "𐦘𐦏𐦊𐦙📵𐦙𐦗𐦜𐦅𐦇𐦁𐦟𐦘𐦐𐦉"
+		"name": "𐦐𐦎𐦞𐦒𐦗𐦟𐦚𐦚👩🏽‍❤️‍💋‍👩🏼",
+		"norm": "𐦐𐦎𐦞𐦒𐦗𐦟𐦚𐦚👩🏽‍❤‍💋‍👩🏼"
 	},
 	{
-		"name": "𐦘✊🏿𐦖𐦏𐦟𐦅𐦙𐦀𐦝𐦍𐦓𐦝𐦓𐦍𐦘𐦔𐦔𐦁𐦝𐦙"
+		"name": "🌊️🫗️𐦇𐦘𐦏𐦊𐦙📵️𐦙𐦗𐦜𐦅𐦇𐦁𐦟",
+		"norm": "🌊🫗𐦇𐦘𐦏𐦊𐦙📵𐦙𐦗𐦜𐦅𐦇𐦁𐦟"
 	},
 	{
-		"name": "𑁍𑁨𑀞"
+		"name": "󠅘𐦐𐦉󠆡𐦄𐦘✊🏿𐦖𐦏𐦟𐦅𐦙𐦀𐦝𐦍𐦓𐦝𐦓𐦍𐦘",
+		"norm": "𐦐𐦉𐦄𐦘✊🏿𐦖𐦏𐦟𐦅𐦙𐦀𐦝𐦍𐦓𐦝𐦓𐦍𐦘"
 	},
 	{
-		"name": "𑁝𑁂𑀚𑀹𑀔𑀔"
+		"name": "𑁃𑀇𑁪",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🧕🏼𑀸𑀆𑁣𑁰𑀵𑁔𑀈",
+		"name": "󠄈𑁍𑁨𑀞𑀊𑁝",
+		"norm": "𑁍𑁨𑀞𑀊𑁝"
+	},
+	{
+		"name": "𑀚𑀹𑀔𑀔𑁅🧕🏼𑀸𑀆",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🧕🏼 + ◌𑀸\""
 	},
 	{
-		"name": "𑀧𑁿󠅦𑀏𑁠𑀳𑁠𑀶𑀈𑁋👎🏾",
-		"norm": "𑀧𑁿𑀏𑁠𑀳𑁠𑀶𑀈𑁋👎🏾"
-	},
-	{
-		"name": "𑁃𑁣𑀛𑁵𑀭𑀌𑀨𑁍𑁩𑀄𑁣𑁮𑀀𑀖𑀙",
+		"name": "𑁰𑀵𑁔𑀈𑀱𑀧𑁿󠅦𑀏𑁠𑀳𑁠",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑀂𑀇𑀈𑀜𑁂𑀞󠇋𑀲𑀃🧑🏽‍🐰‍🧑🏼𑀾𑀌",
+		"name": "𑀈𑁋👎🏾𑀹𑁃𑁣𑀛𑁵𑀭𑀌𑀨𑁍𑁩𑀄",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"👎🏾 + ◌𑀹\""
+	},
+	{
+		"name": "𑁮𑀀𑀖𑀙𑁉𑀂𑀇𑀈𑀜𑁂𑀞󠇋𑀲𑀃🧑🏽‍🐰‍🧑🏼",
+		"norm": "𑁮𑀀𑀖𑀙𑁉𑀂𑀇𑀈𑀜𑁂𑀞𑀲𑀃🧑🏽‍🐰‍🧑🏼"
+	},
+	{
+		"name": "𑀌𑁤𑁩𑁫𑀦𑀡󠇘𑀜𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅",
+		"norm": "𑀌𑁤𑁩𑁫𑀦𑀡𑀜𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅"
+	},
+	{
+		"name": "𑵑𑴛𑴔"
+	},
+	{
+		"name": "𑴶𑴳󠄸𑴉𑴶𑴒",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑁩𑁫𑀦𑀡󠇘𑀜𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅𑀃𑁦",
-		"norm": "𑁩𑁫𑀦𑀡𑀜𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅𑀃𑁦"
-	},
-	{
-		"name": "𑴔𑴿𑴶"
-	},
-	{
-		"name": "󠄸𑴉𑴶𑴒𑴲𑴼",
-		"norm": "𑴉𑴶𑴒𑴲𑴼"
-	},
-	{
-		"name": "𑴍𑵅𑴿𑴳𑵀𑴨𑴏𑴦𑵅"
-	},
-	{
-		"name": "󠅽𑴅𑴳🤛🏻🧏‍♀️𑵀𑵔𑴭",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧏‍♀ + ◌𑵀\""
-	},
-	{
-		"name": "𑴴📁️𑴶𑴔𑴩𑵅𑴨𑴆𑴕𑵅𑴰𑴟𑵔𑴺",
+		"name": "𑴼𑴤𑴍𑵅𑴿𑴳𑵀𑴨𑴏",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑵅𑴍𑴆󠅙󠄻𑴛𑴪𑴿𑵒𑴕𑴙𑴝𑵅𑴛𑴝𑵇𑴣𑴒",
+		"name": "𑵅𑵔󠅽𑴅𑴳🤛🏻🧏‍♀️𑵀",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑵓󠄇𑴅𑴂𑴿𑴂📤️𑴀𑴖𑵐𑴃𑴉𑴡𑴔󠆅𑴖𑵘🦮️𑴭",
-		"norm": "𑵓𑴅𑴂𑴿𑴂📤𑴀𑴖𑵐𑴃𑴉𑴡𑴔𑴖𑵘🦮𑴭"
+		"name": "𑴭𑴳𑴴📁️𑴶𑴔𑴩𑵅𑴨𑴆𑴕𑵅𑴰𑴟",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"📁 + ◌𑴶\""
 	},
 	{
-		"name": "𖢅🏃🏿‍➡️",
-		"norm": "𖢅🏃🏿‍➡"
+		"name": "𑴺𑴈𑵅𑴍𑴆󠅙󠄻𑴛𑴪𑴿𑵒𑴕𑴙𑴝𑵅𑴛𑴝𑵇",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𑴒𑴼𑵓󠄇𑴅𑴂𑴿𑴂📤️𑴀𑴖𑵐𑴃𑴉𑴡𑴔󠆅𑴖𑵘🦮️",
+		"norm": "𑴒𑴼𑵓𑴅𑴂𑴿𑴂📤𑴀𑴖𑵐𑴃𑴉𑴡𑴔𑴖𑵘🦮"
+	},
+	{
+		"name": "𖨋𖢅🏃🏿‍➡️",
+		"norm": "𖨋𖢅🏃🏿‍➡"
 	},
 	{
 		"name": "𖣑⁠꛱꛱𖠸𖠗",
@@ -179708,7 +179813,7 @@
 		"comment": "illegal mixture: Han + Restricted[Plrd] \"𖼔\"‎ {16F14}"
 	},
 	{
-		"name": "🌱ה️𣹂𫝞𲪡䅂𝐝徚𠆕",
+		"name": "🌱ו️𣹂𫝞𲪡䅂𝐝徚𠆕",
 		"error": true,
 		"comment": "illegal mixture: Hebrew + Han \"𣹂\"‎ {23E42}"
 	},
@@ -179877,22 +179982,22 @@
 		"comment": "illegal mixture: Hebrew + Arabic \"١\"‎ {661}"
 	},
 	{
-		"name": "󠅔֝יחחᝰה",
+		"name": "󠅔֟יחחᝰה",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ח₪שׁײעּאּপחע",
+		"name": "ח₪שׁײעֽאּপחע",
 		"error": true,
 		"comment": "illegal mixture: Hebrew + Bengali \"প\"‎ {9AA}"
 	},
 	{
-		"name": "𑙩צּע🐒️וֱֹ🦫️֭יפװ",
+		"name": "𑙩צּע🐒️וֱֹ🦫️֮יפװ",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🦫 + ◌֭\""
+		"comment": "illegal placement: emoji + combining mark: \"🦫 + ◌֮\""
 	},
 	{
-		"name": "קּץ֣꯲זיֳא👨🏽‍🦳ֱׯ׳₪",
+		"name": "קּץ֤꯲זיִא👨🏽‍🦳ֱׯ׳₪",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"👨🏽‍🦳 + ◌ֱ\""
 	},
@@ -179902,7 +180007,7 @@
 		"comment": "illegal mixture: Hebrew + Restricted[Tagb] \"ᝰ\"‎ {1770}"
 	},
 	{
-		"name": "ג󠄓עד֪ב֑👨🏿‍❤️‍💋‍𑷠👨🏻ﬞ֥שּ־",
+		"name": "ג󠄓עד֫ב֓👨🏿‍❤️‍💋‍𑷠👨🏻ﬞ֦שּ־",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
@@ -179922,22 +180027,22 @@
 		"comment": "illegal mixture: Thai + Restricted[Mong] \"𑙩\"‎ {11669}"
 	},
 	{
-		"name": "­ยำ์ำฺ𖼲็󠇨ีณผป",
+		"name": "­ยำ์ำฺ𖼲่󠇨ึณผป",
 		"error": true,
 		"comment": "illegal mixture: Thai + Restricted[Plrd] \"𖼲\"‎ {16F32}"
 	},
 	{
-		"name": "ฑก󠄕🏋🏼‍♂️󠅢🇧ׂ🇪󠅻󠅷งฦ",
+		"name": "ฑก󠄕🏋🏼‍♂️󠅢🇧ׄ🇪󠅻󠅷งฦ",
 		"error": true,
 		"comment": "disallowed character: \"🇧\"‎ {1F1E7}"
 	},
 	{
-		"name": "̃ำะำีย🕒️งภทฤทึ👴️ธთำ",
+		"name": "ัำะำึย🕒️งภทฤทื👴️ธთำ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "๔๓่ผ๐ิชฑอญำ๘บึਛำำ🐳️ำธเ",
+		"name": "๔๓่ผ๐ิชฑอญำ๘บืਛำำ🐳️ำธเ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🐳 + ◌ํ\""
 	},
@@ -180016,9 +180121,9 @@
 		"comment": "illegal mixture: Latin + Restricted[Gonm] \"𑴂\"‎ {11D02}"
 	},
 	{
-		"name": "♡🧁️🂬הγ⎖",
+		"name": "♡🧁️🂬וγ⎖",
 		"error": true,
-		"comment": "illegal mixture: Latin + Hebrew \"ה\"‎ {5D4}"
+		"comment": "illegal mixture: Latin + Hebrew \"ו\"‎ {5D5}"
 	},
 	{
 		"name": "㊱𝋁🧑🏼૫‍❤️‍🧑🏽",
@@ -180151,37 +180256,37 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "్ఞ𞊮ౣ",
+		"name": "్ట𞊮ౣ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑁁కొఘఱఽళ",
+		"name": "𑁁ఖొఙఱఽవ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "󠅐ోఄరౡ𒾔్ஃుఘ",
+		"name": "󠅐ోఄరౡ𒾔్అుఘ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "౿చ🧑🏾‍❤️‍🧑𐠊🏻టమ",
+		"name": "౿ఛ🧑🏾‍❤️‍🧑𐠊🏻టమ",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "౨ఢయసొ🤷🏿‍𑶀♂️🤦️౹👮🏿‍♂️",
+		"name": "౨ణరసొ🤷🏿‍𑶀♂️🤦️౹👮🏿‍♂️",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𐮋ఔ﻿ఄూజత🎁️ఘఱౝూైౕ౹వ󠆣ఫ",
+		"name": "𐮋ఔ﻿ఄూజథ🎁️ఙఱౝూైౕ౹శ󠆣ఫ",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Phlp] + Telugu \"ఔ\"‎ {C14}"
 	},
 	{
-		"name": "౬👧🏾ఋఌఊ౨౸ఛష౦ౌయఋౚఓీఄఖ౭ట𘭢",
+		"name": "౬👧🏾ఌఎఋ౨౸ఛష౦ౌయఌౚఔీఄగ౭ఠ𘭢",
 		"error": true,
 		"comment": "illegal mixture: Telugu + Restricted[Kits] \"𘭢\"‎ {18B62}"
 	},
@@ -180261,9 +180366,9 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ⴧ󠆳ჩղᲐᲞჽ",
+		"name": "ⴧ󠆳ჩճᲐᲞჽ",
 		"error": true,
-		"comment": "illegal mixture: Georgian + Armenian \"ղ\"‎ {572}"
+		"comment": "illegal mixture: Georgian + Armenian \"ճ\"‎ {573}"
 	},
 	{
 		"name": "Ცჟ🇸🇯ჟდჿვޒ󠄥",
@@ -180276,9 +180381,9 @@
 		"comment": "illegal mixture: Georgian + Restricted[Kits] \"𘭢\"‎ {18B62}"
 	},
 	{
-		"name": "ჭᲓᲥმჍ󠆠ᲾׂყᲖჷცᲨუცე",
+		"name": "ჭᲓᲥმჍ󠆠ᲾׄყᲖჷცᲨუცე",
 		"error": true,
-		"comment": "illegal mixture: Georgian + Hebrew \"◌ׂ\"‎ {5C2}"
+		"comment": "illegal mixture: Georgian + Hebrew \"◌ׄ\"‎ {5C4}"
 	},
 	{
 		"name": "ჭᲕჿⴭხ𑅔ომⴧᲝბᲾჭბᲦჽᲞᲖᲘ",
@@ -180291,9 +180396,9 @@
 		"comment": "illegal mixture: Georgian + Restricted[Jurc] \"𘽷\"‎ {18F77}"
 	},
 	{
-		"name": "̈𖮈ա̈",
+		"name": "ֆ𖮈աՕ",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Armenian + Restricted[Hmng] \"𖮈\"‎ {16B88}"
 	},
 	{
 		"name": "Ե𔐤չչձծﬔ",
@@ -180301,1256 +180406,1255 @@
 		"comment": "illegal mixture: Armenian + Restricted[Hluw] \"𔐤\"‎ {14424}"
 	},
 	{
-		"name": "ը󠇨̈ր𐫲Լ֏ﬕծԷ",
-		"error": true,
-		"comment": "illegal mixture: Armenian + Restricted[Mani] \"𐫲\"‎ {10AF2}"
-	},
-	{
-		"name": "ևռ̈🥬️𐑌ֈ🧑🏽‍🦰խ󠄀",
-		"error": true,
-		"comment": "illegal mixture: Armenian + Restricted[Dsrt] \"𐑌\"‎ {1044C}"
-	},
-	{
-		"name": "Ռկհգ̈ֈ̈Նչծ👨🏽‍𐬈🫯‍👨🏾",
+		"name": "ը🧑🏽‍❤️ꧨ‍🧑🏾",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "࠙դ֎լՊ̈վՅ💃🏿Չթ̈քֈԳ̈🦅️",
+		"name": "ր𖄰Լ֏ﬕծԷտևռԳ🥬️",
+		"error": true,
+		"comment": "illegal mixture: Armenian + Restricted[Gukh] \"𖄰\"‎ {16130}"
+	},
+	{
+		"name": "🧑🏽𐣦‍🦰խ󠄀խՌկհգՂֈﬔՆ",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "ծ👨🏽‍🫯‍👨🏾Ղդ֎լՊԶվՅ𑊖💃🏿",
+		"error": true,
+		"comment": "illegal mixture: Armenian + Restricted[Mult] \"𑊖\"‎ {11296}"
+	},
+	{
+		"name": "թթքֈ︈ռ🦅️ւ🧖🏿ժ󠇈իչՄՉյ󠅿Փ𖫓ջ",
+		"error": true,
+		"comment": "illegal mixture: Armenian + Restricted[Bass] \"𖫓\"‎ {16AD3}"
+	},
+	{
+		"name": "ី󠇁ឦ᮪",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🧖🏿̈󠇈իչ̈𐧈ՉյՅՓջ🦵🏼̈󠇁կՀ🚞️֎",
+		"name": "🚞️᧼៹𞤿᧿󠄢",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧖🏿 + ◌̈\""
+		"comment": "illegal mixture: Khmer + Restricted[Adlm] \"𞤿\"‎ {1E93F}"
 	},
 	{
-		"name": "᧿󠄢ឥ𐎙",
-		"error": true,
-		"comment": "illegal mixture: Khmer + Restricted[Ugar] \"𐎙\"‎ {10399}"
-	},
-	{
-		"name": "១ដះច󠆺🧑🏻‍🚒𑰐",
+		"name": "󠇐១ដះច󠆺🧑🏻‍🚒𑰐",
 		"error": true,
 		"comment": "illegal mixture: Khmer + Restricted[Bhks] \"𑰐\"‎ {11C10}"
 	},
 	{
-		"name": "៶ឪៜកក៩᧶𐭠᧮ៀ",
+		"name": "៶ឪៜកក៩ᛤ᧶᧮ៀ់ឺ᧹",
 		"error": true,
-		"comment": "illegal mixture: Khmer + Restricted[Phli] \"𐭠\"‎ {10B60}"
+		"comment": "illegal mixture: Khmer + Restricted[Runr] \"ᛤ\"‎ {16E4}"
 	},
 	{
-		"name": "ឺ᧹ធឱ៤ទៃ᧰᧱ន𑴂ន៤",
+		"name": "ឱ៤ទ𐢑ៃ᧰᧱នន៤ើ᧣៨󠅕ឿ🏃🏿",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Khmer + Restricted[Nbat] \"𐢑\"‎ {10891}"
 	},
 	{
-		"name": "᧣៨󠅕ឿ🏃🏿᧢󠅐𖻃᧾᧡់᧯᧪ពដ",
-		"error": true,
-		"comment": "illegal mixture: Khmer + Restricted[Berf] \"𖻃\"‎ {16EC3}"
-	},
-	{
-		"name": "🎡️ៈ᧡᧤់២៲ែើឍយ᧥ដ៶᧹ᝥ᧭᧸",
+		"name": "󠅐᧾᧡់᧯᧪ពដ᧻🎡️ៈ᧡᧤់𐦁២៲ែ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🎡 + ◌ៈ\""
 	},
 	{
-		"name": "ឯ᧤ិ៩᧸👩🏾‍🦰ជ᧫᧥ឃឩ᧻᧡᧡ꡭៅក៊យ",
+		"name": "ឍយ᧥ដ៶᧹ヮ᧭᧸󠇇ឯ᧤ិ៩᧸👩🏾‍🦰ជ᧫᧥",
 		"error": true,
-		"comment": "illegal mixture: Khmer + Restricted[Phag] \"ꡭ\"‎ {A86D}"
+		"comment": "illegal mixture: Khmer + Japanese \"ヮ\"‎ {30EE}"
 	},
 	{
-		"name": "ಒ೭𑃑ಳ",
+		"name": "ಞ𐪗೯ಶ",
 		"error": true,
-		"comment": "illegal mixture: Kannada + Restricted[Sora] \"𑃑\"‎ {110D1}"
+		"comment": "illegal mixture: Kannada + Restricted[Narb] \"𐪗\"‎ {10A97}"
 	},
 	{
-		"name": "ೖಅ೨🧑🏿ޒ‍🦲",
+		"name": "ೈಀ𞗘್ಕ್ಓ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ಳೖೖಆ೨🧑🏿ޒ‍🦲",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ಲಬಛಙ𑋖ಡಓಆಕ೫",
+		"name": "ಲಬಜಙಢಔಇಖ೫𐤁ೡಱೖ",
 		"error": true,
-		"comment": "illegal mixture: Kannada + Restricted[Sind] \"𑋖\"‎ {112D6}"
+		"comment": "illegal mixture: Kannada + Restricted[Phnx] \"𐤁\"‎ {10901}"
 	},
 	{
-		"name": "ರೖೀ𐤎ೆೄ್ಅಊಪೲ󠄼೫",
-		"error": true,
-		"comment": "illegal mixture: Kannada + Restricted[Phnx] \"𐤎\"‎ {1090E}"
-	},
-	{
-		"name": "ಛಎ𑵲೨ೄಡಔ🏴󠁧󠁢󠁷󠁬󠁳󠁿೫ವ",
-		"error": true,
-		"comment": "illegal mixture: Kannada + Restricted[Gong] \"𑵲\"‎ {11D72}"
-	},
-	{
-		"name": "ೂ೮ರಹಜ🌍️𑤍ಟஃಳ೦󠇖ಪಐ🫱🏿‍🫲🏽",
+		"name": "ೆೄ್ಆಋಪೲ󠄼೫𔇎ಔಛಏ೨ೄಢ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "🧑🏻‍⚖️ಊ🦂️󠅁೮ೋನ🧒🏼ಘ𑚯಼ೕಒಉ೬ಢ",
+		"name": "🏴󠁧󠁢󠁷󠁬󠁳󠁿೫ವಬ🀧ೂ೮ಱಹಝ🌍️ಟ",
 		"error": true,
-		"comment": "illegal mixture: Kannada + Restricted[Takr] \"◌𑚯\"‎ {116AF}"
+		"comment": "illegal mixture: Kannada + Latin \"🀧\"‎ {1F027}"
 	},
 	{
-		"name": "𑪊ം󠅦ഡ",
+		"name": "ಳ೦󠇖ಪಒ🫱🏿‍🫲🏽ಪ🧑🏻‍⚖️ಊ🦂️𐤳󠅁೮",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Kannada + Restricted[Lydi] \"𐤳\"‎ {10933}"
 	},
 	{
-		"name": "ശപൢ𞤿ൂ൬൛",
+		"name": "𐎻സ🧒🏼",
 		"error": true,
-		"comment": "illegal mixture: Malayalam + Restricted[Adlm] \"𞤿\"‎ {1E93F}"
+		"comment": "illegal mixture: Restricted[Xpeo] + Malayalam \"സ\"‎ {D38}"
 	},
 	{
-		"name": "🧘🏻‍♂️ഊഭ𐡃ഖയ",
-		"error": true,
-		"comment": "illegal mixture: Malayalam + Restricted[Armi] \"𐡃\"‎ {10843}"
-	},
-	{
-		"name": "ുചൌ൦ഫഽ🆙️൏ᝰഃൡ൴",
+		"name": "ഃൌഛഐ൸𑚯ര",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ഌ൬ൾചൖമഥൢ🔜️൫ിടഝശᜡ",
+		"name": "𑲫ം󠅦ഡ൱ശഫൢൂ൬",
 		"error": true,
-		"comment": "illegal mixture: Malayalam + Restricted[Hano] \"ᜡ\"‎ {1721}"
+		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ള൸󠅫൲ഫ൦ഏെെള൨റ𐍓൘൏ഏ🐂️ച",
-		"error": true,
-		"comment": "illegal mixture: Malayalam + Restricted[Perm] \"𐍓\"‎ {10353}"
-	},
-	{
-		"name": "൨ീഘ󠆪󠆒ൎൂ󠅞ളഴഘകലഋൄ👨𛇭‍🏫൘ഃഈ",
+		"name": "ധ🧘🏻ꨘ‍♂️ഋഭഗയൄു",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ⷞጼዉ༨",
-		"error": true,
-		"comment": "illegal mixture: Ethiopic + Tibetan \"༨\"‎ {F28}"
-	},
-	{
-		"name": "ጪሬ٠😰️ኽቋ",
-		"error": true,
-		"comment": "illegal mixture: Ethiopic + Arabic \"٠\"‎ {660}"
-	},
-	{
-		"name": "︍፝ቫꬓዷሾዤዋዒꓳ",
+		"name": "ൌ൦ബൎ🆙️൏ഃ൦𑈰൴്എ൭ൾഛ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ቯⶱፐኺህ󠇁ፉዤቕል፝󠆪ඇ",
+		"name": "മഥൢջ🔜️൫ിഠഞഷ🫸🏻ള൹󠅫൲ബ൧",
 		"error": true,
-		"comment": "illegal mixture: Ethiopic + Sinhala \"ඇ\"‎ {D87}"
+		"comment": "illegal mixture: Malayalam + Armenian \"ջ\"‎ {57B}"
 	},
 	{
-		"name": "ⶺ፝ⷋ𞟵፞፞ቐ፝ራꬊ𞟶፟ⷋ፟ጦ𐩆",
-		"error": true,
-		"comment": "illegal mixture: Ethiopic + Restricted[Khar] \"𐩆\"‎ {10A46}"
-	},
-	{
-		"name": "ⶮጶ፻ቢꬬኰ፟ိ፝ዔዃጚ፝ꬣ፝፝ላገለ",
-		"error": true,
-		"comment": "illegal mixture: Ethiopic + Myanmar \"◌ိ\"‎ {102D}"
-	},
-	{
-		"name": "󠇨፝ጦ፞ⶮ𞋯ⷆ︋󠇔󠅼ዐⶨኝፀ󠄉ፔ󠆊ቃ🦳️ፔሱ",
+		"name": "െെഴ𖫢൨ല൘൏ഏ🐂️ഛ൩൨ീങ󠆪󠆒ൎൂ󠅞ഴ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𛱎නඬඹ",
+		"name": "ቫਛቓዾ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Dupl] + Sinhala \"න\"‎ {DB1}"
+		"comment": "illegal mixture: Ethiopic + Gurmukhi \"ਛ\"‎ {A1B}"
 	},
 	{
-		"name": "🧜🏼෨🧎𐣪🏻‍♀️‍➡️",
+		"name": "፞👨ו‍🏫ፒ፝",
 		"error": true,
-		"comment": "disallowed character: \"🏻\"‎ {1F3FB}"
+		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ඹෞඟ𑤍ඟඕෙෲඛ𑇲",
+		"name": "፟ⷞጼዉ፝ጪᬛሬ😰️",
 		"error": true,
-		"comment": "illegal mixture: Sinhala + Restricted[Diak] \"𑤍\"‎ {1190D}"
+		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ඊ෨𑇦෧ඨෞෞමටᬥ෭󠅞෪",
+		"name": "ቋᨽꬌ︍፝ቫꬓዷሾዤዋዒ󠅋",
 		"error": true,
-		"comment": "illegal mixture: Sinhala + Restricted[Bali] \"ᬥ\"‎ {1B25}"
+		"comment": "illegal mixture: Ethiopic + Restricted[Lana] \"ᨽ\"‎ {1A3D}"
 	},
 	{
-		"name": "ඝ්󠆼ඛඐ🏓️ෞභ🇮🇸ජ𑅔ෘඟ𑇰",
+		"name": "ᝰⶱፐኺህ󠇁ፉዤቕል፝󠆪🍠️ⶺ፝",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tagb] + Ethiopic \"ⶱ\"‎ {2DB1}"
+	},
+	{
+		"name": "𞟵፞፞ቐ፝ራ𐧉ꬊ𞟶፟ⷋ፟ጦ👨🏻‍🚀ⶮጶ",
+		"error": true,
+		"comment": "illegal mixture: Ethiopic + Restricted[Merc] \"𐧉\"‎ {109C9}"
+	},
+	{
+		"name": "ቢꬬኰ፟፝ዔዃጚ፝ꬣ፝𐼎፝ላገለሱ󠇨፝ጦ፞ⶮ",
+		"error": true,
+		"comment": "illegal mixture: Ethiopic + Restricted[Sogo] \"𐼎\"‎ {10F0E}"
+	},
+	{
+		"name": "ᰛ︋󠇔󠅼",
+		"norm": "ᰛ"
+	},
+	{
+		"name": "𑇡ජኦශ󠄉ළ󠆊",
+		"error": true,
+		"comment": "illegal mixture: Sinhala + Ethiopic \"ኦ\"‎ {12A6}"
+	},
+	{
+		"name": "🦳️ළඍනනඬඹය𐠊",
+		"error": true,
+		"comment": "illegal mixture: Sinhala + Restricted[Cprt] \"𐠊\"‎ {1080A}"
+	},
+	{
+		"name": "෨🧎🏻‍♀ᜃ️‍➡️වඹෞ",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "ඟඕ𞤿ෙෲඛ𑇲ඹඊ෨𑇦෧ඨෞෞම",
+		"error": true,
+		"comment": "illegal mixture: Sinhala + Restricted[Adlm] \"𞤿\"‎ {1E93F}"
+	},
+	{
+		"name": "෭󠅞෪ිඝ්󠆼ඛඐ🏓️ෞ𑏇භ🇮🇸ජෘඟ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🏓 + ◌ෞ\""
 	},
 	{
-		"name": "ී󠇯ඃීළ𑇪𑇬ෳල💃🏿ඁං󠇐𑇦බ👩🏾‍🏫𐩶",
+		"name": "ේී󠇯ඃීළ𑇪𑇬ෳල💃🏿ඁං󠇐𑇦බ👩🏾‍🏫𐩶",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑇳තපඃ෫ਟඒ෭෫ංබෂබ්ීඩෳ𑇯ෞහළඡ",
-		"error": true,
-		"comment": "illegal mixture: Sinhala + Gurmukhi \"ਟ\"‎ {A1F}"
-	},
-	{
-		"name": "︈𐮋ଳ󠄋",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phlp] + Oriya \"ଳ\"‎ {B33}"
-	},
-	{
-		"name": "ଠᛒଡ଼ତ🦔️ଣ",
-		"error": true,
-		"comment": "illegal mixture: Oriya + Restricted[Runr] \"ᛒ\"‎ {16D2}"
-	},
-	{
-		"name": "ୟଭଢ଼𑦺ଔଡ଼ଆ👇🏿୵",
-		"error": true,
-		"comment": "illegal mixture: Oriya + Restricted[Nand] \"𑦺\"‎ {119BA}"
-	},
-	{
-		"name": "ୄହୂ᧫ଯଐ୯ଢ଼ଏୖ୮ଡ଼ଢ଼",
+		"name": "ୣଥೠୄ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ଋଢ଼ୠତޒ󠆀୧ଐ୷ଽଲଉୄ󠄎ଚଖ",
-		"error": true,
-		"comment": "illegal mixture: Oriya + Thaana \"ޒ\"‎ {792}"
-	},
-	{
-		"name": "ୌଖଢ଼ଭୠହ🫱𮏗🏼‍🫲🏽ଉଡ଼🧛🏻୵ଂଖ",
-		"error": true,
-		"comment": "disallowed character: \"🏼\"‎ {1F3FC}"
-	},
-	{
-		"name": "ଡ଼ଛଔ𐴉󠅉ଢ଼ଊ🫘️୰ଡ଼ରଉୀ󠇞ଶ୳ଓ୕ଭ୮ଡ଼",
-		"error": true,
-		"comment": "illegal mixture: Oriya + Restricted[Rohg] \"𐴉\"‎ {10D09}"
-	},
-	{
-		"name": "۲𑲫ރެ",
-		"error": true,
-		"comment": "illegal mixture: Arabic + Restricted[Marc] \"◌𑲫\"‎ {11CAB}"
-	},
-	{
-		"name": "󠇒ޒޠ𐕁ްް۱",
-		"error": true,
-		"comment": "illegal mixture: Thaana + Restricted[Aghb] \"𐕁\"‎ {10541}"
-	},
-	{
-		"name": "🙋𑦺🏼‍♂️۰ީ۳ޭ",
-		"error": true,
-		"comment": "disallowed character: \"🏼\"‎ {1F3FC}"
-	},
-	{
-		"name": "۲ީ٨ޣ📑️🧖🏾۰𒑅ޚމޥ",
-		"error": true,
-		"comment": "illegal mixture: Thaana + Restricted[Xsux] \"𒑅\"‎ {12445}"
-	},
-	{
-		"name": "ޑ۷ާޯްޯޠޣޑމ𞤿ޠސގޑޮ",
-		"error": true,
-		"comment": "illegal mixture: Thaana + Restricted[Adlm] \"𞤿\"‎ {1E93F}"
-	},
-	{
-		"name": "🔔️𑃡٣ޏޓ١🇬🇷۲ޏޘ⁠٧ޮގކޮޞ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Sora] + Arabic \"٣\"‎ {663}"
-	},
-	{
-		"name": "ိ٠ޕގ٨۳ޝފށނޮ۰ޤް۹١󠅮ޚޤޓގފ",
+		"name": "ୌଐୡ𐳬୍ଂବ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "➰️ܞⱑ",
+		"name": "ବ଼ଡ଼ଡ𐌣ଢ଼୳ୖଶଷ",
+		"error": true,
+		"comment": "illegal mixture: Oriya + Restricted[Ital] \"𐌣\"‎ {10323}"
+	},
+	{
+		"name": "𑊜ଊ︈ଳ󠄋୨ଠଡ଼ତ🦔️ଣକ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mult] + Oriya \"ଊ\"‎ {B0A}"
+	},
+	{
+		"name": "ଭଢ଼ଔଡ଼ଆ👇🏿୵ୠୄହୂଯ𐭕ଐ୯",
+		"error": true,
+		"comment": "illegal mixture: Oriya + Restricted[Prti] \"𐭕\"‎ {10B55}"
+	},
+	{
+		"name": "ଏୖ୮ଡ଼ଢ଼ଏଋଢ଼ୠତ󠆀୧ଐ୷ଽଲଉܽୄ",
+		"error": true,
+		"comment": "illegal mixture: Oriya + Restricted[Syrc] \"◌ܽ\"‎ {73D}"
+	},
+	{
+		"name": "ଚଖଓୌଖଢ଼ଭୠ𮏗ହ🫱🏼‍🫲🏽ଉଡ଼🧛🏻୵ଂଖ",
+		"error": true,
+		"comment": "illegal mixture: Oriya + Han \"𮏗\"‎ {2E3D7}"
+	},
+	{
+		"name": "۲ރ٨ᰠ",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Lepc] \"ᰠ\"‎ {1C20}"
+	},
+	{
+		"name": "۷𑌈٣🫘️ޢ۰",
+		"error": true,
+		"comment": "illegal mixture: Arabic + Restricted[Gran] \"𑌈\"‎ {11308}"
+	},
+	{
+		"name": "٣ީ󠇞ޕޤ٧ޮސ𑐯ޠ",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Newa] \"𑐯\"‎ {1142F}"
+	},
+	{
+		"name": "ދ۲ރެޗ󠇒ޒޠްް۱ލࠬ",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Samr] \"◌ࠬ\"‎ {82C}"
+	},
+	{
+		"name": "۰ީ۳ꓔޭޙ۲ީ٨ޣ📑️🧖🏾۰ޚ",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Lisu] \"ꓔ\"‎ {A4D4}"
+	},
+	{
+		"name": "ޥ۱ޑ۷ާޯްޯޠޣޑމޠސގޑޮީ𑁁",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Brah] \"◌𑁁\"‎ {11041}"
+	},
+	{
+		"name": "٣ޏޓ١🇬🇷۲ޏޘ⁠٧ޮގކޮޞޟ𞋯٠ޕގ٨",
+		"error": true,
+		"comment": "illegal mixture: Thaana + Restricted[Wcho] \"◌𞋯\"‎ {1E2EF}"
+	},
+	{
+		"name": "ᚑࡠܠܘ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Syrc] \"ࡠ\"‎ {860}"
+	},
+	{
+		"name": "ݏًࡧࡧ݊܋𐿋",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Chrs] \"𐿋\"‎ {10FCB}"
+	},
+	{
+		"name": "ݍࡧܩܥܡܐ➰️ⱑܞ",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Glag] \"ⱑ\"‎ {2C51}"
 	},
 	{
-		"name": "ࡦ𑐖ܐܝܓ󠄾݁",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Newa] \"𑐖\"‎ {11416}"
-	},
-	{
-		"name": "ܟ🛰️ܽ𑌗ܱࡤܯܦٍ",
+		"name": "ࡦ𖪦ܐܝܓ󠄾݂ܠܟ🛰️ܽܲ",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🛰 + ◌ܽ\""
 	},
 	{
-		"name": "ܚࡥٓ݊ܕَ⛹🏾‍♂️𐴂܌",
+		"name": "ܯܦ௶َܩܚࡥٔ݊ܕُ⛹🏾‍♂️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Rohg] \"𐴂\"‎ {10D02}"
+		"comment": "illegal mixture: Restricted[Syrc] + Tamil \"௶\"‎ {BF6}"
 	},
 	{
-		"name": "ܲܢܹࡡܖܫܩࡠ܊ܚ🤾🏼ब‍♂️",
+		"name": "󠅕ܳܢܺࡡܖܫܩࡠ܊ܚ🤾🏼‍𑶸♂️̄🧖🏾‍♂️",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "🧖🏾‍♂️ࡩࡪܦٍܔ܍ࡪܕܺ𑃡݂̈ܢ󠆰",
+		"name": "ࡪܦَܔ܍ࡪܕ݂ܺ̊ᨽܢ󠆰݃ܝࡡܱٕ܍ܜܥ݅",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Sora] \"𑃡\"‎ {110E1}"
+		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Lana] \"ᨽ\"‎ {1A3D}"
 	},
 	{
-		"name": "ܝࡡܱٕ܍ܜܥ݄ܗܕܬܬܖ𑊜👨🏻‍❤️‍💋‍👨🏼",
+		"name": "ᛒ߇ߜߜ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Syrc] + Restricted[Mult] \"𑊜\"‎ {1129C}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Nkoo] \"߇\"‎ {7C7}"
 	},
 	{
-		"name": "𑎻߶󠄽߲",
+		"name": "👨🏻‍❤️‍𑊜💋‍👨🏼",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ߒߓ߰ߠߜߌ𑫩",
+		"name": "߶󠄽𐌣߲߷ߒߓ߰ߠߜ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Pauc] \"𑫩\"‎ {11AE9}"
+		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Ital] \"𐌣\"‎ {10323}"
 	},
 	{
-		"name": "߷߇󠇔٠߶ߖߐ߳߭߷",
+		"name": "󠆭߷߇󠇔ହ߶ߖߐ߳߭߷ߧ߽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nkoo] + Arabic \"٠\"‎ {660}"
+		"comment": "illegal mixture: Restricted[Nkoo] + Oriya \"ହ\"‎ {B39}"
 	},
 	{
-		"name": "߽߆󠆠ߕ߳ߟꢏ߂߱ߘ🥾️ߠ",
+		"name": "󠆠ߕ߳ߟ߂߱ߘ🥾️ߠߓ🤟🏼ꧏ߳߿",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Java] \"ꧏ\"‎ {A9CF}"
 	},
 	{
-		"name": "🤟🏼߳߿߰ߣߓߓ𐡃🕵🏼‍♀️ߜߏ",
+		"name": "ߣߓߓ🕵🏼‍♀️ߜߏߕߙ߀ߊ߃߳ᜡߐߣ",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🤟🏼 + ◌߳\""
+		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Hano] \"ᜡ\"‎ {1721}"
 	},
 	{
-		"name": "ߙ߀ߊ߃߳ߐהߣ󠅿󠅶߃ߔߦ߬ߞߔ߭߭ߑ",
+		"name": "󠅶߃ߔߦ߬ߞߔ𑄠߭߭ߑ߁߇ߝߋߙ߄ߣ߀߽ߠ߽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nkoo] + Hebrew \"ה\"‎ {5D4}"
+		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Cakm] \"𑄠\"‎ {11120}"
 	},
 	{
-		"name": "߇ߝꡡߋߙ߄ߣ߀߽ߠ߽ߐߒ߶ߊ߂߯߱߂߿ߜߣ",
+		"name": "Ꮕ̌ป́",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Phag] \"ꡡ\"‎ {A861}"
+		"comment": "illegal mixture: Restricted[Cher] + Thai \"ป\"‎ {E1B}"
 	},
 	{
-		"name": "ᜡᏜᏓᏅ",
+		"name": "ꡡꮖꮪᎤᏴᏗ̋",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Hano] + Restricted[Cher] \"Ꮬ\"‎ {13DC}"
+		"comment": "illegal mixture: Restricted[Phag] + Restricted[Cher] \"Ꮖ\"‎ {13C6}"
 	},
 	{
-		"name": "ᎶᏊᏮ̌󠇗ꤕᎶ",
+		"name": "ᜉᏜᏓᏅᏒᎶᏊᏮ̌󠇗",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cher] + Restricted[Kali] \"ꤕ\"‎ {A915}"
+		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Cher] \"Ꮬ\"‎ {13DC}"
 	},
 	{
-		"name": "꠫ᎳᏐᏜᏮᏧ̄ᎷᏆᏟ",
+		"name": "ⴴꮐᎳᏐᏜᏮᏧ̄ᎷᏆᏟᏆꮱ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sylo] + Restricted[Cher] \"Ꮃ\"‎ {13B3}"
+		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Cher] \"Ꮐ\"‎ {13C0}"
 	},
 	{
-		"name": "ꮱᎷᏵꮯᏂ👏🏻̂🛡𐕁️Ꮥ̌",
+		"name": "ꯞᏵꮯᏂ👏🏻̂🛡️Ꮥ̌ꮘᏭᏠᏓ̌",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"👏🏻 + ◌̂\""
 	},
 	{
-		"name": "Ꮽ༨ᏠᏓ̌ᏂᏠᎥᎰ̂Ᏹ̌ᏌᎨꮘᏢ",
+		"name": "ᏠᎥᎰ̂Ᏹ̌ᏌᎨꮘᏢᎦᏡᏥᎢᏤꮰ̄Ꮁ𐍰",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cher] + Tibetan \"༨\"‎ {F28}"
+		"comment": "illegal mixture: Restricted[Cher] + Restricted[Perm] \"𐍰\"‎ {10370}"
 	},
 	{
-		"name": "ᏡᏥᎢᏤꮰ̄Ꮁ👰🏻‍♀️ᎹᎳ󠆙ᎼᏅᏧᮦ",
+		"name": "ᎹᎳ󠆙ᎼᏅᏧ🤦𐿫🏽̄̀ᎶꭽꮲᏰᎵᏈᏅᎸ̀̄🫱🏿‍🫲🏼",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cher] + Restricted[Sund] \"◌ᮦ\"‎ {1BA6}"
+		"comment": "disallowed character: \"🏽\"‎ {1F3FD}"
 	},
 	{
-		"name": "̄̀ᎶꭽꮲᏰᎵᏈᏅᎸ𑗀̀̄🫱🏿‍🫲🏼ᏐᏜ̀Ꮦ",
+		"name": "ᘂ𑗀ᐽᗌ",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Restricted[Cans] + Restricted[Sidd] \"◌𑗀\"‎ {115C0}"
 	},
 	{
-		"name": "ᑾᔣ󠆥𐑌",
+		"name": "𑐖ᑾᔣ󠆥󠄳ᑠᙤ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Dsrt] \"𐑌\"‎ {1044C}"
+		"comment": "illegal mixture: Restricted[Newa] + Restricted[Cans] \"ᑾ\"‎ {147E}"
 	},
 	{
-		"name": "ᑠ𐖞ᙤᔨᘐ𑪾ᑊ",
+		"name": "ᘐ𑪾ᑊᢶᘌ󠆼𐎗ᘈᔾᓀ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Vith] \"𐖞\"‎ {1059E}"
+		"comment": "illegal mixture: Restricted[Cans] + Restricted[Ugar] \"𐎗\"‎ {10397}"
 	},
 	{
-		"name": "ᘌ󠆼ᘈᔾᓀꡭᢲᒅᑚᣱ",
+		"name": "ᒅᑚᣱᘧᐫᗨᐷᙯ𑠈ᔂᗱᖸᕉ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Phag] \"ꡭ\"‎ {A86D}"
+		"comment": "illegal mixture: Restricted[Cans] + Restricted[Dogr] \"𑠈\"‎ {11808}"
 	},
 	{
-		"name": "ᐫᗨᐷᙯᔂᗱᖸᕉᖈ👨🏾‍🦰🂲",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Latin \"🂲\"‎ {1F0B2}"
-	},
-	{
-		"name": "ᔏᗢᓫ᙭ᖼᘉ👱🏻‍♂️𑄠ᐡᒚᔦᖣ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Cakm] \"𑄠\"‎ {11120}"
-	},
-	{
-		"name": "ᒭᔁᑌᓕꥅᔰᒍᖜᔪᑃᑐᘏᘣ󠆹ᕤᙼᕂᓑᖵ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Rjng] \"ꥅ\"‎ {A945}"
-	},
-	{
-		"name": "ᒚᔭᑡᒁᣮᕉᒯᖵᖃᑝᙕᑤᔔᙢᔶᙻᘎ󠄢ᒍ࠙ᣅᙡ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Restricted[Samr] \"◌࠙\"‎ {819}"
-	},
-	{
-		"name": "ࡐᛰᚽᚯ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mand] + Restricted[Runr] \"ᛰ\"‎ {16F0}"
-	},
-	{
-		"name": "𑶀ᛩᛙᚹᛝᛁ🦀️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Gong] + Restricted[Runr] \"ᛩ\"‎ {16E9}"
-	},
-	{
-		"name": "ᛇᛦᛠᛚᛚᱡᛚᛏᚶᚶ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Runr] + Restricted[Olck] \"ᱡ\"‎ {1C61}"
-	},
-	{
-		"name": "ᚶ🚴ꥅ🏿‍♀️ᚸᚰ👨🏾‍🦼‍➡️",
-		"error": true,
-		"comment": "disallowed character: \"🏿\"‎ {1F3FF}"
-	},
-	{
-		"name": "ᛕ🍋️𐳬ᛷ󠄆ᛋᛰᛅᛩᚵᛒᛛᛙᛦᛐ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Runr] + Restricted[Hung] \"𐳬\"‎ {10CEC}"
-	},
-	{
-		"name": "𑪊ᛒ󠅕ᛁᛄ󠅵ᛡᛎᛤ󠇯👯🏿ᛑᛰᚼᚠ🧟‍♀️",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ᚽᚹᛂᛄᛎ󠆵ᚡᛥᚯᛰᚳᛳᛉ🙏️ᚡ🇦🇫ᚰ𚿲᠌ᛶ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Runr] + Japanese \"𚿲\"‎ {1AFF2}"
-	},
-	{
-		"name": "ᢍ🍛𖄰️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mong] + Restricted[Gukh] \"𖄰\"‎ {16130}"
-	},
-	{
-		"name": "ᡎꢕ👒️᠘ᡈ🚴🏻",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mong] + Restricted[Saur] \"ꢕ\"‎ {A895}"
-	},
-	{
-		"name": "ᝰᠼᢆᠾ᠙ᢆᢆᡑᢜ𑙬",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Tagb] + Restricted[Mong] \"ᠼ\"‎ {183C}"
-	},
-	{
-		"name": "ᡊ﻿ᠸᠢᢪᢩᡧ\u0000😺️󠄎󠄚🙎‍♂️",
-		"error": true,
-		"comment": "disallowed character: {00}"
-	},
-	{
-		"name": "ᢟᢆᠥᢅᢈ᠓ᡟ🖱𖄘️ᡨ᠙🛀🏽ᠹᠡ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mong] + Restricted[Gukh] \"𖄘\"‎ {16118}"
-	},
-	{
-		"name": "⏬️ᡨᢆᢪᡱᢁᢆ𑙡𐶏ᢅ𑙠ᢙᠽᢅ👩🏻‍🦽",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mong] + Restricted[Gara] \"𐶏\"‎ {10D8F}"
-	},
-	{
-		"name": "ᢅ🕵🏼🧑🏽‍🤝‍🧑🏻ඇᢩᢀ󠆞ᢅᢁᡎ󠆿ᢈ🙆🏻‍♀️",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ᤜ𑙖ᤩ🪡️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Limb] + Restricted[Modi] \"𑙖\"‎ {11656}"
-	},
-	{
-		"name": "ᤕᤠᤝᤒᤂ᥈𑃡",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Limb] + Restricted[Sora] \"𑃡\"‎ {110E1}"
-	},
-	{
-		"name": "ᤧᤄᤘ᥇ᤆ𑰼ᤚᤈᤌᤄ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "᥀ᤝᤫᤍᤂ🇹🇫🇺ඹ🇿🚶🏽‍♀️",
-		"error": true,
-		"comment": "disallowed character: \"🇺\"‎ {1F1FA}"
-	},
-	{
-		"name": "ᤛ᥍᥉ᤁ᥀ᤀᤏᤕ𐤁ᤧᤖ᥌ᤁ᤹󠄶ᤜ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Limb] + Restricted[Phnx] \"𐤁\"‎ {10901}"
-	},
-	{
-		"name": "ᤅᤇ⁠ᤛ᥈ᤐᤈᤲᤘᤛ𐪆ᤓ᥌᥎᥎ᤆ󠅇ᤋᤣ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Limb] + Restricted[Narb] \"𐪆\"‎ {10A86}"
-	},
-	{
-		"name": "𐔛ᤇᤑᤗᤁᤚᤗᤞᤉᤚᤙ᥎󠆹ᤈ᥌󠇜᤺ᤸ🏕️ᤇ🚴🏻",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Elba] + Restricted[Limb] \"ᤇ\"‎ {1907}"
-	},
-	{
-		"name": "ᧆ𖄰✊🏽",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Talu] + Restricted[Gukh] \"𖄰\"‎ {16130}"
-	},
-	{
-		"name": "ᮦ︆👐🏼ᦻᦳᦖ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ࡒᦃᦰ💂🏿ᦑᦍᦿ󠇈ᦾ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mand] + Restricted[Talu] \"ᦃ\"‎ {1983}"
-	},
-	{
-		"name": "ᧀ𑏇ᦜᧇᦻᦓᦦᦩᧄᦃ᧘🕵🏽",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Talu] + Restricted[Tutg] \"◌𑏇\"‎ {113C7}"
-	},
-	{
-		"name": "ᦛᦑᧂ󠄒ᦨᦀᧄ🙎🏽‍♀️❤️‍🔥ꤕ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Talu] + Restricted[Kali] \"ꤕ\"‎ {A915}"
-	},
-	{
-		"name": "ᦂᦀ🧑🏽‍🐰‍🧑🏼ᧀ𖫢ᦣᦺᦒᦣᦷᦴᧇ󠆿",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Talu] + Restricted[Bass] \"𖫢\"‎ {16AE2}"
-	},
-	{
-		"name": "𞊖ᦪ󠄧ᦢᦚ᧚ᦄᦱᦟᦚᦚ᧐᧔︋ᦎᧄ᠌ᧂᧄᦊᦎᦚ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Toto] + Restricted[Talu] \"ᦪ\"‎ {19AA}"
-	},
-	{
-		"name": "ᩥᩭ༨✊🏿",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "𐼰ᩀ᪘ᨡ᩠ᨳ᪬",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Sogd] + Restricted[Lana] \"ᩀ\"‎ {1A40}"
-	},
-	{
-		"name": "ᩖᩇ𐌷󠄞ᨹᨧᩇ᪙ᨩᩲ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ᨼ᩿ᨵⴴᩛ᪕᪢ᩕᩐ🧑🏻‍🚀",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Lana] + Restricted[Tfng] \"ⴴ\"‎ {2D34}"
-	},
-	{
-		"name": "ᩜᩘᨳ᪥𑫩👩🏾‍❤️‍💋‍👩🏿ᨮ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "᪉᪒᪭ᨿᨦᨨ᩵𐒣᪗ᩎᩏᩍᪧᨳ᪈ᨶ󠄵ᩅᩂ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Lana] + Restricted[Osma] \"𐒣\"‎ {104A3}"
-	},
-	{
-		"name": "🔮️ᨿᩈᨫᨵᩃᨬᩚ𐓙ᩊᩭᨼᩢᩊᩔᩊᩋᩂᨾᩉ💄️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Lana] + Restricted[Osge] \"𐓙\"‎ {104D9}"
-	},
-	{
-		"name": "ㆦ󠇦ㄝㄓ",
-		"norm": "ㆦㄝㄓ"
-	},
-	{
-		"name": "ㆦㄅ･ㄔㄪㆴ췼",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Bopo] + Korean \"췼\"‎ {CDFC}"
-	},
-	{
-		"name": "･ㄇ･ㄙ🩷️ㄊ𞛾ㄪ󠆩",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "･ㄫㄉㆥ･ㆹㄓ󠆱･ⳳㄋㆸㆩ",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "ㆢㄊ･ㄆ𑴿ㆾㄜㆶ･ㆻㄯㄅㆵㄔ･･",
-		"error": true,
-		"comment": "illegal placement: middle dot + middle dot"
-	},
-	{
-		"name": "𑊖･ㆯ🇸🇪ㆹㄅㄟ・ㄫㆤㄯ󠇩ㆽ･ㆵㄖㆺㄬ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mult] + Han \"・\"‎ {30FB}"
-	},
-	{
-		"name": "ᚃㄏㆳㄛㄇ･･ㄬㄪ󠇖･ㆳ･ㄊ⁠･･ㆫㆨㄞ･⚪️",
-		"error": true,
-		"comment": "illegal placement: middle dot + middle dot"
-	},
-	{
-		"name": "･ꁒ𛇭ꇩ",
-		"error": true,
-		"comment": "illegal placement: leading middle dot"
-	},
-	{
-		"name": "ꃸꋞꅹꍣꊉꠒꑺ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Sylo] \"ꠒ\"‎ {A812}"
-	},
-	{
-		"name": "ꏒ󠄍･ꂞ𘻑ꅱꂑꌫ･󠅊",
-		"error": true,
-		"comment": "illegal placement: trailing middle dot"
-	},
-	{
-		"name": "ꈠ･･ꅩꍳ᯲🧎🏿‍➡️👨🏽‍💻",
-		"error": true,
-		"comment": "illegal placement: middle dot + middle dot"
-	},
-	{
-		"name": "ꍝꊋꏙꁑꈭꁉ🦤️𐢈ꆺꂛꁂꊂꉽꇿꊶ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Nbat] \"𐢈\"‎ {10888}"
-	},
-	{
-		"name": "🧏🏽‍♀𑨾️9️⃣ꎍꄈ･ꌵꅎꐲꅸꐲꂎꀗ",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧏🏽‍♀ + ◌𑨾\""
-	},
-	{
-		"name": "ꌎꌺꄇꑖ󠄀󠆮ꀮꄨꀽꃡꅸ･ꐓ･ꉝꃕ𑵲ꐥꎂꑼꌅꀸ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Gong] \"𑵲\"‎ {11D72}"
-	},
-	{
-		"name": "ꨓꨁ𞓵󠄠",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cham] + Restricted[Nagm] \"𞓵\"‎ {1E4F5}"
-	},
-	{
-		"name": "ꩅ꩖ꩀ󠇢ꨌ👨🏼‍𐭠🔬",
-		"error": true,
-		"comment": "disallowed character: {200D}"
-	},
-	{
-		"name": "ꨮꨒ𑱾🐙️ꨧꨮꩄꩊ꩖",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ꨋផ🐀️ꨣꨢꨑꨭꨗꨟꨄꨉꨴ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cham] + Khmer \"ផ\"‎ {1795}"
-	},
-	{
-		"name": "ꨬꨊꨂꨪꨅꩃ꩘ꨁꨍ᠌ꨲ꩜ꨎ𑜰ꨪꨲ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ꨴ𞤿ꨕꨐ꩜ꩃ󠆅ꨔꨪꨯꨋꨰꩍꨋꨌꩅꨫꨴꩌ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ꨃꩅꨰꨪ꩒ꨝꨍ꩘ꩅ꩜ꨅꨏꨘ󠇡ꩉꨊꨂ󠅄𑛉ꩌꨌꨛ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cham] + Restricted[Takr] \"𑛉\"‎ {116C9}"
-	},
-	{
-		"name": "𐤗𒅀𐤑𐤇",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Xsux] \"𒅀\"‎ {12140}"
-	},
-	{
-		"name": "𐤅𐤊𑏇𐤟𐤓𐤚𐤍",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Tutg] \"◌𑏇\"‎ {113C7}"
-	},
-	{
-		"name": "𐤉󠄺𐤍󠆿𐤈𐤋డ𐤒𐤋󠄗",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Telugu \"డ\"‎ {C21}"
-	},
-	{
-		"name": "󠄙𐤍𐤈𐤛👨🏼‍❤त️‍💋‍👨🏿",
-		"error": true,
-		"comment": "disallowed character: {200D}"
-	},
-	{
-		"name": "𐤉𐤐𖮈𐤐𐤏𐤛𐤉𐤘𐤔🪑️𐤄𐤗𐤔𐤅𐤄",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Hmng] \"𖮈\"‎ {16B88}"
-	},
-	{
-		"name": "𐤊𐤃𐤏𐤖󠇋𐤂𐤒𐤉𐤛𐤍𖪦𐤚𐤆𐤟𐤇𐤇𐤎𐤂𐤘",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Tnsa] \"𖪦\"‎ {16AA6}"
-	},
-	{
-		"name": "𐤃𐤐𐤆𐤕𐤚𐤒𐤏𐤈𐤔🧚‍♀️𐤗𖪦𐤅𐤄𐤁𐤖𐤏𐤒𐤓",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Tnsa] \"𖪦\"‎ {16AA6}"
-	},
-	{
-		"name": "𔕾𓉼𓁞󠆝",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Hluw] + Restricted[Egyp] \"𓉼\"‎ {1327C}"
-	},
-	{
-		"name": "𓪛𔀐𓑆𓝮𓰊꤆󠄽",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Egyp] + Restricted[Kali] \"꤆\"‎ {A906}"
-	},
-	{
-		"name": "𮏗𓑕𓑌𓑕𔄞𓑈𓅩𓔯𓑎𓔯",
-		"error": true,
-		"comment": "illegal mixture: Han + Restricted[Egyp] \"◌𓑕\"‎ {13455}"
-	},
-	{
-		"name": "𔎵𓱡𓺹𓳧😎️𔌆ⴧ𓺭𓑌𓫡𓂎𔏤",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Egyp] + Georgian \"ⴧ\"‎ {2D27}"
-	},
-	{
-		"name": "𓑇𓯁𓽒𓑓𓩣𓑒𓩞𓪸𓏠𓒚𓌙𓆮𓑇𓥅꤆𓑒",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "🪩️🧑‍💻𓑇𓑏𓥉𓍹𓴨︂𓯍𓱹𓁍𓘐𓑒𓑊ᝂ󠄋",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧑‍💻 + ◌𓑇\""
-	},
-	{
-		"name": "𓩪󠅄𓵖𓒣𓆵𐫟𓿤𓤀𓐚𓩰👟️󠇥󠇣𓑏𓑊𓲉𓾆𔇉𓵀𓴰𓠾",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"👟 + ◌𓑏\""
-	},
-	{
-		"name": "👩𞊖🏻‍🎤",
+		"name": "👨🏾‍🦰⏰️ᔏᗢᓫ᙭ᖼᘉ👱ׄ🏻‍♂️",
 		"error": true,
 		"comment": "disallowed character: \"🏻\"‎ {1F3FB}"
 	},
 	{
-		"name": "𐱀𐰝🎍️𘽷🔮️",
+		"name": "ᒚᔦᖣᔌᒭᔁᑌ𞊖ᓕᔰᒍᖜᔪᑃᑐᘏᘣ󠆹ᕤ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Jurc] \"𘽷\"‎ {18F77}"
+		"comment": "illegal mixture: Restricted[Cans] + Restricted[Toto] \"𞊖\"‎ {1E296}"
 	},
 	{
-		"name": "𐰵󠅹𐰓𐰃ࡐ𐰜𐰡𐰜𐰪𐰛",
+		"name": "ᕂᓑᖵᘷᒚᔭᑡᒁᣮᕉᒯᖵᖃᑝᙕᑤᔔᙢᔶ𔇎ᙻᘎ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Mand] \"ࡐ\"‎ {850}"
+		"comment": "illegal mixture: Restricted[Cans] + Restricted[Egyp] \"𔇎\"‎ {141CE}"
 	},
 	{
-		"name": "𐱁🌮️ᨇ𐱈🇬🇭𐰑🧑🏾‍❤️‍💋‍🧑🏼",
+		"name": "ᚰᛱᛨ࠙",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Bugi] \"ᨇ\"‎ {1A07}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Samr] \"◌࠙\"‎ {819}"
 	},
 	{
-		"name": "𐰃👨🏽‍🏭𐰤𐰞𑧟👮🏾‍♀️𐰮𐰵𐰯",
+		"name": "ᛰ𐏂ᚽᚯᛂᛩᛙ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Nand] \"◌𑧟\"‎ {119DF}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Xpeo] \"𐏂\"‎ {103C2}"
 	},
 	{
-		"name": "𐰱𐰣𐰖𐰲𐰎𐰫❔️𐱆𐰫𐰕𐰯𐱂🇨🇮𑩸󠄻︍𐰖",
+		"name": "ᛝᛁ🦀️ᛐ𞠑ᛇᛦᛠᛚ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Soyo] \"𑩸\"‎ {11A78}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Mend] \"𞠑\"‎ {1E811}"
 	},
 	{
-		"name": "𐱈󠇮󠄕𐰨𐰫𐰾𐱅󠆒𐰝👎🏿𐰭𐰲𐰏প𐰞☝🏾🇺🇿𐰑♥️",
+		"name": "ᛚᛏᚶᚶᛃᚶ🚴🏿‍ᠽ♀️ᚸ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Bengali \"প\"‎ {9AA}"
+		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "󠇚𒌗𒈝𞊖",
+		"name": "👨🏾ꢏ‍🦼‍➡️ᛣᛕ🍋️ᛷ󠄆ᛋᛰ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Toto] \"𞊖\"‎ {1E296}"
+		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𑒃𒄃𒆤𒓏𒔫𒌁𒒱",
+		"name": "ᛩᚵᛒᛛᛙᛦᜭᛐᛓᛒ󠅕ᛁᛄ󠅵ᛡᛎᛤ󠇯👯🏿",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tirh] + Restricted[Xsux] \"𒄃\"‎ {12103}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Hano] \"ᜭ\"‎ {172D}"
 	},
 	{
-		"name": "𒈃𒆅­𒇾𐑱󠇌𒉛𒊹𒄴𒆴",
+		"name": "ᛰᚼᚠ🧟‍♀️ᛨᚽᚹᛂᛄᛎ󠆵ᚡᛥᚯᛰᚳᛳᛉꤕ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Shaw] \"𐑱\"‎ {10471}"
+		"comment": "illegal mixture: Restricted[Runr] + Restricted[Kali] \"ꤕ\"‎ {A915}"
 	},
 	{
-		"name": "𒂓𒇂𒙕𒖋꠫𒓀𒓕𒂞𒉔𒅿𒊽👩‍👩‍👧‍👦",
+		"name": "᠒︆ᠳڥ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mong] + Arabic \"ڥ\"‎ {6A5}"
+	},
+	{
+		"name": "𑙨꤆︀ᢍ🍛️𑙠",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mong] + Restricted[Kali] \"꤆\"‎ {A906}"
+	},
+	{
+		"name": "👒️᠘ⱞᡈ🚴🏻ᡘᠼᢆ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mong] + Restricted[Glag] \"ⱞ\"‎ {2C5E}"
+	},
+	{
+		"name": "᠙ᢆᢆᡑᢜ𑙬ᢟᡊ﻿𐢈ᠸᠢᢪ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mong] + Restricted[Nbat] \"𐢈\"‎ {10888}"
+	},
+	{
+		"name": "ᡧ😺️󠄎󠄚🙎‍ब♂️𑙬ᢟᢆᠥᢅᢈ",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "ᡟ🖱️ᡨ᠙🛀🏽ᠹᠡ𑙠⏬𖵳️ᡨᢆᢪᡱᢁᢆ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mong] + Restricted[Krai] \"𖵳\"‎ {16D73}"
+	},
+	{
+		"name": "ᢅ𑙠ᢙᠽᢅ👩🏻‍🦽ᢪᢅ𑻥🕵🏼🧑🏽‍🤝‍🧑🏻ᢩ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𞄛󠆞ᤥᤛ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Hmnp] + Restricted[Limb] \"◌ᤥ\"‎ {1925}"
+	},
+	{
+		"name": "󠆿ᤝ🙆ඇ🏻‍♀️",
+		"error": true,
+		"comment": "disallowed character: \"🏻\"‎ {1F3FB}"
+	},
+	{
+		"name": "ᤜᤩυ🪡️ᤝᤕᤠᤝᤒ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Limb] + Greek \"υ\"‎ {3C5}"
+	},
+	{
+		"name": "᥈𐽳󠇁ᤧᤄᤘ᥇ᤆᤚᤈᤌᤄᤔ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Limb] + Restricted[Ougr] \"𐽳\"‎ {10F73}"
+	},
+	{
+		"name": "ᤝᤫᤍᤂ🇹🇫🇺🇿𑯖🚶🏽‍♀️ᤆᤛ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Limb] + Restricted[Sunu] \"𑯖\"‎ {11BD6}"
+	},
+	{
+		"name": "᥉ᤁ𑃡᥀ᤀᤏᤕᤧᤖ᥌ᤁ᤹󠄶ᤜᤉᤅᤇ⁠ᤛ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Limb] + Restricted[Sora] \"𑃡\"‎ {110E1}"
+	},
+	{
+		"name": "ᤐᤈᤲᤘᤛᤓ᥌ꨡ᥎᥎ᤆ󠅇ᤋᤣᤝᤇᤑᤗᤁᤚᤗᤞ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Limb] + Restricted[Cham] \"ꨡ\"‎ {AA21}"
+	},
+	{
+		"name": "ᦸᦵ᧙𐩯",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Talu] + Restricted[Sarb] \"𐩯\"‎ {10A6F}"
+	},
+	{
+		"name": "ᦐ᧖🧑🏻‍🫯‍𐗒🧑🏾",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "󠇍🏕𖄰️ᦏ🚴🏻ᦱᧆ✊🏽",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Gukh] + Restricted[Talu] \"ᦏ\"‎ {198F}"
+	},
+	{
+		"name": "︆👐🏼ᦻᦳܽᦖᦤᦃᦰ💂🏿ᦑ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Talu] + Restricted[Syrc] \"◌ܽ\"‎ {73D}"
+	},
+	{
+		"name": "ᦿ𑏇󠇈ᦾᦠᧀᦜᧇᦻᦓᦦᦩᧄᦃ᧘🕵🏽",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Talu] + Restricted[Tutg] \"◌𑏇\"‎ {113C7}"
+	},
+	{
+		"name": "ᦛᦑᧂ󠄒ᦨヮᦀᧄ🙎🏽‍♀️❤️‍🔥🙏️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Talu] + Japanese \"ヮ\"‎ {30EE}"
+	},
+	{
+		"name": "ᦀ🧑🏽‍🐰‍🧑🏼ᧀᦣᦺᦒᦣᦷᦴᧇ󠆿𑁅ᦩᦪ󠄧ᦢ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Talu] + Restricted[Brah] \"◌𑁅\"‎ {11045}"
+	},
+	{
+		"name": "ꤕᪧᨤᩍ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Kali] + Restricted[Lana] \"ᪧ\"‎ {1AA7}"
+	},
+	{
+		"name": "ᨺᨺ᪗᩹ᩗ𐮋ᨮ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Lana] + Restricted[Phlp] \"𐮋\"‎ {10B8B}"
+	},
+	{
+		"name": "ᩕᩴ᪑ᩚᨮᨺ᪙ᩥᩭҟ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ໟᨦᩀ᪘ᨡ᩠ᨳ᪬᪕ᩖᩇ󠄞ᨹ",
+		"error": true,
+		"comment": "illegal mixture: Lao + Restricted[Lana] \"ᨦ\"‎ {1A26}"
+	},
+	{
+		"name": "ᩇ᪙ᨩᩲᩏⴴᨼ᩿ᨵᩛ᪕᪢ᩕᩐ🧑🏻‍🚀",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Lana] + Restricted[Tfng] \"ⴴ\"‎ {2D34}"
+	},
+	{
+		"name": "ᩜᩘᨳ᪥👩🏾‍❤️‍.💋‍👩🏿ᨮ᪉᪉᪒",
+		"error": true,
+		"comment": "Invalid label \"◌ᩜᩘᨳ᪥👩🏾{200D}❤{FE0F}{200D}\"‎: disallowed character: {200D}"
+	},
+	{
+		"name": "ᨿᚃᨦᨨ᩵᪗ᩎᩏᩍᪧᨳ᪈ᨶ󠄵ᩅᩂ᪇🔮️ᨿᩈᨫ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Lana] + Restricted[Ogam] \"ᚃ\"‎ {1683}"
+	},
+	{
+		"name": "ㄣㄎ𐾲･",
+		"error": true,
+		"comment": "illegal placement: trailing middle dot"
+	},
+	{
+		"name": "･ㄝ･𒾔ㄩㆣㄩ",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
+	},
+	{
+		"name": "ㄢㆦㄟㄩ💄️ㄢ󠇦ㄝㄓ",
+		"norm": "ㄢㆦㄟㄩ💄ㄢㄝㄓ"
+	},
+	{
+		"name": "ㆦㄅ･ㄔㄪㆴ⚽️･ㄇ･ㄙ𑠈",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Bopo] + Restricted[Dogr] \"𑠈\"‎ {11808}"
+	},
+	{
+		"name": "ㄊㄪ󠆩･･ㄫㄉ𐪆ㆥ･ㆹㄓ󠆱･ㄋㆸ",
+		"error": true,
+		"comment": "illegal placement: middle dot + middle dot"
+	},
+	{
+		"name": "･ㆢㄊ･ㄆㆾㄜㆶ･ㆻ𐭅ㄯㄅㆵㄔ･･ㄛ･",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
+	},
+	{
+		"name": "🇸🇪ㆹㄅㄟ・ㄫㆤㄯ󠇩ㆽ･ㆵㄖㆺㄬ𓷪ㆨㄏㆳㄛㄇ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Bopo] + Restricted[Egyp] \"𓷪\"‎ {13DEA}"
+	},
+	{
+		"name": "･ꊗꉸ𑨾",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
+	},
+	{
+		"name": "･ꏽ･ꁴ⁠𖼲･",
+		"error": true,
+		"comment": "illegal placement: leading middle dot"
+	},
+	{
+		"name": "ꍽ꯲ꍆꇀ･⚪️ꄷ･ꁒ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Mtei] \"꯲\"‎ {ABF2}"
+	},
+	{
+		"name": "ꍳꃸ𐦁ꋞꅹꍣꊉꑺ･ꏒ󠄍･ꂞ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Mero] \"𐦁\"‎ {10981}"
+	},
+	{
+		"name": "ꂑꌫ･󠅊꒩ꈠ･･ꅩꍳ🧎🏿‍➡️𘱑",
+		"error": true,
+		"comment": "illegal placement: middle dot + middle dot"
+	},
+	{
+		"name": "ꆴꍝꊋꏙꁑꈭꁉ🦤️ꆺꂛꁂꊂꉽꇿꊶꍯ🧏🏽‍♀️𔕾",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Hluw] \"𔕾\"‎ {1457E}"
+	},
+	{
+		"name": "ꎍꄈ･ꌵꅎꐲꅸꐲꂎꀗꑏꌎ𑁁ꌺꄇꑖ󠄀󠆮ꀮꄨꀽꃡ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Brah] \"◌𑁁\"‎ {11041}"
+	},
+	{
+		"name": "ꩍ𑰼꩑ꩍ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ꨋ꩒ꩆ꩗ꨧ𑵲ꨂ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cham] + Restricted[Gong] \"𑵲\"‎ {11D72}"
+	},
+	{
+		"name": "ꨓꨁ󠄠ꨴꩅ꩖ꩀ󠇢ꨌ𑈰",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cham] + Restricted[Khoj] \"◌𑈰\"‎ {11230}"
+	},
+	{
+		"name": "ꨶꨮꨒ🐙️ꨧꨮꩄꩊ꩖ꩀꨋᠽ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ꨣꨢꨑꨭꨗꨟꨄꨉꨴꨇꨬ𑪊ꨊꨂꨪꨅ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cham] + Restricted[Soyo] \"◌𑪊\"‎ {11A8A}"
+	},
+	{
+		"name": "꩘ꨁꨍ᠌ꨲ꩜ꨎꨪꨲ󠅢ꨴꨕ᯲ꨐ꩜ꩃ󠆅ꨔꨪ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cham] + Restricted[Batk] \"◌᯲\"‎ {1BF2}"
+	},
+	{
+		"name": "ꨋꨰꩍꨋꨌꩅ𒑅ꨫꨴꩌꨕꨃꩅꨰꨪ꩒ꨝꨍ꩘ꩅ꩜ꨅ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cham] + Restricted[Xsux] \"𒑅\"‎ {12445}"
+	},
+	{
+		"name": "𐤋ꤹ👨🏻‍❤️‍👨🏼",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Rjng] \"ꤹ\"‎ {A939}"
+	},
+	{
+		"name": "𐤄𐤁󠅄𐤛𐤅𑛉𐤌",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Takr] \"𑛉\"‎ {116C9}"
+	},
+	{
+		"name": "𞋌𐤗𐤑𐤇𐤇𐤅𐤊𐤟𐤓𐤚",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Wcho] + Restricted[Phnx] \"𐤗\"‎ {10917}"
+	},
+	{
+		"name": "𐤛၉𐤉󠄺𐤍󠆿𐤈𐤋𐤒𐤋󠄗𐤂󠄙",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Phnx] + Myanmar \"၉\"‎ {1049}"
+	},
+	{
+		"name": "𐤈𐤛👨🏼‍❤𑵲️‍💋‍👨🏿𐤀𐤉𐤐",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "𐤏𐤛𐤉𐤘𐤔🪑️𐤄𐤗𐤔ླ𐤅𐤄𐤑𐤊𐤃𐤏𐤖󠇋",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Phnx] + Tibetan \"◌ླ\"‎ {FB3}"
+	},
+	{
+		"name": "𐤒𐤉𐤛𐤍𐤚𑊜𐤆𐤟𐤇𐤇𐤎𐤂𐤘𐤙𐤃𐤐𐤆𐤕𐤚𐤒𐤏𐤈",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Phnx] + Restricted[Mult] \"𑊜\"‎ {1129C}"
+	},
+	{
+		"name": "󠆤ඹ𔀪𓑈",
+		"error": true,
+		"comment": "illegal mixture: Sinhala + Restricted[Egyp] \"𔀪\"‎ {1402A}"
+	},
+	{
+		"name": "ೠ𓑀𓑒𓫉𓲽𓵤𔅷",
+		"error": true,
+		"comment": "illegal mixture: Kannada + Restricted[Egyp] \"◌𓑀\"‎ {13440}"
+	},
+	{
+		"name": "𓁞󠆝𓯜𓪛𔀐𓑆𓝮꤆𓰊󠄽",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Egyp] + Restricted[Kali] \"꤆\"‎ {A906}"
+	},
+	{
+		"name": "𓑕𐒤𓑌𓑕𔄞𓑈𓅩𓔯𓑎𓔯𓁋𔎵𓱡",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𓳧😎️𔌆𓺭𓑌𓫡𓂎𔏤𓈢𓑇ࠬ𓯁𓽒𓑓𓩣",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Egyp] + Restricted[Samr] \"◌ࠬ\"‎ {82C}"
+	},
+	{
+		"name": "𓩞𓪸𓏠ᐋ𓒚𓌙𓆮𓑇𓥅𓑒󠅇🪩️🧑‍💻𓑇𓑏𓥉",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"🧑‍💻 + ◌𓑇\""
+	},
+	{
+		"name": "𓴨︂𓯍𓱹𓁍𓘐𓑒𓑊󠄋󠅬𓩪󠅄𓵖𓒣𓆵𓿤𓤀𓐚𓩰𐥐👟️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Egyp] + Restricted[Sidt] \"𐥐\"‎ {10950}"
+	},
+	{
+		"name": "👨🏿‍❤️‍𐍈👨🏽",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "𐰔𐰭𐰸𑐖𐱀𐰰𐰯",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Newa] \"𑐖\"‎ {11416}"
+	},
+	{
+		"name": "𐰰👩🏻‍🎤𐰿𐱀𐰝🎍️𑴿",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"🎍 + ◌𑴿\""
+	},
+	{
+		"name": "𐱇𐰵󠅹𐰓𐰃𐰜𐰡𐰜𐰪𐰛𐰜𐱁ൡ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Orkh] + Malayalam \"ൡ\"‎ {D61}"
+	},
+	{
+		"name": "𐱈🇬🇭𐰑🧑🏾‍❤️‍ו💋‍🧑🏼𐰤",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "𑊖👨🏽‍🏭𐰤𐰞👮🏾‍♀️𐰮𐰵𐰯𐰴𐰱𐰣𐰖",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mult] + Restricted[Orkh] \"𐰤\"‎ {10C24}"
+	},
+	{
+		"name": "𐰎𐰫𑏇❔️𐱆𐰫𐰕𐰯𐱂🇨🇮󠄻︍𐰖𐰽𐱈󠇮󠄕𐰨𐰫𐰾",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Tutg] \"◌𑏇\"‎ {113C7}"
+	},
+	{
+		"name": "󠆒𑂤𒈳👎🏿",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Kthi] + Restricted[Xsux] \"𒈳\"‎ {12233}"
+	},
+	{
+		"name": "𒐫𒄭𒉁☝🏾𔇎🇺🇿",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Egyp] \"𔇎\"‎ {141CE}"
+	},
+	{
+		"name": "♥️𒁐󠇚𒌗𒈝ᛒ👨‍👨‍👧‍👧",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Runr] \"ᛒ\"‎ {16D2}"
+	},
+	{
+		"name": "𒆤𒓏𒔫𒌁𒒱𒔟𑰐𒈃𒆅­𒇾󠇌𒉛",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Bhks] \"𑰐\"‎ {11C10}"
+	},
+	{
+		"name": "𒄴𒆴𒓆𒂓𒇂꠫𒙕𒖋𒓀𒓕𒂞𒉔𒅿𒊽👩‍👩‍👧‍👦",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Sylo] \"꠫\"‎ {A82B}"
 	},
 	{
-		"name": "𐤳𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍♀️𒍿𒄩",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Lydi] + Restricted[Xsux] \"𒀚\"‎ {1201A}"
-	},
-	{
-		"name": "಼𒃅𒇝𒑌𒍷𒃀𒅣🏃🏽‍➡️𒐚𒌽𒃰𒊩𒀂𒓱𒁭",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "🛀🏾𒎓𒓞𒎑𒄮𒒡󠄊𒍻󠆦𐦖𒃟𒊥𒕜𒂞𒑘𒉕𒔘𒌸𒂥𒄺𒌹",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Mero] \"𐦖\"‎ {10996}"
-	},
-	{
-		"name": "ҟᚁᚇᚓ",
-		"error": true,
-		"comment": "illegal mixture: Cyrillic + Restricted[Ogam] \"ᚁ\"‎ {1681}"
-	},
-	{
-		"name": "ᚉᚃᚄ𖼔ᚌᚔ🤎️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Plrd] \"𖼔\"‎ {16F14}"
-	},
-	{
-		"name": "󠄇ᚄᚙ᚜డᚎᚖᚂᚙᚁ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Telugu \"డ\"‎ {C21}"
-	},
-	{
-		"name": "ᚄ᚜᚜ᚅᚇᚘ𖫢󠄅ᚙ💪🏼ᚘᚙ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Bass] \"𖫢\"‎ {16AE2}"
-	},
-	{
-		"name": "ᚕ᚜ᚖᚕ󠅊ᚅ𑎻ᚆᚒᚆᚇᚎᚈᚃᚁᚆ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Tutg] \"◌𑎻\"‎ {113BB}"
-	},
-	{
-		"name": "ᚎᚋᚁᚂ󠇧ᚗᚃꢏᚙᚌᚚᚍ᚛ᚊᚐᚄᚊᚋ💁🏻‍♂️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Saur] \"ꢏ\"‎ {A88F}"
-	},
-	{
-		"name": "ᚋᚂᚃᚔᚗ᚛ᚇ𖭳ᚙᚑᚏᚙᚂᚁ᚛ᚉᚐ🙏️💂🏽‍♀️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Hmng] \"𖭳\"‎ {16B73}"
-	},
-	{
-		"name": "ᜋᛒᜎᜃ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Runr] \"ᛒ\"‎ {16D2}"
-	},
-	{
-		"name": "ᜓ𐠛ᜁᜏ᜕ᜀᜒ",
-		"error": true,
-		"comment": "illegal placement: leading combining mark"
-	},
-	{
-		"name": "ᜉᜃ᜕ᜋ𐬊ᜀ🇮🇳ᜊᜒ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Avst] \"𐬊\"‎ {10B0A}"
-	},
-	{
-		"name": "ᜌ🇱🇷ᜑ󠅯᜕ᜁᜋ᜔ᜁ𛊞ᜎᜋ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Nshu] \"𛊞\"‎ {1B29E}"
-	},
-	{
-		"name": "ᜋᜎᜅ🚣🏾𐏂‍♀️ᜉᜊᜈᜇ᜕᜔ᜇ",
+		"name": "𒀚𒈴𒙴𒊬𒀼𒁔𒄂𒔠🧚🏽‍𑧟♀️𒍿𒄩𒎃𒃅𒇝",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ᜏᜀᜇ᜕ᜊᜑ󠆡ᜈᜇᜑᜆᜍᜐ᜕߃ᜇᜍᜟᜒ",
+		"name": "𒍷𒃀𒅣🏃🏽‍➡️𒐚𒌽𒃰𒊩𒀂ꋤ𒓱𒁭𒂫🛀🏾𒎓𒓞𒎑",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Nkoo] \"߃\"‎ {7C3}"
+		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Yiii] \"ꋤ\"‎ {A2E4}"
 	},
 	{
-		"name": "ᜂ᜕ᜃᜓᜒᜑ󠅶👩🏼‍❤️‍💋‍👨🏾᜔ᜅᜎ𑴿ᜎ",
+		"name": "ᚖ󠄊ᚒ𛊞",
 		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"👩🏼‍❤‍💋‍👨🏾 + ◌᜔\""
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Nshu] \"𛊞\"‎ {1B29E}"
 	},
 	{
-		"name": "🇦🇬𐫲𞀍",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mani] + Restricted[Glag] \"◌𞀍\"‎ {1E00D}"
-	},
-	{
-		"name": "ⱇ𞀞󠅁ⱗⱒ𞀊𞊮",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Glag] + Restricted[Toto] \"◌𞊮\"‎ {1E2AE}"
-	},
-	{
-		"name": "ⱉⱎ🧙🏼‍♂༨️🏇🏽",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Glag] + Tibetan \"༨\"‎ {F28}"
-	},
-	{
-		"name": "ⰞⰝⰍୃ𞀦ⱚ𞀣ⱔⱂⰸ🧙🏾‍♀️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Glag] + Oriya \"◌ୃ\"‎ {B43}"
-	},
-	{
-		"name": "ⰽⱅⰎㆦⰪⱊ𞀗ⱘⱉ᠋Ⱗ󠄚𞀀ⱀⰅⰨ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Glag] + Restricted[Bopo] \"ㆦ\"‎ {31A6}"
-	},
-	{
-		"name": "̃ⰳⱗ𞀂ⰼ󠄨ⱅⱈ🚶🏼‍♀ꡡ️ⰴ👨🏿‍🫯‍👨🏻",
+		"name": "𑓂ᚅᚎᚚᚄᚕᚍ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "󠆭ⰺⱝⰰⱂⱕ̃ⱈⱅⰟ𞀏ⱗᬛⱎⱈⰸⱙⱔ󠆠Ⰵⱋⱎ",
+		"name": "ᚑᚄᚇᚑᚉᚁᚇ𐦖ᚓᚂ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Glag] + Restricted[Bali] \"ᬛ\"‎ {1B1B}"
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Mero] \"𐦖\"‎ {10996}"
 	},
 	{
-		"name": "ղ̄ⴵⵏ",
+		"name": "ꡡᚃᚄᚌᚔ🤎️ᚌ󠄇ᚄᚙ᚜ᚎ",
 		"error": true,
-		"comment": "illegal mixture: Armenian + Restricted[Syrc] \"◌̄\"‎ {304}"
+		"comment": "illegal mixture: Restricted[Phag] + Restricted[Ogam] \"ᚃ\"‎ {1683}"
 	},
 	{
-		"name": "ⵇⵛⵛⵗⵯହⵞ",
+		"name": "ᚂᚙᚁᚃᚄ᚜᚜𖪦ᚅᚇᚘ󠄅ᚙ💪🏼ᚘ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Oriya \"ହ\"‎ {B39}"
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Tnsa] \"𖪦\"‎ {16AA6}"
 	},
 	{
-		"name": "ⵈⴺⴸⴵⴳⴷⵑ̄ⵯ𑈰",
+		"name": "ᚎᚕ᚜ᚖᚕ󠅊ᚅᚆᚒᚆᚇᚎ꤆ᚈᚃᚁᚆ᚛ᚎ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Khoj] \"◌𑈰\"‎ {11230}"
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Kali] \"꤆\"‎ {A906}"
 	},
 	{
-		"name": "ⵯ👬🏼ⵅⵯⴰⵙ̆ⵯⵯࠬⵒⴳ",
+		"name": "ᚁᚂ󠇧ᚗᚃᚙᚌᚚᚍ᚛ᚊᚐ𑄔ᚄᚊᚋ💁🏻‍♂️ᚍ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Samr] \"◌ࠬ\"‎ {82C}"
+		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Cakm] \"𑄔\"‎ {11114}"
 	},
 	{
-		"name": "⵰ⴸⵑ󠆍ⵔ̄ⵅⴶ󠇐ⴳ󠅝ⵯⵛ𞤿ⵃⵂ",
+		"name": "𐩯ᜀᜁᜍ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Sarb] + Restricted[Tglg] \"ᜀ\"‎ {1700}"
+	},
+	{
+		"name": "ᜟᜄচᜐ᜔ᜊ᜕",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tglg] + Bengali \"চ\"‎ {99A}"
+	},
+	{
+		"name": "ᜀ᜕ᜅ𖭳ᜊ🙏️💂🏽‍♀️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Hmng] \"𖭳\"‎ {16B73}"
+	},
+	{
+		"name": "ᜋᜎᠽᜃᜃᜓᜁᜏ᜕ᜀᜒᜊᜉ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Mong] \"ᠽ\"‎ {183D}"
+	},
+	{
+		"name": "𑈰᜕ᜋᜀ🇮🇳ᜊᜒᜉᜌ🇱🇷ᜑ󠅯᜕ᜁ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "᜔ᜁᜎᜋ᜔ᜋᜎᜅ🚣🏾‍♀️𐫲ᜉᜊᜈᜇ᜕",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ᜇᜅᜏᜀᜇ᜕ᜊᜑ󠆡ᜈᜇହᜑᜆᜍᜐ᜕ᜇᜍᜟᜒᜒ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tglg] + Oriya \"ହ\"‎ {B39}"
+	},
+	{
+		"name": "𞀣ⰷ췼Ⱆ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𞀧Ⱊ👩🏼‍❤️‍💋‍𖺆👨🏾",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "ⰾ𞀞𞀠󠄹🇦🇬𞀍𐽳Ⱓⱇ",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"🇦🇬 + ◌𞀍\""
+	},
+	{
+		"name": "󠅁ⱗⱒ𞀊󠇏ⱉⱎ🧙🏼‍♂️Ꭷ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Glag] + Restricted[Cher] \"Ꭷ\"‎ {13A7}"
+	},
+	{
+		"name": "𞀁ⰞⰝୃⰍ𞀦ⱚ𞀣ⱔⱂⰸ🧙🏾‍♀️",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ⰽⱅⰎⰪⱊ𞀗ⱘⱉ᠋𑃡Ⱗ󠄚𞀀ⱀⰅⰨⰺ̃ⰳ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Glag] + Restricted[Sora] \"𑃡\"‎ {110E1}"
+	},
+	{
+		"name": "𞀂𖻓ⰼ󠄨ⱅⱈ🚶🏼‍♀️ⰴ👨🏿‍🫯‍👨🏻𞀟󠆭ⰺ",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "ⴱⵅ撥ⵜ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tfng] + Han \"撥\"‎ {64A5}"
+	},
+	{
+		"name": "ⵌⵉᝂⵯ̆ⵞⵔ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Buhd] \"ᝂ\"‎ {1742}"
+	},
+	{
+		"name": "૫ⴹⵡⵛ󠆠ⵯⵐⵔ̆̄",
+		"error": true,
+		"comment": "illegal mixture: Gujarati + Restricted[Tfng] \"ⴹ\"‎ {2D39}"
+	},
+	{
+		"name": "ⵏⴶⵇઈⵛⵛⵗⵯⵞⵯⵈⴺⴸ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tfng] + Gujarati \"ઈ\"‎ {A88}"
+	},
+	{
+		"name": "ⴳⴷⵑ̄ⵯ󠆊ⵯ👬🏼ⵅⵯⴰⵙ𐭰̆ⵯ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Phli] \"𐭰\"‎ {10B70}"
+	},
+	{
+		"name": "ⵒⴳⵯ⵰ⴸⵑ󠆍ⵔ̄ⵅⴶ󠇐ⴳ󠅝ⵯⵛ𞤿ⵃⵂ",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Adlm] \"𞤿\"‎ {1E93F}"
 	},
 	{
-		"name": "🧎🏾‍♂️‍➡️ⵯⵄⵁⵯⵌⵯ󠆏ⵚ🇲🇩ޒ",
+		"name": "🧎🏾‍♂️‍➡️ⵯⵄⵁⵯⵌⵯ󠆏ⵚ🇲🇩🎅🏽ⵁ𖺆",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Thaana \"ޒ\"‎ {792}"
+		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Medf] \"𖺆\"‎ {16E86}"
 	},
 	{
-		"name": "ⵁ💂‍♀️ⵁⵟ⵰ⵊⵅ🕹️ⵉⴱⵦⵜ👩🏼‍🤝𐬈‍👩🏻",
+		"name": "ꪹꕙꗱ꘩",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tavt] + Restricted[Vaii] \"ꕙ\"‎ {A559}"
+	},
+	{
+		"name": "ꕭ🕹ꥅ️ꖂꔆꘟ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Rjng] \"ꥅ\"‎ {A945}"
+	},
+	{
+		"name": "👩🏼‍🤝‍👩🏻󠅥ేꔵ",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"👩🏼‍🤝‍👩🏻 + ◌ే\""
+	},
+	{
+		"name": "𖩔ꔿꖉꖐꘖꕸꗉ꘩𛲡ꕔꕀ꘨ꘔ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mroo] + Restricted[Vaii] \"ꔿ\"‎ {A53F}"
+	},
+	{
+		"name": "ꖖꗩꘞ꘠ꖠ😙️ꕙꖶꔪꗲꔅླꔓꕬꖯ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Vaii] + Tibetan \"◌ླ\"‎ {FB3}"
+	},
+	{
+		"name": "ꕁꗷꖱ󠆾ꔢꕩꖻꔚꕳᝄ꘢ꖌꕀ👷🏼‍♂️ꗨ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Buhd] \"ᝄ\"‎ {1744}"
+	},
+	{
+		"name": "ꗮ🦆𑠚️︈ꖢꖦꔥꕥꔩꕀꕌ󠇋ꖅꕞ󠄌ꕈꘌꖪꔊꔀꗪ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Dogr] \"𑠚\"‎ {1181A}"
+	},
+	{
+		"name": "󠆜ᥛ𐊸𐊷",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Tale] + Restricted[Cari] \"𐊸\"‎ {102B8}"
+	},
+	{
+		"name": "︌𐊥𐋂🪦️𐊷𑤍",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cari] + Restricted[Diak] \"𑤍\"‎ {1190D}"
+	},
+	{
+		"name": "󠄰🇹🇿➖️𐊰𐍓𐋆🏌🏿‍♀️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cari] + Restricted[Perm] \"𐍓\"‎ {10353}"
+	},
+	{
+		"name": "𐼰𐊳𐊪𐊷𐊸𐋐󠄦󠆇𐊢𐊦🤹‍♂️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Sogd] + Restricted[Cari] \"𐊳\"‎ {102B3}"
+	},
+	{
+		"name": "𐋐𐊯𐊨𐊹𐊮𐊼𐋀𐊷𐊣𐋃𐊰𐋃𐊤𐊭𔇎🧏🏽‍♀️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cari] + Restricted[Egyp] \"𔇎\"‎ {141CE}"
+	},
+	{
+		"name": "𐊴𐋄𐊪󠆍𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄𖵍👨🏾‍🦲𐊹",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cari] + Restricted[Krai] \"𖵍\"‎ {16D4D}"
+	},
+	{
+		"name": "󠅣𐊬🧑🏽‍🌾𐊯𐊡𐋊🚠ᯒ️𐊰𐊽𐊰󠄏𐋉🦸‍♂️𐊿",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Cari] + Restricted[Batk] \"ᯒ\"‎ {1BD2}"
+	},
+	{
+		"name": "𐌅𐌃𐌎١",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Arabic \"١\"‎ {661}"
+	},
+	{
+		"name": "ࠬ󠇧𐌒𐌄☃️𐌁",
+		"error": true,
+		"comment": "illegal placement: leading combining mark"
+	},
+	{
+		"name": "𐌚🧀𐒣️𐌉𐌣𐌑𐌈󠅋💆🏿‍♂️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Restricted[Osma] \"𐒣\"‎ {104A3}"
+	},
+	{
+		"name": "𐌔ꥅ𐌅𐌞🧑🏻‍⚖️𐌕𐌭𐌣𐌐",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Restricted[Rjng] \"ꥅ\"‎ {A945}"
+	},
+	{
+		"name": "𐌘𐌘𐌎𐌛𐌁𐌁𐗧𐌚𐌓𐌠𐌗🧈️𐌅𐌌𐌯",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Restricted[Todr] \"𐗧\"‎ {105E7}"
+	},
+	{
+		"name": "𐌓𐌈𐌈𐌐𐌟󠆛󠇯𐌖𐌞𐌇𐌑𐌝𐌟𐌅ᐂ𐌍𐌘𐌑𐌎",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Restricted[Cans] \"ᐂ\"‎ {1402}"
+	},
+	{
+		"name": "𐌚󠇫𐌠𐌜𐌞𐌈𐌓👷️𒗭𐌕󠇔𐌛𐌚👩🏿‍🤝‍👩🏽𐌄",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Ital] + Restricted[Pcun] \"𒗭\"‎ {125ED}"
+	},
+	{
+		"name": "ճ𐏈𐎬󠄤",
+		"error": true,
+		"comment": "illegal mixture: Armenian + Restricted[Xpeo] \"𐏈\"‎ {103C8}"
+	},
+	{
+		"name": "𐏋𐎰🇲🇲ᮦ𐏌𐎻",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"🇲🇲 + ◌ᮦ\""
+	},
+	{
+		"name": "𐎧𐎭󠇢𐎹𞋌󠅬𐏂𐎦𐎲󠇚",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Wcho] \"𞋌\"‎ {1E2CC}"
+	},
+	{
+		"name": "𐎧𐎧𐏉𐎽𛲠𐎵𐏌𐎮𐏁𐏐𐎸🙇️χ",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xpeo] + Greek \"χ\"‎ {3C7}"
+	},
+	{
+		"name": "𐎳𐎻ࡷ𐏂𐎿𐎮󠅤𐏕𐎩𐏃𐎸𐎵𐏓𐎦💃🏼",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xpeo] + Arabic \"ࡷ\"‎ {877}"
+	},
+	{
+		"name": "𐎮𐏌𐏋𐎨𐎤𐎦𐎥𐎤𐏎󠅘󠇅𐎮𐎤󠅺𐎱𐎧𐎬𐭠𐎶",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Phli] \"𐭠\"‎ {10B60}"
+	},
+	{
+		"name": "𐎷󠆰𐎰𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀️𐎱ⴴ𐏎",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Tfng] \"ⴴ\"‎ {2D34}"
+	},
+	{
+		"name": "𐐷👨🏿‍❤𑂤️‍💋‍👨🏼",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "ꔵ️ꔿ𐕃",
+		"name": "𞛾𐐮𐑂𐐯𐑋𐑉𐑅",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Aghb] \"𐕃\"‎ {10543}"
+		"comment": "illegal mixture: Restricted[Tayo] + Restricted[Dsrt] \"𐐮\"‎ {1042E}"
 	},
 	{
-		"name": "ꖐꘖꕸꗉ𐌣꘩𛲡",
+		"name": "𐑃𐐐𐐰𐒣𐐲𐐉𐐖𐐙𐐰𐑂",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Ital] \"𐌣\"‎ {10323}"
+		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Osma] \"𐒣\"‎ {104A3}"
 	},
 	{
-		"name": "ꕀ꘨ꘔꕟꖖꗩꘞ꘠ꖠᬥ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Bali] \"ᬥ\"‎ {1B25}"
-	},
-	{
-		"name": "ꕙꖶꔪꗲꔅꔓꕬꖯꔕꕁꗷ𑋐ꖱ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Sind] \"𑋐\"‎ {112D0}"
-	},
-	{
-		"name": "ꔢꕩꖻꔚꕳ꘢ꖌꕀ👷🏼‍♂𑋐️ꗨꖔ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Sind] \"𑋐\"‎ {112D0}"
-	},
-	{
-		"name": "🦆️︈ꖢꖦꔥꕥꔩꕀꕌ󠇋🀧ꖅꕞ󠄌ꕈꘌꖪꔊ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Latin \"🀧\"‎ {1F027}"
-	},
-	{
-		"name": "ꗪꖞ󠆜ꖔꖍꖃ︌ꔠꗏ🪦️ꖎ𐍓󠅳󠄰🇹🇿➖️ꕤꗣ🏌🏿‍♀️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Restricted[Perm] \"𐍓\"‎ {10353}"
-	},
-	{
-		"name": "𐊳𐊪𖫢𐊷",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cari] + Restricted[Bass] \"𖫢\"‎ {16AE2}"
-	},
-	{
-		"name": "𐼰𐋐󠄦󠆇𐊢𐊦🤹‍♂️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Sogd] + Restricted[Cari] \"𐋐\"‎ {102D0}"
-	},
-	{
-		"name": "𐋐𐊯𐊨𐊹𐊮𐊼𐋀𐒣𐊷𐊣",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cari] + Restricted[Osma] \"𐒣\"‎ {104A3}"
-	},
-	{
-		"name": "𐊰𐋃ㆦ𐊤𐊭🧏🏽‍♀️𐊫𐊴𐋄",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cari] + Restricted[Bopo] \"ㆦ\"‎ {31A6}"
-	},
-	{
-		"name": "󠆍𐊢𐊠𐊼𐋊𐊹𐋄𐋍𐊽𐋄👨𖵍🏾‍🦲𐊹",
-		"error": true,
-		"comment": "disallowed character: \"🏾\"‎ {1F3FE}"
-	},
-	{
-		"name": "󠅣𐊬🧑🏽‍🌾𐊯𑻬𐊡𐋊🚠️𐊰𐊽𐊰󠄏𐋉🦸‍♂️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cari] + Restricted[Maka] \"𑻬\"‎ {11EEC}"
-	},
-	{
-		"name": "𐊱𐊦𐊤𐊲𐒣󠄌󠇧𐊷𐊥☃️𐊡𐋆𐋁🧀️𐊬𐋌𐊵𐊪󠅋💆🏿‍♂️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Cari] + Restricted[Osma] \"𐒣\"‎ {104A3}"
-	},
-	{
-		"name": "𐌔𐌅𐌞𑪊",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Restricted[Soyo] \"◌𑪊\"‎ {11A8A}"
-	},
-	{
-		"name": "𐌕𐌭𐌣𐌐𘱑𐌞𐌘",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Restricted[Kits] \"𘱑\"‎ {18C51}"
-	},
-	{
-		"name": "𐌎𐌛𐌁𐌁𐌚ޒ𐌓𐌠𐌗🧈️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Thaana \"ޒ\"‎ {792}"
-	},
-	{
-		"name": "𐌌𐌯𐌭𐌓ᛒ𐌈𐌈𐌐𐌟󠆛󠇯𐌖𐌞",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Restricted[Runr] \"ᛒ\"‎ {16D2}"
-	},
-	{
-		"name": "𐌑𐌝𐌟𐌅𐌍𐌘𐌑𐌎𐌆𑰼𐌚󠇫𐌠𐌜𐌞𐌈",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Restricted[Bhks] \"◌𑰼\"‎ {11C3C}"
-	},
-	{
-		"name": "ղ👷️𐌕󠇔𐌛𐌚👩🏿‍🤝‍👩🏽𐌄𐌯𐌜𐌊󠄤",
-		"error": true,
-		"comment": "illegal mixture: Armenian + Restricted[Ital] \"𐌕\"‎ {10315}"
-	},
-	{
-		"name": "𐌟𐌌🇲🇲𐌟𐌕𐌑𐌅𐌊󠇢𐌔󠅬𐌛𐌄𐌎󠇚𐌒𐌅ꧨ𐌅𐌝𐌖",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Myanmar \"ꧨ\"‎ {A9E8}"
-	},
-	{
-		"name": "𐎵𞠑𐏌𐎮",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Mend] \"𞠑\"‎ {1E811}"
-	},
-	{
-		"name": "𐏐𐎸🙇️ࡐ🇨🇻",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Mand] \"ࡐ\"‎ {850}"
-	},
-	{
-		"name": "𐎻𐏂𐎿𖼔𐎮󠅤𐏕𐎩𐏃𐎸",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Plrd] \"𖼔\"‎ {16F14}"
-	},
-	{
-		"name": "𐏓𐎦💃🏼𐎠𐎮𐏌𐏋𐎨ే𐎤𐎦𐎥",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Telugu \"◌ే\"‎ {C47}"
-	},
-	{
-		"name": "𐏎󠅘󠇅𐎮𐎤󠅺𐎱𐎧𐎬𐎶💁🏿𞋯‍♂️",
-		"error": true,
-		"comment": "disallowed character: {200D}"
-	},
-	{
-		"name": "󠆰𐎰᯲𐎡𐎬𐏑𐎯𐎤𐎣𐎻𐎻𐏃𐏎𐎫🧙🏼‍♀️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Batk] \"◌᯲\"‎ {1BF2}"
-	},
-	{
-		"name": "𐏎💆🏾𞛾𐎳👨🏿‍❤️‍💋‍👨🏼𐎿𐎨𐏁𐎩𐏐𐏍𐏈",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Tayo] \"𞛾\"‎ {1E6FE}"
-	},
-	{
-		"name": "ⴴ𐑃𐐐𐐰",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Dsrt] \"𐑃\"‎ {10443}"
-	},
-	{
-		"name": "𐐉𐐖𐐙𞗘𐐰𐑂𐑅",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Onao] \"𞗘\"‎ {1E5D8}"
-	},
-	{
-		"name": "𐐸󠄠𐑅𐐈ᩆ𐐪𐑋🪃️🧚🏽‍♂️",
+		"name": "𐑍𐐸󠄠𐑅ᩆ𐐈𐐪𐑋🪃️🧚🏽‍♂️",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Lana] \"ᩆ\"‎ {1A46}"
 	},
 	{
-		"name": "𐐼𐐻𐐰𐐁𐑊𐐱󠆘𐐼𐫲𐐳🇦🇲𐐓",
+		"name": "𐐼𐐻𐐰𐐁ᥛ𐑊𐐱󠆘𐐼𐐳🇦🇲𐐓𐐚𐑎𐑉",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Mani] \"𐫲\"‎ {10AF2}"
+		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Tale] \"ᥛ\"‎ {195B}"
 	},
 	{
-		"name": "𐑎𐑉𐐺𐐩𐰻𐐣𐐈𐐍𐑂𐐻󠄷𐐨𐐰👨🏿‍🏫",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Orkh] \"𐰻\"‎ {10C3B}"
-	},
-	{
-		"name": "󠅷𐐬𐐸👩🏻‍🤝‍𐓰👨🏼𐐳𐑄𐑁🧛🏿‍♀️",
+		"name": "𐐩𐐣𐐈𐐍𐑂𐐻󠄷𐐨𐐰👨🏿ꕊ‍🏫𐐱󠅷𐐬𐐸👩🏻‍🤝‍👨🏼",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𐐸𐐚𐐗👩🏼‍🔧𐐲𐐪𐐂𐐐𐑄ᮦ𐐽𐐉𐐷𐐼𐐕𐑅𐐶𐐱𐐐",
+		"name": "𐑄𐑁🧛🏿‍♀️𐐸𐐸𐐚𐐗👩🏼‍𒅀🔧𐐲𐐪𐐂𐐐𐑄𐐽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Sund] \"◌ᮦ\"‎ {1BA6}"
+		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𑲫𐦇🧆️",
+		"name": "𑫩𐦌𐦐𐦑",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Pauc] + Restricted[Mero] \"𐦌\"‎ {1098C}"
+	},
+	{
+		"name": "𐦋𑲫𐦇𐦍𐦎𐦇🧆️",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mero] + Restricted[Marc] \"◌𑲫\"‎ {11CAB}"
+	},
+	{
+		"name": "𐦏𐦐𐦂𐦞𐑌𐦑𐦆𐦙𐦈𐦋",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mero] + Restricted[Dsrt] \"𐑌\"‎ {1044C}"
+	},
+	{
+		"name": "𐦑𐦏⁠𐦈𐦛󠆁ᐋ𐦄🥋️𐦘𐦑𐦕",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mero] + Restricted[Cans] \"ᐋ\"‎ {140B}"
+	},
+	{
+		"name": "𐦐𐦎𐦞𐦒𐦗𐦟𐦚𐦚👩🏽‍❤️‍𖺆💋‍👩🏼",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "🌊️🫗️𐦇𐦘𐦏𐦊𐦙📵️𐦙𐦗𐦜𐮋𐦅𐦇𐦁𐦟",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mero] + Restricted[Phlp] \"𐮋\"‎ {10B8B}"
+	},
+	{
+		"name": "󠅘𐦐𐦉𐤧󠆡𐦄𐦘✊🏿𐦖𐦏𐦟𐦅𐦙𐦀𐦝𐦍𐦓𐦝𐦓𐦍𐦘",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Mero] + Restricted[Lydi] \"𐤧\"‎ {10927}"
+	},
+	{
+		"name": "𑁃ꥅ𑀇𑁪",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𐦏𐦐𐦂𐦞𐦑𐑱𐦆",
+		"name": "󠄈𑁍𑁨𑀞𑈾𑀊𑁝",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Restricted[Shaw] \"𐑱\"‎ {10471}"
+		"comment": "illegal mixture: Restricted[Brah] + Restricted[Khoj] \"◌𑈾\"‎ {1123E}"
 	},
 	{
-		"name": "𐦈𐦋ൡ𐦉𐦑𐦏⁠𐦈𐦛󠆁",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Malayalam \"ൡ\"‎ {D61}"
-	},
-	{
-		"name": "🥋️𐦘𑃡𐦑𐦕𐦅𐦐𐦎𐦞𐦒𐦗𐦟",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Restricted[Sora] \"𑃡\"‎ {110E1}"
-	},
-	{
-		"name": "𐦚👩🏽‍❤️‍💋‍👩🏼𐦕🌊𐰿️🫗️",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Restricted[Orkh] \"𐰿\"‎ {10C3F}"
-	},
-	{
-		"name": "𐦘𐦏𐦊𐦙📵️𐦙𐦗ጅ𐦜𐦅𐦇𐦁𐦟𐦘󠅘𐦐𐦉󠆡",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Ethiopic \"ጅ\"‎ {1305}"
-	},
-	{
-		"name": "𐦘✊🏿𐦖𐦏𐦟𐦅𐦙𐦀𐦝𐦍𐦓𐦝𐦓𐦍𐦘𐦔𐦔𐦁ඇ𐦝𐦙",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Mero] + Sinhala \"ඇ\"‎ {D87}"
-	},
-	{
-		"name": "𑁍ਛ𑁨𑀞",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Brah] + Gurmukhi \"ਛ\"‎ {A1B}"
-	},
-	{
-		"name": "𑁝𑁂𑀚𑀹𑫏𑀔𑀔",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Brah] + Restricted[Pauc] \"𑫏\"‎ {11ACF}"
-	},
-	{
-		"name": "🧕🏼𑀸𑀆𑁣𐾲𑁰𑀵𑁔𑀈",
+		"name": "𑀚𐼣𑀹𑀔𑀔𑁅🧕🏼𑀸𑀆",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🧕🏼 + ◌𑀸\""
 	},
 	{
-		"name": "𑀧𑁿󠅦𑀏𑁠𑀳𑁠𑀶ᤪ𑀈𑁋👎🏾",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Brah] + Restricted[Limb] \"◌ᤪ\"‎ {192A}"
-	},
-	{
-		"name": "𑁃𑁣𑀛𑁵𑀭𑀌𑀨𑁍𑁩𑀄𐣦𑁣𑁮𑀀𑀖𑀙",
+		"name": "𑁰𑀵𑁔𑀈𑀱𑶀𑀧𑁿󠅦𑀏𑁠𑀳𑁠",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑀂𑀇𑀈𑀜𑁂𑪊𑀞󠇋𑀲𑀃🧑🏽‍🐰‍🧑🏼𑀾𑀌",
+		"name": "𑀈𑁋𐼹👎🏾𑀹𑁃𑁣𑀛𑁵𑀭𑀌𑀨𑁍𑁩𑀄",
+		"error": true,
+		"comment": "illegal placement: emoji + combining mark: \"👎🏾 + ◌𑀹\""
+	},
+	{
+		"name": "𑁮𑀀𑀖𑀙𑁉𑀂𑀇𑀈𑀜𑁂𑀞󠇋𑀲𑀃🧑🏽𖼔‍🐰‍🧑🏼",
+		"error": true,
+		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "𑀌𑁤𑁩𑁫𑀦𑀡󠇘ڥ𑀜𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Brah] + Arabic \"ڥ\"‎ {6A5}"
+	},
+	{
+		"name": "𑵑𑴛𑤍𑴔",
+		"error": true,
+		"comment": "illegal mixture: Restricted[Gonm] + Restricted[Diak] \"𑤍\"‎ {1190D}"
+	},
+	{
+		"name": "𑴶𑴳󠄸𑴉𑴶ິ𑴒",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑁩𑁫𑀦𑀡󠇘𑀜ꠒ𑀕𑁕𑁞𑀔𑀤𑀵𑀭𑁖𑀠𑁌𑁟𑁊𑁅𑀃𑁦",
+		"name": "𑂤𑴼𑴤𑴍𑵅𑴿𑴳𑵀𑴨𑴏",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Brah] + Restricted[Sylo] \"ꠒ\"‎ {A812}"
+		"comment": "illegal mixture: Restricted[Kthi] + Restricted[Gonm] \"◌𑴼\"‎ {11D3C}"
 	},
 	{
-		"name": "𑴔𑴿𑴶ܽ",
+		"name": "𑵅𑵔󠅽𑴅𑴳🤛𑨾🏻🧏‍♀️𑵀",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Gonm] + Restricted[Syrc] \"◌ܽ\"‎ {73D}"
+		"comment": "disallowed character: \"🏻\"‎ {1F3FB}"
 	},
 	{
-		"name": "󠄸𖭳𑴉𑴶𑴒𑴲𑴼",
+		"name": "𑴭𑴳𑴴📁️𑴶𑴔𑴩٠𑵅𑴨𑴆𑴕𑵅𑴰𑴟",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Hmng] + Restricted[Gonm] \"𑴉\"‎ {11D09}"
+		"comment": "illegal placement: emoji + combining mark: \"📁 + ◌𑴶\""
 	},
 	{
-		"name": "𑣄𑴍𑵅𑴿𑴳𑵀𑴨𑴏𑴦𑵅",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Wara] + Restricted[Gonm] \"𑴍\"‎ {11D0D}"
-	},
-	{
-		"name": "󠅽𑴅𑴳🤛🏻🧏‍♀ܽ️𑵀𑵔𑴭",
-		"error": true,
-		"comment": "illegal placement: emoji + combining mark: \"🧏‍♀ + ◌ܽ\""
-	},
-	{
-		"name": "𑴴📁️𑴶𑴔𑴩𑵅ൡ𑴨𑴆𑴕𑵅𑴰𑴟𑵔𑴺",
+		"name": "𑴺𑴈𑵅𑴍𑴆󠅙󠄻𑌈𑴛𑴪𑴿𑵒𑴕𑴙𑴝𑵅𑴛𑴝𑵇",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑵅𑴍𑴆󠅙󠄻𑴛𑴪𑴿𑵒𑴕𑴙𑴝𑵅𑴛ᥛ𑴝𑵇𑴣𑴒",
+		"name": "𑴒𑴼𐍰𑵓󠄇𑴅𑴂𑴿𑴂📤️𑴀𑴖𑵐𑴃𑴉𑴡𑴔󠆅𑴖𑵘🦮️",
 		"error": true,
-		"comment": "illegal placement: leading combining mark"
+		"comment": "illegal mixture: Restricted[Gonm] + Restricted[Perm] \"𐍰\"‎ {10370}"
 	},
 	{
-		"name": "𑵓󠄇𑴅𑴂𑴿𑴂📤️𑴀𑴖𞗘𑵐𑴃𑴉𑴡𑴔󠆅𑴖𑵘🦮️𑴭",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Gonm] + Restricted[Onao] \"𞗘\"‎ {1E5D8}"
-	},
-	{
-		"name": "𖢅🏃🏿‍➡𐢑️",
+		"name": "𖨋𖢅🏃🏿‍➡𐢑️",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Bamu] + Restricted[Nbat] \"𐢑\"‎ {10891}"
 	},
@@ -181635,9 +181739,9 @@
 		"comment": "illegal mixture: Restricted[Java] + Restricted[Gonm] \"𑴂\"‎ {11D02}"
 	},
 	{
-		"name": "ꦛช꧌ꦕꦚꦗꦲꦶ꧄꧀꧄꧕ꦌ",
+		"name": "ꦛซ꧌ꦕꦚꦗꦲꦶ꧄꧀꧄꧕ꦌ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Java] + Thai \"ช\"‎ {E0A}"
+		"comment": "illegal mixture: Restricted[Java] + Thai \"ซ\"‎ {E0B}"
 	},
 	{
 		"name": "ꦁꦻꦧꦝꦲꦰꦣꦀ𐢑ꦇꦲꦒꦍꦜꦘꦴ",
@@ -181969,9 +182073,9 @@
 		"comment": "illegal mixture: Restricted[Lisu] + Restricted[Bhks] \"𑰐\"‎ {11C10}"
 	},
 	{
-		"name": "࡞ࡂࡀบ",
+		"name": "࡞ࡂࡀป",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Mand] + Thai \"บ\"‎ {E1A}"
+		"comment": "illegal mixture: Restricted[Mand] + Thai \"ป\"‎ {E1B}"
 	},
 	{
 		"name": "ࡖࡕࡕ࡛ࡎᐂࡐ",
@@ -182039,9 +182143,9 @@
 		"comment": "illegal mixture: Restricted[Mtei] + Restricted[Hung] \"𐳬\"‎ {10CEC}"
 	},
 	{
-		"name": "𑐦𑑡ׂ𑐃",
+		"name": "𑐦𑑡ׄ𑐃",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Newa] + Hebrew \"◌ׂ\"‎ {5C2}"
+		"comment": "illegal mixture: Restricted[Newa] + Hebrew \"◌ׄ\"‎ {5C4}"
 	},
 	{
 		"name": "𑐋𑐄𑐓👩𑊖🏾‍🔧",
@@ -182554,9 +182658,9 @@
 		"comment": "illegal mixture: Restricted[Avst] + Restricted[Java] \"ꦤ\"‎ {A9A4}"
 	},
 	{
-		"name": "𐬝𐬖𐬍󠇍𐬹𐬳󠇡🤝🏾𐬻𐬿𐬱𐬰𐬾𐬯𐬀𐬗𐬹ׂ",
+		"name": "𐬝𐬖𐬍󠇍𐬹𐬳󠇡🤝🏾𐬻𐬿𐬱𐬰𐬾𐬯𐬀𐬗𐬹ׄ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Avst] + Hebrew \"◌ׂ\"‎ {5C2}"
+		"comment": "illegal mixture: Restricted[Avst] + Hebrew \"◌ׄ\"‎ {5C4}"
 	},
 	{
 		"name": "𐬒ꪄ𐬂𐬢𐬧𐬖𐬱👲🏽󠅠𐬜𐬣𐬿󠄎𐬘♂️𐬡︋𐬅𐬦𐬕",
@@ -182724,9 +182828,9 @@
 		"comment": "illegal mixture: Restricted[Chrs] + Arabic \"ڥ\"‎ {6A5}"
 	},
 	{
-		"name": "𐾿𐿂ช𐿆𐾹𐿃󠆜🕡️𐾹𐾶𐾻𐾹𐾳𐿊𐾷",
+		"name": "𐾿𐿂ซ𐿆𐾹𐿃󠆜🕡️𐾹𐾶𐾻𐾹𐾳𐿊𐾷",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Chrs] + Thai \"ช\"‎ {E0A}"
+		"comment": "illegal mixture: Restricted[Chrs] + Thai \"ซ\"‎ {E0B}"
 	},
 	{
 		"name": "߃󠆫𐾷󠇤🦪️𐾼𐾺𐾵🧑‍🔬𐿀𐿄𐾲𐿃𐾺𐿄𐾲",
@@ -183453,9 +183557,9 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𐊙𐊒𐊐𐊄𐊇𐊋𐊊𐊗𐊀ช𐊑𐊈𐊈",
+		"name": "𐊙𐊒𐊐𐊄𐊇𐊋𐊊𐊗𐊀ซ𐊑𐊈𐊈",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Lyci] + Thai \"ช\"‎ {E0A}"
+		"comment": "illegal mixture: Restricted[Lyci] + Thai \"ซ\"‎ {E0B}"
 	},
 	{
 		"name": "𐊆ହ𐊌𐊇𐊃𐊆𐊅𐊛𐊎𐊅𐊍𐊎𐊎𐊇𐊗𐊂",
@@ -183693,7 +183797,7 @@
 		"comment": "illegal mixture: Restricted[Java] + Restricted[Mend] \"◌𞣑\"‎ {1E8D1}"
 	},
 	{
-		"name": "ൔ𞣔𞣐𞡹𞠋𞡅𞠴𞣕𞣐𞣓",
+		"name": "ൕ𞣔𞣐𞡹𞠋𞡅𞠴𞣕𞣐𞣓",
 		"error": true,
 		"comment": "illegal mixture: Malayalam + Restricted[Mend] \"◌𞣔\"‎ {1E8D4}"
 	},
@@ -183768,7 +183872,7 @@
 		"comment": "illegal mixture: Restricted[Modi] + Restricted[Tnsa] \"𖪟\"‎ {16A9F}"
 	},
 	{
-		"name": "𑘇𑙄𑙕𛲣պ󠄆𑘗🚙️𑘹𑘴𑘭𑘫",
+		"name": "𑘇𑙄𑙕𛲣ջ󠄆𑘗🚙️𑘹𑘴𑘭𑘫",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"🚙 + ◌𑘹\""
 	},
@@ -184022,7 +184126,7 @@
 		"comment": "illegal mixture: Restricted[Osma] + Restricted[Berf] \"𖻃\"‎ {16EC3}"
 	},
 	{
-		"name": "⁠𐒖𐒎𐒂𐒆𐒋𐒁🧔🏿ה‍♂️𐒎𐒅𐒤𐒆👩🏽‍✈️",
+		"name": "⁠𐒖𐒎𐒂𐒆𐒋𐒁🧔🏿ו‍♂️𐒎𐒅𐒤𐒆👩🏽‍✈️",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
@@ -184147,9 +184251,9 @@
 		"comment": "illegal placement: emoji + combining mark: \"🧈 + ◌𑜤\""
 	},
 	{
-		"name": "𐍴🎟️ה𐍦𐍷𐍜𐍙𐍛👩🏼‍❤️‍👨🏻",
+		"name": "𐍴🎟️ו𐍦𐍷𐍜𐍙𐍛👩🏼‍❤️‍👨🏻",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Perm] + Hebrew \"ה\"‎ {5D4}"
+		"comment": "illegal mixture: Restricted[Perm] + Hebrew \"ו\"‎ {5D5}"
 	},
 	{
 		"name": "𐍝𖺆𐍛𐍒𐍗𐍗𐍶𐍬𐍓𐍹𐍗𐍟𐍸",
@@ -184307,9 +184411,9 @@
 		"comment": "illegal mixture: Restricted[Prti] + Bengali \"প\"‎ {9AA}"
 	},
 	{
-		"name": "𐭅𐭔𐭁𐭓𐭟𐭀󠆷𐭐𐭌𐭉𐭉𐭂𐭝𐭐𐭇󠇧𐭓𐭇𐭅𐭉𐭄ׂ",
+		"name": "𐭅𐭔𐭁𐭓𐭟𐭀󠆷𐭐𐭌𐭉𐭉𐭂𐭝𐭐𐭇󠇧𐭓𐭇𐭅𐭉𐭄ׄ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Prti] + Hebrew \"◌ׂ\"‎ {5C2}"
+		"comment": "illegal mixture: Restricted[Prti] + Hebrew \"◌ׄ\"‎ {5C4}"
 	},
 	{
 		"name": "ꥃꤴꪹꤶ",
@@ -184975,9 +185079,9 @@
 		"comment": "illegal mixture: Restricted[Vith] + Restricted[Rjng] \"ꥅ\"‎ {A945}"
 	},
 	{
-		"name": "𑣎𑢺󠄌บ",
+		"name": "𑣎𑢺󠄌ป",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Wara] + Thai \"บ\"‎ {E1A}"
+		"comment": "illegal mixture: Restricted[Wara] + Thai \"ป\"‎ {E1B}"
 	},
 	{
 		"name": "𑢿🕵🏻‍♂߃️",
@@ -185040,9 +185144,9 @@
 		"comment": "illegal mixture: Restricted[Yezi] + Restricted[Mend] \"𞠌\"‎ {1E80C}"
 	},
 	{
-		"name": "𐺰𐺋𐺬𐺂٢𐺙𐺫𐺂۲𐺝𐺛𐺃𐺡บ𐺖٠۷𐺓𐺫۰𐺙۳",
+		"name": "𐺰𐺋𐺬𐺂٢𐺙𐺫𐺂۲𐺝𐺛𐺃𐺡ป𐺖٠۷𐺓𐺫۰𐺙۳",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Yezi] + Thai \"บ\"‎ {E1A}"
+		"comment": "illegal mixture: Restricted[Yezi] + Thai \"ป\"‎ {E1B}"
 	},
 	{
 		"name": "ꥅ𑨗𑩆𑨚",
@@ -185195,9 +185299,9 @@
 		"comment": "illegal mixture: Restricted[Onao] + Restricted[Seal] \"𾹈\"‎ {3EE48}"
 	},
 	{
-		"name": "𞗲𞗭𞗱𞗨ղ𛲠𞗧𞗪𞗐𞗳",
+		"name": "𞗲𞗭𞗱𞗨ճ𛲠𞗧𞗪𞗐𞗳",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Onao] + Armenian \"ղ\"‎ {572}"
+		"comment": "illegal mixture: Restricted[Onao] + Armenian \"ճ\"‎ {573}"
 	},
 	{
 		"name": "🐑️𞗤𞗜𐢑𞗴𞗰𞗔𞗶𞗠𞗮𞗒𞗨",
@@ -185300,9 +185404,9 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑎈𑎲𑎥󠅩ൔ𑎘𑏑𑎅𑎎​",
+		"name": "𑎈𑎲𑎥󠅩ൕ𑎘𑏑𑎅𑎎​",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tutg] + Malayalam \"ൔ\"‎ {D54}"
+		"comment": "illegal mixture: Restricted[Tutg] + Malayalam \"ൕ\"‎ {D55}"
 	},
 	{
 		"name": "👃🏿ࡒ೩𑏇𑏐𑏑𑎢𑎡𑎵𑎓𑎽𑎸",
@@ -185335,9 +185439,9 @@
 		"comment": "illegal mixture: Restricted[Berf] + Restricted[Phag] \"ꡡ\"‎ {A861}"
 	},
 	{
-		"name": "󠄰𖺽𖻇𖺲𖺼𖻓𖻁𖻒𖻊บ",
+		"name": "󠄰𖺽𖻇𖺲𖺼𖻓𖻁𖻒𖻊ป",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Berf] + Thai \"บ\"‎ {E1A}"
+		"comment": "illegal mixture: Restricted[Berf] + Thai \"ป\"‎ {E1B}"
 	},
 	{
 		"name": "𐬈𖺸󠆘︄𖺯😆️𖻑𖺸𖻏𖺽𖺽𖻋",

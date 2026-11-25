@@ -13217,11 +13217,16 @@ Removed Valid: 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
 Removed Valid: 2E (.) FULL STOP
 ==== Apply ScriptExt ====
 3BE (ξ) GREEK SMALL LETTER XI [Grek => Zyyy]
+303 (◌̃) COMBINING TILDE [Glag,Latn,Sunu,Syrc,Thai => Glag,Latn,Sunu,Syrc]
+307 (◌̇) COMBINING DOT ABOVE [Copt,Dupl,Hebr,Latn,Perm,Syrc,Tale,Tfng,Todr => Copt,Dupl,Latn,Perm,Syrc,Tale,Tfng,Todr]
+308 (◌̈) COMBINING DIAERESIS [Armn,Cyrl,Dupl,Goth,Grek,Hebr,Latn,Perm,Syrc,Tale,Tfng => Cyrl,Dupl,Goth,Grek,Latn,Perm,Syrc,Tale,Tfng]
+B83 (ஃ) TAMIL SIGN VISARGA [Knda,Mlym,Taml,Telu => Taml]
 ==== Create Groups ====
 Disallowed Script: [Brai] Braille
 Disallowed Script: [Lina] Linear A [X]
 Disallowed Script: [Linb] Linear B [X]
 Disallowed Script: [Sgnw] SignWriting [X]
+[✓] UAX-31 script kinds
 Valid  | Name       | Test      | Rest      | Extra                     
 103072 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
 114389 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
@@ -13231,8 +13236,8 @@ Valid  | Name       | Test      | Rest      | Extra
    827 | Greek      | Grek      | Zyyy+Zinh |                           
    438 | Arabic     | Arab      |           | -                         
    108 | Devanagari | Deva      |           |                           
-    86 | Hebrew     | Hebr      |           | ₪                         
-    84 | Thai       | Thai      |           | ฿                         
+    84 | Hebrew     | Hebr      |           | ₪                         
+    83 | Thai       | Thai      |           | ฿                         
     90 | Bengali    | Beng      |           |                           
     61 | Thaana     | Thaa      |           |                           
     73 | Gurmukhi   | Guru      |           |                           
@@ -13241,15 +13246,15 @@ Valid  | Name       | Test      | Rest      | Extra
     89 | Oriya      | Orya      |           |                           
    111 | Sinhala    | Sinh      |           |                           
     90 | Gujarati   | Gujr      |           |                           
-    97 | Telugu     | Telu      |           |                           
-    91 | Kannada    | Knda      |           |                           
-   114 | Malayalam  | Mlym      |           |                           
+    96 | Telugu     | Telu      |           |                           
+    90 | Kannada    | Knda      |           |                           
+   113 | Malayalam  | Mlym      |           |                           
     80 | Lao        | Laoo      |           |                           
     41 | Georgian   | Geor      |           |                           
    230 | Myanmar    | Mymr      |           |                           
    504 | Ethiopic   | Ethi      |           |                           
    132 | Khmer      | Khmr      |           |                           
-    43 | Armenian   | Armn      |           |                           
+    42 | Armenian   | Armn      |           |                           
     52 | Adlm [R]   | Adlm      |           |                           
     90 | Bali [R]   | Bali      |           |                           
    654 | Bamu [R]   | Bamu      |           |                           
@@ -13866,10 +13871,11 @@ Unresolved: [Hebrew] 59A (◌֚) HEBREW ACCENT YETIV vs 5A4 (◌֤) HEBREW ACCEN
 Unresolved: [Hebrew] 59C (◌֜) HEBREW ACCENT GERESH vs 59D (◌֝) HEBREW ACCENT GERESH MUQDAM
 Unresolved: [Syrc] 64E (◌َ) ARABIC FATHA vs 747 (◌݇) SYRIAC OBLIQUE LINE ABOVE
 Unresolved: [Syrc] 652 (◌ْ) ARABIC SUKUN vs 30A (◌̊) COMBINING RING ABOVE
+Auto-Override: 8EB (◌࣫) ARABIC TONE TWO DOTS ABOVE [Arabic vs Syrc,Tale,Tfng,Dupl,Goth,Perm,Nkoo]
 Unresolved: [Arabic] 64B (◌ً) ARABIC FATHATAN vs 8F0 (◌ࣰ) ARABIC OPEN FATHATAN
-Unresolved: [Syrc] 653 (◌ٓ) ARABIC MADDAH ABOVE vs 303 (◌̃) COMBINING TILDE
-Unresolved: [Hebrew] 5B9 (◌ֹ) HEBREW POINT HOLAM vs 5BA (◌ֺ) HEBREW POINT HOLAM HASER FOR VAV vs 5C1 (◌ׁ) HEBREW POINT SHIN DOT vs 5C2 (◌ׂ) HEBREW POINT SIN DOT vs 5C4 (◌ׄ) HEBREW MARK UPPER DOT vs 307 (◌̇) COMBINING DOT ABOVE
+Auto-Override: 653 (◌ٓ) ARABIC MADDAH ABOVE [Arabic,Syrc vs Glag,Sunu]
 Unresolved: [Syrc] 741 (◌݁) SYRIAC QUSHSHAYA vs 307 (◌̇) COMBINING DOT ABOVE
+Unresolved: [Hebrew] 5B9 (◌ֹ) HEBREW POINT HOLAM vs 5BA (◌ֺ) HEBREW POINT HOLAM HASER FOR VAV vs 5C1 (◌ׁ) HEBREW POINT SHIN DOT vs 5C2 (◌ׂ) HEBREW POINT SIN DOT vs 5C4 (◌ׄ) HEBREW MARK UPPER DOT
 Unresolved: [Arabic] 6EC (◌۬) ARABIC ROUNDED HIGH STOP WITH FILLED CENTRE vs 8EA (◌࣪) ARABIC TONE ONE DOT ABOVE
 Unresolved: [Copt,Goth] 304 (◌̄) COMBINING MACRON vs 305 (◌̅) COMBINING OVERLINE
 Unresolved: [Arabic] 64C (◌ٌ) ARABIC DAMMATAN vs 8E5 (◌ࣥ) ARABIC CURLY DAMMA vs 8E8 (◌ࣨ) ARABIC CURLY DAMMATAN vs 8F1 (◌ࣱ) ARABIC OPEN DAMMATAN
@@ -17064,13 +17070,13 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
 Valid: 155565
-Multi: 103052
-Unique: 52513
+Multi: 103051
+Unique: 52514
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
-Confusable: 1192
-Not Confusable: 121
-Non-Confusable Non-Unique: 52
+Confusable: 1190
+Not Confusable: 123
+Non-Confusable Non-Unique: 53
 ==== Compress Wholes ====
 ==== Compress Groups ====
 ==== Order Groups ====
@@ -17085,27 +17091,27 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
   5 | 114388 | 11526 |  11528 | 102860 | 0/0  | Korean    
   6 | 103069 |   207 |    209 | 102860 | 0/58 | Japanese  
   7 |    812 |   102 |    102 |    710 | 0/8  | Cyrillic  
-  8 |     86 |    83 |     85 |      1 |      | Hebrew    
-  9 |     84 |    82 |     83 |      1 |      | Thai      
+  8 |     84 |    83 |     83 |      1 |      | Hebrew    
+  9 |     83 |    82 |     82 |      1 |      | Thai      
  10 |     90 |    80 |     90 |      0 |      | Bengali   
- 11 |    125 |   103 |    125 |      0 |      | Tamil     
+ 11 |    125 |   104 |    125 |      0 |      | Tamil     
  12 |    745 |    34 |     35 |    710 | 0/11 | Greek     
  13 |    167 |   167 |    167 |      0 |      | Tibetan   
  14 |     73 |    63 |     73 |      0 |      | Gurmukhi  
  15 |     80 |    80 |     80 |      0 |      | Lao       
- 16 |     97 |    96 |     97 |      0 |      | Telugu    
+ 16 |     96 |    96 |     96 |      0 |      | Telugu    
  17 |    229 |   219 |    229 |      0 |      | Myanmar   
  18 |     90 |    80 |     90 |      0 |      | Gujarati  
  19 |     41 |    41 |     41 |      0 |      | Georgian  
- 20 |     43 |    42 |     43 |      0 |      | Armenian  
+ 20 |     42 |    42 |     42 |      0 |      | Armenian  
  21 |    132 |   132 |    132 |      0 |      | Khmer     
- 22 |     91 |    80 |     91 |      0 |      | Kannada   
- 23 |    114 |   113 |    114 |      0 |      | Malayalam 
+ 22 |     90 |    80 |     90 |      0 |      | Kannada   
+ 23 |    113 |   113 |    113 |      0 |      | Malayalam 
  24 |    504 |   504 |    504 |      0 |      | Ethiopic  
  25 |    111 |   111 |    111 |      0 |      | Sinhala   
  26 |     89 |    89 |     89 |      0 |      | Oriya     
  27 |     61 |    50 |     61 |      0 |      | Thaana    
- 28 |     91 |    75 |     91 |      0 |      | Syrc      
+ 28 |     90 |    75 |     90 |      0 |      | Syrc      
  29 |     54 |    54 |     54 |      0 |      | Nkoo      
  30 |     92 |    86 |     92 |      0 |      | Cher      
  31 |    722 |   722 |    722 |      0 |      | Cans      
