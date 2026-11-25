@@ -1,17 +1,8 @@
 // Types for the hand-maintained rule files in /rules, and a loader that bundles them.
 
+import type {ConfuseRules} from './confuse.ts';
 import type {Rule} from './select.ts';
 import type {CodePoint} from './utils.ts';
-
-export const CONFUSE_TYPE_ALLOW = 'allow';
-export const CONFUSE_TYPE_VALID = 'primary';
-export type ConfuseType = typeof CONFUSE_TYPE_ALLOW | typeof CONFUSE_TYPE_VALID;
-export interface ConfuseDef {
-	cp: CodePoint;
-	type?: ConfuseType;
-}
-/** [target hex, member, member, ...] */
-export type ConfuseGroup = [target: string, ...members: (CodePoint | ConfuseDef)[]];
 
 export interface ScriptGroupConfig {
 	name: string;
@@ -39,8 +30,7 @@ export interface Rules {
 	charsFenced: [CodePoint, string][];
 	groupOrder: string[];
 	cmWhitelist: string[];
-	confuseGroups: ConfuseGroup[];
-	confuseDefaultAllow: boolean;
+	confuse: ConfuseRules;
 	emojiDemoted: CodePoint[];
 	emojiDisabled: CodePoint[];
 	emojiSeqWhitelist: EmojiWhitelistEntry[];
@@ -78,8 +68,7 @@ export async function loadRules(): Promise<Rules> {
 		charsFenced: fenced.default,
 		groupOrder: order.default,
 		cmWhitelist: cm.CM_WHITELIST,
-		confuseGroups: confuse.CONFUSE_GROUPS,
-		confuseDefaultAllow: confuse.CONFUSE_DEFAULT_ALLOW,
+		confuse: confuse.default,
 		emojiDemoted: emoji.EMOJI_DEMOTED,
 		emojiDisabled: emoji.EMOJI_DISABLED,
 		emojiSeqWhitelist: emoji.EMOJI_SEQ_WHITELIST,

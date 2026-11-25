@@ -188,4 +188,12 @@ export default [
 	{name: 'ա\u{308}', error: true, comment: 'Script_Extensions: Armenian + COMBINING DIAERESIS'},
 	{name: 'ஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Tamil'},
 	{name: 'కஃ', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)'},
+
+	// confusables synced with Unicode 18 (rules/confuse.ts): registered names stay valid
+	{name: 'бот', comment: 'Confusable: Cyrillic word vs new Coptic lookalikes'},
+	{name: 'сша', comment: 'Confusable: Unicode 18 moved ш into the w set (restored)'},
+	{name: 'ㅇㅇㅇ', norm: 'ᄋᄋᄋ', comment: 'Confusable: Hangul ieung vs o'},
+	{name: 'ㄐㄐㄐ', comment: 'Confusable: Bopomofo ㄐ vs Han 丩 (split)'},
+	{name: 'оо', error: true, comment: 'Confusable: Cyrillic oo is still whole-script confusable with Latin'},
+	{name: 'ꓳ', error: true, comment: 'Confusable: Lisu o-lookalike alone'},
 ] satisfies TestCase[];

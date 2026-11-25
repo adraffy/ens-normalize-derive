@@ -85,7 +85,7 @@ Restore the checkout's own data afterwards with `bun run download` there.
 3. **Characters**: [chars-mapped](rules/chars-mapped.ts), [chars-ignored](rules/chars-ignored.ts), [chars-valid](rules/chars-valid.ts) are added, then the [disallow rules](rules/disallow/) are removed.
 4. **Script groups** ([rules/scripts.ts](rules/scripts.ts)): each valid char joins every group whose test/rest scripts cover its script extensions. Limited Use and Excluded scripts become single-script _restricted_ groups.
 5. **Combining marks**: Latin-like and CJK groups only allow the sequences in [rules/cm.ts](rules/cm.ts). Other groups drop chars that decompose into duplicate NSMs.
-6. **Confusables** ([rules/confuse.ts](rules/confuse.ts), built from `confusables.txt`): per group, a confusable is removed, kept (`primary`), or kept but whole-script checked (`allow`). This produces `wholes`.
+6. **Confusables** ([src/confuse.ts](src/confuse.ts): `confusables.txt` edited by [rules/confuse.ts](rules/confuse.ts)): per group, a confusable is removed, kept (`primary`), or kept but whole-script checked (`allow`). This produces `wholes`.
 7. Leftovers are pruned and invariants asserted, then the payloads are written.
 
 `output/log.txt` records every decision and is committed, so rule changes show up as a readable diff. Its **Review: New in X** section lists every character new in the current Unicode version that ended up valid.
@@ -107,6 +107,7 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 
 - [rules/disallow/](rules/disallow/): one file per area (latin, phonetic, symbols, math-arrows, music, cjk, scripts, …), one entry per block. A block that is mostly disallowed is written as `{block, except}`, so characters Unicode adds to it later are disallowed automatically.
 - [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable.
+- [rules/confuse.ts](rules/confuse.ts): edits over Unicode's `confusables.txt`, which is read live. `primary`/`allow` decide members; `split`/`join` reshape sets. [output/confusables.txt](output/confusables.txt) shows every resulting set and what happened to each member.
 - [rules/chars-escape.ts](rules/chars-escape.ts): derived from properties (it replaced the hand list and `unprintables`).
 - [rules/scripts.ts](rules/scripts.ts) `SCRIPT_EXTENSIONS`: replace a character's Script_Extensions (`[cp, ['Zyyy']]`) or remove scripts from it (`[cp, {remove: ['Hebr']}]`). Derive checks that removed scripts are actually present, and checks the script lists against UAX-31.
 - [rules/reports.ts](rules/reports.ts): the revisions of the Unicode reports whose text defines behavior (UAX-15/24/31, UTS-39/46/51) that have been read. `data/unicode/<v>/reports.json` records each release's revisions; derive and `bun run review` flag newer ones.

@@ -18,6 +18,32 @@ Decided or done since the first review:
 - **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
 - **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
 
+## Confusables sync (2026-11-25)
+
+`rules/confuse.ts` was a hand-edited copy of Unicode 15.0's `confusables.txt`: 21,463 lines, 3,289 groups. 957 groups had no live members and 1,825 had exactly one. Only about 500 sets did anything, and the file was never updated for 16–18.
+
+It's now **181 lines of edits over live data**. Derive reads `data/unicode/<v>/confusables.txt` and applies:
+
+- `primary` 69 and `allow` 18: your decisions.
+- `split` 32: pull characters out of their Unicode set.
+- `join` 51: merge sets.
+- `defaultAllow`.
+
+`output/confusables.txt` (generated, committed) shows every set with 2+ members in groups and what happened to each member.
+
+How it was migrated:
+
+1. The hand edits were extracted relative to 15.0 (2 splits, 41 joins, 68 primary, 18 allow). Re-applying them to 15.0 reproduces all 2,157 sets exactly.
+2. On 18.0, Unicode moved some members to better sets (e.g. Cyrillic ӏ is now an l-lookalike), and those moves are followed. Ten pairs that Unicode 18 dropped entirely are kept as joins: ç/ҫ, 郎/郞, 隷/隸, …
+3. Unicode 16–18 additions apply, except where they would break a registered name. Those were found by iterating derive against all registrations:
+   - 29 new characters are split out, mostly restricted-script lookalikes (Coptic, Batak). This includes the faux-Latin Han 丅 and 丫, so prune them if you'd rather break those names.
+   - ᄋ is made primary.
+   - Two sets that Unicode merged ({ш ⲽ}, {ᩅ ᪀ ᪐}) are restored.
+
+Result: whole-script checked characters go from 1,190 to 2,108 (+522 Han, +270 restricted). Six unregistered characters become invalid. Registrations vs 1.11.1 are unchanged: BROKEN 34 (Bopo), CHANGED 0.
+
+Still unsolved: confusables _within_ one group, such as Katakana vs Han in the Japanese group (ム/厶) and simplified vs traditional Han (户/戶). The whole-script model only compares across groups, and Unicode lists many of these pairs. Handling them needs a different mechanism (a per-group rule).
+
 ## Unicode text and data audit (2026-11-25)
 
 Behavior that comes only from report text, checked against the 18.0 revisions. Revisions are now recorded in `data/unicode/<v>/reports.json`, the reviewed ones in `rules/reports.ts`, and `bun run review` flags anything newer.
@@ -28,7 +54,7 @@ Behavior that comes only from report text, checked against the 18.0 revisions. R
 - **UAX-31 kinds vs `rules/scripts.ts`:** consistent, and now enforced by derive. Every Limited Use or Excluded script must be restricted or disallowed, and groups can only be identified by Recommended scripts.
 - **Script_Extensions leaks (fixed):** Latin diacritics were valid in groups without a CM whitelist, where base + mark isn't checked. They are U+0303 in Thai, U+0307 in Hebrew, and U+0308 in Hebrew and Armenian, all present since before 17.0 and used by 0 registrations. They're removed with the new `{remove: [...]}` override.
 - **Script_Extensions changes 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Knda/Mlym/Telu and is pinned to Taml until reviewed. Vedic U+1CF5/1CF6 lost Deva, which has no effect.
-- **confusables.txt changed heavily in 18.0** (+1,457 / −1,310 pairs), and `confuse.ts` was never regenerated from it. 445 characters valid in unrestricted groups are confusables.txt sources but appear nowhere in `confuse.ts`. 415 of those predate Unicode 10, so this is an original gap; 113 are used by registrations. Most are Han, and most are confusables _within_ one group, which the whole-script model can't express:
+- **confusables.txt changed heavily in 18.0** (now synced, see Confusables sync above) (+1,457 / −1,310 pairs), and `confuse.ts` was never regenerated from it. 445 characters valid in unrestricted groups are confusables.txt sources but appear nowhere in `confuse.ts`. 415 of those predate Unicode 10, so this is an original gap; 113 are used by registrations. Most are Han, and most are confusables _within_ one group, which the whole-script model can't express:
   - simplified vs traditional: 户/戶, 吴/吳, 娱/娛
   - Katakana vs Han: ム/厶, ネ/礻, ヒ/匕, ヨ/彐
   - CJK Radicals Supplement vs ideographs: ⺁/厂, ⺊/卜, ⺝/月

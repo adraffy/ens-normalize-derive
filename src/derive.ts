@@ -10,11 +10,12 @@
 //   6. confusables (rules/confuse.ts) are resolved per group into "wholes"
 //   7. leftovers are pruned, invariants are asserted, and the payloads are built
 
+import {CONFUSE_TYPE_ALLOW, CONFUSE_TYPE_VALID, type ConfuseType, confusableSets} from './confuse.ts';
 import {describer} from './describe.ts';
 import {ensIdnaRules} from './idna.ts';
 import {Logger} from './log.ts';
 import {createNF, type NF, nfDataFromUnicode} from './nf.ts';
-import {CONFUSE_TYPE_ALLOW, CONFUSE_TYPE_VALID, type ConfuseType, type Rules} from './rules.ts';
+import type {Rules} from './rules.ts';
 import {describeSelector, resolveRules} from './select.ts';
 import type {UnicodeScript, UnicodeSpec, VersionInfo} from './ucd.ts';
 import {type CodePoint, compareArrays, explodeCp, getOrInsert, groupBy, parseCpSequence, sortedCps} from './utils.ts';
@@ -77,6 +78,8 @@ export interface DeriveOutput {
 	names: unknown;
 	/** for confuse.html */
 	confused: unknown;
+	/** every confusable set with 2+ members in groups, and what happened to each member */
+	confusables: string;
 }
 
 // ************************************************************
@@ -367,11 +370,9 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 
 	// 20221213: this comes after Adds
 	log.section('Remove Disallowed Characters');
-	let disallowed = new Set<CodePoint>();
 	{
 		inspect?.('disallow', {valid, mapped, ignored});
-		const {byRule, warnings, cps: disallowedCps} = resolveRules(unicode, rules.charsDisallowed);
-		disallowed = disallowedCps;
+		const {byRule, warnings} = resolveRules(unicode, rules.charsDisallowed);
 		for (const w of warnings) log.log(`*** ${w}`);
 		for (const [rule, cps] of byRule) {
 			const live = cps.filter((cp) => valid.has(cp) || mapped.has(cp) || ignored.has(cp));
@@ -556,15 +557,16 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	// confusables
 
 	log.section('Compute Confusables');
+	const confusablesReport: string[] = [];
 	const wholes: Whole[] = [];
 	const confusedUnion = new Set<CodePoint>();
 	{
 		const parts = new Map(groups.map((g) => [g, g.computeParts(NF)]));
-		for (const [target, ...members] of rules.confuseGroups) {
+		const {sets, warnings} = confusableSets(unicode.readConfusables(), rules.confuse);
+		for (const w of warnings) log.log(`*** confuse: ${w}`);
+		for (const {target, members} of sets) {
 			const defs: ConfuseMember[] = [];
-			for (const member of members) {
-				const {cp, type} = typeof member === 'number' ? {cp: member, type: undefined} : member;
-				if (disallowed.has(cp)) log.log(`*** Confusable is disallowed (mark it //DISALLOW: in rules/confuse.ts): ${desc.cp(cp)}`);
+			for (const {cp, type} of members) {
 				// assert that every confusable is unique
 				// note: this is tested before group tests, so this includes invalid characters
 				if (confusedUnion.has(cp)) throw new Error(`Duplicate confusable "${target}": ${desc.cp(cp)}`);
@@ -604,6 +606,9 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			wholes.push(whole);
 
 			const unresolved = new Map<string, ScriptGroup[]>();
+			// for output/confusables.txt: cp => what happened per group
+			const status = new Map<CodePoint, string[]>(defs.map((x) => [x.cp, []]));
+			const note = (cp: CodePoint, g: ScriptGroup, what: string) => status.get(cp)!.push(`${g.name}: ${what}`);
 			for (const g of union) {
 				const confuse = defs.filter((x) => x.groups.has(g));
 				if (confuse.some((x) => x.type)) {
@@ -611,12 +616,15 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 					for (const def of confuse) {
 						switch (def.type) {
 							case CONFUSE_TYPE_VALID:
+								note(def.cp, g, def.auto ? 'valid (auto)' : 'valid');
 								break; // char can be used freely
 							case CONFUSE_TYPE_ALLOW:
 								whole.add(def.cp, g);
+								note(def.cp, g, 'allowed, whole-script checked');
 								break; // char requires additional hints
 							default:
 								g.validSet.delete(def.cp); // char is single-script confusable
+								note(def.cp, g, 'REMOVED');
 						}
 					}
 					continue;
@@ -624,6 +632,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				// there's only 1 for this group, ALLOW it
 				if (confuse.length === 1) {
 					whole.add(confuse[0]!.cp, g);
+					note(confuse[0]!.cp, g, 'allowed, whole-script checked');
 					continue;
 				}
 				// there are 2+ confusables without a decision for the same group
@@ -634,14 +643,18 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				const v = getOrInsert(unresolved, key, () => []);
 				v.push(g);
 				for (const def of confuse) {
-					if (rules.confuseDefaultAllow) {
+					if (rules.confuse.defaultAllow) {
 						whole.add(def.cp, g);
+						note(def.cp, g, 'allowed, whole-script checked (unresolved)');
 					} else {
 						g.validSet.delete(def.cp);
+						note(def.cp, g, 'REMOVED (unresolved)');
 					}
 				}
 			}
 			if (!whole.map.size && !whole.valid.length) throw new Error(`Confusable without member: ${target}`);
+			confusablesReport.push(`[${target}] ${defs.map((x) => desc.str([x.cp])).join(' ')}`);
+			for (const x of defs) confusablesReport.push(`\t${desc.cp(x.cp)}\t${status.get(x.cp)!.join('; ')}`);
 			for (const def of defs) {
 				if (def.type !== CONFUSE_TYPE_VALID) continue;
 				if (def.auto) {
@@ -982,5 +995,10 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		})),
 	};
 
-	return {spec, nf, nfTests: unicode.readNFTests(), emojiInfo, names, confused};
+	const confusables = [
+		'# Confusable sets (Unicode confusables.txt + rules/confuse.ts) with 2+ members in groups',
+		'# [prototype] members, then per member: what happened in each group',
+		...confusablesReport,
+	].join('\n');
+	return {spec, nf, nfTests: unicode.readNFTests(), emojiInfo, names, confused, confusables: `${confusables}\n`};
 }

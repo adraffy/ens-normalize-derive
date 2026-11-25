@@ -63,6 +63,15 @@ const files: [name: string, json: unknown, indent?: boolean][] = [
 
 if (args.check) {
 	let changed = 0;
+	{
+		let old = '';
+		try {
+			old = readFileSync(new URL('confusables.txt', outDir), 'utf8');
+		} catch {}
+		const same = old === out.confusables;
+		if (!same) changed++;
+		console.log(`${same ? 'Same' : 'DIFF'}: confusables.txt`);
+	}
 	for (const [name, json] of files) {
 		const same = contentKey(readExisting(name)) === contentKey(json);
 		if (!same) changed++;
@@ -81,5 +90,7 @@ for (const [name, json, indent] of files) {
 	writeFileSync(new URL(name, outDir), buf);
 	console.log(`Wrote: ${name} [${buf.length}]`);
 }
+writeFileSync(new URL('confusables.txt', outDir), out.confusables);
+console.log(`Wrote: confusables.txt`);
 writeFileSync(new URL('log.txt', outDir), log.toString());
 console.log(`Wrote: log.txt [${log.lines.length} lines]`);
