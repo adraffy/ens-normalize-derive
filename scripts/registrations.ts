@@ -12,12 +12,11 @@
 //   ALLOWED    error before, valid now
 //   MESSAGE    error before and now, different message (harmless)
 //
-// --expiry: looks up BROKEN and CHANGED labels as .eth names in the ENSv2 ETHRegistry (mainnet)
-//   active    expiry in the future (REGISTERED, or RESERVED = v1 holder that hasn't migrated yet)
-//   grace     expired less than 28 days ago (only the holder can renew)
-//   expired   anyone can register it
-//   lapsed    no v2 entry; was a v1 .eth name that lapsed (now held by the v2 Graveyard, or just expired)
-//   never     no .eth 2LD with this label, ever (the label is known from a subname or elsewhere)
+// --expiry: looks up BROKEN and CHANGED labels as .eth names in the ENSv2 ETHRegistry (mainnet, the authority)
+//   active    expiry in the future
+//   grace     expired less than --grace days ago (default 120)
+//   expired   expired longer ago
+//   none      no entry (never a .eth 2LD, or lapsed before the v2 migration)
 // RPC: --rpc or $RPC_URL, else viem's default public mainnet endpoint.
 
 import {writeFileSync} from 'node:fs';
@@ -33,6 +32,7 @@ const {values: opts, positionals} = parseArgs({
 	options: {
 		out: {type: 'string'},
 		expiry: {type: 'boolean', default: false},
+		grace: {type: 'string', default: '120'}, // days
 		rpc: {type: 'string', default: process.env.RPC_URL},
 	},
 });
@@ -78,68 +78,44 @@ for (const label of labels) {
 
 // https://github.com/ensdomains/contracts-v2/blob/v1.0.1/contracts/deployments/mainnet/addresses.md
 const ETH_REGISTRY = '0xf60aba43e1f7f3dab1186ff03b561401c9df85e2';
-// v1, frozen: only used to explain names with no v2 entry
-const V1_BASE_REGISTRAR = '0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85';
-const GRAVEYARD = '0xda021a2c1c2f99574d861ef8c6fa745851beb7f6';
-const GRACE_PERIOD = 28 * 24 * 60 * 60; // ETHRegistrar.GRACE_PERIOD()
-const STATUS = ['AVAILABLE', 'RESERVED', 'REGISTERED'];
-const ABI = parseAbi([
-	'function getExpiry(uint256 anyId) view returns (uint64)', // the registry masks the low 32 version bits
-	'function getStatus(uint256 anyId) view returns (uint8)',
-]);
-const V1_ABI = parseAbi(['function nameExpires(uint256 id) view returns (uint256)', 'function ownerOf(uint256 id) view returns (address)']);
+// the registry masks the low 32 version bits, so a plain labelhash works
+const ABI = parseAbi(['function getExpiry(uint256 anyId) view returns (uint64)']);
 
 const expiries = new Map<string, string>();
 const expiryCounts = new Map<string, number>();
 if (opts.expiry) {
+	const graceDays = Number(opts.grace);
+	if (!Number.isFinite(graceDays) || graceDays < 0) throw new Error(`invalid --grace: ${opts.grace}`);
 	const client = createPublicClient({chain: mainnet, transport: http(opts.rpc), batch: {multicall: true}});
 	const block = await client.getBlock();
 	const now = Number(block.timestamp);
 	const check = [...buckets.BROKEN, ...buckets.CHANGED].map((x) => x.label);
 	// registered labels are hashed as registered (not normalized)
-	const ids = check.map((label) => hexToBigInt(labelhash(label)));
 	const results = await client.multicall({
 		allowFailure: true,
-		contracts: ids.flatMap((id) => [
-			{address: ETH_REGISTRY, abi: ABI, functionName: 'getExpiry', args: [id]} as const,
-			{address: ETH_REGISTRY, abi: ABI, functionName: 'getStatus', args: [id]} as const,
-			{address: V1_BASE_REGISTRAR, abi: V1_ABI, functionName: 'nameExpires', args: [id]} as const,
-			{address: V1_BASE_REGISTRAR, abi: V1_ABI, functionName: 'ownerOf', args: [id]} as const, // reverts when expired
-		]),
+		contracts: check.map(
+			(label) => ({address: ETH_REGISTRY, abi: ABI, functionName: 'getExpiry', args: [hexToBigInt(labelhash(label))]}) as const,
+		),
 	});
 	check.forEach((label, i) => {
-		const [e, s, v1e, v1o] = results.slice(4 * i, 4 * i + 4) as [
-			(typeof results)[number],
-			(typeof results)[number],
-			(typeof results)[number],
-			(typeof results)[number],
-		];
+		const r = results[i]!;
 		let state: string;
-		let info: string;
-		if (e.status !== 'success' || s.status !== 'success') {
+		let info = '';
+		if (r.status !== 'success') {
 			state = 'error';
-			info = 'call failed';
+			info = ': call failed';
 		} else {
-			const expiry = Number(e.result);
-			const date = new Date(expiry * 1000).toISOString().slice(0, 10);
-			if (expiry > now) state = 'active';
-			else if (expiry && expiry + GRACE_PERIOD > now) state = 'grace';
-			else if (expiry) state = 'expired';
-			else if (v1e.status === 'success' && v1e.result) state = 'lapsed';
-			else state = 'never';
-			if (expiry) {
-				info = `${STATUS[Number(s.result)] ?? s.result} until ${date}`;
-			} else if (state === 'lapsed') {
-				const owner = v1o.status === 'success' ? String(v1o.result).toLowerCase() : undefined;
-				info = owner === GRAVEYARD ? 'v1 name, now held by the Graveyard' : 'v1 name, expired before the v2 migration';
-			} else {
-				info = 'not a .eth 2LD';
-			}
+			const expiry = Number(r.result);
+			if (!expiry) state = 'none';
+			else if (expiry > now) state = 'active';
+			else if (expiry + graceDays * 86400 > now) state = 'grace';
+			else state = 'expired';
+			if (expiry) info = ` ${new Date(expiry * 1000).toISOString().slice(0, 10)}`;
 		}
-		expiries.set(label, `${state}: ${info}`);
+		expiries.set(label, `${state}${info}`);
 		expiryCounts.set(state, (expiryCounts.get(state) ?? 0) + 1);
 	});
-	console.log(`ENSv2 ETHRegistry ${ETH_REGISTRY} @ block ${block.number}`);
+	console.log(`ENSv2 ETHRegistry ${ETH_REGISTRY} @ block ${block.number}, grace ${graceDays} days`);
 }
 
 // ************************************************************
@@ -153,7 +129,7 @@ if (reasons.size) {
 }
 if (expiryCounts.size) {
 	lines.push('', 'BROKEN + CHANGED as .eth:');
-	for (const k of ['active', 'grace', 'expired', 'lapsed', 'never', 'error']) {
+	for (const k of ['active', 'grace', 'expired', 'none', 'error']) {
 		const n = expiryCounts.get(k);
 		if (n) lines.push(`  ${String(n).padStart(5)} ${k}`);
 	}

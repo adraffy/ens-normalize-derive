@@ -58,7 +58,7 @@ bun scripts/registrations.ts ../ens-normalize.ts --out report.txt [--expiry]
 
 `registrations.ts` compares the rebuilt library against the released `@adraffy/ens-normalize` (a dev dependency) over every known label ([adraffy/ens-labels](https://github.com/adraffy/ens-labels), pinned and cached in `.cache/`). It buckets the differences: **BROKEN** (valid → error), **CHANGED** (normalizes differently), **ALLOWED** (error → valid), **MESSAGE** (different error). BROKEN and CHANGED need a decision.
 
-`--expiry` looks up each BROKEN and CHANGED label as a `.eth` name in the ENSv2 ETHRegistry on mainnet and classifies it as active, grace (28 days), expired, lapsed (no v2 entry, was a v1 name), or never. The RPC comes from `--rpc` or `RPC_URL`, otherwise viem's default public endpoint.
+`--expiry` looks up each BROKEN and CHANGED label as a `.eth` name in the ENSv2 ETHRegistry on mainnet, which is the authority. Each label is classified as active, grace (expired less than `--grace` days ago, default 120), expired, or none. The RPC comes from `--rpc` or `RPC_URL`, otherwise viem's default public endpoint.
 
 `src/labels.ts` also builds a per-codepoint usage index over the valid labels: how many use a character, and how many at the start, at the end, or doubled. Use it to price a disallow or fence before making it.
 

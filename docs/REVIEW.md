@@ -41,21 +41,8 @@ Duplicates removed: `chars-valid` `$` and `_` (IDNA-valid since 16.0). 850 `conf
 
 - All 128 entries are precomposed characters. The sequence half of the mechanism (base + mark with no precomposed form) is never used, so every group's `cm` in `spec.json` is empty. In practice the whitelist is a list of allowed accented letters.
 - Unused entries: ǹ, ΐ ϋ, ѓ ӣ ќ ӯ, ヷヸヹヺヾ, ぢゔゞ (harmless).
-- Gaps, measured as invalid registered labels that contain the character:
-
-| char      | labels         | note                                                                                  |
-| --------- | -------------- | ------------------------------------------------------------------------------------- |
-| ı         | 595            | dotless i, a classic i-confusable: needs a confusable decision, not a whitelist entry |
-| ī         | 113            | macron allows a e o u but not i (Latvian, pinyin, Hawaiian)                           |
-| ė         | 79             | Lithuanian                                                                            |
-| ț ș       | 34, 31         | Romanian comma-below; the cedilla forms ţ ş are whitelisted                           |
-| į ų       | 18, 4          | Lithuanian; ogonek allows only ą ę                                                    |
-| ÿ         | 13             | diaeresis allows a e i o u but not y                                                  |
-| ř ň ť ď ľ | 12, 5, 2, 6, 3 | Czech/Slovak; caron allows c e s z i o but no consonants beyond those                 |
-| ő ű       | 10, 1          | Hungarian                                                                             |
-| ǎ ǔ       | 5, 1           | breve-or-caron rule: ǎ was traded for ă, but u has neither                            |
-
-Adding any of these only makes more names valid. It never breaks one, but each addition should be checked against `confuse.ts`.
+- **Added (applied):** ī ė ț ș į ų ÿ ř ň ť ď ľ ő ű. These were the gaps that blocked registered names. With them, **311 currently invalid registered labels become valid**, and their uppercase forms gain IDNA mappings. ț resolves as the primary against Cherokee Ꮏ. ș and ş are both valid; UTS-39 doesn't list them as confusable.
+- Not added: ı (dotless i, 595 labels). It's a classic i-confusable and needs a confusable decision, not a whitelist entry. ǎ stays out by the existing breve-over-caron rule (ă). ǔ was already whitelisted.
 
 ### Fencing
 
@@ -72,7 +59,9 @@ Fenced today: ’ (11,394 names), ⁄ (520), ・ (54), none at the start, end, o
 
 ### Registrations still at stake (`--expiry`)
 
-All 34 BROKEN labels (Bopomofo + Han) have **no ENSv2 entry**. Each was a v1 `.eth` name that lapsed and is now held by the Graveyard. **No active registration breaks.**
+All 34 BROKEN labels (Bopomofo + Han) have **no entry in the ENSv2 ETHRegistry**, so none is registered. They lapsed before the v2 migration. **No active registration breaks.**
+
+Current totals vs 1.11.1: BROKEN 34, CHANGED 0, ALLOWED 316, MESSAGE 48.
 
 ## 1. Registration impact of Unicode 18 (needs a decision)
 

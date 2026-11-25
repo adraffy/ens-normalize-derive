@@ -16,4 +16,9 @@ export default [
 		0x30FB, // (・) KATAKANA MIDDLE DOT
 		'middle dot',
 	],
+	[
+		// 20261125: a hyphen; 1 registration, none at the start/end/doubled
+		0x5BE, // (־) HEBREW PUNCTUATION MAQAF
+		'maqaf',
+	],
 ] satisfies [CodePoint, string][];
