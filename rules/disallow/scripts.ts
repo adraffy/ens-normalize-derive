@@ -21,6 +21,8 @@ export default [
 		0x55A, // (՚) ARMENIAN APOSTROPHE
 		// bad hyphens
 		0x58A, // (֊) ARMENIAN HYPHEN
+		// 20261125: unused by registrations (rotated)
+		0x560, // (ՠ) ARMENIAN SMALL LETTER TURNED AYB
 	]},
 	// 590..5FF Hebrew: 6/88 denied
 	{block: 'Hebrew', cps: [
@@ -103,6 +105,11 @@ export default [
 		0x66F, // (ٯ) ARABIC LETTER DOTLESS QAF
 		0x68E, // (ڎ) ARABIC LETTER DUL
 		0x6A1, // (ڡ) ARABIC LETTER DOTLESS FEH
+		// 20261125: unused by registrations (rotated)
+		0x63D, // (ؽ) ARABIC LETTER FARSI YEH WITH INVERTED V
+		0x6EE, // (ۮ) ARABIC LETTER DAL WITH INVERTED V
+		0x6EF, // (ۯ) ARABIC LETTER REH WITH INVERTED V
+		0x6FF, // (ۿ) ARABIC LETTER HEH WITH INVERTED V
 	]},
 	// 700..74F Syriac: 12/76 denied
 	{block: 'Syriac', cps: [
@@ -121,6 +128,13 @@ export default [
 		0x707, // (܇) SYRIAC COLON SKEWED RIGHT
 		0x708, // (܈) SYRIAC SUPRALINEAR COLON SKEWED LEFT
 		0x709, // (܉) SYRIAC SUBLINEAR COLON SKEWED RIGHT
+	]},
+	// 750..77F Arabic Supplement
+	{block: 'Arabic Supplement', cps: [
+		// 20261125: unused by registrations (rotated)
+		0x755, // (ݕ) ARABIC LETTER BEH WITH INVERTED SMALL V BELOW
+		0x75A, // (ݚ) ARABIC LETTER DAL WITH INVERTED SMALL V BELOW
+		0x77E, // (ݾ) ARABIC LETTER SEEN WITH INVERTED V
 	]},
 	// 7C0..7FF NKo: 8/62 denied
 	{block: 'NKo', cps: [
@@ -150,6 +164,9 @@ export default [
 		// 20221112: https://scriptsource.org/cms/scripts/page.php?item_id=character_detail&key=U000953
 		0x898, // (◌࢘) ARABIC SMALL HIGH WORD AL-JUZ
 		0x89D, // (◌࢝) ARABIC SUPERSCRIPT ALEF MOKHASSAS
+		// 20261125: unused by registrations (rotated)
+		0x889, // (ࢉ) ARABIC LETTER NOON WITH INVERTED SMALL V
+		0x88A, // (ࢊ) ARABIC LETTER HAH WITH INVERTED SMALL V BELOW
 	]},
 	// 8A0..8FF Arabic Extended-A: 31/95 denied
 	{block: 'Arabic Extended-A', cps: [
@@ -186,6 +203,9 @@ export default [
 		0x8AF, // (ࢯ) ARABIC LETTER SAD WITH THREE DOTS BELOW
 		0x8B0, // (ࢰ) ARABIC LETTER GAF WITH INVERTED STROKE
 		0x8B1, // (ࢱ) ARABIC LETTER STRAIGHT WAW
+		// 20261125: unused by registrations (rotated)
+		0x8B2, // (ࢲ) ARABIC LETTER ZAIN WITH INVERTED V ABOVE
+		0x8FF, // (◌ࣿ) ARABIC MARK SIDEWAYS NOON GHUNNA
 	]},
 	// 900..97F Devanagari: 10/128 denied
 	{block: 'Devanagari', cps: [
@@ -205,12 +225,27 @@ export default [
 		0x951, // (◌॑) DEVANAGARI STRESS SIGN UDATTA
 		0x952, // (◌॒) DEVANAGARI STRESS SIGN ANUDATTA
 		0x978, // (ॸ) DEVANAGARI LETTER MARWARI DDA
+		// 20261125: unused by registrations (rotated, punctuation)
+		0x900, // (◌ऀ) DEVANAGARI SIGN INVERTED CANDRABINDU
+		0x970, // (॰) DEVANAGARI ABBREVIATION SIGN
 	]},
 	// 980..9FF Bengali: 2/96 denied
 	{block: 'Bengali', cps: [
 		// obsolete
 		0x980, // (ঀ) BENGALI ANJI
 		0x9FC, // (ৼ) BENGALI LETTER VEDIC ANUSVARA
+		// 20261125: unused by registrations (punctuation)
+		0x9FD, // (৽) BENGALI ABBREVIATION SIGN
+	]},
+	// A00..A7F Gurmukhi
+	{block: 'Gurmukhi', cps: [
+		// 20261125: unused by registrations (punctuation)
+		0xA76, // (੶) GURMUKHI ABBREVIATION SIGN
+	]},
+	// A80..AFF Gujarati
+	{block: 'Gujarati', cps: [
+		// 20261125: unused by registrations (punctuation)
+		0xAF0, // (૰) GUJARATI ABBREVIATION SIGN
 	]},
 	// B80..BFF Tamil: 1/72 denied
 	{block: 'Tamil', cps: [
@@ -224,6 +259,8 @@ export default [
 		0xC34, // (ఴ) TELUGU LETTER LLLA
 		0xC58, // (ౘ) TELUGU LETTER TSA
 		0xC59, // (ౙ) TELUGU LETTER DZA
+		// 20261125: unused by registrations (punctuation)
+		0xC77, // (౷) TELUGU SIGN SIDDHAM
 	]},
 	// C80..CFF Kannada: 2/92 denied
 	{block: 'Kannada', cps: [
@@ -240,6 +277,13 @@ export default [
 		0xD3C, // (◌഼) MALAYALAM SIGN CIRCULAR VIRAMA
 		0xD5F, // (ൟ) MALAYALAM LETTER ARCHAIC II
 	]},
+	// E00..E7F Thai
+	{block: 'Thai', cps: [
+		// 20261125: unused by registrations (punctuation)
+		0xE4F, // (๏) THAI CHARACTER FONGMAN
+		0xE5A, // (๚) THAI CHARACTER ANGKHANKHU
+		0xE5B, // (๛) THAI CHARACTER KHOMUT
+	]},
 	// F00..FFF Tibetan: 7/211 denied
 	{block: 'Tibetan', cps: [
 		// comma
@@ -252,12 +296,37 @@ export default [
 		// depreciated
 		0xF77, // (◌ཷ) TIBETAN VOWEL SIGN VOCALIC RR
 		0xF79, // (◌ཹ) TIBETAN VOWEL SIGN VOCALIC LL
+		// 20261125: unused by registrations (punctuation, rotated)
+		0xF05, // (༅) TIBETAN MARK CLOSING YIG MGO SGAB MA
+		0xF06, // (༆) TIBETAN MARK CARET YIG MGO PHUR SHAD MA
+		0xF07, // (༇) TIBETAN MARK YIG MGO TSHEG SHAD MA
+		0xF08, // (༈) TIBETAN MARK SBRUL SHAD
+		0xF09, // (༉) TIBETAN MARK BSKUR YIG MGO
+		0xF0A, // (༊) TIBETAN MARK BKA- SHOG YIG MGO
+		0xF0F, // (༏) TIBETAN MARK TSHEG SHAD
+		0xF10, // (༐) TIBETAN MARK NYIS TSHEG SHAD
+		0xF11, // (༑) TIBETAN MARK RIN CHEN SPUNGS SHAD
+		0xF80, // (◌ྀ) TIBETAN VOWEL SIGN REVERSED I
+		0xF85, // (྅) TIBETAN MARK PALUTA
+		0xF8C, // (ྌ) TIBETAN SIGN INVERTED MCHU CAN
+		0xF8F, // (◌ྏ) TIBETAN SUBJOINED SIGN INVERTED MCHU CAN
+		0xFD0, // (࿐) TIBETAN MARK BSKA- SHOG GI MGO RGYAN
+		0xFD1, // (࿑) TIBETAN MARK MNYAM YIG GI MGO RGYAN
+		0xFD2, // (࿒) TIBETAN MARK NYIS TSHEG
+		0xFD4, // (࿔) TIBETAN MARK CLOSING BRDA RNYING YIG MGO SGAB MA
+		0xFD9, // (࿙) TIBETAN MARK LEADING MCHAN RTAGS
+		0xFDA, // (࿚) TIBETAN MARK TRAILING MCHAN RTAGS
 	]},
 	// 1000..109F Myanmar: 2/160 denied
 	{block: 'Myanmar', cps: [
 		// general punctuation / https://discuss.ens.domains/t/ens-name-normalization/8652/396
 		0x104A, // (၊) MYANMAR SIGN LITTLE SECTION
 		0x104B, // (။) MYANMAR SIGN SECTION
+		// 20261125: unused by registrations (punctuation)
+		0x104C, // (၌) MYANMAR SYMBOL LOCATIVE
+		0x104D, // (၍) MYANMAR SYMBOL COMPLETED
+		0x104E, // (၎) MYANMAR SYMBOL AFOREMENTIONED
+		0x104F, // (၏) MYANMAR SYMBOL GENITIVE
 	]},
 	// 10A0..10FF Georgian: 8/88 denied
 	{block: 'Georgian', cps: [
@@ -272,6 +341,8 @@ export default [
 		0x10F4, // (ჴ) GEORGIAN LETTER HAR
 		0x10F5, // (ჵ) GEORGIAN LETTER HOE
 		0x10F6, // (ჶ) GEORGIAN LETTER FI
+		// 20261125: unused by registrations (rotated)
+		0x10F9, // (ჹ) GEORGIAN LETTER TURNED GAN
 	]},
 	// 1200..137F Ethiopic: 8/358 denied
 	{block: 'Ethiopic', cps: [
@@ -286,6 +357,8 @@ export default [
 		0x1361, // (፡) ETHIOPIC WORDSPACE
 		// general punctuation / https://discuss.ens.domains/t/ens-name-normalization/8652/396
 		0x1368, // (፨) ETHIOPIC PARAGRAPH SEPARATOR
+		// 20261125: unused by registrations (punctuation)
+		0x1360, // (፠) ETHIOPIC SECTION MARK
 	]},
 	// 1380..139F Ethiopic Supplement: 10/26 denied
 	{block: 'Ethiopic Supplement', cps: [
@@ -340,6 +413,12 @@ export default [
 		// 20240912: in 16.0.0 a bunch of invisibles were changed to ignored / decision: keep these disabled
 		0x17B4, // ({17B4}) KHMER VOWEL INHERENT AQ
 		0x17B5, // ({17B5}) KHMER VOWEL INHERENT AA
+		// 20261125: unused by registrations (punctuation)
+		0x17D4, // (។) KHMER SIGN KHAN
+		0x17D5, // (៕) KHMER SIGN BARIYOOSAN
+		0x17D6, // (៖) KHMER SIGN CAMNUC PII KUUH
+		0x17D9, // (៙) KHMER SIGN PHNAEK MUAN
+		0x17DA, // (៚) KHMER SIGN KOOMUUT
 	]},
 	// 1800..18AF Mongolian: 12/158 denied
 	{block: 'Mongolian', cps: [
@@ -559,6 +638,11 @@ export default [
 		0x10A54, // (𐩔) KHAROSHTHI PUNCTUATION MANGALAM
 		0x10A58, // (𐩘) KHAROSHTHI PUNCTUATION LINES
 	]},
+	// 10EC0..10EFF Arabic Extended-C
+	{block: 'Arabic Extended-C', cps: [
+		// 20261125: unused by registrations (punctuation)
+		0x10ED0, // (𐻐) ARABIC BIBLICAL END OF VERSE
+	]},
 	// 10F30..10F6F Sogdian: 5/42 denied
 	{block: 'Sogdian', cps: [
 		// general punctuation / https://discuss.ens.domains/t/ens-name-normalization/8652/396
@@ -687,6 +771,20 @@ export default [
 		0x11A9B, // (𑪛) SOYOMBO MARK SHAD
 		0x11A9C, // (𑪜) SOYOMBO MARK DOUBLE SHAD
 	]},
+	// 11B00..11B5F Devanagari Extended-A
+	{block: 'Devanagari Extended-A', cps: [
+		// 20261125: unused by registrations (punctuation, rotated)
+		0x11B00, // (𑬀) DEVANAGARI HEAD MARK
+		0x11B01, // (𑬁) DEVANAGARI HEAD MARK WITH HEADSTROKE
+		0x11B02, // (𑬂) DEVANAGARI SIGN BHALE
+		0x11B03, // (𑬃) DEVANAGARI SIGN BHALE WITH HOOK
+		0x11B04, // (𑬄) DEVANAGARI SIGN EXTENDED BHALE
+		0x11B05, // (𑬅) DEVANAGARI SIGN EXTENDED BHALE WITH HOOK
+		0x11B06, // (𑬆) DEVANAGARI SIGN WESTERN FIVE-LIKE BHALE
+		0x11B07, // (𑬇) DEVANAGARI SIGN WESTERN NINE-LIKE BHALE
+		0x11B08, // (𑬈) DEVANAGARI SIGN REVERSED NINE-LIKE BHALE
+		0x11B09, // (𑬉) DEVANAGARI SIGN MINDU
+	]},
 	// 11C00..11C6F Bhaiksuki: 2/97 denied
 	{block: 'Bhaiksuki', cps: [
 		// general punctuation / https://discuss.ens.domains/t/ens-name-normalization/8652/396
@@ -704,6 +802,11 @@ export default [
 		// general punctuation / https://discuss.ens.domains/t/ens-name-normalization/8652/396
 		0x11F43, // (𑽃) KAWI DANDA
 		0x11F44, // (𑽄) KAWI DOUBLE DANDA
+	]},
+	// 11FC0..11FFF Tamil Supplement
+	{block: 'Tamil Supplement', cps: [
+		// 20261125: unused by registrations (punctuation)
+		0x11FFF, // (𑿿) TAMIL PUNCTUATION END OF TEXT
 	]},
 	// 16A40..16A6F Mro: 2/43 denied
 	{block: 'Mro', cps: [

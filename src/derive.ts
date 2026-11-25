@@ -357,9 +357,11 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 
 	// 20221213: this comes after Adds
 	log.section('Remove Disallowed Characters');
+	let disallowed = new Set<CodePoint>();
 	{
 		inspect?.('disallow', {valid, mapped, ignored});
-		const {byRule, warnings} = resolveRules(unicode, rules.charsDisallowed);
+		const {byRule, warnings, cps: disallowedCps} = resolveRules(unicode, rules.charsDisallowed);
+		disallowed = disallowedCps;
 		for (const w of warnings) log.log(`*** ${w}`);
 		for (const [rule, cps] of byRule) {
 			const live = cps.filter((cp) => valid.has(cp) || mapped.has(cp) || ignored.has(cp));
@@ -527,6 +529,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			const defs: ConfuseMember[] = [];
 			for (const member of members) {
 				const {cp, type} = typeof member === 'number' ? {cp: member, type: undefined} : member;
+				if (disallowed.has(cp)) log.log(`*** Confusable is disallowed (mark it //DISALLOW: in rules/confuse.ts): ${desc.cp(cp)}`);
 				// assert that every confusable is unique
 				// note: this is tested before group tests, so this includes invalid characters
 				if (confusedUnion.has(cp)) throw new Error(`Duplicate confusable "${target}": ${desc.cp(cp)}`);

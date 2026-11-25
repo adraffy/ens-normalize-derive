@@ -79,6 +79,8 @@ export default [
 		0x16FF1, // (◌𖿱) VIETNAMESE ALTERNATE READING MARK NHAY
 		// obsolete
 		0x16FE3, // (𖿣) OLD CHINESE ITERATION MARK
+		// 20261125: unused by registrations (punctuation)
+		0x16FE2, // (𖿢) OLD CHINESE HOOK MARK
 	]},
 	// 1B000..1B0FF Kana Supplement: 256/256 denied
 	{block: 'Kana Supplement'},
