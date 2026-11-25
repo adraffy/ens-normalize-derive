@@ -2,6 +2,11 @@
 	"name": "ens-normalize-derive",
 	"private": true,
 	"description": "Derives the ENSIP-15 normalization spec (spec.json, nf.json) from Unicode data files",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adraffy/ens-normalize-derive.git"
+	},
 	"type": "module",
 	"scripts": {
 		"derive": "bun scripts/derive.ts",

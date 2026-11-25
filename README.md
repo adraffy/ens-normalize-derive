@@ -118,3 +118,7 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 | `baseline/1.11.1/`   | payloads of the last release (Unicode 17), for comparison                               |
 
 Only Unicode 17.0.0 / 18.0.0 and CLDR 47 / 48.2 are checked in. Older versions can be fetched with the download scripts.
+
+## License
+
+MIT, see [LICENSE](LICENSE). The files in `data/` are Unicode and CLDR data, distributed under the [Unicode License v3](https://www.unicode.org/license.txt).
