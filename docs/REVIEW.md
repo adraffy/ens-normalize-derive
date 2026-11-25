@@ -18,6 +18,15 @@ Decided or done since the first review:
 - **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
 - **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
 
+## Validation (2026-11-25)
+
+- **Reference implementation:** `src/ensip15.ts` matches `@adraffy/ens-normalize@1.11.1` exactly on 3,460,714 names: all registered labels plus the 1.11.1 `tests.json`.
+- **Test file:** upstream's `validate/` is replaced by `scripts/make-tests.ts`. It is deterministic (upstream used `Math.random`, and random names lived in an uncommitted cache), needs no library build, and samples registrations per group as well as per outcome. It adds Unicode's IdnaTestV2 inputs and every registered label that changed since the baseline. 44,974 tests, 3.1 MB. A rebuilt ens-normalize.ts passes all of them.
+- **Custom tests:** now `validate/custom.ts`, typed, with `\u{…}` escapes. Added 29 Unicode 18 cases: Bopomofo restriction, maqaf and other fences, the new Latin letters, rejected look-alikes (ţ ǎ ı ᴀ ǝ), unreviewed 18.0 characters, and the newly disallowed blocks.
+- **ӕ:** stays valid. Upstream's custom test `тӕ` relies on it, so the earlier disallow was reverted. On its own, `ӕ` is a whole-script confusable.
+- **Group order:** fixed in `rules/group-order.ts` instead of regenerated from registration counts. Spec output is unchanged.
+- **Still open:** `א̇` (Hebrew + U+0307) is valid, through 18.0 script extensions.
+
 ## Rules review (2026-11-25)
 
 Usage numbers count the 3,399,305 labels that are valid under 1.11.1.

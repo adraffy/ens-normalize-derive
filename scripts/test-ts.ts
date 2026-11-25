@@ -24,6 +24,7 @@ const copies: [string, string][] = [
 	['spec.json', 'data/spec.json'],
 	['nf.json', 'data/nf.json'],
 	['nf-tests.json', 'test/data/nf-tests.json'],
+	['tests.json', 'test/data/tests.json'], // validate.test.ts runs these
 ];
 for (const [src, dst] of copies) {
 	mkdirSync(resolve(root, dst, '..'), {recursive: true});

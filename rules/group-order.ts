@@ -1,13 +1,17 @@
-// Computed: 2026-05-20T19:36:46.547Z
-// Spec: 299c45174539f081a506887685b5f5fcafc7ac0efd97483e2beadd8b183a847f
-// Total: 3411559
+// Group priority: the first group (in this order) that contains every character of a label names it,
+// and "illegal mixture" errors name the highest-priority group that matched. Matching also tries
+// groups in this order, so common groups first is faster. Unrestricted groups come before restricted ones.
+//
+// This order is FIXED: changing it changes output (label types and error messages).
+// Every unrestricted group must be listed; restricted groups that aren't listed keep their
+// rules/scripts.ts order. `bun run group-stats` shows registrations per group for reference.
+//
+// 20261125: fixed at the 1.11.x order (registration counts from 2026-05-20, 3,411,559 labels).
+//   ASCII (89.26%) and Emoji (2.43%) are fast-path label types, not groups.
 export default [
-	'ASCII',      // 3045168 |  89.26031%
 	'Latin',      //  166792 |   4.88903%
-	'Emoji',      //   82924 |   2.43068%
 	'Arabic',     //   37087 |   1.08710%
 	'Han',        //   36027 |   1.05603%
-	'*** Error',  //   22814 |   0.66873%
 	'Devanagari', //    4799 |   0.14067%
 	'Korean',     //    3267 |   0.09576%
 	'Japanese',   //    3113 |   0.09125%

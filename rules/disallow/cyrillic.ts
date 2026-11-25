@@ -35,7 +35,7 @@ export default [
 		// 20261125: unused by registrations (ligature)
 		0x4A5, // (ҥ) CYRILLIC SMALL LIGATURE EN GHE
 		0x4B5, // (ҵ) CYRILLIC SMALL LIGATURE TE TSE
-		0x4D5, // (ӕ) CYRILLIC SMALL LIGATURE A IE
+		// 0x4D5 (ӕ) CYRILLIC SMALL LIGATURE A IE stays valid: see validate/custom.ts "тӕ"
 	]},
 	// 500..52F Cyrillic Supplement: 11/48 denied
 	{block: 'Cyrillic Supplement', cps: [

@@ -30,21 +30,36 @@ export interface NF {
 	isNFC(cp: CodePoint): boolean;
 	isDecomposed(cp: CodePoint): boolean;
 	isComposite(cp: CodePoint): boolean;
-	/** returns failures against NormalizationTest.txt */
-	runTests(): {name: string; input: CodePoint[]; expect: CodePoint[]; actual: CodePoint[]}[];
+	/** returns failures against NormalizationTest-style cases: {name: [[input, nfd, nfc], ...]} */
+	runTests(
+		tests: Record<string, [string, string, string][]>,
+	): {name: string; input: CodePoint[]; expect: CodePoint[]; actual: CodePoint[]}[];
 	/** asserts nfc(x) == nfc(nfd(x)) and nfd(x) == nfd(nfc(x)) on random input */
 	runRandomTests(n?: number, len?: number, seed?: number): void;
 	/** cps that are between NFC and NFD in the composition graph */
 	innerParts(cp: CodePoint): CodePoint[];
 }
 
-export function createNF(unicode: UnicodeSpec): NF {
-	const SHIFTED_RANK = new Map(unicode.combiningRanks().flatMap((v, i) => v.map((cp) => [cp, (i + 1) << 24])));
-	const EXCLUSIONS = new Set(unicode.readCompositionExclusions());
+/** the tables NF needs (same shape as output/nf.json) */
+export interface NFData {
+	/** cps grouped by increasing non-zero combining class */
+	ranks: CodePoint[][];
+	exclusions: CodePoint[];
+	/** canonical decompositions */
+	decomp: [CodePoint, CodePoint[]][];
+}
+
+export function nfDataFromUnicode(unicode: UnicodeSpec): NFData {
+	return {ranks: unicode.combiningRanks(), exclusions: unicode.readCompositionExclusions(), decomp: unicode.decompositions()};
+}
+
+export function createNF({ranks, exclusions, decomp}: NFData): NF {
+	const SHIFTED_RANK = new Map(ranks.flatMap((v, i) => v.map((cp) => [cp, (i + 1) << 24])));
+	const EXCLUSIONS = new Set(exclusions);
 	const DECOMP = new Map<CodePoint, CodePoint[]>();
 	const RECOMP = new Map<CodePoint, Map<CodePoint, CodePoint>>();
 
-	for (const [cp, cps] of unicode.decompositions()) {
+	for (const [cp, cps] of decomp) {
 		DECOMP.set(cp, cps.toReversed());
 		if (!EXCLUSIONS.has(cp) && cps.length === 2) {
 			const [a, b] = cps as [CodePoint, CodePoint];
@@ -172,9 +187,9 @@ export function createNF(unicode: UnicodeSpec): NF {
 			return cps.length === 1 && cps[0] === cp;
 		},
 		isComposite: (cp) => nf.nfd([cp]).length > 1,
-		runTests() {
+		runTests(tests) {
 			const errors: ReturnType<NF['runTests']> = [];
-			for (const [name, cases] of Object.entries(unicode.readNFTests())) {
+			for (const [name, cases] of Object.entries(tests)) {
 				for (const strs of cases) {
 					const [input, nfd0, nfc0] = strs.map((s) => explodeCp(s)) as [CodePoint[], CodePoint[], CodePoint[]];
 					const nfd1 = nf.nfd(input);

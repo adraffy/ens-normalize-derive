@@ -47,20 +47,32 @@ bun run unicode-diff [17] [18]      # parsed diff between two releases
 bun scripts/emoji-new.ts            # emoji new in the current release
 ```
 
-## Testing against registrations
+## Validation
 
-The payloads are consumed by [ens-normalize.ts](https://github.com/adraffy/ens-normalize.ts). With a local checkout:
+[src/ensip15.ts](src/ensip15.ts) is a small, unoptimized ENSIP-15 implementation that runs straight on `output/spec.json` + `output/nf.json`. It mirrors ens-normalize.js step for step, error messages included. `bun run parity` proves it: on [baseline/1.11.1](baseline/1.11.1/) it reproduces `@adraffy/ens-normalize@1.11.1` exactly over every known label (normalize, beautify, label types).
+
+That means a new spec can be validated before any library is built:
 
 ```sh
-bun scripts/test-ts.ts ../ens-normalize.ts           # copy output/, rebuild, bun test
-bun scripts/registrations.ts ../ens-normalize.ts --out report.txt [--expiry]
+bun run make-tests                      # output/tests.json (deterministic)
+bun run registrations [--expiry]        # every known label: new spec vs the 1.11.1 release
+bun run group-stats                     # registered labels per group
 ```
 
-`registrations.ts` compares the rebuilt library against the released `@adraffy/ens-normalize` (a dev dependency) over every known label ([adraffy/ens-labels](https://github.com/adraffy/ens-labels), pinned and cached in `.cache/`). It buckets the differences: **BROKEN** (valid → error), **CHANGED** (normalizes differently), **ALLOWED** (error → valid), **MESSAGE** (different error). BROKEN and CHANGED need a decision.
+**output/tests.json** uses the format ens-normalize.js and ens-normalize.ts already read (`{name, norm?, error?, comment?}`, a version entry first). Sources:
 
-`--expiry` looks up each BROKEN and CHANGED label as a `.eth` name in the ENSv2 ETHRegistry on mainnet, which is the authority. Each label is classified as active, grace (expired less than `--grace` days ago, default 120), expired, or none. The RPC comes from `--rpc` or `RPC_URL`, otherwise viem's default public endpoint.
+- **required** (the build fails otherwise): the hand-written tests in [validate/custom.ts](validate/custom.ts), every emoji in every optional-FE0F form, every character the rules disallow, disabled emoji
+- **expected** (mismatches are printed for review): rule mappings, fences, CM exemplars, whitespace/noncharacter/terminal properties, ignored variation selectors
+- **recorded**: per-group samples and cross-group mixtures, whole-script confusables, Unicode's IdnaTestV2 inputs, every registered label whose result changed since the baseline, registered labels sampled per group and per outcome, and seeded random names
 
-`src/labels.ts` also builds a per-codepoint usage index over the valid labels: how many use a character, and how many at the start, at the end, or doubled. Use it to price a disallow or fence before making it.
+**registrations** buckets every difference from the release: **BROKEN** (valid → error), **CHANGED** (normalizes differently), **ALLOWED** (error → valid) and **MESSAGE** (different error). BROKEN and CHANGED need a decision. `--expiry` looks up those labels as `.eth` names in the ENSv2 ETHRegistry on mainnet and classifies them as active, grace (expired less than `--grace` days ago, default 120), expired, or none. The RPC comes from `--rpc` or `RPC_URL`, otherwise viem's public default. Labels come from [adraffy/ens-labels](https://github.com/adraffy/ens-labels), pinned and cached in `.cache/`. [src/labels.ts](src/labels.ts) also counts per-codepoint usage over the valid labels: how many use a character, and how many at the start, at the end, or doubled. Use it to price a disallow or fence before making it.
+
+To check a library build, use a local [ens-normalize.ts](https://github.com/adraffy/ens-normalize.ts) checkout:
+
+```sh
+bun scripts/test-ts.ts ../ens-normalize.ts          # copy spec/nf/tests into it, rebuild, bun test
+bun run registrations --ts ../ens-normalize.ts      # registrations through the rebuilt library
+```
 
 Restore the checkout's own data afterwards with `bun run download` there.
 
@@ -96,13 +108,15 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 - [rules/disallow/](rules/disallow/): one file per area (latin, phonetic, symbols, math-arrows, music, cjk, scripts, …), one entry per block. A block that is mostly disallowed is written as `{block, except}`, so characters Unicode adds to it later are disallowed automatically.
 - [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable.
 - [rules/chars-escape.ts](rules/chars-escape.ts): derived from properties (it replaced the hand list and `unprintables`).
+- [rules/group-order.ts](rules/group-order.ts): a fixed group priority. The first matching group names a label and is the one named in "illegal mixture" errors, so the order is part of the output. Derive fails if an unrestricted group isn't listed. `bun run group-stats` compares it with registrations.
 
 ## Upgrading Unicode
 
 1. `bun run download:unicode <v>` and `bun run download:cldr`, then point `current` in `data/releases.json` at them and move the old one to `prior`.
 2. In `rules/disallow/unreviewed.ts`, bump `AGE` and empty `REVIEWED`. Add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
 3. `bun run review`: paste the characters you allow into `REVIEWED`, then `bun run derive`.
-4. `bun scripts/test-ts.ts ../ens-normalize.ts --labels` and `bun scripts/registrations.ts ../ens-normalize.ts`: BROKEN and CHANGED must be empty or explicitly accepted.
+4. `bun run make-tests` (fix any FAILED/REVIEW lines), then `bun run registrations --expiry`. BROKEN and CHANGED must be empty or explicitly accepted. Add tests for the release's decisions to `validate/custom.ts`.
+5. `bun scripts/test-ts.ts ../ens-normalize.ts` to check the library build.
 
 ## Layout
 
@@ -114,11 +128,13 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 | `rules/`             | hand-maintained rules                                                                   |
 | `src/select.ts`      | rule selectors (block / gc / script / prop / name / age / cps)                          |
 | `src/describe.ts`    | character descriptions for logs and rule comments                                       |
+| `src/ensip15.ts`     | reference ENSIP-15 implementation over `spec.json` (see Validation)                     |
+| `validate/custom.ts` | hand-written tests                                                                      |
 | `src/ucd.ts`         | data file parsers (`UnicodeSpec`)                                                       |
 | `src/nf.ts`          | reference NFC/NFD, checked against `NormalizationTest.txt` on every derive              |
 | `src/derive.ts`      | the derivation (pure function: data + rules → payloads + log)                           |
 | `scripts/`           | CLIs                                                                                    |
-| `output/`            | generated payloads (commit these)                                                       |
+| `output/`            | generated payloads + `tests.json` (commit these)                                        |
 | `baseline/1.11.1/`   | payloads of the last release (Unicode 17), for comparison                               |
 
 Only Unicode 17.0.0 / 18.0.0 and CLDR 47 / 48.2 are checked in. Older versions can be fetched with the download scripts.

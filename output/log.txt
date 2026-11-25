@@ -6108,7 +6108,7 @@ Removed Valid: 1D353 (𝍓) TETRAGRAM FOR ON THE VERGE
 Removed Valid: 1D354 (𝍔) TETRAGRAM FOR DIFFICULTIES
 Removed Valid: 1D355 (𝍕) TETRAGRAM FOR LABOURING
 Removed Valid: 1D356 (𝍖) TETRAGRAM FOR FOSTERING
-Rule: cps(27) block=Cyrillic [27/27]
+Rule: cps(26) block=Cyrillic [26/26]
 Removed Valid: 461 (ѡ) CYRILLIC SMALL LETTER OMEGA
 Removed Valid: 463 (ѣ) CYRILLIC SMALL LETTER YAT
 Removed Valid: 465 (ѥ) CYRILLIC SMALL LETTER IOTIFIED E
@@ -6135,7 +6135,6 @@ Removed Valid: 488 (◌҈) COMBINING CYRILLIC HUNDRED THOUSANDS SIGN
 Removed Valid: 489 (◌҉) COMBINING CYRILLIC MILLIONS SIGN
 Removed Valid: 4A5 (ҥ) CYRILLIC SMALL LIGATURE EN GHE
 Removed Valid: 4B5 (ҵ) CYRILLIC SMALL LIGATURE TE TSE
-Removed Valid: 4D5 (ӕ) CYRILLIC SMALL LIGATURE A IE
 Rule: cps(11) block=Cyrillic Supplement [11/11]
 Removed Valid: 501 (ԁ) CYRILLIC SMALL LETTER KOMI DE
 Removed Valid: 503 (ԃ) CYRILLIC SMALL LETTER KOMI DJE
@@ -13228,7 +13227,7 @@ Valid  | Name       | Test      | Rest      | Extra
 114389 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
 102862 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
   1001 | Latin      | Latn+Zyyy | Zinh      | π                         
-   837 | Cyrillic   | Cyrl      | Zyyy+Zinh |                           
+   838 | Cyrillic   | Cyrl      | Zyyy+Zinh |                           
    827 | Greek      | Grek      | Zyyy+Zinh |                           
    438 | Arabic     | Arab      |           | -                         
    108 | Devanagari | Deva      |           |                           
@@ -13906,6 +13905,7 @@ Override: 96E (८) DEVANAGARI DIGIT EIGHT [Devanagari,Dogr,Kthi,Mahj]
 Override: 669 (٩) ARABIC-INDIC DIGIT NINE [Arabic,Thaana,Yezi]
 Override: 967 (१) DEVANAGARI DIGIT ONE [Devanagari,Dogr,Kthi,Mahj]
 Override: 61 (a) LATIN SMALL LETTER A [Japanese,Korean,Han,Latin]
+Override: E6 (æ) LATIN SMALL LETTER AE [Latin]
 Override: 62 (b) LATIN SMALL LETTER B [Japanese,Korean,Han,Latin]
 Unresolved: [Cher] 13CF (Ꮟ) CHEROKEE LETTER SI vs 13F4 (Ᏼ) CHEROKEE LETTER YV
 Unresolved: [Cans] 1472 (ᑲ) CANADIAN SYLLABICS KA vs 15AF (ᖯ) CANADIAN SYLLABICS AIVILIK B vs 15F7 (ᗷ) CANADIAN SYLLABICS CARRIER KHE
@@ -16266,7 +16266,6 @@ Removed Mapping: 4B4 (Ҵ) CYRILLIC CAPITAL LIGATURE TE TSE => 4B5 (ҵ) CYRILLIC 
 Removed Mapping: 4C1 (Ӂ) CYRILLIC CAPITAL LETTER ZHE WITH BREVE => 4C2 (ӂ) CYRILLIC SMALL LETTER ZHE WITH BREVE
 Removed Mapping: 4D0 (Ӑ) CYRILLIC CAPITAL LETTER A WITH BREVE => 4D1 (ӑ) CYRILLIC SMALL LETTER A WITH BREVE
 Removed Mapping: 4D2 (Ӓ) CYRILLIC CAPITAL LETTER A WITH DIAERESIS => 4D3 (ӓ) CYRILLIC SMALL LETTER A WITH DIAERESIS
-Removed Mapping: 4D4 (Ӕ) CYRILLIC CAPITAL LIGATURE A IE => 4D5 (ӕ) CYRILLIC SMALL LIGATURE A IE
 Removed Mapping: 4D6 (Ӗ) CYRILLIC CAPITAL LETTER IE WITH BREVE => 4D7 (ӗ) CYRILLIC SMALL LETTER IE WITH BREVE
 Removed Mapping: 4DA (Ӛ) CYRILLIC CAPITAL LETTER SCHWA WITH DIAERESIS => 4DB (ӛ) CYRILLIC SMALL LETTER SCHWA WITH DIAERESIS
 Removed Mapping: 4DC (Ӝ) CYRILLIC CAPITAL LETTER ZHE WITH DIAERESIS => 4DD (ӝ) CYRILLIC SMALL LETTER ZHE WITH DIAERESIS
@@ -17064,19 +17063,19 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Fastpath ASCII
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
-Valid: 155564
+Valid: 155565
 Multi: 103052
-Unique: 52512
+Unique: 52513
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
-Confusable: 1191
-Not Confusable: 120
-Non-Confusable Non-Unique: 51
+Confusable: 1192
+Not Confusable: 121
+Non-Confusable Non-Unique: 52
 ==== Compress Wholes ====
 ==== Compress Groups ====
 ==== Order Groups ====
 [✓] All Unrestricted before Restricted
-[✓] Ordered by Registration Likelihood
+[✓] Ordered by rules/group-order.ts
 ==== Group Summary ====
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
   1 |    806 |    69 |    805 |      1 | 0/65 | Latin     
@@ -17085,7 +17084,7 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
   4 |    108 |    98 |    108 |      0 |      | Devanagari
   5 | 114388 | 11526 |  11528 | 102860 | 0/0  | Korean    
   6 | 103069 |   207 |    209 | 102860 | 0/58 | Japanese  
-  7 |    811 |   101 |    101 |    710 | 0/8  | Cyrillic  
+  7 |    812 |   102 |    102 |    710 | 0/8  | Cyrillic  
   8 |     86 |    83 |     85 |      1 |      | Hebrew    
   9 |     84 |    82 |     83 |      1 |      | Thai      
  10 |     90 |    80 |     90 |      0 |      | Bengali   

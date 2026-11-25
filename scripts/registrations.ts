@@ -1,10 +1,11 @@
 // Registration impact report: how does the new spec treat every known ENS label vs the released library?
 //
-// usage (after `bun scripts/test-ts.ts <checkout>` has rebuilt ens-normalize.ts from our output/):
-//   bun scripts/registrations.ts ../ens-normalize.ts [--out report.txt] [--expiry] [--rpc URL]
+// usage:
+//   bun run registrations [--out report.txt] [--expiry] [--rpc URL] [--grace DAYS]
+//   bun run registrations --ts ../ens-normalize.ts   # use a rebuilt ens-normalize.ts instead (see test-ts.ts)
 //
-// Compares <checkout>/src/index.ts (rebuilt from our output/) with the released library
-// (@adraffy/ens-normalize, see BASELINE_VERSION) over every known label (adraffy/ens-labels).
+// Compares the new spec (reference implementation on output/, or a rebuilt ens-normalize.ts) with the
+// released library (@adraffy/ens-normalize, see BASELINE_VERSION) over every known label (adraffy/ens-labels).
 //
 // Categories:
 //   BROKEN     valid before, error now (an existing registration stops resolving)
@@ -25,21 +26,31 @@ import {parseArgs} from 'node:util';
 import {ens_normalize} from '@adraffy/ens-normalize';
 import {createPublicClient, hexToBigInt, http, labelhash, parseAbi} from 'viem';
 import {mainnet} from 'viem/chains';
+import {loadENSIP15} from '../src/ensip15.ts';
 import {BASELINE_VERSION, loadLabels} from '../src/labels.ts';
 
-const {values: opts, positionals} = parseArgs({
-	allowPositionals: true,
+const {values: opts} = parseArgs({
 	options: {
+		ts: {type: 'string'},
 		out: {type: 'string'},
 		expiry: {type: 'boolean', default: false},
 		grace: {type: 'string', default: '120'}, // days
 		rpc: {type: 'string', default: process.env.RPC_URL},
 	},
 });
-const root = resolve(positionals[0] ?? '../ens-normalize.ts');
-
 type Normalize = (s: string) => string;
-const next: {ensNormalize: Normalize} = await import(`${root}/src/index.ts`);
+let next: Normalize;
+let nextName: string;
+if (opts.ts) {
+	const root = resolve(opts.ts);
+	const lib: {ensNormalize: Normalize} = await import(`${root}/src/index.ts`);
+	next = lib.ensNormalize;
+	nextName = root;
+} else {
+	const ref = await loadENSIP15();
+	next = (s) => ref.normalize(s);
+	nextName = 'output/ (reference)';
+}
 const labels = await loadLabels();
 
 function run(f: Normalize, s: string): {norm?: string; error?: string} {
@@ -58,7 +69,7 @@ const buckets: Record<'BROKEN' | 'CHANGED' | 'ALLOWED' | 'MESSAGE', Diff[]> = {B
 const reasons = new Map<string, number>();
 for (const label of labels) {
 	const a = run(ens_normalize, label);
-	const b = run(next.ensNormalize, label);
+	const b = run(next, label);
 	if (a.norm === b.norm && a.error === b.error) continue;
 	if (a.norm !== undefined && b.error !== undefined) {
 		buckets.BROKEN.push({label, detail: b.error});
@@ -121,7 +132,7 @@ if (opts.expiry) {
 // ************************************************************
 // report
 
-const lines: string[] = [`${labels.length} labels, @adraffy/ens-normalize@${BASELINE_VERSION} vs ${root}`];
+const lines: string[] = [`${labels.length} labels, @adraffy/ens-normalize@${BASELINE_VERSION} vs ${nextName}`];
 for (const [k, v] of Object.entries(buckets)) lines.push(`${k.padEnd(8)} ${v.length}`);
 if (reasons.size) {
 	lines.push('', 'BROKEN by reason:');

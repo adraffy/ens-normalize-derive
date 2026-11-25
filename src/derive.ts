@@ -13,7 +13,7 @@
 import {describer} from './describe.ts';
 import {ensIdnaRules} from './idna.ts';
 import {Logger} from './log.ts';
-import {createNF, type NF} from './nf.ts';
+import {createNF, type NF, nfDataFromUnicode} from './nf.ts';
 import {CONFUSE_TYPE_ALLOW, CONFUSE_TYPE_VALID, type ConfuseType, type Rules} from './rules.ts';
 import {describeSelector, resolveRules} from './select.ts';
 import type {UnicodeScript, UnicodeSpec, VersionInfo} from './ucd.ts';
@@ -158,7 +158,7 @@ export interface DeriveOptions {
 }
 
 export function derive({unicode, rules, log = new Logger(), created = new Date(), skipNFTests, inspect}: DeriveOptions): DeriveOutput {
-	const NF = createNF(unicode);
+	const NF = createNF(nfDataFromUnicode(unicode));
 	const IDNA = ensIdnaRules(unicode);
 	const escaped = resolveRules(unicode, rules.charsEscape).cps;
 	const desc = describer(unicode, escaped);
@@ -171,7 +171,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.log(`CLDR Version: ${versionStr(unicode.cldrVersion)}`);
 
 	if (!skipNFTests) {
-		const errors = NF.runTests();
+		const errors = NF.runTests(unicode.readNFTests());
 		if (errors.length) throw new Error(`nf implementation wrong: ${errors.length} failures`);
 		NF.runRandomTests();
 	}
@@ -832,11 +832,20 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	}
 
 	log.section('Order Groups');
-	for (const g of groups) g.order = 1 + rules.groupOrder.indexOf(g.name) || Infinity;
+	// the order is a fixed priority (rules/group-order.ts): the first matching group names a label,
+	// and names the group in "illegal mixture" errors, so changing it changes output
+	for (const name of rules.groupOrder) {
+		if (!groups.some((g) => g.name === name)) throw new Error(`group-order: unknown group: ${name}`);
+	}
+	for (const g of groups) {
+		const i = rules.groupOrder.indexOf(g.name);
+		if (i < 0 && !g.restricted) throw new Error(`group-order: unrestricted group needs a position: ${g.name}`);
+		g.order = i < 0 ? Infinity : i; // unlisted restricted groups keep rules/scripts.ts order
+	}
 	groups.sort((a, b) => Number(!!a.restricted) - Number(!!b.restricted) || a.order - b.order || 0);
 	for (const [i, g] of groups.entries()) g.index = i;
 	log.checked(`All Unrestricted before Restricted`);
-	log.checked(`Ordered by Registration Likelihood`);
+	log.checked(`Ordered by rules/group-order.ts`);
 
 	log.section('Group Summary');
 	log.table(

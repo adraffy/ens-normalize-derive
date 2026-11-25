@@ -1,12 +1,12 @@
 import {expect, test} from 'bun:test';
-import {createNF} from '../src/nf.ts';
+import {createNF, nfDataFromUnicode} from '../src/nf.ts';
 import {UnicodeSpec} from '../src/ucd.ts';
 
 const unicode = UnicodeSpec.fromRelease('current');
-const nf = createNF(unicode);
+const nf = createNF(nfDataFromUnicode(unicode));
 
 test('NormalizationTest.txt', () => {
-	expect(nf.runTests()).toEqual([]);
+	expect(nf.runTests(unicode.readNFTests())).toEqual([]);
 });
 
 test('random round-trips', () => {

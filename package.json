@@ -10,8 +10,12 @@
 	"type": "module",
 	"scripts": {
 		"derive": "bun scripts/derive.ts",
-		"check": "bun scripts/derive.ts --check",
+		"make-tests": "bun scripts/make-tests.ts",
+		"check": "bun scripts/derive.ts --check && bun scripts/make-tests.ts --check",
 		"review": "bun scripts/review.ts",
+		"group-stats": "bun scripts/group-stats.ts",
+		"parity": "bun scripts/parity.ts",
+		"registrations": "bun scripts/registrations.ts",
 		"download:unicode": "bun scripts/download-unicode.ts",
 		"download:cldr": "bun scripts/download-cldr.ts",
 		"names": "bun scripts/names.ts",

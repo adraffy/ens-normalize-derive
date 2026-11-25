@@ -3914,7 +3914,7 @@ export const CONFUSE_GROUPS = [
 		// "ae" <Same>
 		'61 65', // LATIN SMALL LETTER A + LATIN SMALL LETTER E [Latn]=>[Latn]
 		valid(0xE6), // (æ) LATIN SMALL LETTER AE [Latn]=>[Latn]
-		//DISALLOW:0x4D5, // (ӕ) CYRILLIC SMALL LIGATURE A IE [Cyrl]=>[Cyrl]
+		0x4D5, // (ӕ) CYRILLIC SMALL LIGATURE A IE [Cyrl]=>[Cyrl]
 	],
 	[
 		// "AE" <Same>
