@@ -359,11 +359,12 @@
 	118C1 (𑣁) WARANG CITI SMALL LETTER A	Wara: allowed, whole-script checked
 	16AD6 (𖫖) BASSA VAH LETTER GAH	Bass: allowed, whole-script checked
 	16F3A (𖼺) MIAO LETTER SA	Plrd: allowed, whole-script checked
-[54] t ߠ Ꭲ ㄒ ꓔ ꔋ 𐊗 𐊱 𐌕 𖼊
+[54] t ߠ Ꭲ ㄒ 丅 ꓔ ꔋ 𐊗 𐊱 𐌕 𖼊
 	74 (t) LATIN SMALL LETTER T	Japanese: valid; Korean: valid; Han: valid; Latin: valid
 	7E0 (ߠ) NKO LETTER NA WOLOSO	Nkoo: allowed, whole-script checked
 	13A2 (Ꭲ) CHEROKEE LETTER I	Cher: allowed, whole-script checked
 	3112 (ㄒ) BOPOMOFO LETTER X	Bopo: allowed, whole-script checked
+	4E05 (丅) CJK Ideograph-4E05 [6/20992]	Japanese: REMOVED; Korean: REMOVED; Han: REMOVED
 	A4D4 (ꓔ) LISU LETTER TA	Lisu: allowed, whole-script checked
 	A50B (ꔋ) VAI SYLLABLE GBEE	Vaii: allowed, whole-script checked
 	10297 (𐊗) LYCIAN LETTER T	Lyci: allowed, whole-script checked

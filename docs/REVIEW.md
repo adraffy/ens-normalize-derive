@@ -36,11 +36,12 @@ How it was migrated:
 1. The hand edits were extracted relative to 15.0 (2 splits, 41 joins, 68 primary, 18 allow). Re-applying them to 15.0 reproduces all 2,157 sets exactly.
 2. On 18.0, Unicode moved some members to better sets (e.g. Cyrillic ӏ is now an l-lookalike), and those moves are followed. Ten pairs that Unicode 18 dropped entirely are kept as joins: ç/ҫ, 郎/郞, 隷/隸, …
 3. Unicode 16–18 additions apply, except where they would break a registered name. Those were found by iterating derive against all registrations:
-   - 29 new characters are split out, mostly restricted-script lookalikes (Coptic, Batak). This includes the faux-Latin Han 丅 and 丫, so prune them if you'd rather break those names.
+   - 28 new characters are split out, mostly restricted-script lookalikes (Coptic, Batak). 丫 is kept valid: it's real Chinese, with 3 active registrations.
+   - 丅 is **not** protected: it's archaic, used only as a faux-Latin T (三丅卄 = "ETH"), and none of its 4 names is registered in ENSv2.
    - ᄋ is made primary.
    - Two sets that Unicode merged ({ш ⲽ}, {ᩅ ᪀ ᪐}) are restored.
 
-Result: whole-script checked characters go from 1,190 to 2,108 (+522 Han, +270 restricted). Six unregistered characters become invalid. Registrations vs 1.11.1 are unchanged: BROKEN 34 (Bopo), CHANGED 0.
+Result: whole-script checked characters go from 1,190 to 2,108 (+522 Han, +270 restricted). Seven characters become invalid (the six unregistered ones plus 丅). Registrations vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅, none active in ENSv2), CHANGED 0.
 
 Still unsolved: confusables _within_ one group, such as Katakana vs Han in the Japanese group (ム/厶) and simplified vs traditional Han (户/戶). The whole-script model only compares across groups, and Unicode lists many of these pairs. Handling them needs a different mechanism (a per-group rule).
 

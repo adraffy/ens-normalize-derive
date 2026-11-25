@@ -146,8 +146,8 @@ export default {
 		0x2CD3, // (ⳓ) COPTIC SMALL LETTER OLD COPTIC HEI (5 registered labels)
 		0x2CE1, // (ⳡ) COPTIC SMALL LETTER OLD NUBIAN NYI (1 registered label)
 		0x3111, // (ㄑ) BOPOMOFO LETTER Q (1 registered label)
-		0x4E05, // (丅) CJK Ideograph-4E05 [6/20992] (4 registered labels)
-		0x4E2B, // (丫) CJK Ideograph-4E2B [44/20992] (6 registered labels)
+		// 0x4E05 (丅) not split: archaic, only used as a faux-Latin T (三丅卄 = ETH), 4 names, none registered in ENSv2
+		0x4E2B, // (丫) CJK Ideograph-4E2B [44/20992] (6 registered labels: mostly real Chinese, 3 active)
 		0x1091F, // (𐤟) PHOENICIAN WORD SEPARATOR (1 registered label)
 		0x10D08, // (𐴈) HANIFI ROHINGYA LETTER KHA (2 registered labels)
 		0x10D09, // (𐴉) HANIFI ROHINGYA LETTER FA (1 registered label)

@@ -196,4 +196,6 @@ export default [
 	{name: 'ㄐㄐㄐ', comment: 'Confusable: Bopomofo ㄐ vs Han 丩 (split)'},
 	{name: 'оо', error: true, comment: 'Confusable: Cyrillic oo is still whole-script confusable with Latin'},
 	{name: 'ꓳ', error: true, comment: 'Confusable: Lisu o-lookalike alone'},
+	{name: '三丅卄', error: true, comment: 'Confusable: faux-Latin 丅 (T) is disallowed'},
+	{name: '丫丫123', comment: 'Confusable: 丫 stays valid (real Chinese, registered)'},
 ] satisfies TestCase[];

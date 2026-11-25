@@ -14957,6 +14957,7 @@ Removed Valid: 1FE5 (ῥ) GREEK SMALL LETTER RHO WITH DASIA
 Removed Valid: 1FE6 (ῦ) GREEK SMALL LETTER UPSILON WITH PERISPOMENI
 Removed Valid: 1FE7 (ῧ) GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND PERISPOMENI
 Removed Valid: 1FF6 (ῶ) GREEK SMALL LETTER OMEGA WITH PERISPOMENI
+Removed Valid: 4E05 (丅) CJK Ideograph-4E05 [6/20992]
 Removed Valid: 10000 (𐀀) LINEAR B SYLLABLE B008 A
 Removed Valid: 10001 (𐀁) LINEAR B SYLLABLE B038 E
 Removed Valid: 10002 (𐀂) LINEAR B SYLLABLE B028 I
@@ -17425,8 +17426,8 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Fastpath ASCII
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
-Valid: 155559
-Multi: 103048
+Valid: 155558
+Multi: 103047
 Unique: 52511
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
@@ -17442,10 +17443,10 @@ Non-Confusable Non-Unique: 100
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
   1 |    806 |    69 |    805 |      1 | 0/65 | Latin     
   2 |    427 |   404 |    426 |      1 |      | Arabic    
-  3 | 102859 |     0 | 102123 |    736 | 0/0  | Han       
+  3 | 102858 |     0 | 102122 |    736 | 0/0  | Han       
   4 |    108 |    98 |    108 |      0 |      | Devanagari
-  5 | 114384 | 11525 |  11527 | 102857 | 0/0  | Korean    
-  6 | 103066 |   207 |    209 | 102857 | 0/58 | Japanese  
+  5 | 114383 | 11525 |  11527 | 102856 | 0/0  | Korean    
+  6 | 103065 |   207 |    209 | 102856 | 0/58 | Japanese  
   7 |    812 |   102 |    102 |    710 | 0/8  | Cyrillic  
   8 |     84 |    83 |     83 |      1 |      | Hebrew    
   9 |     83 |    82 |     82 |      1 |      | Thai      
