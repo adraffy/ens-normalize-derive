@@ -277,7 +277,14 @@ section(
 			let s = '';
 			while ([...s].length < len) {
 				let r = rng() * total;
-				const [, v] = dist.find(([w]) => (r -= w) < 0) ?? dist.at(-1)!;
+				let v = dist.at(-1)![1];
+				for (const [w, x] of dist) {
+					r -= w;
+					if (r < 0) {
+						v = x;
+						break;
+					}
+				}
 				s += pick(v);
 			}
 			pass.push(s);

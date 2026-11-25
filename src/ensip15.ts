@@ -182,11 +182,14 @@ export class ENSIP15 {
 			const info: Label = {input, offset};
 			offset += input.length + 1;
 			try {
-				const tokens = (info.tokens = this.tokens(input, ef));
+				const tokens = this.tokens(input, ef);
+				info.tokens = tokens;
 				if (!tokens.length) throw new Error('empty label');
-				const norm = (info.output = tokens.flatMap((t) => t.cps));
+				const norm = tokens.flatMap((t) => t.cps);
+				info.output = norm;
 				checkLeadingUnderscore(norm);
-				const emoji = (info.emoji = tokens.length > 1 || !!tokens[0]!.emoji);
+				const emoji = tokens.length > 1 || !!tokens[0]!.emoji;
+				info.emoji = emoji;
 				if (!emoji && norm.every((cp) => cp < 0x80)) {
 					checkLabelExtension(norm);
 					info.type = 'ASCII';
