@@ -18,6 +18,62 @@ Decided or done since the first review:
 - **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
 - **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
 
+## Rules review (2026-11-25)
+
+Usage numbers count the 3,399,305 labels that are valid under 1.11.1.
+
+### Missed disallows (applied)
+
+These 422 characters were still valid in unrestricted groups, matched the conventions in the old `chars-disallow` header, and are used by **no** valid registration. They are now disallowed:
+
+- unused characters in symbol blocks the rules otherwise reject (341): Znamenny Musical Notation, Symbols for Legacy Computing (+Supplement), Supplemental Arrows-A/C, Misc Symbols Supplement, Geometric Shapes Extended, Chess, Alchemical, Control Pictures, Supplemental Symbols and Pictographs
+- punctuation (47), rotated forms (31), Cyrillic ligatures ҥ ҵ ӕ
+
+Not applied, your call:
+
+- Modifier letters with no registrations: kana iteration marks ゝゞヽヾ, Arabic small yeh/waw. These are real orthography.
+- Box/shade characters that _are_ used: ▁▂▃▄▅▆▇█ and ░▒▓ each appear in 14–73 names.
+- U+0307 COMBINING DOT ABOVE is valid in the Hebrew group through its 18.0 script extensions. That looks unintended, but disallowing it globally would affect Latin ż. The fix would be a `SCRIPT_EXTENSIONS` override.
+
+Duplicates removed: `chars-valid` `$` and `_` (IDNA-valid since 16.0). 850 `confuse.ts` members that are disallowed are now commented `//DISALLOW:`. Derive warns if that happens again.
+
+### CM whitelist
+
+- All 128 entries are precomposed characters. The sequence half of the mechanism (base + mark with no precomposed form) is never used, so every group's `cm` in `spec.json` is empty. In practice the whitelist is a list of allowed accented letters.
+- Unused entries: ǹ, ΐ ϋ, ѓ ӣ ќ ӯ, ヷヸヹヺヾ, ぢゔゞ (harmless).
+- Gaps, measured as invalid registered labels that contain the character:
+
+| char      | labels         | note                                                                                  |
+| --------- | -------------- | ------------------------------------------------------------------------------------- |
+| ı         | 595            | dotless i, a classic i-confusable: needs a confusable decision, not a whitelist entry |
+| ī         | 113            | macron allows a e o u but not i (Latvian, pinyin, Hawaiian)                           |
+| ė         | 79             | Lithuanian                                                                            |
+| ț ș       | 34, 31         | Romanian comma-below; the cedilla forms ţ ş are whitelisted                           |
+| į ų       | 18, 4          | Lithuanian; ogonek allows only ą ę                                                    |
+| ÿ         | 13             | diaeresis allows a e i o u but not y                                                  |
+| ř ň ť ď ľ | 12, 5, 2, 6, 3 | Czech/Slovak; caron allows c e s z i o but no consonants beyond those                 |
+| ő ű       | 10, 1          | Hungarian                                                                             |
+| ǎ ǔ       | 5, 1           | breve-or-caron rule: ǎ was traded for ă, but u has neither                            |
+
+Adding any of these only makes more names valid. It never breaks one, but each addition should be checked against `confuse.ts`.
+
+### Fencing
+
+Fenced today: ’ (11,394 names), ⁄ (520), ・ (54), none at the start, end, or doubled. The candidates, with how many valid names would break:
+
+| char                      | names   | would break                             |                                 |
+| ------------------------- | ------- | --------------------------------------- | ------------------------------- |
+| -                         | 154,209 | 38,400 start, 5,102 end, 11,378 doubled | no                              |
+| _                         | 29,228  | all of them start with it               | no (already leading-only)       |
+| •                         | 13,924  | 13,223 start                            | no                              |
+| ‿                         | 66      | ~11                                     | maybe: it acts as an underscore |
+| ־ HEBREW MAQAF            | 1       | 0                                       | **yes**: it's a hyphen          |
+| ་ Tibetan tsheg, ׳ geresh | 26, 3   | 18+, 1                                  | no: they end words by design    |
+
+### Registrations still at stake (`--expiry`)
+
+All 34 BROKEN labels (Bopomofo + Han) have **no ENSv2 entry**. Each was a v1 `.eth` name that lapsed and is now held by the Graveyard. **No active registration breaks.**
+
 ## 1. Registration impact of Unicode 18 (needs a decision)
 
 `bun scripts/registrations.ts` (new spec vs released 1.11.1, 3,422,100 labels):

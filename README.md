@@ -52,11 +52,15 @@ bun scripts/emoji-new.ts            # emoji new in the current release
 The payloads are consumed by [ens-normalize.ts](https://github.com/adraffy/ens-normalize.ts). With a local checkout:
 
 ```sh
-bun scripts/test-ts.ts ../ens-normalize.ts --labels   # copy output/, rebuild, bun test, compare every ENS label
-bun scripts/registrations.ts ../ens-normalize.ts --out report.txt
+bun scripts/test-ts.ts ../ens-normalize.ts           # copy output/, rebuild, bun test
+bun scripts/registrations.ts ../ens-normalize.ts --out report.txt [--expiry]
 ```
 
-`registrations.ts` compares the rebuilt library against the released ens-normalize.js over every known label and buckets the differences: **BROKEN** (valid → error), **CHANGED** (normalizes differently), **ALLOWED** (error → valid), **MESSAGE** (different error). BROKEN and CHANGED need a decision.
+`registrations.ts` compares the rebuilt library against the released `@adraffy/ens-normalize` (a dev dependency) over every known label ([adraffy/ens-labels](https://github.com/adraffy/ens-labels), pinned and cached in `.cache/`). It buckets the differences: **BROKEN** (valid → error), **CHANGED** (normalizes differently), **ALLOWED** (error → valid), **MESSAGE** (different error). BROKEN and CHANGED need a decision.
+
+`--expiry` looks up each BROKEN and CHANGED label as a `.eth` name in the ENSv2 ETHRegistry on mainnet and classifies it as active, grace (28 days), expired, lapsed (no v2 entry, was a v1 name), or never. The RPC comes from `--rpc` or `RPC_URL`, otherwise viem's default public endpoint.
+
+`src/labels.ts` also builds a per-codepoint usage index over the valid labels: how many use a character, and how many at the start, at the end, or doubled. Use it to price a disallow or fence before making it.
 
 Restore the checkout's own data afterwards with `bun run download` there.
 
