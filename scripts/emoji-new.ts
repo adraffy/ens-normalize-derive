@@ -1,12 +1,12 @@
 // Print emoji introduced in a release.
 // usage: bun scripts/emoji-new.ts [release=current]
 
-import {UnicodePrinter} from '../src/printer.ts';
+import {describer} from '../src/describe.ts';
 import {UnicodeSpec} from '../src/ucd.ts';
 import {type CodePoint, compareVersions} from '../src/utils.ts';
 
 const unicode = UnicodeSpec.fromRelease(process.argv[2] ?? 'current');
-const P = new UnicodePrinter(unicode);
+const d = describer(unicode, new Set());
 const threshold = unicode.unicodeVersion.version;
 
 const found = new Map<string, {cps: CodePoint[]; name: string; version: string; types: string[]}>();
@@ -22,5 +22,5 @@ for (const x of Object.values(unicode.readEmojiData()).flat()) add([x.cp], x);
 for (const x of Object.values(unicode.readEmojiSequences()).flat()) add(x.cps, x);
 for (const x of Object.values(unicode.readEmojiZWJs()).flat()) add(x.cps, x);
 
-for (const rec of found.values()) console.log(`${P.emoji(rec)} [${rec.types}]`);
+for (const rec of found.values()) console.log(`${d.emoji(rec.cps, rec.name)} [${rec.types}]`);
 console.log(found.size);

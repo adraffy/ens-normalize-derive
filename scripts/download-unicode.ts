@@ -23,6 +23,8 @@ const FILES: string[][] = [
 	['{SPEC}/ucd/Scripts.txt'],
 	['{SPEC}/ucd/ScriptExtensions.txt'],
 	['{SPEC}/ucd/PropertyValueAliases.txt'],
+	['{SPEC}/ucd/Blocks.txt'],
+	['{SPEC}/ucd/DerivedAge.txt'],
 	// NF
 	['{SPEC}/ucd/CompositionExclusions.txt'],
 	['{SPEC}/ucd/DerivedNormalizationProps.txt'],
@@ -70,19 +72,21 @@ async function download(version: Version, draft: boolean, force: boolean) {
 	const dir = new URL(`unicode/${v3}/`, DATA_DIR);
 	mkdirSync(dir, {recursive: true});
 	console.log(`Downloading ${v3}${draft ? ' (draft)' : ''} => ${dir.pathname}`);
+	// only modified files bump version.json (adding a new file to the download list is not a data change)
 	let changed = 0;
 	const failures: string[] = [];
 	function write(name: string, bytes: Uint8Array, desc: string) {
 		const file = new URL(name, dir);
-		let same = false;
+		let old: Buffer | undefined;
 		try {
-			same = Buffer.compare(readFileSync(file), bytes) === 0;
+			old = readFileSync(file);
 		} catch {}
+		const same = old !== undefined && Buffer.compare(old, bytes) === 0;
 		if (!same) {
-			changed++;
+			if (old) changed++;
 			writeFileSync(file, bytes);
 		}
-		console.log(`${same ? 'SAME' : 'NEW!'} ${desc}`);
+		console.log(`${same ? 'SAME' : old ? 'CHG!' : 'NEW!'} ${desc}`);
 	}
 	await Promise.all(
 		FILES.map(async (sources) => {

@@ -13,7 +13,8 @@
 import {createNF, type NF} from './nf.ts';
 import {ensIdnaRules} from './idna.ts';
 import {Logger} from './log.ts';
-import {UnicodePrinter} from './printer.ts';
+import {describer} from './describe.ts';
+import {describeSelector, resolveRules} from './select.ts';
 import {CONFUSE_TYPE_ALLOW, CONFUSE_TYPE_VALID, type ConfuseType, type Rules} from './rules.ts';
 import type {UnicodeScript, UnicodeSpec, VersionInfo} from './ucd.ts';
 import {type CodePoint, compareArrays, explodeCp, groupBy, parseCpSequence, sortedCps} from './utils.ts';
@@ -148,6 +149,8 @@ const versionStr = (x: VersionInfo) => `${x.version} (${x.date})`;
 export interface DeriveOptions {
 	unicode: UnicodeSpec;
 	rules: Rules;
+	/** debugging/migration hook: called with the live sets at a stage */
+	inspect?: (stage: 'disallow', sets: {valid: Set<CodePoint>; mapped: Map<CodePoint, CodePoint[]>; ignored: Set<CodePoint>}) => void;
 	log?: Logger;
 	/** defaults to now */
 	created?: Date;
@@ -155,10 +158,13 @@ export interface DeriveOptions {
 	skipNFTests?: boolean;
 }
 
-export function derive({unicode, rules, log = new Logger(), created = new Date(), skipNFTests}: DeriveOptions): DeriveOutput {
+export function derive({unicode, rules, log = new Logger(), created = new Date(), skipNFTests, inspect}: DeriveOptions): DeriveOutput {
 	const NF = createNF(unicode);
 	const IDNA = ensIdnaRules(unicode);
-	const P = new UnicodePrinter(unicode);
+	const escaped = resolveRules(unicode, rules.charsEscape).cps;
+	const desc = describer(unicode, escaped);
+	const emojiDesc = (x: {cps?: readonly CodePoint[]; cp?: CodePoint; name?: string; name0?: string}) =>
+		desc.emoji(x.cps ?? [x.cp!], x.name0 ? `${x.name} / ${x.name0}` : x.name);
 	const CM = unicode.cm;
 	const NSM = unicode.nsm;
 
@@ -183,11 +189,11 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		const ys = mapped.get(cp);
 		if (ys) {
 			mapped.delete(cp);
-			log.log(`Removed Mapped: ${P.mapped(cp, ys)}`);
+			log.log(`Removed Mapped: ${desc.mapped(cp, ys)}`);
 		} else if (ignored.delete(cp)) {
-			log.log(`Removed Ignored: ${P.cp(cp)}`);
+			log.log(`Removed Ignored: ${desc.cp(cp)}`);
 		} else if (valid.delete(cp)) {
-			log.log(`Removed Valid: ${P.cp(cp)}`);
+			log.log(`Removed Valid: ${desc.cp(cp)}`);
 		}
 	}
 
@@ -197,9 +203,9 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		if (!info.name) throw new Error('expected name');
 		if (!info.type) throw new Error('expected type');
 		const key = String.fromCodePoint(...cps);
-		if (validEmoji.has(key)) throw new Error(`duplicate emoji: ${P.emoji(info)}`);
-		if (disabledEmoji.has(key)) throw new Error(`disabled emoji: ${P.emoji(info)}`);
-		log.log(`Register Emoji [${info.type}]: ${P.emoji(info)}`);
+		if (validEmoji.has(key)) throw new Error(`duplicate emoji: ${emojiDesc(info)}`);
+		if (disabledEmoji.has(key)) throw new Error(`disabled emoji: ${emojiDesc(info)}`);
+		log.log(`Register Emoji [${info.type}]: ${emojiDesc(info)}`);
 		validEmoji.set(key, info);
 	}
 
@@ -234,18 +240,18 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.section(`Demote Emoji to Characters`);
 	for (const cp of rules.emojiDemoted) {
 		const info = emojiMap.get(cp);
-		if (!info) throw new Error(`Expected emoji: ${P.cp(cp)}`);
-		if (info.used) throw new Error(`Duplicate: ${P.cp(cp)}`);
+		if (!info) throw new Error(`Expected emoji: ${desc.cp(cp)}`);
+		if (info.used) throw new Error(`Duplicate: ${desc.cp(cp)}`);
 		info.used = true;
-		log.log(`Demoted Emoji: ${P.emoji(info)}`);
+		log.log(`Demoted Emoji: ${emojiDesc(info)}`);
 		markEmojiDisabled(info);
 	}
 
 	log.section(`Disable Emoji (and Characters)`);
 	for (const cp of rules.emojiDisabled) {
 		const info = emojiMap.get(cp);
-		if (!info) throw new Error(`Expected emoji: ${P.cp(cp)}`);
-		if (info.used) throw new Error(`Duplicate: ${P.cp(cp)}`);
+		if (!info) throw new Error(`Expected emoji: ${desc.cp(cp)}`);
+		if (info.used) throw new Error(`Duplicate: ${desc.cp(cp)}`);
 		info.used = true;
 		disallowChar(cp);
 		markEmojiDisabled(info);
@@ -262,7 +268,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		if (cps.length === 2 && cps[1] === FE0F) {
 			// X + FE0F
 			const info = emojiMap.get(cps[0]!);
-			if (!info) throw new Error(`Expected emoji: ${P.emoji(seq)}`);
+			if (!info) throw new Error(`Expected emoji: ${emojiDesc(seq)}`);
 			if (info.used) continue;
 			info.used = true;
 			registerEmoji(seq);
@@ -272,7 +278,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.section('Register Default Emoji-Presentation Emoji');
 	for (const seq of emojiData.Emoji_Presentation!) {
 		const info = emojiMap.get(seq.cp);
-		if (!info) throw new Error(`Expected emoji: ${P.emoji(seq)}`);
+		if (!info) throw new Error(`Expected emoji: ${emojiDesc(seq)}`);
 		if (info.used) continue;
 		info.used = true;
 		registerEmoji({cps: [seq.cp, FE0F], ...seq});
@@ -293,8 +299,8 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		const cps = typeof def === 'number' ? [def] : parseCpSequence(def);
 		const key = String.fromCodePoint(...cps);
 		const info = validEmoji.get(key);
-		if (!info) throw new Error(`Expected emoji sequence: ${P.cps(cps)}`);
-		log.log(`Unregistered Emoji: ${P.emoji(info)}`);
+		if (!info) throw new Error(`Expected emoji sequence: ${desc.seq(cps)}`);
+		log.log(`Unregistered Emoji: ${emojiDesc(info)}`);
 		validEmoji.delete(key);
 		markEmojiDisabled(info);
 	}
@@ -312,7 +318,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			const info = map.get(key);
 			if (!info) continue;
 			const test = tests.find((x) => x.type === 'fully-qualified' || x.type === 'component'); // exclusive
-			if (!test) throw new Error(`Expected emoji group: ${P.emoji(info)}`);
+			if (!test) throw new Error(`Expected emoji group: ${emojiDesc(info)}`);
 			info.group = test.group;
 			info.subgroup = test.subgroup;
 			if (test.type === 'component') info.component = true;
@@ -325,38 +331,42 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.section('Add Mapped Characters');
 	for (const [x, ys] of rules.charsMapped) {
 		const old = mapped.get(x);
-		if (old && !compareArrays(old, ys)) throw new Error(`Duplicate mapped: ${P.mapped(x, ys)}`);
+		if (old && !compareArrays(old, ys)) throw new Error(`Duplicate mapped: ${desc.mapped(x, ys)}`);
 		disallowChar(x);
 		mapped.set(x, ys);
-		log.log(`Add Mapped: ${P.mapped(x, ys)}`);
+		log.log(`Add Mapped: ${desc.mapped(x, ys)}`);
 	}
 
 	log.section('Add Ignored Characters');
 	for (const cp of rules.charsIgnored) {
-		if (ignored.has(cp)) throw new Error(`Already ignored: ${P.cp(cp)}`);
+		if (ignored.has(cp)) throw new Error(`Already ignored: ${desc.cp(cp)}`);
 		disallowChar(cp);
 		ignored.add(cp);
-		log.log(`Added Ignored: ${P.cp(cp)}`);
+		log.log(`Added Ignored: ${desc.cp(cp)}`);
 	}
 
 	log.section('Add Valid Characters');
 	for (const cp of rules.charsValid) {
 		if (valid.has(cp)) {
-			log.log(`*** Already valid: ${P.cp(cp)}`);
+			log.log(`*** Already valid: ${desc.cp(cp)}`);
 			continue;
 		}
 		disallowChar(cp);
 		valid.add(cp);
-		log.log(`Added Valid: ${P.cp(cp)}`);
+		log.log(`Added Valid: ${desc.cp(cp)}`);
 	}
 
 	// 20221213: this comes after Adds
 	log.section('Remove Disallowed Characters');
-	for (const cp of rules.charsDisallowed) {
-		if (!mapped.has(cp) && !ignored.has(cp) && !valid.has(cp)) {
-			log.log(`*** Already disallowed: ${P.cp(cp)}`); // not fatal
+	{
+		inspect?.('disallow', {valid, mapped, ignored});
+		const {byRule, warnings} = resolveRules(unicode, rules.charsDisallowed);
+		for (const w of warnings) log.log(`*** ${w}`);
+		for (const [rule, cps] of byRule) {
+			const live = cps.filter((cp) => valid.has(cp) || mapped.has(cp) || ignored.has(cp));
+			log.log(`Rule: ${rule.reason ?? describeSelector(rule)} [${live.length}/${cps.length}]`);
+			for (const cp of live) disallowChar(cp);
 		}
-		disallowChar(cp);
 	}
 	disallowChar(STOP);
 
@@ -367,10 +377,10 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			if (!abbrs.length) throw new Error(`Empty`);
 			const scripts = [...new Set(abbrs.toSorted().map((x) => unicode.requireScript(x)))];
 			const char = unicode.requireChar(cp);
-			log.log(`${P.cp(cp)} [${char.getExtended().map((x) => x.abbr)} => ${scripts.map((x) => x.abbr)}]`);
+			log.log(`${desc.cp(cp)} [${char.getExtended().map((x) => x.abbr)} => ${scripts.map((x) => x.abbr)}]`);
 			char.extended = scripts; // replace
 		} catch (err) {
-			throw new Error(`ScriptExt "${(err as Error).message}": ${P.cp(cp)}`);
+			throw new Error(`ScriptExt "${(err as Error).message}": ${desc.cp(cp)}`);
 		}
 	}
 
@@ -437,7 +447,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			g.name + (g.restricted ? ' [R]' : ''),
 			[...g.testScripts].map((s) => s.abbr).join('+'),
 			[...g.restScripts].map((s) => s.abbr).join('+'),
-			[...g.extraSet].map((cp) => unicode.safeString(cp, true)).join(''),
+			[...g.extraSet].map((cp) => desc.str([cp])).join(''),
 		]),
 	);
 
@@ -454,15 +464,15 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			cmWhitelist.add(key);
 			const [base, ...cms] = cps as [CodePoint, ...CodePoint[]];
 			const baseChar = unicode.requireChar(base);
-			if (!valid.has(base)) throw new Error(`Base not Valid: ${P.cp(base)}`);
-			if (baseChar.isCM) throw new Error(`Base is CM: ${P.cp(base)}`);
+			if (!valid.has(base)) throw new Error(`Base not Valid: ${desc.cp(base)}`);
+			if (baseChar.isCM) throw new Error(`Base is CM: ${desc.cp(base)}`);
 			const gs = groups.filter((g) => g.validSet.has(base));
 			if (!gs.length) throw new Error(`No group`);
 			for (const cp of cms) {
-				if (!unicode.requireChar(cp).isCM) throw new Error(`Not CM: ${P.cp(cp)}`);
-				if (!valid.has(cp)) throw new Error(`CM not Valid: ${P.cp(cp)}`);
+				if (!unicode.requireChar(cp).isCM) throw new Error(`Not CM: ${desc.cp(cp)}`);
+				if (!valid.has(cp)) throw new Error(`CM not Valid: ${desc.cp(cp)}`);
 				for (const g of gs) {
-					if (!g.validSet.has(cp)) throw new Error(`Group "${g.name} missing CM: ${P.cp(cp)}`);
+					if (!g.validSet.has(cp)) throw new Error(`Group "${g.name} missing CM: ${desc.cp(cp)}`);
 				}
 			}
 			for (const g of gs) {
@@ -470,7 +480,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				if (!v) g.cmMap.set(base, (v = []));
 				v.push(cms);
 			}
-			log.log(`${P.cps(cps)} <${cms.length}> "${NF.nfd(cps).map((cp) => unicode.safeString(cp, true)).join('+')}" [${gs.map((g) => g.name)}]`);
+			log.log(`${desc.seq(cps)} <${cms.length}> "${NF.nfd(cps).map((cp) => desc.str([cp])).join('+')}" [${gs.map((g) => g.name)}]`);
 		} catch (err) {
 			throw new Error(`Whitelist CM "${form}": ${(err as Error).message}`);
 		}
@@ -499,7 +509,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		log.section(`Purge CM: ${g.name} (${purged.length})`);
 		for (const cp of purged) {
 			g.validSet.delete(cp);
-			log.log(P.mapped(cp, NF.nfd([cp])));
+			log.log(desc.mapped(cp, NF.nfd([cp])));
 		}
 	}
 
@@ -517,13 +527,13 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				const {cp, type} = typeof member === 'number' ? {cp: member, type: undefined} : member;
 				// assert that every confusable is unique
 				// note: this is tested before group tests, so this includes invalid characters
-				if (confusedUnion.has(cp)) throw new Error(`Duplicate confusable "${target}": ${P.cp(cp)}`);
+				if (confusedUnion.has(cp)) throw new Error(`Duplicate confusable "${target}": ${desc.cp(cp)}`);
 				confusedUnion.add(cp);
 				switch (type) {
 					case undefined:
 					case CONFUSE_TYPE_VALID:
 					case CONFUSE_TYPE_ALLOW: break;
-					default: throw new Error(`Unknown confusable type "${type}": ${P.cp(cp)}`);
+					default: throw new Error(`Unknown confusable type "${type}": ${desc.cp(cp)}`);
 				}
 				// find the groups that COULD contain this character
 				let gs = groups.filter((g) => parts.get(g)!.has(cp));
@@ -583,14 +593,14 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 			for (const def of defs) {
 				if (def.type !== CONFUSE_TYPE_VALID) continue;
 				if (def.auto) {
-					log.log(`Auto-Override: ${P.cp(def.cp)} [${[...def.groups].map((g) => g.name)} vs ${[...union].filter((g) => !def.groups.has(g)).map((g) => g.name)}]`);
+					log.log(`Auto-Override: ${desc.cp(def.cp)} [${[...def.groups].map((g) => g.name)} vs ${[...union].filter((g) => !def.groups.has(g)).map((g) => g.name)}]`);
 				} else {
-					log.log(`Override: ${P.cp(def.cp)} [${[...def.groups].map((g) => g.name)}]`);
+					log.log(`Override: ${desc.cp(def.cp)} [${[...def.groups].map((g) => g.name)}]`);
 				}
 			}
 			for (const [key, gs] of unresolved) {
 				const cps = key.split(',').map((s) => parseInt(s));
-				log.log(`Unresolved: [${gs.map((g) => g.name)}] ${cps.map((x) => P.cp(x)).join(' vs ')}`);
+				log.log(`Unresolved: [${gs.map((g) => g.name)}] ${cps.map((x) => desc.cp(x)).join(' vs ')}`);
 			}
 		}
 	}
@@ -610,7 +620,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	for (const [x, ys] of mapped) {
 		if (!ys.every((cp) => valid.has(cp))) {
 			mapped.delete(x);
-			log.log(`Removed Mapping: ${P.mapped(x, ys)}`);
+			log.log(`Removed Mapping: ${desc.mapped(x, ys)}`);
 		}
 	}
 
@@ -635,54 +645,53 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	log.section('Assert Invariants');
 
 	for (const cp of ignored) {
-		if (valid.has(cp)) throw new Error(`Ignored is Valid: ${P.cp(cp)}`);
-		if (mapped.has(cp)) throw new Error(`Ignored is Mapped: ${P.cp(cp)}`);
+		if (valid.has(cp)) throw new Error(`Ignored is Valid: ${desc.cp(cp)}`);
+		if (mapped.has(cp)) throw new Error(`Ignored is Mapped: ${desc.cp(cp)}`);
 	}
 	log.checked(`Ignored`);
 
 	for (const [x, ys] of mapped) {
-		if (valid.has(x)) throw new Error(`Mapped is Valid: ${P.mapped(x, ys)}`);
+		if (valid.has(x)) throw new Error(`Mapped is Valid: ${desc.mapped(x, ys)}`);
 	}
 	log.checked('Mapped is Valid');
 
 	if (valid.has(STOP)) throw new Error(`Stop is Valid`);
 	for (const [x, ys] of mapped) {
-		if (x === STOP || ys.includes(STOP)) throw new Error(`Mapped contains Stop: ${P.mapped(x, ys)}`);
+		if (x === STOP || ys.includes(STOP)) throw new Error(`Mapped contains Stop: ${desc.mapped(x, ys)}`);
 	}
 	log.checked(`Stop isn't Mapped`);
 
 	for (const cp of valid) {
-		if (!NF.isNFC(cp)) throw new Error(`Valid Non-NFC: ${P.cp(cp)}`);
+		if (!NF.isNFC(cp)) throw new Error(`Valid Non-NFC: ${desc.cp(cp)}`);
 	}
 	log.checked(`Valid are NFC`);
 
 	// this prevents us from disabling a non-trivial intermediate part
 	for (const cp0 of valid) {
 		for (const cp of NF.innerParts(cp0)) {
-			if (!valid.has(cp)) throw new Error(`Not Closed: ${P.cp(cp0)} w/part ${P.cp(cp)}`);
+			if (!valid.has(cp)) throw new Error(`Not Closed: ${desc.cp(cp0)} w/part ${desc.cp(cp)}`);
 		}
 	}
 	log.checked(`Valid is Closed (via Brute-force)`);
 
-	const escaped = new Set(rules.charsEscape);
 	for (const cp of escaped) {
-		if (valid.has(cp)) throw new Error(`Escaped character is valid: ${P.cp(cp)}`);
+		if (valid.has(cp)) throw new Error(`Escaped character is valid: ${desc.cp(cp)}`);
 	}
 	log.checked(`No Valid Escaped`);
 
 	for (const cp of unicode.getNoncharacterCps()) {
-		if (valid.has(cp)) throw new Error(`Non-character is valid: ${P.cp(cp)}`);
+		if (valid.has(cp)) throw new Error(`Non-character is valid: ${desc.cp(cp)}`);
 	}
 	log.checked('No Valid Non-Characters');
 
 	for (let cp = 0xd800; cp <= 0xdfff; cp++) {
-		if (valid.has(cp)) throw new Error(`Surrogate is valid: ${P.cp(cp)}`);
+		if (valid.has(cp)) throw new Error(`Surrogate is valid: ${desc.cp(cp)}`);
 	}
 	log.checked(`No Valid Surrogates`);
 
 	const fencedMap = new Map<CodePoint, string>();
 	for (const [cp, name] of rules.charsFenced) {
-		if (!valid.has(cp)) throw new Error(`Fenced character is not valid: ${P.cp(cp)}`);
+		if (!valid.has(cp)) throw new Error(`Fenced character is not valid: ${desc.cp(cp)}`);
 		fencedMap.set(cp, name || unicode.getName(cp, true));
 	}
 	log.checked('Fenced are Valid');
@@ -691,22 +700,22 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	for (const info of validEmoji.values()) {
 		const {cps} = info;
 		if (nonzeroCC.has(cps[0]!) || nonzeroCC.has(cps.at(-1)!)) {
-			throw new Error(`Emoji with non-zero CC Boundary: ${P.emoji(info)}`);
+			throw new Error(`Emoji with non-zero CC Boundary: ${emojiDesc(info)}`);
 		}
 	}
 	log.checked('Emoji Boundaries');
 
 	for (const info of validEmoji.values()) {
 		const {cps} = info;
-		if (compareArrays(cps, NF.nfc(cps))) throw new Error(`Emoji doesn't survive NFC: ${P.emoji(info)}`);
-		if (compareArrays(cps, NF.nfd(cps))) throw new Error(`Emoji doesn't survive NFD: ${P.emoji(info)}`);
+		if (compareArrays(cps, NF.nfc(cps))) throw new Error(`Emoji doesn't survive NFC: ${emojiDesc(info)}`);
+		if (compareArrays(cps, NF.nfd(cps))) throw new Error(`Emoji doesn't survive NFD: ${emojiDesc(info)}`);
 	}
 	log.checked('Emoji are NF-Safe');
 
 	// check that ASCII can be fast-pathed
 	for (let cp = 0; cp < 0x80; cp++) {
 		if (!valid.has(cp)) continue;
-		const fail = (msg: string) => new Error(`ASCII ${P.cp(cp)}: ${msg}`);
+		const fail = (msg: string) => new Error(`ASCII ${desc.cp(cp)}: ${msg}`);
 		const char = unicode.requireChar(cp);
 		if (!char.script) throw fail(`Missing script`);
 		if (!NF.isDecomposed(cp)) throw fail(`Decomposes`);
@@ -746,7 +755,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		const gs = groups.filter((g) => g.validSet.has(cp));
 		if (!gs.length) throw new Error('bug');
 		if (gs.some((g) => g.cmWhitelisted !== gs[0]!.cmWhitelisted)) {
-			throw new Error(`Different CM style: ${P.cp(cp)} [${gs.map((g) => `${g.name}=${g.cmWhitelisted}`)}]`);
+			throw new Error(`Different CM style: ${desc.cp(cp)} [${gs.map((g) => `${g.name}=${g.cmWhitelisted}`)}]`);
 		}
 	}
 	log.checked(`Matching Groups have Same CM Style`);
@@ -754,7 +763,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	for (const w of wholes) {
 		for (const [cp, set] of w.map) {
 			for (const g of set) {
-				if (!g.validSet.has(cp)) throw new Error(`Whole member not valid: ${g.name} ${P.cp(cp)}`);
+				if (!g.validSet.has(cp)) throw new Error(`Whole member not valid: ${g.name} ${desc.cp(cp)}`);
 			}
 		}
 	}
@@ -831,6 +840,17 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	const nsm = new Set(nsms.flat());
 	log.log(`CM(${CM.size}) => NSM(${NSM.size}) => ${nsm.size}`);
 	log.log(`Per Group Max: ${Math.max(...nsms.map((v) => v.length))}`);
+
+	// characters new in this Unicode version that ended up valid need a human decision
+	log.section(`Review: New in ${unicode.unicodeVersion.version}`);
+	{
+		const age = unicode.unicodeVersion.version.split('.').slice(0, 2).join('.');
+		const fresh = sortedCps(validUnion).filter((cp) => unicode.requireChar(cp).age === age);
+		for (const cp of fresh) {
+			log.log(`${desc.cp(cp)} [${groups.filter((g) => g.validSet.has(cp)).map((g) => g.name)}]`);
+		}
+		log.log(`New Valid: ${fresh.length}`);
+	}
 
 	// ************************************************************
 	// payloads

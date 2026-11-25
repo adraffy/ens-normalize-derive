@@ -1,5 +1,6 @@
 // Types for the hand-maintained rule files in /rules, and a loader that bundles them.
 
+import type {Rule} from './select.ts';
 import type {CodePoint} from './utils.ts';
 
 export const CONFUSE_TYPE_ALLOW = 'allow';
@@ -33,8 +34,8 @@ export interface Rules {
 	charsValid: CodePoint[];
 	charsIgnored: CodePoint[];
 	charsMapped: [CodePoint, CodePoint[]][];
-	charsDisallowed: CodePoint[];
-	charsEscape: CodePoint[];
+	charsDisallowed: Rule[];
+	charsEscape: Rule[];
 	charsFenced: [CodePoint, string?][];
 	groupOrder: string[];
 	cmWhitelist: string[];
@@ -69,7 +70,8 @@ export async function loadRules(): Promise<Rules> {
 		charsValid: valid.default,
 		charsIgnored: ignored.default,
 		charsMapped: mapped.default,
-		charsDisallowed: disallowed.default,
+		// TEMP: wrap the legacy codepoint list until rules/disallow/ exists
+		charsDisallowed: [{cps: disallowed.default, reason: "legacy chars-disallow"}],
 		charsEscape: escape.default,
 		charsFenced: fenced.default,
 		groupOrder: order.default,

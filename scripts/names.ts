@@ -5,7 +5,8 @@
 //   bun scripts/names.ts find abc            # search names (regex, case-insensitive)
 //   bun scripts/names.ts script Latn         # every character in a script
 //   bun scripts/names.ts prop White_Space    # every character with a PropList property
-//   bun scripts/names.ts block 0400..04FF    # alias of a range
+//   bun scripts/names.ts block "Box Drawing" # every character in a block
+//   bun scripts/names.ts new                 # characters new in this version
 //   bun scripts/names.ts idna-valid | idna-ignored | idna-mapped | cm
 // options:
 //   --format=js|jss|jsstr|md|csv   (default: js)
@@ -13,8 +14,10 @@
 //   --old                          (find: also search old names)
 
 import {parseArgs} from 'node:util';
+import {describer} from '../src/describe.ts';
 import {ensIdnaRules} from '../src/idna.ts';
-import {UnicodePrinter} from '../src/printer.ts';
+import {loadRules} from '../src/rules.ts';
+import {resolveRules} from '../src/select.ts';
 import {UnicodeSpec} from '../src/ucd.ts';
 import {type CodePoint, explodeCp, hexCp, parseCpRange} from '../src/utils.ts';
 
@@ -28,7 +31,7 @@ const {values: opts, positionals: args} = parseArgs({
 });
 
 const unicode = UnicodeSpec.fromRelease(opts.release);
-const P = new UnicodePrinter(unicode);
+const d = describer(unicode, resolveRules(unicode, (await loadRules()).charsEscape).cps);
 
 let cps: CodePoint[];
 switch (args[0]) {
@@ -56,26 +59,29 @@ switch (args[0]) {
 	case 'idna-ignored': cps = ensIdnaRules(unicode).ignored; break;
 	case 'idna-mapped': cps = ensIdnaRules(unicode).mapped.map((x) => x[0]); break;
 	case 'cm': cps = [...unicode.cm]; break;
+	case 'block': cps = unicode.requireBlock(args.slice(1).join(' ')).chars.map((x) => x.cp); break;
+	case 'new': {
+		const age = unicode.unicodeVersion.version.split('.').slice(0, 2).join('.');
+		cps = [...unicode.charMap.values()].filter((x) => x.age === age).map((x) => x.cp);
+		break;
+	}
 	default: {
-		const v = args.slice(args[0] === 'block' ? 1 : 0).flatMap((arg) => (/^[0-9a-f]/i.test(arg) ? parseCpRange(arg) : explodeCp(arg)));
+		const v = args.flatMap((arg) => (/^[0-9a-f]/i.test(arg) ? parseCpRange(arg) : explodeCp(arg)));
 		cps = [...new Set(v)].sort((a, b) => a - b);
 	}
 }
 
-switch (opts.format) {
-	case 'js':
-	case 'jss':
-	case 'jsstr':
-	case 'md': {
-		const fmt = opts.format;
-		for (const cp of cps) console.log(P[fmt](cp));
-		console.log(cps.length);
-		break;
-	}
-	case 'csv': {
-		console.log(`Dec,Hex,Form,Name`);
-		for (const cp of cps) console.log(`${cp},${hexCp(cp)},"${P.display(cp)}","${unicode.getName(cp)}"`);
-		break;
-	}
-	default: throw new Error(`unknown format: ${opts.format}`);
-}
+// line formats (for pasting into rule files)
+const name = (cp: CodePoint) => unicode.getName(cp);
+const FORMATS: Record<string, (cp: CodePoint) => string> = {
+	js: (cp) => d.comment(cp), //                              0x61, // (a) LATIN SMALL LETTER A
+	jss: (cp) => `${d.comment(cp)} [${d.scripts(cp)}]`, //      0x61, // (a) LATIN SMALL LETTER A [Latn]
+	jsstr: (cp) => `'${String.fromCodePoint(cp)}', // ${d.cp(cp)}`, // 'a', // 61 (a) LATIN SMALL LETTER A
+	md: (cp) => `* \`${hexCp(cp)} (${d.str([cp])})\` ${name(cp)}`,
+	csv: (cp) => `${cp},${hexCp(cp)},"${d.str([cp])}","${name(cp)}"`,
+};
+const fmt = FORMATS[opts.format];
+if (!fmt) throw new Error(`unknown format: ${opts.format} (${Object.keys(FORMATS)})`);
+if (opts.format === 'csv') console.log('Dec,Hex,Form,Name');
+for (const cp of cps) console.log(fmt(cp));
+if (opts.format !== 'csv') console.log(cps.length);

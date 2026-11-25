@@ -10,9 +10,7 @@ import {
 	parseCp,
 	parseCpRange,
 	parseCpSequence,
-	quoteCp,
 } from './utils.ts';
-import UNPRINTABLES from './unprintables.ts';
 
 export const DATA_DIR = new URL('../data/', import.meta.url);
 
@@ -133,6 +131,10 @@ export class UnicodeChar {
 	script!: UnicodeScript;
 	/** script extensions (if different from [script]) */
 	extended?: UnicodeScript[];
+	/** Blocks.txt (every assigned char is in a block) */
+	block!: UnicodeBlock;
+	/** DerivedAge.txt: version that assigned this char, eg. "18.0" */
+	age!: string;
 
 	static parse(v: string[]): UnicodeChar {
 		// https://www.unicode.org/reports/tr44/#UnicodeData.txt
@@ -206,6 +208,14 @@ export class UnicodeScript {
 	toString() {
 		return `UnicodeScript(${this.abbr}, ${this.name})`;
 	}
+}
+
+export interface UnicodeBlock {
+	name: string;
+	cp0: CodePoint;
+	cp1: CodePoint;
+	/** assigned chars */
+	chars: UnicodeChar[];
 }
 
 export interface VersionInfo {
@@ -285,6 +295,7 @@ export class UnicodeSpec {
 	readonly cldrVersion: VersionInfo;
 	readonly charMap: Map<CodePoint, UnicodeChar>;
 	readonly scriptMap = new Map<string, UnicodeScript>();
+	readonly blocks: UnicodeBlock[];
 	/** gc = M* */
 	readonly cm: Set<CodePoint>;
 	/** gc = Mn | Me */
@@ -338,6 +349,26 @@ export class UnicodeSpec {
 		const {limited_use, excluded} = this.readScriptKinds();
 		for (const abbr of excluded) this.requireScript(abbr).type = SCRIPT_TYPE_EXCLUDED;
 		for (const abbr of limited_use) this.requireScript(abbr).type = SCRIPT_TYPE_LIMITED_USE;
+		this.blocks = this.readBlocks().map(([cp0, cp1, name]) => {
+			const block: UnicodeBlock = {name, cp0, cp1, chars: []};
+			for (let cp = cp0; cp <= cp1; cp++) {
+				const char = this.charMap.get(cp);
+				if (!char) continue;
+				char.block = block;
+				block.chars.push(char);
+			}
+			return block;
+		});
+		for (const [age, cps] of Object.entries(this.readAges())) {
+			for (const cp of cps) {
+				const char = this.charMap.get(cp);
+				if (char) char.age = age;
+			}
+		}
+		for (const char of this.charMap.values()) {
+			if (!char.block) throw new Error(`no block: ${char}`);
+			if (!char.age) throw new Error(`no age: ${char}`);
+		}
 	}
 
 	private file(name: string) {
@@ -355,6 +386,11 @@ export class UnicodeSpec {
 		if (!char) throw new TypeError(`invalid codepoint: ${hexCp(cp)}`);
 		return char;
 	}
+	requireBlock(name: string): UnicodeBlock {
+		const block = this.blocks.find((x) => x.name === name);
+		if (!block) throw new TypeError(`unknown block: ${name}`);
+		return block;
+	}
 	requireScript(abbr: string): UnicodeScript {
 		const script = this.scriptMap.get(abbr);
 		if (!script) throw new TypeError(`unknown script abbr: ${abbr}`);
@@ -362,27 +398,6 @@ export class UnicodeSpec {
 	}
 	getName(cp: CodePoint, useShort = false): string {
 		return this.charMap.get(cp)?.getName(useShort) ?? `???-${hexCp(cp)}`;
-	}
-	isPrintable(cp: CodePoint): boolean {
-		return this.charMap.has(cp) && !UNPRINTABLES.has(cp);
-	}
-	/** printable form: prefixes a leading CM with a dotted-circle, replaces unprintables */
-	safeString(x: CodePoint | readonly CodePoint[], escape = false): string {
-		const cps = typeof x === 'number' ? [x] : x;
-		if (!cps.length) return '';
-		const buf: string[] = [];
-		if (this.isPrintable(cps[0]!) && this.cm.has(cps[0]!)) buf.push('◌'); // DOTTED CIRCLE
-		let prev = 0;
-		for (let i = 0; i < cps.length; i++) {
-			const cp = cps[i]!;
-			if (!this.isPrintable(cp)) {
-				buf.push(String.fromCodePoint(...cps.slice(prev, i)));
-				buf.push(escape ? quoteCp(cp) : '\u{FFFD}');
-				prev = i + 1;
-			}
-		}
-		buf.push(String.fromCodePoint(...cps.slice(prev)));
-		return buf.join('');
 	}
 
 	// ************************************************************
@@ -469,6 +484,21 @@ export class UnicodeSpec {
 	readScripts(): [string, CodePoint[]][] {
 		// 0000..001F    ; Common # Cc  [32] <control-0000>..<control-001F>
 		return Object.entries(parseRangeBuckets(this.file('Scripts.txt')));
+	}
+	/** [[cp0, cp1, name], ...] */
+	readBlocks(): [CodePoint, CodePoint, string][] {
+		// 0000..007F; Basic Latin
+		const root: [CodePoint, CodePoint, string][] = [];
+		parseSemicolonFile(this.file('Blocks.txt'), ([src, name]) => {
+			const cps = parseCpRange(src!);
+			root.push([cps[0]!, cps.at(-1)!, name!]);
+		});
+		return root;
+	}
+	/** {"1.1": [cp, ...], ...} */
+	readAges(): Record<string, CodePoint[]> {
+		// 0000..001F    ; 1.1 #  [32] <control-0000>..<control-001F>
+		return parseRangeBuckets(this.file('DerivedAge.txt'));
 	}
 	readScriptExtensions(): [CodePoint, string[]][] {
 		// 102E1..102FB  ; Arab Copt # No  [27] COPTIC EPACT DIGIT ONE..COPTIC EPACT NUMBER NINE HUNDRED
