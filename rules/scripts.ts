@@ -259,8 +259,8 @@ export const RESTRICTED_SCRIPTS = [
 	// Bopo is now Limited Use ==> fix in 18.0.0
 
 	// 18.0.0
-	'Chis', // Chisoi
-	'Jurc', // Jurchen 
+	// 20261125: Chisoi was in the proposed UAX-31 Excluded table but was cut from the final 18.0.0
+	'Jurc', // Jurchen
 	'Pcun', // Proto Cuneiform 
 	'Seal', // Seal
 	'Bopo', // Bopomofo (was allowed in 17-)

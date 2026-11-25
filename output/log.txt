@@ -1,4 +1,4 @@
-Unicode Version: 18.0.0 (2026-08-22T21:13:47.456Z)
+Unicode Version: 18.0.0 (2026-11-25T20:48:52.431Z)
 CLDR Version: 48.2 (2026-03-28T19:59:34.849Z)
 ==== RGI Emoji ZWJ Sequences ====
 Register Emoji [RGI_Emoji_ZWJ_Sequence]: [1F468 200D 2764 FE0F 200D 1F468] (👨‍❤️‍👨) couple with heart: man, man
@@ -12440,7 +12440,6 @@ Valid  | Name       | Test      | Rest      | Extra
     26 | Sidt [R]   | Sidt      |           |                           
     55 | Tayo [R]   | Tayo      |           |                           
     54 | Tols [R]   | Tols      |           |                           
-     0 | Chis [R]   | Chis      |           |                           
    965 | Jurc [R]   | Jurc      |           |                           
    235 | Pcun [R]   | Pcun      |           |                           
  11328 | Seal [R]   | Seal      |           |                           
@@ -16259,7 +16258,6 @@ Removed Mapping: 1F246 (🉆) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-76D
 Removed Mapping: 1F247 (🉇) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-52DD => [3014 52DD 3015] (〔勝〕) LEFT TORTOISE SHELL BRACKET + CJK Ideograph-52DD [1246/20992] + RIGHT TORTOISE SHELL BRACKET
 Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-6557 => [3014 6557 3015] (〔敗〕) LEFT TORTOISE SHELL BRACKET + CJK Ideograph-6557 [5976/20992] + RIGHT TORTOISE SHELL BRACKET
 ==== Remove Empty Groups ====
-Removed Group: Chis
 ==== Assert Invariants ====
 [✓] Ignored
 [✓] Mapped is Valid
@@ -16281,8 +16279,8 @@ Unique: 52697
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 Confusable: 1203
-Not Confusable: 107
-Non-Confusable Non-Unique: 44
+Not Confusable: 120
+Non-Confusable Non-Unique: 51
 ==== Compress Wholes ====
 ==== Compress Groups ====
 ==== Order Groups ====

@@ -258,11 +258,6 @@ export interface IdnaTable {
 	mapped: [string, string][];
 }
 
-// 20250910: Chisoi is listed in the UAX-31 (proposed) Excluded table for 18.0.0
-// but has no assigned characters and no PropertyValueAliases entry.
-// TODO: remove once data/unicode/18.0.0 is re-downloaded from the final release
-const MISSING_SCRIPTS: Record<string, string> = {Chis: 'Chisoi'};
-
 export class UnicodeSpec {
 	static releases(): Release[] {
 		return JSON.parse(readFileSync(new URL('releases.json', DATA_DIR), 'utf8'));
@@ -316,13 +311,7 @@ export class UnicodeSpec {
 			}
 		}
 		const name2abbr = new Map(this.readPropertyValueAliases().sc!.map((v) => [v[1]!, v[0]!]));
-		const scripts = this.readScripts();
-		for (const [abbr, name] of Object.entries(MISSING_SCRIPTS)) {
-			if (name2abbr.has(name)) continue;
-			name2abbr.set(name, abbr);
-			scripts.push([name, []]);
-		}
-		for (const [name, cps] of scripts) {
+		for (const [name, cps] of this.readScripts()) {
 			const abbr = name2abbr.get(name);
 			if (!abbr) throw new TypeError(`unknown script: ${name}`);
 			const script = new UnicodeScript(abbr, name.replaceAll('_', ' '));

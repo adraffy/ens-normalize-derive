@@ -507,7 +507,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	// confusables
 
 	log.section('Compute Confusables');
-	let wholes: Whole[] = [];
+	const wholes: Whole[] = [];
 	const confusedUnion = new Set<CodePoint>();
 	{
 		const parts = new Map(groups.map((g) => [g, g.computeParts(NF)]));
@@ -619,12 +619,13 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 		if (g.validSet.size) return true;
 		log.log(`Removed Group: ${g.name}`);
 		// remove whole links
-		wholes = wholes.filter((w) => {
+		// note: upstream also dropped every whole without confused members here, which made
+		// confused.json depend on whether any group happened to be empty (spec.json filters them anyway)
+		for (const w of wholes) {
 			for (const [cp, set] of w.map) {
 				if (set.delete(g) && !set.size) w.map.delete(cp);
 			}
-			return w.map.size > 0;
-		});
+		}
 		return false;
 	});
 
