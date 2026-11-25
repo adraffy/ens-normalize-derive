@@ -6,6 +6,8 @@ This is a Bun + TypeScript port of [`ens-normalize.js/derive`](https://github.co
 
 Goal: a normalization scheme that **doesn't break existing registrations** ([adraffy/ens-labels](https://github.com/adraffy/ens-labels)) but tries to stop confusables.
 
+See [docs/REVIEW.md](docs/REVIEW.md) for findings from the port: Unicode 18 registration impact, bugs, and suggestions for chars-disallow and CJK confusables.
+
 ## Commands
 
 Requires [Bun](https://bun.sh) 1.4+.
