@@ -6,6 +6,7 @@
 	"scripts": {
 		"derive": "bun scripts/derive.ts",
 		"check": "bun scripts/derive.ts --check",
+		"review": "bun scripts/review.ts",
 		"download:unicode": "bun scripts/download-unicode.ts",
 		"download:cldr": "bun scripts/download-cldr.ts",
 		"names": "bun scripts/names.ts",

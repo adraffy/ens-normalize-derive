@@ -16,6 +16,7 @@ Requires [Bun](https://bun.sh) 1.4+.
 bun install
 bun run derive              # data/ + rules/ => output/
 bun run check               # exit 1 if output/ is stale
+bun run review              # new characters waiting for a decision (--all for everything new)
 bun test                    # NF conformance + output/ is up to date
 bun run lint                # biome + check every `0x…, // (c) NAME` rule annotation against the UCD
 bun run format              # biome (rules/ is lint-only: hand-written uppercase hex and comments are kept)
@@ -71,7 +72,7 @@ Restore the checkout's own data afterwards with `bun run download` there.
 6. **Confusables** ([rules/confuse.ts](rules/confuse.ts), built from `confusables.txt`): per group, a confusable is removed, kept (`primary`), or kept but whole-script checked (`allow`). This produces `wholes`.
 7. Leftovers are pruned and invariants asserted, then the payloads are written.
 
-`output/log.txt` records every decision and is committed, so rule changes show up as a readable diff. Its **Review: New in X** section lists every character new in the current Unicode version that ended up valid: that's the upgrade to-do list.
+`output/log.txt` records every decision and is committed, so rule changes show up as a readable diff. Its **Review: New in X** section lists every character new in the current Unicode version that ended up valid.
 
 ## Rules
 
@@ -89,14 +90,14 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 ```
 
 - [rules/disallow/](rules/disallow/): one file per area (latin, phonetic, symbols, math-arrows, music, cjk, scripts, …), one entry per block. A block that is mostly disallowed is written as `{block, except}`, so characters Unicode adds to it later are disallowed automatically.
-- [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): new Common/Inherited characters are disallowed until reviewed. On upgrade, bump its `age`.
+- [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable.
 - [rules/chars-escape.ts](rules/chars-escape.ts): derived from properties (it replaced the hand list and `unprintables`).
 
 ## Upgrading Unicode
 
 1. `bun run download:unicode <v>` and `bun run download:cldr`, then point `current` in `data/releases.json` at them and move the old one to `prior`.
-2. Bump `age` in `rules/disallow/unreviewed.ts`, and add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
-3. `bun run derive`, then work through **Review: New in X** in `output/log.txt`.
+2. In `rules/disallow/unreviewed.ts`, bump `AGE` and empty `REVIEWED`. Add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
+3. `bun run review`: paste the characters you allow into `REVIEWED`, then `bun run derive`.
 4. `bun scripts/test-ts.ts ../ens-normalize.ts --labels` and `bun scripts/registrations.ts ../ens-normalize.ts`: BROKEN and CHANGED must be empty or explicitly accepted.
 
 ## Layout

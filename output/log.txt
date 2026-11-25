@@ -12629,11 +12629,64 @@ Removed Valid: 1FBB6 (🮶) RIGHTWARDS ARROW AND UPPER AND LOWER ONE EIGHTH BLOC
 Removed Valid: 1FBB7 (🮷) DOWNWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
 Removed Valid: 1FBB8 (🮸) UPWARDS ARROW AND RIGHT ONE EIGHTH BLOCK
 Removed Valid: 1FBC4 (🯄) NEGATIVE SQUARED QUESTION MARK
-Rule: new in 18.0: unreviewed Common/Inherited [104/164]
+Rule: new in 18.0: unreviewed [158/384]
+Removed Mapped: 558 (՘) MODIFIER LETTER ARMENIAN SMALL EH => 567 (է) ARMENIAN SMALL LETTER EH
+Removed Mapped: 58B (֋) MODIFIER LETTER ARMENIAN SMALL INI => 56B (ի) ARMENIAN SMALL LETTER INI
+Removed Mapped: 58C (֌) MODIFIER LETTER ARMENIAN SMALL YI => 575 (յ) ARMENIAN SMALL LETTER YI
+Removed Valid: 5C8 (◌׈) HEBREW POINT SHEVA NA MUDGASH
+Removed Valid: 5C9 (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH
+Removed Valid: B53 (◌୓) ORIYA SIGN DOT ABOVE
+Removed Valid: B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE
 Removed Valid: 208F (₏) MODIFIER LETTER HIGH AND LOW VERTICAL LINE
+Removed Mapped: 209D (₝) LATIN SUBSCRIPT SMALL LETTER W => 77 (w) LATIN SMALL LETTER W
+Removed Mapped: 209E (₞) LATIN SUBSCRIPT SMALL LETTER Y => 79 (y) LATIN SMALL LETTER Y
+Removed Mapped: 209F (₟) LATIN SUBSCRIPT SMALL LETTER Z => 7A (z) LATIN SMALL LETTER Z
 Removed Valid: 20C2 (⃂) RUFIYAA SIGN
 Removed Valid: 20C3 (⃃) UAE DIRHAM SIGN
 Removed Valid: 20C4 (⃄) OMANI RIAL SIGN
+Removed Valid: 10EC9 (𐻉) ARABIC SMALL BASELINE FATHA
+Removed Valid: 10ECA (𐻊) ARABIC SMALL BASELINE DOTLESS HEAD OF KHAH
+Removed Valid: 10ECB (◌𐻋) ARABIC NORTHEAST POINTING ARROWHEAD ABOVE
+Removed Valid: 10ECC (◌𐻌) ARABIC NORTHEAST POINTING ARROWHEAD BELOW
+Removed Valid: 10ECD (◌𐻍) ARABIC SOUTHWEST POINTING ARROWHEAD BELOW
+Removed Valid: 10ECE (◌𐻎) ARABIC SMALL CIRCLE ABOVE
+Removed Valid: 10ECF (◌𐻏) ARABIC LARGE CIRCLE ABOVE
+Removed Valid: 10ED9 (𐻙) ARABIC CROWN LETTER BEH
+Removed Valid: 10EDA (𐻚) ARABIC CROWN LETTER PEH
+Removed Valid: 10EDB (𐻛) ARABIC CROWN LETTER TEH
+Removed Valid: 10EDC (𐻜) ARABIC CROWN LETTER THEH
+Removed Valid: 10EDD (𐻝) ARABIC CROWN LETTER JEEM
+Removed Valid: 10EDE (𐻞) ARABIC CROWN LETTER HAH
+Removed Valid: 10EDF (𐻟) ARABIC CROWN LETTER KHAH
+Removed Valid: 10EE0 (𐻠) ARABIC CROWN LETTER SEEN
+Removed Valid: 10EE1 (𐻡) ARABIC CROWN LETTER SHEEN
+Removed Valid: 10EE2 (𐻢) ARABIC CROWN LETTER SAD
+Removed Valid: 10EE3 (𐻣) ARABIC CROWN LETTER DAD
+Removed Valid: 10EE4 (𐻤) ARABIC CROWN LETTER TAH
+Removed Valid: 10EE5 (𐻥) ARABIC CROWN LETTER ZAH
+Removed Valid: 10EE6 (𐻦) ARABIC CROWN LETTER AIN
+Removed Valid: 10EE7 (𐻧) ARABIC CROWN LETTER GHAIN
+Removed Valid: 10EE8 (𐻨) ARABIC CROWN LETTER FEH
+Removed Valid: 10EE9 (𐻩) ARABIC CROWN LETTER QAF
+Removed Valid: 10EEA (𐻪) ARABIC CROWN LETTER KAF
+Removed Valid: 10EEB (𐻫) ARABIC CROWN LETTER MEEM
+Removed Valid: 10EEC (𐻬) ARABIC CROWN LETTER NOON
+Removed Valid: 10EED (𐻭) ARABIC CROWN LETTER HEH
+Removed Valid: 10EEE (𐻮) ARABIC CROWN LETTER YEH
+Removed Valid: 10EF0 (◌𐻰) ARABIC SMALL LOW UPRIGHT RECTANGULAR ZERO
+Removed Valid: 10EF1 (◌𐻱) ARABIC SQUARE BELOW
+Removed Valid: 10EF2 (◌𐻲) ARABIC FILLED SQUARE BELOW
+Removed Valid: 10EF3 (◌𐻳) ARABIC SMALL HIGH NOON WITH FATHA
+Removed Valid: 10EF4 (◌𐻴) ARABIC SMALL LOW NOON WITH FATHA
+Removed Valid: 10EF5 (◌𐻵) ARABIC SMALL HIGH NOON WITH DAMMA
+Removed Valid: 10EF6 (◌𐻶) ARABIC SMALL LOW NOON WITH DAMMA
+Removed Valid: 10EF7 (◌𐻷) ARABIC SMALL HIGH HEH INITIAL FORM
+Removed Valid: 10EF8 (◌𐻸) ARABIC SMALL HIGH WORD KABBIR
+Removed Valid: 10EF9 (◌𐻹) ARABIC MARK CROWN
+Removed Valid: 11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA
+Removed Valid: 11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE
+Removed Valid: 11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
+Removed Valid: 1B168 (𛅨) KATAKANA LETTER SMALL ARCHAIC YE
 Removed Valid: 1CED2 (𜻒) ALCHEMICAL SYMBOL FOR OIL INVERTED
 Removed Valid: 1CED3 (𜻓) ALCHEMICAL SYMBOL FOR MOON-JUPITER
 Removed Valid: 1CED4 (𜻔) ALCHEMICAL SYMBOL FOR SALT OF TARTAR
@@ -12734,6 +12787,7 @@ Removed Valid: 1DB1A (𝬚) LEIBNIZIAN SIMILARITY-2
 Removed Valid: 1DB1B (𝬛) LEIBNIZIAN DISSIMILARITY
 Removed Valid: 1DB1C (𝬜) FACIT SYMBOL
 Removed Valid: 1F1AE (🆮) TOMOBIKI SYMBOL
+Removed Valid: 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
 Removed Valid: 2E (.) FULL STOP
 ==== Apply ScriptExt ====
 3BE (ξ) GREEK SMALL LETTER XI [Grek => Zyyy]
@@ -12743,22 +12797,22 @@ Disallowed Script: [Lina] Linear A [X]
 Disallowed Script: [Linb] Linear B [X]
 Disallowed Script: [Sgnw] SignWriting [X]
 Valid  | Name       | Test      | Rest      | Extra                     
-103429 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-114745 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-103218 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
+103427 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+114744 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+103217 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
   1355 | Latin      | Latn+Zyyy | Zinh      | π                         
   1195 | Cyrillic   | Cyrl      | Zyyy+Zinh |                           
   1181 | Greek      | Grek      | Zyyy+Zinh |                           
-   489 | Arabic     | Arab      |           | -                         
-   121 | Devanagari | Deva      |           |                           
-    88 | Hebrew     | Hebr      |           | ₪                         
+   450 | Arabic     | Arab      |           | -                         
+   120 | Devanagari | Deva      |           |                           
+    86 | Hebrew     | Hebr      |           | ₪                         
     87 | Thai       | Thai      |           | ฿                         
-    93 | Bengali    | Beng      |           |                           
+    91 | Bengali    | Beng      |           |                           
     61 | Thaana     | Thaa      |           |                           
     74 | Gurmukhi   | Guru      |           |                           
    126 | Tamil      | Taml      |           |                           
    186 | Tibetan    | Tibt      |           |                           
-    91 | Oriya      | Orya      |           |                           
+    89 | Oriya      | Orya      |           |                           
    111 | Sinhala    | Sinh      |           |                           
     91 | Gujarati   | Gujr      |           |                           
     98 | Telugu     | Telu      |           |                           
@@ -16605,9 +16659,9 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Fastpath ASCII
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
-Valid: 156020
-Multi: 103408
-Unique: 52612
+Valid: 155972
+Multi: 103407
+Unique: 52565
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 Confusable: 1203
@@ -16621,15 +16675,15 @@ Non-Confusable Non-Unique: 51
 ==== Group Summary ====
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
   1 |   1146 |    55 |   1145 |      1 | 0/51 | Latin     
-  2 |    479 |   456 |    478 |      1 |      | Arabic    
-  3 | 103218 |     0 | 102128 |   1090 | 0/0  | Han       
-  4 |    121 |   111 |    121 |      0 |      | Devanagari
-  5 | 114744 | 11526 |  11528 | 103216 | 0/0  | Korean    
-  6 | 103426 |   208 |    210 | 103216 | 0/58 | Japanese  
+  2 |    440 |   417 |    439 |      1 |      | Arabic    
+  3 | 103217 |     0 | 102127 |   1090 | 0/0  | Han       
+  4 |    120 |   110 |    120 |      0 |      | Devanagari
+  5 | 114743 | 11526 |  11528 | 103215 | 0/0  | Korean    
+  6 | 103424 |   207 |    209 | 103215 | 0/58 | Japanese  
   7 |   1169 |   105 |    105 |   1064 | 0/8  | Cyrillic  
-  8 |     88 |    85 |     87 |      1 |      | Hebrew    
+  8 |     86 |    83 |     85 |      1 |      | Hebrew    
   9 |     87 |    85 |     86 |      1 |      | Thai      
- 10 |     93 |    83 |     93 |      0 |      | Bengali   
+ 10 |     91 |    81 |     91 |      0 |      | Bengali   
  11 |    126 |   104 |    126 |      0 |      | Tamil     
  12 |   1099 |    34 |     35 |   1064 | 0/11 | Greek     
  13 |    186 |   186 |    186 |      0 |      | Tibetan   
@@ -16645,7 +16699,7 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
  23 |    114 |   113 |    114 |      0 |      | Malayalam 
  24 |    505 |   505 |    505 |      0 |      | Ethiopic  
  25 |    111 |   111 |    111 |      0 |      | Sinhala   
- 26 |     91 |    91 |     91 |      0 |      | Oriya     
+ 26 |     89 |    89 |     89 |      0 |      | Oriya     
  27 |     61 |    50 |     61 |      0 |      | Thaana    
  28 |     91 |    75 |     91 |      0 |      | Syrc      
  29 |     54 |    54 |     54 |      0 |      | Nkoo      
@@ -16791,63 +16845,15 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
 169 |    235 |   164 |    235 |      0 |      | Pcun      
 170 |  11328 | 11328 |  11328 |      0 |      | Seal      
 ==== NFC Quick Check ====
-Optimized: 2211 => 598
+Optimized: 2211 => 581
 ==== Compute NSM from Groups w/o CM Whitelist ====
-CM(2580) => NSM(2103) => 1127
-Per Group Max: 76
+CM(2580) => NSM(2103) => 1107
+Per Group Max: 61
 ==== Review: New in 18.0.0 ====
-5C8 (◌׈) HEBREW POINT SHEVA NA MUDGASH [Hebrew]
-5C9 (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH [Hebrew]
-B53 (◌୓) ORIYA SIGN DOT ABOVE [Oriya]
-B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE [Oriya]
-10EC9 (𐻉) ARABIC SMALL BASELINE FATHA [Arabic]
-10ECA (𐻊) ARABIC SMALL BASELINE DOTLESS HEAD OF KHAH [Arabic]
-10ECB (◌𐻋) ARABIC NORTHEAST POINTING ARROWHEAD ABOVE [Arabic]
-10ECC (◌𐻌) ARABIC NORTHEAST POINTING ARROWHEAD BELOW [Arabic]
-10ECD (◌𐻍) ARABIC SOUTHWEST POINTING ARROWHEAD BELOW [Arabic]
-10ECE (◌𐻎) ARABIC SMALL CIRCLE ABOVE [Arabic]
-10ECF (◌𐻏) ARABIC LARGE CIRCLE ABOVE [Arabic]
-10ED9 (𐻙) ARABIC CROWN LETTER BEH [Arabic]
-10EDA (𐻚) ARABIC CROWN LETTER PEH [Arabic]
-10EDB (𐻛) ARABIC CROWN LETTER TEH [Arabic]
-10EDC (𐻜) ARABIC CROWN LETTER THEH [Arabic]
-10EDD (𐻝) ARABIC CROWN LETTER JEEM [Arabic]
-10EDE (𐻞) ARABIC CROWN LETTER HAH [Arabic]
-10EDF (𐻟) ARABIC CROWN LETTER KHAH [Arabic]
-10EE0 (𐻠) ARABIC CROWN LETTER SEEN [Arabic]
-10EE1 (𐻡) ARABIC CROWN LETTER SHEEN [Arabic]
-10EE2 (𐻢) ARABIC CROWN LETTER SAD [Arabic]
-10EE3 (𐻣) ARABIC CROWN LETTER DAD [Arabic]
-10EE4 (𐻤) ARABIC CROWN LETTER TAH [Arabic]
-10EE5 (𐻥) ARABIC CROWN LETTER ZAH [Arabic]
-10EE6 (𐻦) ARABIC CROWN LETTER AIN [Arabic]
-10EE7 (𐻧) ARABIC CROWN LETTER GHAIN [Arabic]
-10EE8 (𐻨) ARABIC CROWN LETTER FEH [Arabic]
-10EE9 (𐻩) ARABIC CROWN LETTER QAF [Arabic]
-10EEA (𐻪) ARABIC CROWN LETTER KAF [Arabic]
-10EEB (𐻫) ARABIC CROWN LETTER MEEM [Arabic]
-10EEC (𐻬) ARABIC CROWN LETTER NOON [Arabic]
-10EED (𐻭) ARABIC CROWN LETTER HEH [Arabic]
-10EEE (𐻮) ARABIC CROWN LETTER YEH [Arabic]
-10EF0 (◌𐻰) ARABIC SMALL LOW UPRIGHT RECTANGULAR ZERO [Arabic]
-10EF1 (◌𐻱) ARABIC SQUARE BELOW [Arabic]
-10EF2 (◌𐻲) ARABIC FILLED SQUARE BELOW [Arabic]
-10EF3 (◌𐻳) ARABIC SMALL HIGH NOON WITH FATHA [Arabic]
-10EF4 (◌𐻴) ARABIC SMALL LOW NOON WITH FATHA [Arabic]
-10EF5 (◌𐻵) ARABIC SMALL HIGH NOON WITH DAMMA [Arabic]
-10EF6 (◌𐻶) ARABIC SMALL LOW NOON WITH DAMMA [Arabic]
-10EF7 (◌𐻷) ARABIC SMALL HIGH HEH INITIAL FORM [Arabic]
-10EF8 (◌𐻸) ARABIC SMALL HIGH WORD KABBIR [Arabic]
-10EF9 (◌𐻹) ARABIC MARK CROWN [Arabic]
-11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA [Devanagari]
-11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE [Bengali]
-11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA [Bengali]
-1B168 (𛅨) KATAKANA LETTER SMALL ARCHAIC YE [Japanese]
-2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223] [Han,Korean,Japanese]
 Restricted Xsux: 159
 Restricted Pcun: 235
 Restricted Kits: 5
 Restricted Tang: 2
 Restricted Jurc: 965
 Restricted Seal: 11328
-New Valid: 12671
+New Valid: 12623

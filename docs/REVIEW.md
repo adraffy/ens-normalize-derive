@@ -13,7 +13,7 @@ Decided or done since the first review:
   - 95 are Common/Inherited symbols in new or mostly-allowed blocks. These are covered by [unreviewed.ts](../rules/disallow/unreviewed.ts).
   - As a side effect, 33 IDNA mappings of new 18.0 capitals and Kana ligatures drop out, because their targets are now disallowed.
   - None of these can break a registration; they weren't normalizable before.
-- **Still to review:** 47 new letters/marks are valid and listed under "Review: New in 18.0.0" in `output/log.txt`: Arabic Extended-C (39), Hebrew (2), Oriya (2), Bengali (2), Devanagari (1), Kana (1, small archaic ye) and Han (1).
+- **New 18.0 letters and symbols:** everything new in a script used by an unrestricted group is disallowed until reviewed. That's 143 characters: 39 Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, currency signs, and Leibnizian/musical/misc symbols. `bun run review` lists them. Only the new restricted scripts (Seal, Jurchen, Proto-Cuneiform, …) are valid without review.
 - **chars-escape / unprintables:** now derived from properties (§2). 32 format characters were missing and are now escaped.
 - **Rule annotations** (`0x…, // (c) NAME`) are checked by `bun run lint`; all 5,731 match the UCD.
 - **Registrations** after all of the above: BROKEN 34 (Bopo, accepted), CHANGED 0, ALLOWED 5 (new emoji).
