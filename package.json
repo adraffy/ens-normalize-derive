@@ -1,0 +1,20 @@
+{
+	"name": "ens-normalize-derive",
+	"private": true,
+	"description": "Derives the ENSIP-15 normalization spec (spec.json, nf.json) from Unicode data files",
+	"type": "module",
+	"scripts": {
+		"derive": "bun scripts/derive.ts",
+		"check": "bun scripts/derive.ts --check",
+		"download:unicode": "bun scripts/download-unicode.ts",
+		"download:cldr": "bun scripts/download-cldr.ts",
+		"names": "bun scripts/names.ts",
+		"unicode-diff": "bun scripts/unicode-diff.ts",
+		"test": "bun test",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.4.4",
+		"typescript": "^7.0.2"
+	}
+}

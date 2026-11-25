@@ -1,0 +1,34 @@
+[
+	{
+		"spec_hash": "962316964553fce6188e25a5166a4c1e906333adf53bdf2964c71dedc0f8e2c8",
+		"library": "1.9.4",
+		"unicode": "15.0.0",
+		"cldr": "42"
+	},
+	{
+		"spec_hash": "1f6d3bdb7a724fe3b91f6d73ab14defcb719e0f4ab79022089c940e7e9c56b9c",
+		"library": "1.10.1",
+		"unicode": "15.1.0",
+		"cldr": "43.1"
+	},
+	{
+		"spec_hash": "4b3c5210a328d7097500b413bf075ec210bbac045cd804deae5d1ed771304825",
+		"library": "1.11.0",
+		"unicode": "16.0.0",
+		"cldr": "45"
+	},
+	{
+		"spec_hash": "4febc8f5d285cbf80d2320fb0c1777ac25e378eb72910c34ec963d0a4e319c84",
+		"library": "1.11.1",
+		"unicode": "17.0.0",
+		"cldr": "47",
+		"tag": "prior"
+	},
+	{
+		"spec_hash": "299c45174539f081a506887685b5f5fcafc7ac0efd97483e2beadd8b183a847f",
+		"library": "1.11.2",
+		"unicode": "18.0.0",
+		"cldr": "48.2",
+		"tag": "current"
+	}
+]
