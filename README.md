@@ -6,7 +6,7 @@ Started as a Bun + TypeScript port of [`ens-normalize.js/derive`](https://github
 
 Goal: a normalization scheme that **doesn't break existing registrations** ([adraffy/ens-labels](https://github.com/adraffy/ens-labels)) but tries to stop confusables.
 
-See [docs/review.md](docs/review.md) for findings from the port (Unicode 18 registration impact, bugs, and suggestions for chars-disallow and CJK confusables) and [docs/groups.md](docs/groups.md) for how script groups are built and checked.
+See [docs/review.md](docs/review.md) for findings from the port (Unicode 18 registration impact, bugs, and suggestions for chars-disallow and CJK confusables), [docs/groups.md](docs/groups.md) for how script groups are built and checked, and [docs/implementers.md](docs/implementers.md) for what other ENSIP-15 implementations must change for Unicode 18.
 
 ## Commands
 
