@@ -15,11 +15,12 @@ Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, pl
 
 Every valid character has a set of scripts from Unicode's `Script_Extensions` (UAX-24). For most characters this is just its `Script`, but shared characters list every script that uses them. For example, U+0300 COMBINING GRAVE ACCENT has `Cher Copt Cyrl Grek Latn Perm Sunu Tale`. `Zyyy` (Common) covers digits, punctuation and symbols, but not letters: a-z are `Latn`. `Zinh` (Inherited) covers marks that take the script of the letter they attach to.
 
-[rules/scripts.ts](../rules/scripts.ts) `SCRIPT_EXTENSIONS` overrides individual characters, either by replacing the set or by removing scripts from it:
+[rules/scripts.ts](../rules/scripts.ts) `SCRIPT_EXTENSIONS` overrides individual characters: it replaces the set, removes scripts from it, or clears it:
 
 ```ts
 [0x3BE, ['Zyyy']],                    // ξ is usable wherever Common is (the ETH symbol)
 [0x307, {remove: ['Hebr']}],          // ◌̇ shouldn't leak into Hebrew, where marks aren't whitelisted
+[0x20C3, []],                         // ⃃ has no script: it's valid only where a group lists it in `extra` (Arabic)
 ```
 
 ### 2. Group definitions
@@ -34,7 +35,7 @@ An unrestricted group is defined in `SCRIPT_GROUPS`:
 | ------- | ------------------------------------------------------------------------------------------------------------------- |
 | `test`  | the scripts that identify the group. Each script is the `test` of at most one group.                                |
 | `rest`  | other scripts whose characters are also allowed (Han inside Japanese, Common inside Latin, CJK, Cyrillic and Greek) |
-| `extra` | individual characters allowed regardless of script (a-z in CJK groups, π in Latin, ₪ in Hebrew)                     |
+| `extra` | individual characters allowed regardless of script (a-z in CJK groups, π in Latin, ₪ in Hebrew, ⃃ in Arabic)                     |
 | `cm`    | `true` means combining marks are only allowed via the whitelist (see step 3)                                        |
 
 A character joins **every** group whose `test ∪ rest` intersects its script set, or whose `extra` lists it. Membership overlaps on purpose: `a` is in Latin and, via `extra`, in Han, Korean and Japanese. `1` is in every group that has `Zyyy`. Only Common, Latin, Han, Japanese, Korean, Cyrillic and Greek have it, so `ب1` (Arabic + ASCII digit) is an illegal mixture.
@@ -61,7 +62,7 @@ Other groups keep their marks. Instead, derive removes any character whose NFD r
 
 - In the seven whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. No group has `Zinh` in `rest`. Latin, Cyrillic and Greek used to have it, but it only added bare marks that the whitelist then purged, and removing it left `spec.json` unchanged.
 - In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 624 marks are `Zinh` only, and none is valid as a bare mark anywhere.
-- That leaves marks on a group's `extra` characters, which membership alone would allow: `ب-ًب` (an Arabic mark on a hyphen), `₪ּא`, `ก฿ั`. So in groups without a whitelist, a mark's base (the character before it, after NFC) must be **primary** in the group: `illegal placement: combining mark on non-Arabic: "- + ◌ً"`. This is the one positional rule, and it's new after 1.11.1. Only Arabic `-`, Hebrew `₪` and Thai `฿` are affected, and no registered label uses them that way.
+- That leaves marks on a group's `extra` characters, which membership alone would allow: `ب-ًب` (an Arabic mark on a hyphen), `₪ּא`, `ก฿ั`. So in groups without a whitelist, a mark's base (the character before it, after NFC) must be **primary** in the group: `illegal placement: combining mark on non-Arabic: "- + ◌ً"`. This is the one positional rule, and it's new after 1.11.1. Only Arabic `-` and `⃃`, Hebrew `₪` and Thai `฿` are affected, and no registered label uses them that way.
 
 ### 4. Confusables → wholes
 

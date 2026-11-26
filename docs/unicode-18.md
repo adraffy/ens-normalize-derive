@@ -54,7 +54,7 @@ Some characters also left individual groups. Combining marks had leaked through 
 ## Combining marks
 
 - **CM whitelist:** unchanged, 128 precomposed letters (51 Latin, 11 Greek, 8 Cyrillic, 58 Japanese). Fourteen more Latin letters (ī ė ț ș į ų ÿ ř ň ť ď ľ ő ű) were considered and rejected, see [review.md](review.md#cm-whitelist).
-- **New rule:** in a group without a whitelist, a combining mark must follow one of the group's own (primary) characters, not a shared extra. This rejects marks on Arabic `-`, Hebrew `₪` and Thai `฿`. No registered label is affected.
+- **New rule:** in a group without a whitelist, a combining mark must follow one of the group's own (primary) characters, not a shared extra. This rejects marks on Arabic `-` and `⃃`, Hebrew `₪` and Thai `฿`. No registered label is affected.
 - **New message:** a combining mark that isn't in the label's group gives `illegal placement: unsupported combining mark: "x + ◌̂"` instead of an illegal mixture naming an unrelated group. Only the message changes.
 
 Both are code changes; [implementers.md](implementers.md) has the details.

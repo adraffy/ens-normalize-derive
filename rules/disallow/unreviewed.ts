@@ -18,7 +18,7 @@ export const AGE = '18.0';
 // reviewed and allowed (paste from `bun run review`)
 export const REVIEWED: CodePoint[] = [
 	// Currency Symbols
-	0x20C3, // (⃃) UAE DIRHAM SIGN (Arabic only, see rules/scripts.ts)
+	0x20C3, // (⃃) UAE DIRHAM SIGN (Arabic extra only, see rules/scripts.ts)
 	// 20261126: scripts that don't mix with Latin (marks get the group's non-spacing mark checks)
 	// Devanagari Extended-A
 	0x11B0A, // (𑬊) DEVANAGARI LETTER ALTERNATE DDDA

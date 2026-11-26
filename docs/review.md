@@ -23,7 +23,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **Group order** is fixed in [rules/group-order.ts](../rules/group-order.ts) rather than regenerated from registration counts, so it's part of the spec. It's the 1.11.1 order with Common first, except Myanmar and Gujarati are swapped. They share no characters, so the swap changes nothing.
 - **ӕ stays valid.** Upstream's custom test `тӕ` relies on it. On its own, `ӕ` is a whole-script confusable.
 - **İ keeps its UTS-46 mapping** to `i` + U+0307. That never composes and U+0307 isn't valid in Latin, so `İ` labels fail with `unsupported combining mark: "i + ◌̇"` (20 registered labels). That is the intended result.
-- **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid in Arabic only ([rules/scripts.ts](../rules/scripts.ts) overrides its Script_Extensions, so it isn't shared with every group). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
+- **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid in Arabic only, as an extra like ₪ in Hebrew: [rules/scripts.ts](../rules/scripts.ts) clears its Script_Extensions and the Arabic group lists it. So it isn't shared with other groups, and no mark can follow it (`⃃ً` is an error). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
 - **𛅨 small archaic katakana ye (new in 18.0) is disallowed.**
 - **𫠞 U+2B81E is allowed,** like the other 222 Extension D ideographs. It resembles 吹 (口 + 欠), a lookalike within Han that the whole-script check can't express.
 - **ஃ U+0B83 TAMIL SIGN VISARGA follows Unicode 18**, which extends it to Kannada, Malayalam and Telugu. No known label contains it, it has no `confusables.txt` entry, and none of those groups contains a–z.

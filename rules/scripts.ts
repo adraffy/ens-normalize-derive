@@ -56,7 +56,7 @@ export const SCRIPT_GROUPS = [
 	//    => handled by whitelist for Latin-like/CJK
 
 	// was cm: 2
-	{name: 'Arabic', test: ['Arab'], extra: ['-']}, // 15000 pure, underscores, only 11 latin mixed (spoofs), and "0x"
+	{name: 'Arabic', test: ['Arab'], extra: ['-', '⃃']}, // 15000 pure, underscores, only 11 latin mixed (spoofs), and "0x"
 	{name: 'Devanagari', test: ['Deva']},           // 2700 pure but 4
 	{name: 'Hebrew', test: ['Hebr'], extra: ['₪']}, // 1466 pure, 17 spoofs with Latin
 	{name: 'Thai', test: ['Thai'],  extra: ['฿']},  // 1000+ pure, spoof mixed
@@ -93,8 +93,9 @@ export const SCRIPT_EXTENSIONS = [
 	[0x307, {remove: ['Hebr']}], // (◌̇) COMBINING DOT ABOVE
 	[0x308, {remove: ['Armn', 'Hebr']}], // (◌̈) COMBINING DIAERESIS
 
-	// 20261126: new in 18.0, the UAE dirham is written with Arabic, not shared with every group
-	[0x20C3, ['Arab']], // (⃃) UAE DIRHAM SIGN
+	// 20261126: new in 18.0, the UAE dirham is written with Arabic, not shared with every group.
+	// No script: it's valid only as an Arabic extra (secondary, like ₪ in Hebrew), so a mark can't follow it
+	[0x20C3, []], // (⃃) UAE DIRHAM SIGN
 ] satisfies [CodePoint, string[] | {remove: string[]}][];
 
 export const DISALLOWED_SCRIPTS = [
