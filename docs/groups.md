@@ -7,7 +7,7 @@ A label is valid only if every character belongs to a single **group**: roughly 
 
 This page covers how [src/derive.ts](../src/derive.ts) builds the groups into `spec.json`, then how a label is checked against them ([src/ensip15.ts](../src/ensip15.ts), which mirrors ens-normalize.js).
 
-Current numbers (Unicode 18): 170 groups, 27 unrestricted and 143 restricted, plus 847 wholes.
+Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, plus 847 wholes.
 
 ## Building the groups
 
@@ -30,14 +30,16 @@ An unrestricted group is defined in `SCRIPT_GROUPS`:
 {name: 'Japanese', test: ['Kana', 'Hira'], rest: ['Hani', 'Zyyy'], extra: [$AZ], cm: true}
 ```
 
-| field   | meaning                                                                                         |
-| ------- | ----------------------------------------------------------------------------------------------- |
-| `test`  | the scripts that identify the group. Each script is the `test` of at most one group.            |
-| `rest`  | other scripts whose characters are also allowed (Han inside Japanese, Common everywhere)        |
-| `extra` | individual characters allowed regardless of script (a-z in CJK groups, π in Latin, ₪ in Hebrew) |
-| `cm`    | `true` means combining marks are only allowed via the whitelist (see step 3)                    |
+| field   | meaning                                                                                                             |
+| ------- | ------------------------------------------------------------------------------------------------------------------- |
+| `test`  | the scripts that identify the group. Each script is the `test` of at most one group.                                |
+| `rest`  | other scripts whose characters are also allowed (Han inside Japanese, Common inside Latin, CJK, Cyrillic and Greek) |
+| `extra` | individual characters allowed regardless of script (a-z in CJK groups, π in Latin, ₪ in Hebrew)                     |
+| `cm`    | `true` means combining marks are only allowed via the whitelist (see step 3)                                        |
 
-A character joins **every** group whose `test ∪ rest` intersects its script set, or whose `extra` lists it. Membership overlaps on purpose: `a` is in Latin and, via `extra`, in Han, Korean and Japanese. `1` is in every group that has `Zyyy`. Only Latin, Han, Japanese, Korean, Cyrillic and Greek have it, so `ب1` (Arabic + ASCII digit) is an illegal mixture.
+A character joins **every** group whose `test ∪ rest` intersects its script set, or whose `extra` lists it. Membership overlaps on purpose: `a` is in Latin and, via `extra`, in Han, Korean and Japanese. `1` is in every group that has `Zyyy`. Only Common, Latin, Han, Japanese, Korean, Cyrillic and Greek have it, so `ب1` (Arabic + ASCII digit) is an illegal mixture.
+
+**Common** (`test: ['Zyyy']`) holds only the shared characters, so it's a subset of every group that has Zyyy. It can't make a label valid or invalid. It's first in priority so that a label without letters, like `€100` or `💎100`, is typed Common instead of Latin.
 
 Every script must be accounted for exactly once. It is either the `test` of a group, a **restricted** script, or a **disallowed** script. `Zinh` and `Zzzz` are excluded. Derive fails on a leftover or duplicate.
 
@@ -45,7 +47,7 @@ Every script must be accounted for exactly once. It is either the `test` of a gr
 
 ### 3. Combining marks
 
-The groups with `cm: true` are Latin, Cyrillic, Greek, Han, Japanese and Korean. In these groups, a character survives only if its NFD contains no combining mark, or it is listed in [rules/cm.ts](../rules/cm.ts). Every whitelist entry is a precomposed letter (`é`, `ガ`), so in practice:
+The groups with `cm: true` are Common, Latin, Cyrillic, Greek, Han, Japanese and Korean. In these groups, a character survives only if its NFD contains no combining mark, or it is listed in [rules/cm.ts](../rules/cm.ts). Every whitelist entry is a precomposed letter (`é`, `ガ`), so in practice:
 
 - `e + ◌́` is fine: the label is NFC'd first and composes to `é`, which is whitelisted.
 - `x + ◌̂` fails: it doesn't compose, and bare marks aren't members of these groups.
@@ -57,7 +59,7 @@ Other groups keep their marks. Instead, derive removes any character whose NFD r
 
 **Inherited marks are handled by membership, not position.** UAX-24 says a `Zinh` mark takes the script of its base. The groups never look at which character a mark follows. They only require the mark and the base to be in the same group, and that works out the same in practice:
 
-- In the six whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. `Zinh` is in Latin, Cyrillic and Greek `rest` only so that the whitelist check can find those marks while building.
+- In the seven whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. No group has `Zinh` in `rest`. Latin, Cyrillic and Greek used to have it, but it only added bare marks that the whitelist then purged, and removing it left `spec.json` unchanged.
 - In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 595 marks are `Zinh` only, and none is valid as a bare mark anywhere.
 - The one gap is a mark on a group's `extra` character. `ب-ًب` (an Arabic mark on a hyphen), `₪ּא` and `ก฿ั` are valid, even though the mark's base isn't Arabic, Hebrew or Thai. No registered label does this, so the library could add a positional check (a mark's base must be primary) without breaking anything.
 
@@ -79,7 +81,7 @@ A set without decisions whose only unrestricted member is X makes X primary auto
 
 - Characters that end up in no group (and aren't part of one) are disallowed. Empty groups are dropped.
 - In `spec.json` each group splits its characters into **primary** (script set intersects `test`) and **secondary** (came in through `rest`/`extra`). Primary only affects error messages (below).
-- Groups are ordered by [rules/group-order.ts](../rules/group-order.ts), a fixed priority with Latin first. Restricted groups come after all unrestricted ones, in `RESTRICTED_SCRIPTS` order unless listed. The order is part of the output, because it decides which group names a label.
+- Groups are ordered by [rules/group-order.ts](../rules/group-order.ts), a fixed priority with Common, then Latin, first. Restricted groups come after all unrestricted ones, in `RESTRICTED_SCRIPTS` order unless listed. The order is part of the output, because it decides which group names a label.
 
 ## Checking a label
 
@@ -105,6 +107,8 @@ All of these come from `output/spec.json`:
 | ------------ | --------------------------------------------- | -------------------------------------------------------------------- |
 | `raffy`      | ASCII                                         | fast path                                                            |
 | `café`       | Latin                                         | é is whitelisted                                                     |
+| `€100`       | Common                                        | no letters: only shared characters                                   |
+| `💎100`      | Common                                        | emoji are skipped; the rest is shared                                |
 | `ab日`       | Han                                           | a-z are extras of Han, Korean and Japanese. Han is first in priority |
 | `ラーメンab` | Japanese                                      | katakana narrows to Japanese                                         |
 | `ξabc`       | Latin                                         | ξ is Common through the scx override                                 |
@@ -120,7 +124,6 @@ All of these come from `output/spec.json`:
 ## Quirks
 
 - **Odd group in CM errors.** `x̂` names Cherokee because U+0302's script set includes `Cher`, and Cherokee (restricted, no CM whitelist) is the first group where the bare mark is primary. 1.11.1 reports the same. 35 registered labels hit this, mostly Turkish: `İ` maps (UTS-46) to `i` + U+0307, so `İzmir` fails with `illegal mixture: Latin + Restricted[Syrc] "◌̇"`. The message would be clearer if it said "unsupported combining mark".
-- **Pure-Common labels are Latin.** `Zyyy` is a `test` script of Latin, so a label of only shared characters is typed Latin rather than "Common". Examples are `∞`, `€100`, and emoji + digits like `💎100`. About 60,000 registered labels are typed this way.
 
 ## Where to change things
 

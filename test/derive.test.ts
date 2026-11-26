@@ -23,7 +23,14 @@ test('nf.json is up to date', async () => {
 	expect(nf).toEqual(await committed('nf.json'));
 });
 
-test('ascii is valid in Latin', () => {
-	const latin = out.spec.groups.find((g) => g.name === 'Latin')!;
-	for (const cp of 'abcxyz0189-_$') expect(latin.primary).toContain(cp.codePointAt(0)!);
+test('ascii is valid in Latin, shared ascii is Common', () => {
+	const group = (name: string) => out.spec.groups.find((g) => g.name === name)!;
+	const latin = group('Latin');
+	const common = group('Common');
+	for (const cp of 'abcxyz') expect(latin.primary).toContain(cp.codePointAt(0)!);
+	for (const cp of '0189-_$') {
+		expect(latin.secondary).toContain(cp.codePointAt(0)!);
+		expect(common.primary).toContain(cp.codePointAt(0)!);
+	}
+	expect(out.spec.groups[0]!.name).toBe('Common'); // a subset of Latin: must come first to name anything
 });

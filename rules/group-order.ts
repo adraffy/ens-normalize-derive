@@ -9,6 +9,7 @@
 // 20261125: fixed at the 1.11.x order (registration counts from 2026-05-20, 3,411,559 labels).
 //   ASCII (89.26%) and Emoji (2.43%) are fast-path label types, not groups.
 export default [
+	'Common',     //  (20261126: new, ~60000 labels that were Latin; a subset of Latin so it must come first)
 	'Latin',      //  166792 |   4.88903%
 	'Arabic',     //   37087 |   1.08710%
 	'Han',        //   36027 |   1.05603%

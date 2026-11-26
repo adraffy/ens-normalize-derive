@@ -1,14 +1,14 @@
 # Confusable sets (Unicode confusables.txt + rules/confuse.ts) with 2+ members in groups
 # [prototype] members, then per member: what happened in each group
 [24] $ ֆ
-	24 ($) DOLLAR SIGN	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	24 ($) DOLLAR SIGN	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	586 (ֆ) ARMENIAN SMALL LETTER FEH	Armenian: allowed, whole-script checked
 [27] י ׳ ᑊ ᛌ ’ ⳿ ◌𖽑 ◌𖽒 𞥋
 	5D9 (י) HEBREW LETTER YOD	Hebrew: allowed, whole-script checked (unresolved)
 	5F3 (׳) HEBREW PUNCTUATION GERESH	Hebrew: allowed, whole-script checked (unresolved)
 	144A (ᑊ) CANADIAN SYLLABICS WEST-CREE P	Cans: allowed, whole-script checked
 	16CC (ᛌ) RUNIC LETTER SHORT-TWIG-SOL S	Runr: allowed, whole-script checked
-	2019 (’) RIGHT SINGLE QUOTATION MARK	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	2019 (’) RIGHT SINGLE QUOTATION MARK	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	2CFF (⳿) COPTIC MORPHOLOGICAL DIVIDER	Copt: allowed, whole-script checked
 	16F51 (◌𖽑) MIAO SIGN ASPIRATION	Plrd: allowed, whole-script checked (unresolved)
 	16F52 (◌𖽒) MIAO SIGN REFORMED VOICING	Plrd: allowed, whole-script checked (unresolved)
@@ -21,7 +21,7 @@
 	16869 (𖡩) BAMUM LETTER PHASE-B SHET NJAQ	Bamu: allowed, whole-script checked
 	1E6E9 (𞛩) TAI YO LETTER IA	Tayo: allowed, whole-script checked
 [2D] - ᝍ ◌᯳ ⲻ ◌ꩽ
-	2D (-) HYPHEN-MINUS	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid; Arabic: valid
+	2D (-) HYPHEN-MINUS	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid; Arabic: valid
 	174D (ᝍ) BUHID LETTER RA	Buhd: allowed, whole-script checked
 	1BF3 (◌᯳) BATAK PANONGONAN	Batk: allowed, whole-script checked
 	2CBB (ⲻ) COPTIC SMALL LETTER DIALECT-P NI	Copt: allowed, whole-script checked
@@ -30,16 +30,16 @@
 	660 (٠) ARABIC-INDIC DIGIT ZERO	Arabic: valid; Thaana: valid; Yezi: valid
 	ABEC (◌꯬) MEETEI MAYEK LUM IYEK	Mtei: allowed, whole-script checked
 [2F] ⁄ ノ 丿
-	2044 (⁄) FRACTION SLASH	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved); Latin: allowed, whole-script checked; Cyrillic: allowed, whole-script checked; Greek: allowed, whole-script checked
+	2044 (⁄) FRACTION SLASH	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved); Common: allowed, whole-script checked; Latin: allowed, whole-script checked; Cyrillic: allowed, whole-script checked; Greek: allowed, whole-script checked
 	30CE (ノ) KATAKANA LETTER NO	Japanese: allowed, whole-script checked (unresolved)
 	4E3F (丿) CJK Ideograph-4E3F [64/20992]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
 [32] 2 ᒿ ᘖ ꛯ
-	32 (2) DIGIT TWO	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	32 (2) DIGIT TWO	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	14BF (ᒿ) CANADIAN SYLLABICS SAYISI M	Cans: allowed, whole-script checked (unresolved)
 	1616 (ᘖ) CANADIAN SYLLABICS CARRIER JO	Cans: allowed, whole-script checked (unresolved)
 	A6EF (ꛯ) BAMUM LETTER KOGHOM	Bamu: allowed, whole-script checked
 [33] 3 ३ ૩ ౩ ᜂ 𑣊 𖼻
-	33 (3) DIGIT THREE	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	33 (3) DIGIT THREE	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	969 (३) DEVANAGARI DIGIT THREE	Devanagari: valid; Dogr: valid; Kthi: valid; Mahj: valid
 	AE9 (૩) GUJARATI DIGIT THREE	Gujarati: allowed, whole-script checked; Khoj: allowed, whole-script checked
 	C69 (౩) TELUGU DIGIT THREE	Telugu: allowed, whole-script checked
@@ -47,22 +47,22 @@
 	118CA (𑣊) WARANG CITI SMALL LETTER ANG	Wara: allowed, whole-script checked
 	16F3B (𖼻) MIAO LETTER ZA	Plrd: allowed, whole-script checked
 [34] 4 Ꮞ 𖺂
-	34 (4) DIGIT FOUR	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	34 (4) DIGIT FOUR	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	13CE (Ꮞ) CHEROKEE LETTER SE	Cher: allowed, whole-script checked
 	16E82 (𖺂) MEDEFAIDRIN DIGIT TWO	Medf: allowed, whole-script checked
 [36] 6 б Ꮾ ꕃ 𑣕
-	36 (6) DIGIT SIX	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	36 (6) DIGIT SIX	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	431 (б) CYRILLIC SMALL LETTER BE	Cyrillic: allowed, whole-script checked
 	13EE (Ꮾ) CHEROKEE LETTER WV	Cher: allowed, whole-script checked
 	A543 (ꕃ) VAI SYLLABLE KI	Vaii: allowed, whole-script checked
 	118D5 (𑣕) WARANG CITI SMALL LETTER AT	Wara: allowed, whole-script checked
 [37] 7 ᜪ 𑣆 𖺊
-	37 (7) DIGIT SEVEN	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	37 (7) DIGIT SEVEN	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	172A (ᜪ) HANUNOO LETTER BA	Hano: allowed, whole-script checked
 	118C6 (𑣆) WARANG CITI SMALL LETTER II	Wara: allowed, whole-script checked
 	16E8A (𖺊) MEDEFAIDRIN NUMBER TEN	Medf: allowed, whole-script checked
 [38] 8 ৪ ੪ ◌ଃ ꖉ 𐌚 ◌𑑅 𖧾 𞣋
-	38 (8) DIGIT EIGHT	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	38 (8) DIGIT EIGHT	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	9EA (৪) BENGALI DIGIT FOUR	Bengali: allowed, whole-script checked; Cakm: allowed, whole-script checked; Sylo: allowed, whole-script checked
 	A6A (੪) GURMUKHI DIGIT FOUR	Gurmukhi: allowed, whole-script checked; Mult: allowed, whole-script checked
 	B03 (◌ଃ) ORIYA SIGN VISARGA	Oriya: allowed, whole-script checked
@@ -72,7 +72,7 @@
 	169FE (𖧾) BAMUM LETTER PHASE-E KI	Bamu: allowed, whole-script checked
 	1E8CB (𞣋) MENDE KIKAKUI DIGIT FIVE	Mend: allowed, whole-script checked
 [39] 9 ৭ ੧ ୨ ൭ ⳋ 𑣌 𑣖 𖧁 𞋲
-	39 (9) DIGIT NINE	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	39 (9) DIGIT NINE	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	9ED (৭) BENGALI DIGIT SEVEN	Bengali: allowed, whole-script checked; Cakm: allowed, whole-script checked; Sylo: allowed, whole-script checked
 	A67 (੧) GURMUKHI DIGIT ONE	Gurmukhi: allowed, whole-script checked; Mult: allowed, whole-script checked
 	B68 (୨) ORIYA DIGIT TWO	Oriya: allowed, whole-script checked
@@ -459,7 +459,7 @@
 	118E5 (𑣥) WARANG CITI DIGIT FIVE	Wara: allowed, whole-script checked
 	11ABC (𑪼) CANADIAN SYLLABICS SPE	Cans: allowed, whole-script checked
 [5F] _ 𔗁
-	5F (_) LOW LINE	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	5F (_) LOW LINE	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	145C1 (𔗁) ANATOLIAN HIEROGLYPH A397	Hluw: allowed, whole-script checked
 [69] i ι і ւ Ꭵ ᛧ ⲓ 𑣃
 	69 (i) LATIN SMALL LETTER I	Japanese: valid; Korean: valid; Han: valid; Latin: valid
@@ -471,7 +471,7 @@
 	2C93 (ⲓ) COPTIC SMALL LETTER IAUDA	Copt: allowed, whole-script checked
 	118C3 (𑣃) WARANG CITI SMALL LETTER YU	Wara: allowed, whole-script checked
 [B0] ° ᐤ ᣞ 𑂻 𑈽 𑑏 𑓆 𑙃 𑠻 𞗿
-	B0 (°) DEGREE SIGN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	B0 (°) DEGREE SIGN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	1424 (ᐤ) CANADIAN SYLLABICS FINAL RING	Cans: allowed, whole-script checked (unresolved)
 	18DE (ᣞ) CANADIAN SYLLABICS FINAL SMALL RING	Cans: allowed, whole-script checked (unresolved)
 	110BB (𑂻) KAITHI ABBREVIATION SIGN	Kthi: allowed, whole-script checked
@@ -483,7 +483,7 @@
 	1E5FF (𞗿) OL ONAL ABBREVIATION SIGN	Onao: allowed, whole-script checked
 [B7] ࠰ • ・ 𑅴 𑇇 𑗄 𑚹 𒕢
 	830 (࠰) SAMARITAN PUNCTUATION NEQUDAA	Samr: allowed, whole-script checked
-	2022 (•) BULLET	Japanese: valid; Korean: valid; Han: valid; Latin: valid; Cyrillic: valid; Greek: valid
+	2022 (•) BULLET	Japanese: valid; Korean: valid; Han: valid; Common: valid; Latin: valid; Cyrillic: valid; Greek: valid
 	30FB (・) KATAKANA MIDDLE DOT	Japanese: allowed, whole-script checked; Korean: allowed, whole-script checked; Han: allowed, whole-script checked; Yiii: allowed, whole-script checked; Bopo: allowed, whole-script checked
 	11174 (𑅴) MAHAJANI ABBREVIATION SIGN	Mahj: allowed, whole-script checked
 	111C7 (𑇇) SHARADA ABBREVIATION SIGN	Shrd: allowed, whole-script checked
@@ -533,7 +533,7 @@
 	1699B (𖦛) BAMUM LETTER PHASE-E SUAEN	Bamu: allowed, whole-script checked
 	16E80 (𖺀) MEDEFAIDRIN DIGIT ZERO	Medf: allowed, whole-script checked
 [1A9] ∑ ⵉ
-	2211 (∑) N-ARY SUMMATION	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2211 (∑) N-ARY SUMMATION	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2D49 (ⵉ) TIFINAGH LETTER YI	Tfng: allowed, whole-script checked
 [1B1] ᘮ ᘴ
 	162E (ᘮ) CANADIAN SYLLABICS CARRIER LHU	Cans: allowed, whole-script checked (unresolved)
@@ -579,7 +579,7 @@
 	43C (м) CYRILLIC SMALL LETTER EM	Cyrillic: valid (auto)
 	2C99 (ⲙ) COPTIC SMALL LETTER MI	Copt: allowed, whole-script checked
 [298] ☉ ⵙ
-	2609 (☉) SUN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2609 (☉) SUN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2D59 (ⵙ) TIFINAGH LETTER YAS	Tfng: allowed, whole-script checked
 [299] в ⲃ
 	432 (в) CYRILLIC SMALL LETTER VE	Cyrillic: valid (auto)
@@ -771,7 +771,7 @@
 [394] ߡ ᐃ △ ⵠ ꕔ 𐊅 𐊣 𔖢 𖨬 𖼚
 	7E1 (ߡ) NKO LETTER MA	Nkoo: allowed, whole-script checked
 	1403 (ᐃ) CANADIAN SYLLABICS I	Cans: allowed, whole-script checked
-	25B3 (△) WHITE UP-POINTING TRIANGLE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	25B3 (△) WHITE UP-POINTING TRIANGLE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2D60 (ⵠ) TIFINAGH LETTER YAV	Tfng: allowed, whole-script checked
 	A554 (ꕔ) VAI SYLLABLE KPA	Vaii: allowed, whole-script checked
 	10285 (𐊅) LYCIAN LETTER D	Lyci: allowed, whole-script checked
@@ -780,7 +780,7 @@
 	16A2C (𖨬) BAMUM LETTER PHASE-F WA	Bamu: allowed, whole-script checked
 	16F1A (𖼚) MIAO LETTER TLHA	Plrd: allowed, whole-script checked
 [3A0] ∏ ꛛ 𐔗
-	220F (∏) N-ARY PRODUCT	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	220F (∏) N-ARY PRODUCT	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	A6DB (ꛛ) BAMUM LETTER NA	Bamu: allowed, whole-script checked
 	10517 (𐔗) ELBASAN LETTER PE	Elba: allowed, whole-script checked
 [3A6] ቀ ᛰ 𐊳
@@ -849,7 +849,7 @@
 	A4F5 (ꓵ) LISU LETTER UE	Lisu: allowed, whole-script checked
 	16AD1 (𖫑) BASSA VAH LETTER KA	Bass: allowed, whole-script checked
 [554] ₽ ⳨
-	20BD (₽) RUBLE SIGN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	20BD (₽) RUBLE SIGN	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2CE8 (⳨) COPTIC SYMBOL TAU RO	Copt: allowed, whole-script checked
 [571] ձ ኔ
 	571 (ձ) ARMENIAN SMALL LETTER JA	Armenian: allowed, whole-script checked
@@ -1689,7 +1689,7 @@
 [6F 6F] ᅇ ᇮ ∞
 	1147 (ᅇ) HANGUL CHOSEONG SSANGIEUNG	Korean: allowed, whole-script checked (unresolved)
 	11EE (ᇮ) HANGUL JONGSEONG SSANGIEUNG	Korean: allowed, whole-script checked (unresolved)
-	221E (∞) INFINITY	Korean: allowed, whole-script checked (unresolved); Japanese: allowed, whole-script checked; Han: allowed, whole-script checked; Latin: allowed, whole-script checked; Cyrillic: allowed, whole-script checked; Greek: allowed, whole-script checked
+	221E (∞) INFINITY	Korean: allowed, whole-script checked (unresolved); Japanese: allowed, whole-script checked; Han: allowed, whole-script checked; Common: allowed, whole-script checked; Latin: allowed, whole-script checked; Cyrillic: allowed, whole-script checked; Greek: allowed, whole-script checked
 [114C] ᅌ ᇰ
 	114C (ᅌ) HANGUL CHOSEONG YESIEUNG	Korean: allowed, whole-script checked (unresolved)
 	11F0 (ᇰ) HANGUL JONGSEONG YESIEUNG	Korean: allowed, whole-script checked (unresolved)
@@ -1812,14 +1812,14 @@
 	16C2 (ᛂ) RUNIC LETTER E	Runr: allowed, whole-script checked (unresolved)
 [16CF] ᛏ ↑
 	16CF (ᛏ) RUNIC LETTER TIWAZ TIR TYR T	Runr: allowed, whole-script checked
-	2191 (↑) UPWARDS ARROW	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2191 (↑) UPWARDS ARROW	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 [16DC] ᛜ ♢ 𐊔
 	16DC (ᛜ) RUNIC LETTER INGWAZ	Runr: allowed, whole-script checked
-	2662 (♢) WHITE DIAMOND SUIT	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2662 (♢) WHITE DIAMOND SUIT	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	10294 (𐊔) LYCIAN LETTER KK	Lyci: allowed, whole-script checked
 [16DE] ᛞ ⋈
 	16DE (ᛞ) RUNIC LETTER DAGAZ DAEG D	Runr: allowed, whole-script checked
-	22C8 (⋈) BOWTIE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	22C8 (⋈) BOWTIE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 [16EF] ᛯ ⵣ
 	16EF (ᛯ) RUNIC TVIMADUR SYMBOL	Runr: allowed, whole-script checked
 	2D63 (ⵣ) TIFINAGH LETTER YAZ	Tfng: allowed, whole-script checked
@@ -1855,17 +1855,17 @@
 	A4F6 (ꓶ) LISU LETTER UH	Lisu: allowed, whole-script checked
 	16F26 (𖼦) MIAO LETTER HA	Plrd: allowed, whole-script checked
 [2202] ∂ 𞣌
-	2202 (∂) PARTIAL DIFFERENTIAL	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2202 (∂) PARTIAL DIFFERENTIAL	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	1E8CC (𞣌) MENDE KIKAKUI DIGIT SIX	Mend: allowed, whole-script checked
 [102BC] ▽ 𐊼
-	25BD (▽) WHITE DOWN-POINTING TRIANGLE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	25BD (▽) WHITE DOWN-POINTING TRIANGLE	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	102BC (𐊼) CARIAN LETTER K	Cari: allowed, whole-script checked
 [1099E] ☥ 𐦞 𓋹
-	2625 (☥) ANKH	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2625 (☥) ANKH	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	1099E (𐦞) MEROITIC HIEROGLYPHIC SYMBOL VIDJ	Mero: allowed, whole-script checked
 	132F9 (𓋹) EGYPTIAN HIEROGLYPH S034	Egyp: allowed, whole-script checked
 [2627] ☧ ⳩
-	2627 (☧) CHI RHO	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
+	2627 (☧) CHI RHO	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Common: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2CE9 (⳩) COPTIC SYMBOL KHI RO	Copt: allowed, whole-script checked
 [276C] く 𡿨
 	304F (く) HIRAGANA LETTER KU	Japanese: allowed, whole-script checked (unresolved)
