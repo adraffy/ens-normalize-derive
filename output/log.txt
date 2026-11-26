@@ -13188,7 +13188,6 @@ Removed Valid: 2E (.) FULL STOP
 303 (◌̃) COMBINING TILDE [Glag,Latn,Sunu,Syrc,Thai => Glag,Latn,Sunu,Syrc]
 307 (◌̇) COMBINING DOT ABOVE [Copt,Dupl,Hebr,Latn,Perm,Syrc,Tale,Tfng,Todr => Copt,Dupl,Latn,Perm,Syrc,Tale,Tfng,Todr]
 308 (◌̈) COMBINING DIAERESIS [Armn,Cyrl,Dupl,Goth,Grek,Hebr,Latn,Perm,Syrc,Tale,Tfng => Cyrl,Dupl,Goth,Grek,Latn,Perm,Syrc,Tale,Tfng]
-B83 (ஃ) TAMIL SIGN VISARGA [Knda,Mlym,Taml,Telu => Taml]
 20C3 (⃃) UAE DIRHAM SIGN [Zyyy => Arab]
 ==== Create Groups ====
 Disallowed Script: [Brai] Braille
@@ -13216,9 +13215,9 @@ Valid  | Name       | Test      | Rest      | Extra
     91 | Oriya      | Orya      |           |                           
    111 | Sinhala    | Sinh      |           |                           
     90 | Gujarati   | Gujr      |           |                           
-    96 | Telugu     | Telu      |           |                           
-    90 | Kannada    | Knda      |           |                           
-   113 | Malayalam  | Mlym      |           |                           
+    97 | Telugu     | Telu      |           |                           
+    91 | Kannada    | Knda      |           |                           
+   114 | Malayalam  | Mlym      |           |                           
     80 | Lao        | Laoo      |           |                           
     41 | Georgian   | Geor      |           |                           
    230 | Myanmar    | Mymr      |           |                           
@@ -17425,8 +17424,8 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
 Valid: 155592
-Multi: 103048
-Unique: 52544
+Multi: 103049
+Unique: 52543
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 ==== Prune Inert Confusables ====
@@ -18011,19 +18010,19 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
   9 |     86 |    85 |     85 |      1 |      | Hebrew    
  10 |     83 |    82 |     82 |      1 |      | Thai      
  11 |     92 |    82 |     92 |      0 |      | Bengali   
- 12 |    125 |   104 |    125 |      0 |      | Tamil     
+ 12 |    125 |   103 |    125 |      0 |      | Tamil     
  13 |    745 |    34 |     35 |    710 | 0/11 | Greek     
  14 |    167 |   167 |    167 |      0 |      | Tibetan   
  15 |     73 |    63 |     73 |      0 |      | Gurmukhi  
  16 |     80 |    80 |     80 |      0 |      | Lao       
- 17 |     96 |    96 |     96 |      0 |      | Telugu    
+ 17 |     97 |    96 |     97 |      0 |      | Telugu    
  18 |    229 |   219 |    229 |      0 |      | Myanmar   
  19 |     90 |    80 |     90 |      0 |      | Gujarati  
  20 |     41 |    41 |     41 |      0 |      | Georgian  
  21 |     42 |    42 |     42 |      0 |      | Armenian  
  22 |    132 |   132 |    132 |      0 |      | Khmer     
- 23 |     90 |    80 |     90 |      0 |      | Kannada   
- 24 |    113 |   113 |    113 |      0 |      | Malayalam 
+ 23 |     91 |    80 |     91 |      0 |      | Kannada   
+ 24 |    114 |   113 |    114 |      0 |      | Malayalam 
  25 |    504 |   504 |    504 |      0 |      | Ethiopic  
  26 |    111 |   111 |    111 |      0 |      | Sinhala   
  27 |     91 |    91 |     91 |      0 |      | Oriya     

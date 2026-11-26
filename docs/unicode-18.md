@@ -48,7 +48,7 @@ Some characters also left individual groups. Combining marks had leaked through 
 - **Common** (new, first): only shared characters (digits, punctuation, symbols). It's a subset of Latin, Han, Japanese, Korean, Cyrillic and Greek, so it can't make a label valid or invalid. It only names labels without a letter. See [groups.md](groups.md).
 - **Bopomofo** is now `Restricted[Bopo]`. UAX-31 lists Bopomofo as Limited Use, so it no longer mixes with Han (`中ㄐ` is an illegal mixture). This is the 34 BROKEN labels, almost all faux-Latin spoofs (乃卂ㄚ匚 = "BAYC").
 - **New restricted groups:** `Seal`, `Jurc`, `Pcun`. Chisoi was in the draft of UAX-31 but not in the final 18.0.0.
-- **Script_Extensions:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu in 18.0. It stays Tamil-only until reviewed.
+- **Script_Extensions:** U+0B83 ஃ TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu in 18.0, so it's valid in those groups too. No known label uses it, and those groups don't mix with Latin or with each other.
 - **Order:** unchanged except that Common is first. (Myanmar and Gujarati swapped places in the port. They share no characters, so nothing depends on it.)
 
 ## Combining marks

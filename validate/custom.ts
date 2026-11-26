@@ -219,7 +219,10 @@ export default [
 	{name: 'ก\u{303}', error: true, comment: 'Script_Extensions: Thai + COMBINING TILDE'},
 	{name: 'ա\u{308}', error: true, comment: 'Script_Extensions: Armenian + COMBINING DIAERESIS'},
 	{name: 'ஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Tamil'},
-	{name: 'కஃ', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)'},
+	{name: 'కஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Telugu (18.0)'},
+	{name: 'ಕஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Kannada (18.0)'},
+	{name: 'കஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Malayalam (18.0)'},
+	{name: 'கஃక', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA does not let Tamil and Telugu mix'},
 
 	// a combining mark's base must be one of its group's own characters (UAX-24 inherited script)
 	{name: 'ب\u{64B}-ب', comment: 'Inherited: Arabic mark on an Arabic letter'},

@@ -4,7 +4,6 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 
 ## Open
 
-- **U+0B83 TAMIL SIGN VISARGA** is pinned to Tamil until reviewed: 18.0 extended its Script_Extensions to Kannada, Malayalam and Telugu. Every other new 18.0 character has been reviewed; `bun run review` (or `--html`) lists anything pending.
 - **Same-group confusables** (see [below](#confusables-cjk-and-faux-latin)): Katakana vs Han, simplified vs traditional Han, and Han/Bopomofo used as faux-Latin. The whole-script check can't express them.
 - **`spec.json` `unicode`** embeds the download timestamp (`"18.0.0 (2026-11-25T…)"`), so re-downloading identical data changes the spec hash. The version alone would do.
 - **The ENSIP-15 text** doesn't describe the combining mark base rule or the unsupported combining mark message yet ([implementers.md](implementers.md)).
@@ -27,6 +26,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid in Arabic only ([rules/scripts.ts](../rules/scripts.ts) overrides its Script_Extensions, so it isn't shared with every group). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
 - **𛅨 small archaic katakana ye (new in 18.0) is disallowed.**
 - **𫠞 U+2B81E is allowed,** like the other 222 Extension D ideographs. It resembles 吹 (口 + 欠), a lookalike within Han that the whole-script check can't express.
+- **ஃ U+0B83 TAMIL SIGN VISARGA follows Unicode 18**, which extends it to Kannada, Malayalam and Telugu. No known label contains it, it has no `confusables.txt` entry, and none of those groups contains a–z.
 - **🆮 TOMOBIKI SYMBOL is disallowed.** It's a shared symbol, so it would be valid next to Latin, and it looks like ⊖ ⦵ ⦶, which are disallowed.
 - **Allowed: Arabic Extended-C, the Hebrew points ׈ ׉, the Oriya signs ୓ ୔, 𑬊 (Devanagari) and 𑷰 𑷱 (Bengali), all new in 18.0.** Those groups don't mix with Latin, and their marks get the non-spacing mark checks (base must be a letter of the group, no doubles, at most 4).
 - **New 18.0 modifier letters stay disallowed** instead of mapping to plain letters: Latin subscripts ₝ ₞ ₟ (w y z), Armenian modifiers ՘ ֋ ֌ (է ի յ) and 𝚦 (ss). The older subscript letters were already disallowed. So is ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE.
@@ -96,7 +96,7 @@ These behaviors come only from report text, so they were checked against the 18.
 - **UTS-39 also** makes "nonspacing mark" explicitly Mn + Me, as derive already did. Its joining-control change doesn't apply, because ZWJ/ZWNJ are disallowed outside emoji.
 - **UTS-46 rev 36 and UAX-15 rev 58:** no changes. UAX-24 is explanatory. UTS-51 revises FE0F guidance, which doesn't apply because emoji are matched without FE0F.
 - **UAX-31** adds three Excluded scripts (Jurchen, Proto-Cuneiform, Seal), which become restricted groups. Derive enforces the tables: every Limited Use or Excluded script must be restricted or disallowed, and only Recommended scripts can identify a group.
-- **Script_Extensions 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu, and is pinned to Tamil until reviewed. Vedic U+1CF5/1CF6 lost Devanagari, which has no effect.
+- **Script_Extensions 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu, and follows it (see Decisions). Vedic U+1CF5/1CF6 lost Devanagari, which has no effect.
 
 ## Bugs fixed in the port
 
