@@ -113,9 +113,8 @@ All of these come from `output/spec.json`:
 
 ## Quirks
 
-- **Odd group in CM errors.** `x̂` names Cherokee because U+0302's script set includes `Cher`, and Cherokee (restricted, no CM whitelist) is the first group where the bare mark is primary. 1.11.1 reports the same. The message would be clearer if it said "unsupported combining mark".
-- **Pure-Common labels are Latin.** `Zyyy` is a `test` script of Latin, so a label of only shared characters (for example `∞` or `€`) is typed Latin rather than "Common". There's no Common group because it would be a subset of every other group.
-- **Extras widen a group for everyone.** `extra: [$AZ]` lets CJK labels contain romanization. It also means a-z appear in four groups, so they are never "unique" and never end a whole-script check early.
+- **Odd group in CM errors.** `x̂` names Cherokee because U+0302's script set includes `Cher`, and Cherokee (restricted, no CM whitelist) is the first group where the bare mark is primary. 1.11.1 reports the same. 35 registered labels hit this, mostly Turkish: `İ` maps (UTS-46) to `i` + U+0307, so `İzmir` fails with `illegal mixture: Latin + Restricted[Syrc] "◌̇"`. The message would be clearer if it said "unsupported combining mark".
+- **Pure-Common labels are Latin.** `Zyyy` is a `test` script of Latin, so a label of only shared characters is typed Latin rather than "Common". Examples are `∞`, `€100`, and emoji + digits like `💎100`. About 60,000 registered labels are typed this way.
 
 ## Where to change things
 
