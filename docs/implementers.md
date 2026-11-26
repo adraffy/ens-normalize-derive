@@ -12,7 +12,7 @@ The reference is [src/ensip15.ts](../src/ensip15.ts) (`determineGroup`, `checkGr
 
 ## 1. New data
 
-Take `output/spec.json`, `output/nf.json`, `output/tests.json` and `output/nf-tests.json` from this repo. Against every registered label (vs 1.11.1): 38 valid labels become invalid (34 Bopomofo, now a restricted script, and 4 `丅`), 5 invalid labels become valid (new emoji), and none normalizes differently. See [review.md](review.md).
+Take `output/spec.json`, `output/nf.json`, `output/tests.json` and `output/nf-tests.json` from this repo. Against every registered label (vs 1.11.1): 38 valid labels become invalid (34 Bopomofo, now a restricted script, and 4 `丅`), 5 invalid labels become valid (new emoji), and none normalizes differently. See [unicode-18.md](unicode-18.md) for everything that changed.
 
 **The Common group needs no code** if your implementation follows the data: groups in file order, the label's type is the group's `name`, and whitelist groups are the ones with a `cm` key. Check for these assumptions:
 
@@ -74,7 +74,7 @@ function errorMixture(group, cp, cps) {
 }
 ```
 
-37 registered labels get this message, mostly Turkish `İ`. Every label that failed before still fails.
+37 registered labels get this message, 20 of them Turkish `İ`. Every label that failed before still fails.
 
 ## Checking your implementation
 
