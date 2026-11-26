@@ -19,19 +19,19 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 | section of `spec.json` | 1.11.1 → 18                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------- |
-| valid (in some group)  | +12,624, −428                                                                                              |
+| valid (in some group)  | +12,667, −428                                                                                              |
 | emoji                  | +19 sequences: 🛙 🪋 🪌 🪍 🫌 🫝 🫫 🫹 🫺, plus skin tones of 🫹 🫺                                        |
 | mapped                 | −6 (targets now disallowed: Ҥ Ҵ, three Tibetan vowel signs, Georgian Mtavruli U+1CB9). None added.         |
 | ignored                | unchanged                                                                                                  |
 | fenced                 | + ־ HEBREW PUNCTUATION MAQAF (a hyphen: 1 registration, none at the start, end or doubled)                 |
 | escape                 | +32 format characters (now derived from properties, see [rules/chars-escape.ts](../rules/chars-escape.ts)) |
-| cm / nsm / nfc_check   | +37 / −4 / −2, following the new and newly disallowed marks                                                |
+| cm / nsm / nfc_check   | +37 / +19 −4 / +17 −2, following the new and newly disallowed marks                                        |
 
 **New in Unicode 18** (13,007 characters):
 
-- **12,624 are valid.** 12,623 are in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels. The other is ⃃ UAE DIRHAM SIGN, reviewed and valid in Arabic only.
+- **12,667 are valid.** 12,623 are in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels. The other 44 were reviewed: Arabic Extended-C (39 letters and marks), two Hebrew points, two Oriya signs, and ⃃ UAE DIRHAM SIGN (Arabic only). Those groups don't mix with Latin, and their marks get the non-spacing mark checks.
 - **9 new emoji.**
-- **374 are not valid.** 49 are letters, marks and signs in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, one Han ideograph, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 237 more are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, seven modifier and ligature letters that would map to plain letters (Latin subscripts ₝ ₞ ₟, Armenian modifiers ՘ ֋ ֌, 𝚦 → ss), and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
+- **331 are not valid.** 5 are still pending: 𑬊 (Devanagari), 𑷰 𑷱 (Bengali), 🆮 TOMOBIKI SYMBOL and the Han ideograph 𫠞. They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 238 more are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, seven modifier and ligature letters that would map to plain letters (Latin subscripts ₝ ₞ ₟, Armenian modifiers ՘ ֋ ֌, 𝚦 → ss), and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 
 **Disallowed although valid in 1.11.1** (428 characters):
 
@@ -68,7 +68,7 @@ Derive then drops confused characters with no lookalike in another group. Those 
 | wholes                          | 1.11.1 | 18  |
 | ------------------------------- | ------ | --- |
 | count                           | 490    | 292 |
-| whole-script checked characters | 1,204  | 959 |
+| whole-script checked characters | 1,204  | 962 |
 
 Results: `丅` is a T confusable (4 BROKEN labels). Some short labels mixing a lookalike with a shared character are now whole-script confusable, such as `α∞`, `ஐ௮` (Tamil/Grantha) and `ဝ၁` (Myanmar/Chakma). No other registered label changes.
 

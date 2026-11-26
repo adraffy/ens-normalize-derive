@@ -180,7 +180,15 @@ export default [
 	{name: 'a\u{307}', error: true, comment: 'Non-whitelisted CM: composes to ȧ'},
 
 	// new 18.0 characters are disallowed until reviewed (rules/disallow/unreviewed.ts)
-	{name: '𐻉', error: true, comment: 'Unreviewed 18.0: Arabic Extended-C'},
+	{name: '\u{11B0A}', error: true, comment: 'Unreviewed 18.0: Devanagari Extended-A'},
+	{name: 'ب\u{10ED9}ب', comment: 'Reviewed 18.0: Arabic Extended-C crown letter'},
+	{name: 'ب\u{10ECB}', comment: 'Reviewed 18.0: Arabic Extended-C mark on an Arabic letter'},
+	{name: 'ب\u{10ECB}\u{10ECB}', error: true, comment: 'Reviewed 18.0: Arabic Extended-C mark doubled'},
+	{name: 'ب-\u{10ECB}', error: true, comment: 'Reviewed 18.0: Arabic Extended-C mark on a hyphen'},
+	{name: 'a\u{10ECB}', error: true, comment: 'Reviewed 18.0: Arabic Extended-C mark on Latin'},
+	{name: 'א\u{5C8}', comment: 'Reviewed 18.0: Hebrew point'},
+	{name: 'କ\u{B53}', comment: 'Reviewed 18.0: Oriya sign'},
+	{name: 'a\u{208F}', error: true, comment: 'Reviewed 18.0: MODIFIER LETTER HIGH AND LOW VERTICAL LINE disallowed'},
 	{name: '\u{20C3}', comment: 'Reviewed 18.0: UAE DIRHAM SIGN, Arabic only (rules/scripts.ts)'},
 	{name: 'ب\u{20C3}', comment: 'Reviewed 18.0: UAE DIRHAM SIGN with Arabic'},
 	{name: 'a\u{20C3}', error: true, comment: 'Reviewed 18.0: UAE DIRHAM SIGN is not Latin'},

@@ -629,7 +629,7 @@
 	11B66 (◌𑭦) SHARADA VOWEL SIGN CANDRA E	Shrd: allowed, whole-script checked
 	1E132 (◌𞄲) NYIAKENG PUACHUE HMONG TONE-J	Hmnp: allowed, whole-script checked
 	1E948 (◌𞥈) ADLAM CONSONANT MODIFIER	Adlm: allowed, whole-script checked
-[307] ◌̇ ◌ֹ ◌ֺ ◌ׁ ◌ׂ ◌ׄ ◌۬ ◌݁ ◌߭ ◌࣪ ◌ं ◌ਂ ◌ં ◌் ◌፞ ◌𐽈 ◌𑀁 ◌𑂁 ◌𑄁 ◌𑆁 ◌𑋟 ◌𑖽 ◌𑘽 ◌𑚫 ◌𑠷 ◌𞋬
+[307] ◌̇ ◌ֹ ◌ֺ ◌ׁ ◌ׂ ◌ׄ ◌۬ ◌݁ ◌߭ ◌࣪ ◌ं ◌ਂ ◌ં ◌୓ ◌் ◌፞ ◌𐽈 ◌𑀁 ◌𑂁 ◌𑄁 ◌𑆁 ◌𑋟 ◌𑖽 ◌𑘽 ◌𑚫 ◌𑠷 ◌𞋬
 	307 (◌̇) COMBINING DOT ABOVE	Syrc: allowed, whole-script checked (unresolved); Tale: allowed, whole-script checked; Tfng: allowed, whole-script checked; Copt: allowed, whole-script checked; Dupl: allowed, whole-script checked; Perm: allowed, whole-script checked; Todr: allowed, whole-script checked
 	5B9 (◌ֹ) HEBREW POINT HOLAM	Hebrew: allowed, whole-script checked (unresolved)
 	5BA (◌ֺ) HEBREW POINT HOLAM HASER FOR VAV	Hebrew: allowed, whole-script checked (unresolved)
@@ -643,6 +643,7 @@
 	902 (◌ं) DEVANAGARI SIGN ANUSVARA	Devanagari: allowed, whole-script checked
 	A02 (◌ਂ) GURMUKHI SIGN BINDI	Gurmukhi: allowed, whole-script checked
 	A82 (◌ં) GUJARATI SIGN ANUSVARA	Gujarati: allowed, whole-script checked
+	B53 (◌୓) ORIYA SIGN DOT ABOVE	Oriya: allowed, whole-script checked
 	BCD (◌்) TAMIL SIGN VIRAMA	Tamil: allowed, whole-script checked
 	135E (◌፞) ETHIOPIC COMBINING VOWEL LENGTH MARK	Ethiopic: allowed, whole-script checked
 	10F48 (◌𐽈) SOGDIAN COMBINING DOT ABOVE	Sogd: allowed, whole-script checked
@@ -656,10 +657,11 @@
 	116AB (◌𑚫) TAKRI SIGN ANUSVARA	Takr: allowed, whole-script checked
 	11837 (◌𑠷) DOGRA SIGN ANUSVARA	Dogr: allowed, whole-script checked
 	1E2EC (◌𞋬) WANCHO TONE TUP	Wcho: allowed, whole-script checked
-[308] ◌̈ ◌߳ ◌࣫ ◌፟ ◌ᰮ ◌𐨏 ◌𐫥 ◌𐽉 ◌𑄂 ◌𞋭
+[308] ◌̈ ◌߳ ◌࣫ ◌୔ ◌፟ ◌ᰮ ◌𐨏 ◌𐫥 ◌𐽉 ◌𑄂 ◌𞋭
 	308 (◌̈) COMBINING DIAERESIS	Syrc: allowed, whole-script checked; Tale: allowed, whole-script checked; Tfng: allowed, whole-script checked; Dupl: allowed, whole-script checked; Goth: allowed, whole-script checked; Perm: allowed, whole-script checked
 	7F3 (◌߳) NKO COMBINING DOUBLE DOT ABOVE	Nkoo: allowed, whole-script checked
 	8EB (◌࣫) ARABIC TONE TWO DOTS ABOVE	Arabic: allowed, whole-script checked
+	B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE	Oriya: allowed, whole-script checked
 	135F (◌፟) ETHIOPIC COMBINING GEMINATION MARK	Ethiopic: allowed, whole-script checked
 	1C2E (◌ᰮ) LEPCHA CONSONANT SIGN M	Lepc: allowed, whole-script checked
 	10A0F (◌𐨏) KHAROSHTHI SIGN VISARGA	Khar: allowed, whole-script checked
@@ -671,10 +673,10 @@
 	309 (◌̉) COMBINING HOOK ABOVE	Tfng: allowed, whole-script checked
 	7AA (◌ު) THAANA UBUFILI	Thaana: allowed, whole-script checked
 	8F8 (◌ࣸ) ARABIC RIGHT ARROWHEAD ABOVE	Arabic: allowed, whole-script checked
-[30A] ◌̊ ◌֯ ◌ْ ◌ް ◌ࠬ ◌ఄ ◌ഀ ◌ํ ◌ໍ ◌ཾ ◌ံ ◌ំ ◌ᩴ ◌ᮀ ◌ꠋ ◌𑌀 ◌𑑄 ◌𑓀 ◌𑨸 ◌𑪖 ◌𑰽 ◌𑲵 ◌𑶕 ◌𞄳
+[30A] ◌̊ ◌֯ ◌ْ ◌ް ◌ࠬ ◌ఄ ◌ഀ ◌ํ ◌ໍ ◌ཾ ◌ံ ◌ំ ◌ᩴ ◌ᮀ ◌ꠋ ◌𐻎 ◌𑌀 ◌𑑄 ◌𑓀 ◌𑨸 ◌𑪖 ◌𑰽 ◌𑲵 ◌𑶕 ◌𞄳
 	30A (◌̊) COMBINING RING ABOVE	Syrc: allowed, whole-script checked (unresolved); Dupl: allowed, whole-script checked
 	5AF (◌֯) HEBREW MARK MASORA CIRCLE	Hebrew: allowed, whole-script checked
-	652 (◌ْ) ARABIC SUKUN	Syrc: allowed, whole-script checked (unresolved); Arabic: allowed, whole-script checked
+	652 (◌ْ) ARABIC SUKUN	Syrc: allowed, whole-script checked (unresolved); Arabic: allowed, whole-script checked (unresolved)
 	7B0 (◌ް) THAANA SUKUN	Thaana: allowed, whole-script checked
 	82C (◌ࠬ) SAMARITAN VOWEL SIGN SUKUN	Samr: allowed, whole-script checked
 	C04 (◌ఄ) TELUGU SIGN COMBINING ANUSVARA ABOVE	Telugu: allowed, whole-script checked
@@ -687,6 +689,7 @@
 	1A74 (◌ᩴ) TAI THAM SIGN MAI KANG	Lana: allowed, whole-script checked
 	1B80 (◌ᮀ) SUNDANESE SIGN PANYECEK	Sund: allowed, whole-script checked
 	A80B (◌ꠋ) SYLOTI NAGRI SIGN ANUSVARA	Sylo: allowed, whole-script checked
+	10ECE (◌𐻎) ARABIC SMALL CIRCLE ABOVE	Arabic: allowed, whole-script checked (unresolved)
 	11300 (◌𑌀) GRANTHA SIGN COMBINING ANUSVARA ABOVE	Gran: allowed, whole-script checked
 	11444 (◌𑑄) NEWA SIGN ANUSVARA	Newa: allowed, whole-script checked
 	114C0 (◌𑓀) TIRHUTA SIGN ANUSVARA	Tirh: allowed, whole-script checked
@@ -866,6 +869,12 @@
 [59A] ◌֚ ◌֤
 	59A (◌֚) HEBREW ACCENT YETIV	Hebrew: allowed, whole-script checked (unresolved)
 	5A4 (◌֤) HEBREW ACCENT MAHAPAKH	Hebrew: allowed, whole-script checked (unresolved)
+[5C8] ◌ְ ◌׈
+	5B0 (◌ְ) HEBREW POINT SHEVA	Hebrew: allowed, whole-script checked (unresolved)
+	5C8 (◌׈) HEBREW POINT SHEVA NA MUDGASH	Hebrew: allowed, whole-script checked (unresolved)
+[5C9] ◌ּ ◌׉
+	5BC (◌ּ) HEBREW POINT DAGESH OR MAPIQ	Hebrew: allowed, whole-script checked (unresolved)
+	5C9 (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH	Hebrew: allowed, whole-script checked (unresolved)
 [639] ؏ ع
 	60F (؏) ARABIC SIGN MISRA	Arabic: REMOVED
 	639 (ع) ARABIC LETTER AIN	Arabic: allowed, whole-script checked

@@ -19,7 +19,7 @@ export default [
 	{block: 'Phonetic Extensions'},
 	// 1D80..1DBF Phonetic Extensions Supplement: 64/64 denied
 	{block: 'Phonetic Extensions Supplement'},
-	// 2070..209F Superscripts and Subscripts: 22/46 denied
+	// 2070..209F Superscripts and Subscripts: 23/46 denied
 	{block: 'Superscripts and Subscripts', cps: [
 		// subscript
 		0x2090, // (ₐ) LATIN SUBSCRIPT SMALL LETTER A
@@ -38,6 +38,7 @@ export default [
 		0x209D, // (₝) LATIN SUBSCRIPT SMALL LETTER W
 		0x209E, // (₞) LATIN SUBSCRIPT SMALL LETTER Y
 		0x209F, // (₟) LATIN SUBSCRIPT SMALL LETTER Z
+		0x208F, // (₏) MODIFIER LETTER HIGH AND LOW VERTICAL LINE
 		// subscript digits
 		0x2080, // (₀) SUBSCRIPT ZERO
 		0x2081, // (₁) SUBSCRIPT ONE

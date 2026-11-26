@@ -3,7 +3,8 @@
 //
 // A chart's grid page prints each codepoint (eg. "10ED9", small type) under its cell, so a cell is the
 // rectangle above its label, one column pitch wide and one row pitch tall. Pitches are measured from the
-// labels on the page. CJK charts use a different layout (and may omit characters): no glyph for those.
+// labels on the page. CJK charts list one ideograph per row instead: the codepoint (larger type) is on the left
+// and the glyph for the first source is right of it.
 
 import {readFileSync} from 'node:fs';
 import {type CodePoint, hexCp} from './utils.ts';
@@ -12,6 +13,9 @@ import {type CodePoint, hexCp} from './utils.ts';
 const DEFAULT_PITCH_X = 31.6;
 const DEFAULT_PITCH_Y = 39.6;
 const SCALE = 4; // 4x the PDF size: ~120px cells, sharp at 2x
+// CJK rows: the glyph is the first large text item after the label (an em box, measured on the 18.0
+// Extension D chart: from 0.15em below the baseline to 0.9em above)
+const CJK_EM = {below: 0.15, above: 0.9, pad: 1};
 
 interface TextItem {
 	str: string;
@@ -31,22 +35,37 @@ export async function chartGlyphs(file: URL | string, cps: readonly CodePoint[])
 		for (let p = 1; p <= doc.numPages && need.size; p++) {
 			const page = await doc.getPage(p);
 			const items = (await page.getTextContent()).items as TextItem[];
-			const labels = items.filter((x) => x.height < 9 && /^[0-9A-F]{4,6}$/.test(x.str));
-			const found = labels.filter((x) => need.has(x.str));
+			const hex = items.filter((x) => /^[0-9A-F]{4,6}$/.test(x.str));
+			const labels = hex.filter((x) => x.height < 9); // grid: under each cell
+			const rows = hex.filter((x) => x.height >= 9 && x.height < 10.5 && !labels.length); // CJK: left of each glyph (page headers are 11)
+			const found = [...labels, ...rows].filter((x) => need.has(x.str));
 			if (!found.length) continue;
 			const px = pitch(labels.map((x) => x.transform[4]! + x.width / 2)) ?? DEFAULT_PITCH_X;
 			const py = pitch(labels.map((x) => x.transform[5]!)) ?? DEFAULT_PITCH_Y;
+			// the glyph's rectangle in PDF coordinates
+			const rect = (x: TextItem): number[] | undefined => {
+				const [lx, ly] = [x.transform[4]!, x.transform[5]!];
+				if (rows.includes(x)) {
+					const g = items.slice(items.indexOf(x) + 1).find((y) => y.height >= 18 && Math.abs(y.transform[5]! - ly) < 20);
+					if (!g) return;
+					const [gx, gy, em] = [g.transform[4]!, g.transform[5]!, g.height];
+					return [gx - CJK_EM.pad, gy - CJK_EM.below * em, gx + em + CJK_EM.pad, gy + CJK_EM.above * em];
+				}
+				// above the label, inside the cell borders
+				const cx = lx + x.width / 2;
+				return [cx - px / 2 + 1, ly + x.height + 0.5, cx + px / 2 - 1, ly + py - 2];
+			};
 			const viewport = page.getViewport({scale: SCALE});
 			const {canvasFactory} = doc as unknown as {canvasFactory: CanvasFactory};
 			const full = canvasFactory.create(viewport.width, viewport.height);
 			await page.render({canvasContext: full.context, viewport} as never).promise;
 			for (const x of found) {
-				const cp = need.get(x.str)!;
+				const cp = need.get(x.str);
+				if (cp === undefined) continue; // already cropped
 				need.delete(x.str);
-				const cx = x.transform[4]! + x.width / 2;
-				const y = x.transform[5]!;
-				// above the label, inside the cell borders
-				const [x0, y0, x1, y1] = viewport.convertToViewportRectangle([cx - px / 2 + 1, y + x.height + 0.5, cx + px / 2 - 1, y + py - 2]);
+				const r = rect(x);
+				if (!r) continue;
+				const [x0, y0, x1, y1] = viewport.convertToViewportRectangle(r);
 				const left = Math.min(x0, x1);
 				const top = Math.min(y0, y1);
 				const w = Math.round(Math.abs(x1 - x0));
