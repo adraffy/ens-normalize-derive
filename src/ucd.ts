@@ -94,8 +94,10 @@ function bucket<T>(root: Record<string, T[]>, key: string | undefined): T[] {
 	return root[key];
 }
 
+// "E0.6" = emoji version (Unicode 13+); before 13 the comment held the Unicode age instead ("1.1", or "NA" if reserved)
 function parseEmojiVersion(comment: string | undefined): string {
-	const match = comment?.match(/^E(\d+.\d+)\b/);
+	const match = comment?.match(/^(?:E?(\d+\.\d+)|(NA))\b/);
+	if (match?.[2]) return match[2];
 	if (!match) throw new Error(`expected version: ${comment}`);
 	return match[1]!;
 }

@@ -138,9 +138,9 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 | `src/derive.ts`      | the derivation (pure function: data + rules → payloads + log)                           |
 | `scripts/`           | CLIs                                                                                    |
 | `output/`            | generated payloads + `tests.json` (commit these)                                        |
-| `baseline/1.11.1/`   | payloads of the last release (Unicode 17), for comparison                               |
+| `baseline/<v>/`      | outputs of each release (1.9.4 … 1.11.1), hashes match `data/releases.json`             |
 
-Only Unicode 17.0.0 / 18.0.0 and CLDR 47 / 48.2 are checked in. Older versions can be fetched with the download scripts.
+Unicode 11.0.0 – 18.0.0 and CLDR 42 – 48.2 are checked in (the older ones copied from ens-normalize.js and re-verified against unicode.org / GitHub with the download scripts). Every version parses and passes its own NormalizationTest. `rules/` targets the current release only, so `derive --release` for anything before 18 stops at a rule naming a newer character or script; the released outputs for those are in `baseline/`.
 
 ## License
 
