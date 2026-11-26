@@ -201,4 +201,6 @@ export default [
 	{block: 'Musical Symbols', except: [
 		0x1D11E, // (𝄞) MUSICAL SYMBOL G CLEF
 	]},
+	// 1D250..1D28F Musical Symbols Supplement: new in 18.0, all denied
+	{block: 'Musical Symbols Supplement'},
 ] satisfies Rule[];
