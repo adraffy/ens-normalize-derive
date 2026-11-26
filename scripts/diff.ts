@@ -1,9 +1,9 @@
 // Compare two Unicode releases AFTER parsing.
 //
 // usage:
-//   bun scripts/unicode-diff.ts            # prior vs current
-//   bun scripts/unicode-diff.ts 17         # 17 vs current
-//   bun scripts/unicode-diff.ts 17 18      # 17 vs 18
+//   bun scripts/diff.ts            # prior vs current
+//   bun scripts/diff.ts 17         # 17 vs current
+//   bun scripts/diff.ts 17 18      # 17 vs 18
 
 import {ensIdnaRules} from '../src/idna.ts';
 import {UnicodeSpec} from '../src/ucd.ts';

@@ -43,7 +43,7 @@ bun run names script Latn           # every char in a script
 bun run names block Box Drawing     # every char in a block
 bun run names new                   # every char new in this Unicode version
 bun run names -- --format=md prop White_Space
-bun run unicode-diff [17] [18]      # parsed diff between two releases
+bun run diff [17] [18]              # parsed diff between two releases
 bun scripts/emoji-new.ts            # emoji new in the current release
 ```
 
