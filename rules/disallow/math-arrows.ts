@@ -90,6 +90,8 @@ export default [
 		0x2BCE, // (⯎) WHITE FOUR POINTED CUSP
 		0x2BD0, // (⯐) SQUARE POSITION INDICATOR
 	]},
+	// 1DB00..1DBFF Miscellaneous Symbols and Arrows Extended: new in 18.0, all denied
+	{block: 'Miscellaneous Symbols and Arrows Extended'},
 	// 1F800..1F8FF Supplemental Arrows-C: 136/171 denied
 	{block: 'Supplemental Arrows-C'},
 ] satisfies Rule[];

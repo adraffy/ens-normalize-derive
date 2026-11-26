@@ -353,46 +353,8 @@ export default [
 		0x1CCF8, // (𜳸) OUTLINED DIGIT EIGHT
 		0x1CCF9, // (𜳹) OUTLINED DIGIT NINE
 	]},
-	// 1CEC0..1CEFF Miscellaneous Symbols Supplement: 17/34 denied
-	{block: 'Miscellaneous Symbols Supplement', cps: [
-		// circles
-		0x1CEF0, // (𜻰) MEDIUM SMALL WHITE CIRCLE WITH HORIZONTAL BAR
-		// 20230916: these were added in Unicode 15.1 / but are disabled (and likely should be disabled) / added here for future reference / 20240926: these are still disabled / 20250806: still disabled / 20250803: added in Unicode 17
-		0x1CEE0, // (𜻠) GEOMANTIC FIGURE POPULUS
-		0x1CEE1, // (𜻡) GEOMANTIC FIGURE TRISTITIA
-		0x1CEE2, // (𜻢) GEOMANTIC FIGURE ALBUS
-		0x1CEE3, // (𜻣) GEOMANTIC FIGURE FORTUNA MAJOR
-		0x1CEE4, // (𜻤) GEOMANTIC FIGURE RUBEUS
-		0x1CEE5, // (𜻥) GEOMANTIC FIGURE ACQUISITIO
-		0x1CEE6, // (𜻦) GEOMANTIC FIGURE CONJUNCTIO
-		0x1CEE7, // (𜻧) GEOMANTIC FIGURE CAPUT DRACONIS
-		0x1CEE8, // (𜻨) GEOMANTIC FIGURE LAETITIA
-		0x1CEE9, // (𜻩) GEOMANTIC FIGURE CARCER
-		0x1CEEA, // (𜻪) GEOMANTIC FIGURE AMISSIO
-		0x1CEEB, // (𜻫) GEOMANTIC FIGURE PUELLA
-		0x1CEEC, // (𜻬) GEOMANTIC FIGURE FORTUNA MINOR
-		0x1CEED, // (𜻭) GEOMANTIC FIGURE PUER
-		0x1CEEE, // (𜻮) GEOMANTIC FIGURE CAUDA DRACONIS
-		0x1CEEF, // (𜻯) GEOMANTIC FIGURE VIA
-		// 20261125: unused by registrations (unused symbol block)
-		0x1CEC0, // (𜻀) HEBE
-		0x1CEC1, // (𜻁) IRIS
-		0x1CEC2, // (𜻂) FLORA
-		0x1CEC3, // (𜻃) METIS
-		0x1CEC4, // (𜻄) PARTHENOPE
-		0x1CEC5, // (𜻅) VICTORIA
-		0x1CEC6, // (𜻆) EGERIA
-		0x1CEC7, // (𜻇) IRENE
-		0x1CEC8, // (𜻈) EUNOMIA
-		0x1CEC9, // (𜻉) PSYCHE
-		0x1CECA, // (𜻊) THETIS
-		0x1CECB, // (𜻋) MELPOMENE
-		0x1CECC, // (𜻌) FORTUNA
-		0x1CECD, // (𜻍) ASTRONOMICAL SYMBOL FOR ASTEROID PROSERPINA
-		0x1CECE, // (𜻎) BELLONA
-		0x1CECF, // (𜻏) AMPHITRITE
-		0x1CED0, // (𜻐) LEUKOTHEA
-	]},
+	// 1CEC0..1CEFF Miscellaneous Symbols Supplement: all denied (asteroids, geomantic figures, and since 18.0 alchemical and Leibnizian signs)
+	{block: 'Miscellaneous Symbols Supplement'},
 	// 1F030..1F09F Domino Tiles: 100/100 denied
 	{block: 'Domino Tiles'},
 	// 1F300..1F5FF Miscellaneous Symbols and Pictographs: 20/131 denied
