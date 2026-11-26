@@ -5,6 +5,12 @@
 // and (2) be checked against the released library: with baseline/1.11.1 it must reproduce
 // @adraffy/ens-normalize@1.11.1 exactly (see scripts/parity.ts).
 //
+// Differences from 1.11.1, none of which changes a registered label (parity still holds):
+//   20261126: in a group without a CM whitelist, a combining mark's base must be primary (checkGroup)
+//   20261126: a combining mark that doesn't fit the group is "unsupported combining mark" instead of an
+//     "illegal mixture" naming whichever group lists the mark first (errorGroupMember). Same outcome,
+//     different message: scripts/parity.ts accepts this pair.
+//
 // https://docs.ens.domains/ensip/15
 
 import type {NFJSON, SpecJSON} from './derive.ts';
@@ -207,7 +213,7 @@ export class ENSIP15 {
 						}
 						this.checkFenced(norm);
 						const unique = [...new Set(chars)];
-						const [g] = this.determineGroup(unique);
+						const [g] = this.determineGroup(unique, chars);
 						this.checkGroup(g!, chars);
 						this.checkWhole(g!, unique);
 						info.type = g!.name;
@@ -314,13 +320,13 @@ export class ENSIP15 {
 		if (last === n) throw errorPlacement(`trailing ${prev}`);
 	}
 
-	private determineGroup(unique: CodePoint[]): Group[] {
+	private determineGroup(unique: CodePoint[], chars: CodePoint[]): Group[] {
 		let groups = this.groups;
 		for (const cp of unique) {
 			const gs = groups.filter((g) => groupHas(g, cp));
 			if (!gs.length) {
 				if (!this.groups.some((g) => groupHas(g, cp))) throw this.errorDisallowed(cp);
-				throw this.errorGroupMember(groups[0]!, cp);
+				throw this.errorGroupMember(groups[0]!, cp, chars);
 			}
 			groups = gs;
 			if (gs.length === 1) break;
@@ -330,9 +336,19 @@ export class ENSIP15 {
 
 	private checkGroup(g: Group, cps: CodePoint[]) {
 		for (const cp of cps) {
-			if (!groupHas(g, cp)) throw this.errorGroupMember(g, cp);
+			if (!groupHas(g, cp)) throw this.errorGroupMember(g, cp, cps);
 		}
 		if (!g.checkNSM) return;
+		// 20261126: a combining mark inherits the script of its base (UAX-24), so in a group without a
+		// CM whitelist the base must be one of the group's own (primary) characters, not a shared extra
+		// eg. Arabic "-" + U+064B. CM after an emoji was already rejected, so the base is in the same text.
+		for (let i = 1, base = cps[0]!; i < cps.length; i++) {
+			const cp = cps[i]!;
+			if (!this.cm.has(cp)) base = cp;
+			else if (!g.primary.has(base)) {
+				throw errorPlacement(`combining mark on non-${g.name}: "${this.safeStr([base])} + ${this.safeStr([cp])}"`);
+			}
+		}
 		const d = this.nf.nfd(cps);
 		for (let i = 1, e = d.length; i < e; i++) {
 			if (!this.nsm.has(d[i]!)) continue;
@@ -377,7 +393,15 @@ export class ENSIP15 {
 	private errorDisallowed(cp: CodePoint) {
 		return new Error(`disallowed character: ${this.quotedCp(cp)}`);
 	}
-	private errorGroupMember(g: Group, cp: CodePoint) {
+	/** chars: the label's text, to find the base of a combining mark */
+	private errorGroupMember(g: Group, cp: CodePoint, chars: CodePoint[]) {
+		if (this.cm.has(cp)) {
+			// the mark exists in some group, but not with this text: name its base, not an unrelated group
+			// (eg. "x" + U+0302 isn't Restricted[Cher]). chars[0] isn't a CM, so a base exists
+			let i = chars.indexOf(cp);
+			while (this.cm.has(chars[--i]!));
+			return errorPlacement(`unsupported combining mark: "${this.safeStr([chars[i]!])} + ${this.safeStr([cp])}"`);
+		}
 		let quoted = this.quotedCp(cp);
 		const primary = this.groups.find((x) => x.primary.has(cp));
 		if (primary) quoted = `${primary.name} ${quoted}`;

@@ -18,16 +18,20 @@ export const SCRIPT_GROUPS = [
 	{name: 'Korean', test: ['Hang'], rest: ['Hani', 'Zyyy'], extra: [$AZ], cm: true},
 	{name: 'Han', test: ['Hani'], rest: ['Zyyy'], extra: [$AZ], cm: true},
 
+	// 20261126: Common only (digits, symbols, punctuation: no letters), so "€100" and "💎100" aren't typed Latin.
+	// It's a subset of every group that has Zyyy, so it can't make a label valid or invalid, only rename it.
+	{name: 'Common', test: ['Zyyy'], cm: true},
+
 	// Latin-like
-	{name: 'Latin', test: ['Latn', 'Zyyy'], rest: ['Zinh'], cm: true, extra: [
+	{name: 'Latin', test: ['Latn'], rest: ['Zyyy'], cm: true, extra: [
 		0x3C0, // (π) GREEK SMALL LETTER PI
 
 		// 20221210: after looking at illegal mixtures,
 		// i think this is bad idea, it will just get abused, eg. mμsk
 		//0x3BC, // (μ) GREEK SMALL LETTER MU (since Latin mu is mapped)
 	]}, 
-	{name: 'Cyrillic', test: ['Cyrl'], rest: ['Zyyy', 'Zinh'], cm: true},
-	{name: 'Greek', test: ['Grek'], rest: ['Zyyy', 'Zinh'], cm: true},
+	{name: 'Cyrillic', test: ['Cyrl'], rest: ['Zyyy'], cm: true},
+	{name: 'Greek', test: ['Grek'], rest: ['Zyyy'], cm: true},
 	
 	// 20221215: there is no need for "common" group 
 	// it is a proper subset of any of the groups above
@@ -35,8 +39,7 @@ export const SCRIPT_GROUPS = [
 	// inclusion would only improve the displayed name
 	// in the case of pure-common non-emoji
 	// eg. "123" is Latin/ASCII instead of Common
-	//{name: 'Common', test: ['Zyyy'], cm: 0},
-	// this change also requires moving Latin's Zyyy from rest to test
+	// 20261126: added (see above): 60,000 registered labels were typed Latin without a Latin letter
 
 	// 20230213: consider bumping all CM to max of 3
 	// https://discuss.ens.domains/t/ens-name-normalization-2nd/14564/66

@@ -154,11 +154,23 @@ export default [
 	{name: '\u{30FB}a', error: true, comment: 'Fenced: leading middle dot'},
 	{name: 'a\u{2044}b', comment: 'Fenced: fraction slash'},
 
-	// whitelisted accented Latin (Latvian, Lithuanian, Romanian, Czech, Slovak, Hungarian)
-	{name: 'īėțșįųÿřňťďľőű', comment: 'Exemplars: Latn (2026)'},
-	{name: 'ĪĖȚȘĮŲŸŘŇŤĎĽŐŰ', norm: 'īėțșįųÿřňťďľőű', comment: 'Exemplars: Latn (2026) uppercase'},
-	{name: 'ș', comment: 'Romanian comma-below (cedilla ş is also valid)'},
-	{name: 'ţ', error: true, comment: 'T with cedilla: use ț'},
+	// accented Latin that is NOT whitelisted: registered uses are mostly ASCII spoofs (rules/cm.ts)
+	{name: 'ėth', error: true, comment: 'Not whitelisted: e with dot above (spoof of eth)'},
+	{name: 'ďegen', error: true, comment: 'Not whitelisted: d with caron (renders like d’, and ’ is valid)'},
+	{name: 'biťcoin', error: true, comment: 'Not whitelisted: t with caron (renders like t’)'},
+	{name: 'ľudmila', error: true, comment: 'Not whitelisted: l with caron (renders like l’)'},
+	{name: 'fīrst', error: true, comment: 'Not whitelisted: i with macron'},
+	{name: 'nįck', error: true, comment: 'Not whitelisted: i with ogonek'},
+	{name: 'crÿpto', error: true, comment: 'Not whitelisted: y with diaeresis'},
+	{name: 'crypțo', error: true, comment: 'Not whitelisted: t with comma below'},
+	{name: 'iași', error: true, comment: 'Not whitelisted: s with comma below'},
+	{name: 'třump', error: true, comment: 'Not whitelisted: r with caron'},
+	{name: 'plzeň', error: true, comment: 'Not whitelisted: n with caron'},
+	{name: 'gergő', error: true, comment: 'Not whitelisted: o with double acute'},
+	{name: 'művészet', error: true, comment: 'Not whitelisted: u with double acute'},
+	{name: 'lietuvių', error: true, comment: 'Not whitelisted: u with ogonek'},
+	{name: 'ş', comment: 'Whitelisted: s with cedilla'},
+	{name: 'ţ', error: true, comment: 'Not whitelisted: t with cedilla'},
 	{name: 'ǎ', error: true, comment: 'A with caron: breve ă instead'},
 	{name: 'ı', error: true, comment: 'Dotless i: confusable with i'},
 
@@ -188,6 +200,20 @@ export default [
 	{name: 'ա\u{308}', error: true, comment: 'Script_Extensions: Armenian + COMBINING DIAERESIS'},
 	{name: 'ஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Tamil'},
 	{name: 'కஃ', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)'},
+
+	// a combining mark's base must be one of its group's own characters (UAX-24 inherited script)
+	{name: 'ب\u{64B}-ب', comment: 'Inherited: Arabic mark on an Arabic letter'},
+	{name: 'ب-\u{64B}ب', error: true, comment: 'Inherited: Arabic mark on hyphen (an Arabic extra)'},
+	{name: 'א₪\u{5BC}', error: true, comment: 'Inherited: Hebrew mark on ₪ (a Hebrew extra)'},
+	{name: '₪\u{5BC}א', error: true, comment: 'Inherited: Hebrew mark on leading ₪'},
+	{name: 'ก฿\u{E31}', error: true, comment: 'Inherited: Thai mark on ฿ (a Thai extra)'},
+	{name: 'ก\u{E31}฿', comment: 'Inherited: Thai mark on a Thai letter, then ฿'},
+
+	// a combining mark outside the label's group: "unsupported combining mark" (message only, was illegal mixture)
+	{name: 'x\u{302}', error: true, comment: 'Unsupported mark: no precomposed x̂'},
+	{name: 'İzmir', error: true, comment: 'Unsupported mark: İ maps to i + COMBINING DOT ABOVE'},
+	{name: 'ab\u{64B}', error: true, comment: 'Unsupported mark: Arabic mark on Latin'},
+	{name: 'ა\u{301}', error: true, comment: "Unsupported mark: COMBINING ACUTE isn't Georgian"},
 
 	// confusables synced with Unicode 18 (rules/confuse.ts): registered names stay valid
 	{name: 'бот', comment: 'Confusable: Cyrillic word vs new Coptic lookalikes'},
