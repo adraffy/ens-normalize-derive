@@ -7,7 +7,7 @@ A label is valid only if every character belongs to a single **group**: roughly 
 
 This page covers how [src/derive.ts](../src/derive.ts) builds the groups into `spec.json`, then how a label is checked against them ([src/ensip15.ts](../src/ensip15.ts), which mirrors ens-normalize.js).
 
-Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, plus 292 wholes (959 checked characters).
+Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, plus 292 wholes (964 checked characters).
 
 ## Building the groups
 
@@ -60,7 +60,7 @@ Other groups keep their marks. Instead, derive removes any character whose NFD r
 **Inherited marks are handled by membership, not position.** UAX-24 says a `Zinh` mark takes the script of its base. The groups never look at which character a mark follows. They only require the mark and the base to be in the same group, and that works out the same in practice:
 
 - In the seven whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. No group has `Zinh` in `rest`. Latin, Cyrillic and Greek used to have it, but it only added bare marks that the whitelist then purged, and removing it left `spec.json` unchanged.
-- In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 595 marks are `Zinh` only, and none is valid as a bare mark anywhere.
+- In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 624 marks are `Zinh` only, and none is valid as a bare mark anywhere.
 - That leaves marks on a group's `extra` characters, which membership alone would allow: `ب-ًب` (an Arabic mark on a hyphen), `₪ּא`, `ก฿ั`. So in groups without a whitelist, a mark's base (the character before it, after NFC) must be **primary** in the group: `illegal placement: combining mark on non-Arabic: "- + ◌ً"`. This is the one positional rule, and it's new after 1.11.1. Only Arabic `-`, Hebrew `₪` and Thai `฿` are affected, and no registered label uses them that way.
 
 ### 4. Confusables → wholes
@@ -77,7 +77,7 @@ Each confusable set (Unicode's `confusables.txt` as edited by [rules/confuse.ts]
 
 A set without decisions whose only unrestricted member is X makes X primary automatically. ASCII is never confusable (an invariant). Each resolved set becomes a **whole**: its `valid` (primary) members, plus its `confused` members, each tagged with the groups where it is checked. [output/confusables.txt](../output/confusables.txt) lists what happened to every member in every group.
 
-**Inert confusables are pruned.** A confused member only matters if some _other_ group holds one of its lookalikes (the label-check step 5 below). When every member of a set lands in the same groups, there's nobody to confuse it with, and leaving it in would make the check stop early at that character, an accidental exemption. For example, `∞` was in a set of shared characters, so `α∞` passed while `α1` failed. Derive drops these members (1,148 in Unicode 18, mostly Han-internal sets such as 户/戶) and asserts that every remaining confused character has a lookalike group. `output/log.txt` lists them under **Prune Inert Confusables**. Lookalikes inside one group need a different mechanism (see [review.md](review.md)).
+**Inert confusables are pruned.** A confused member only matters if some _other_ group holds one of its lookalikes (the label-check step 5 below). When every member of a set lands in the same groups, there's nobody to confuse it with, and leaving it in would make the check stop early at that character, an accidental exemption. For example, `∞` was in a set of shared characters, so `α∞` passed while `α1` failed. Derive drops these members (1,154 in Unicode 18, mostly Han-internal sets such as 户/戶) and asserts that every remaining confused character has a lookalike group. `output/log.txt` lists them under **Prune Inert Confusables**. Lookalikes inside one group need a different mechanism (see [review.md](review.md)).
 
 ### 5. Pruning, primary/secondary, order
 

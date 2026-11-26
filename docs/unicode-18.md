@@ -19,19 +19,19 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 | section of `spec.json` | 1.11.1 → 18                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------- |
-| valid (in some group)  | +12,623, −428                                                                                              |
+| valid (in some group)  | +12,671, −428                                                                                              |
 | emoji                  | +19 sequences: 🛙 🪋 🪌 🪍 🫌 🫝 🫫 🫹 🫺, plus skin tones of 🫹 🫺                                        |
 | mapped                 | −6 (targets now disallowed: Ҥ Ҵ, three Tibetan vowel signs, Georgian Mtavruli U+1CB9). None added.         |
 | ignored                | unchanged                                                                                                  |
 | fenced                 | + ־ HEBREW PUNCTUATION MAQAF (a hyphen: 1 registration, none at the start, end or doubled)                 |
 | escape                 | +32 format characters (now derived from properties, see [rules/chars-escape.ts](../rules/chars-escape.ts)) |
-| cm / nsm / nfc_check   | +37 / −4 / −2, following the new and newly disallowed marks                                                |
+| cm / nsm / nfc_check   | +37 / +20 −4 / +17 −2, following the new and newly disallowed marks                                        |
 
 **New in Unicode 18** (13,007 characters):
 
-- **12,623 are valid,** all in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (235), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels.
+- **12,671 are valid.** 12,623 are in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels. The other 48 were reviewed: Arabic Extended-C (39 letters and marks), two Hebrew points, two Oriya signs, 𑬊 (Devanagari), 𑷰 𑷱 (Bengali), the Han ideograph 𫠞, and ⃃ UAE DIRHAM SIGN, a shared currency sign (Common, so also valid in Latin, CJK, Cyrillic and Greek). The script additions are in groups that don't mix with Latin, except Han, and their marks get the non-spacing mark checks.
 - **9 new emoji.**
-- **375 are not valid.** 53 are letters, marks and signs in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 234 more are disallowed by block rules (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
+- **327 are not valid,** and none is waiting for review ([rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts) lists the 48 that were allowed). 239 are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE, 🆮 TOMOBIKI SYMBOL, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, seven modifier and ligature letters that would map to plain letters (Latin subscripts ₝ ₞ ₟, Armenian modifiers ՘ ֋ ֌, 𝚦 → ss), and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 
 **Disallowed although valid in 1.11.1** (428 characters):
 
@@ -48,7 +48,7 @@ Some characters also left individual groups. Combining marks had leaked through 
 - **Common** (new, first): only shared characters (digits, punctuation, symbols). It's a subset of Latin, Han, Japanese, Korean, Cyrillic and Greek, so it can't make a label valid or invalid. It only names labels without a letter. See [groups.md](groups.md).
 - **Bopomofo** is now `Restricted[Bopo]`. UAX-31 lists Bopomofo as Limited Use, so it no longer mixes with Han (`中ㄐ` is an illegal mixture). This is the 34 BROKEN labels, almost all faux-Latin spoofs (乃卂ㄚ匚 = "BAYC").
 - **New restricted groups:** `Seal`, `Jurc`, `Pcun`. Chisoi was in the draft of UAX-31 but not in the final 18.0.0.
-- **Script_Extensions:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu in 18.0. It stays Tamil-only until reviewed.
+- **Script_Extensions:** U+0B83 ஃ TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu in 18.0, so it's valid in those groups too. No known label uses it, and those groups don't mix with Latin or with each other.
 - **Order:** unchanged except that Common is first. (Myanmar and Gujarati swapped places in the port. They share no characters, so nothing depends on it.)
 
 ## Combining marks
@@ -68,7 +68,7 @@ Derive then drops confused characters with no lookalike in another group. Those 
 | wholes                          | 1.11.1 | 18  |
 | ------------------------------- | ------ | --- |
 | count                           | 490    | 292 |
-| whole-script checked characters | 1,204  | 959 |
+| whole-script checked characters | 1,204  | 964 |
 
 Results: `丅` is a T confusable (4 BROKEN labels). Some short labels mixing a lookalike with a shared character are now whole-script confusable, such as `α∞`, `ஐ௮` (Tamil/Grantha) and `ဝ၁` (Myanmar/Chakma). No other registered label changes.
 
@@ -76,4 +76,4 @@ Results: `丅` is a T confusable (4 BROKEN labels). Some short labels mixing a l
 
 - **Data:** same file shapes as 1.11.1, so `spec.json` and `nf.json` are drop-in replacements.
 - **Code:** the combining mark rule and message above.
-- **Tests:** `output/tests.json` (44,958 tests) has cases for every change on this page. [adraffy/ens-normalize.ts#4](https://github.com/adraffy/ens-normalize.ts/pull/4) is the Unicode 18 build of ens-normalize.ts.
+- **Tests:** `output/tests.json` (44,946 tests) has cases for every change on this page. [adraffy/ens-normalize.ts#4](https://github.com/adraffy/ens-normalize.ts/pull/4) is the Unicode 18 build of ens-normalize.ts.

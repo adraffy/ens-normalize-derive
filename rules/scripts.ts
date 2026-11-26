@@ -92,9 +92,6 @@ export const SCRIPT_EXTENSIONS = [
 	[0x303, {remove: ['Thai']}], // (◌̃) COMBINING TILDE
 	[0x307, {remove: ['Hebr']}], // (◌̇) COMBINING DOT ABOVE
 	[0x308, {remove: ['Armn', 'Hebr']}], // (◌̈) COMBINING DIAERESIS
-
-	// 20261125: 18.0 added Knda Mlym Telu, keep the 17.0 value until reviewed
-	[0xB83, ['Taml']], // (ஃ) TAMIL SIGN VISARGA
 ] satisfies [CodePoint, string[] | {remove: string[]}][];
 
 export const DISALLOWED_SCRIPTS = [

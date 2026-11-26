@@ -4,7 +4,6 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 
 ## Open
 
-- **53 new 18.0 characters wait for review** (`bun run review`): Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, ₏ and the 🆮 Tomobiki symbol. Each one allowed goes into `REVIEWED` in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts). U+0B83 TAMIL SIGN VISARGA, whose Script_Extensions grew in 18.0, is also pinned to Tamil until reviewed.
 - **Same-group confusables** (see [below](#confusables-cjk-and-faux-latin)): Katakana vs Han, simplified vs traditional Han, and Han/Bopomofo used as faux-Latin. The whole-script check can't express them.
 - **`spec.json` `unicode`** embeds the download timestamp (`"18.0.0 (2026-11-25T…)"`), so re-downloading identical data changes the spec hash. The version alone would do.
 - **The ENSIP-15 text** doesn't describe the combining mark base rule or the unsupported combining mark message yet ([implementers.md](implementers.md)).
@@ -20,10 +19,17 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **丅 is not protected.** It's archaic and used only as a faux-Latin T (三丅卄 = "ETH"). Unicode 18 made it a T confusable, and none of its 4 labels is registered in ENSv2. 丫 is kept valid: it's real Chinese, with 3 active registrations.
 - **Common group:** labels without a letter are typed Common instead of Latin. See [groups.md](groups.md).
 - **Combining marks:** in groups without a whitelist, a mark must follow a primary character, and a mark outside the label's group gets the `unsupported combining mark` message. See [implementers.md](implementers.md).
-- **Inert confusables are pruned.** 1,148 confused characters had no lookalike in another group and ended the whole-script check early.
+- **Inert confusables are pruned.** 1,154 confused characters had no lookalike in another group and ended the whole-script check early.
 - **Group order** is fixed in [rules/group-order.ts](../rules/group-order.ts) rather than regenerated from registration counts, so it's part of the spec. It's the 1.11.1 order with Common first, except Myanmar and Gujarati are swapped. They share no characters, so the swap changes nothing.
 - **ӕ stays valid.** Upstream's custom test `тӕ` relies on it. On its own, `ӕ` is a whole-script confusable.
 - **İ keeps its UTS-46 mapping** to `i` + U+0307. That never composes and U+0307 isn't valid in Latin, so `İ` labels fail with `unsupported combining mark: "i + ◌̇"` (20 registered labels). That is the intended result.
+- **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid, shared like the other currency signs (Common, Latin, CJK, Cyrillic, Greek; not Arabic, which has no Common). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
+- **𛅨 small archaic katakana ye (new in 18.0) is disallowed.**
+- **𫠞 U+2B81E is allowed,** like the other 222 Extension D ideographs. It resembles 吹 (口 + 欠), a lookalike within Han that the whole-script check can't express.
+- **ஃ U+0B83 TAMIL SIGN VISARGA follows Unicode 18**, which extends it to Kannada, Malayalam and Telugu. No known label contains it, it has no `confusables.txt` entry, and none of those groups contains a–z.
+- **🆮 TOMOBIKI SYMBOL is disallowed.** It's a shared symbol, so it would be valid next to Latin, and it looks like ⊖ ⦵ ⦶, which are disallowed.
+- **Allowed: Arabic Extended-C, the Hebrew points ׈ ׉, the Oriya signs ୓ ୔, 𑬊 (Devanagari) and 𑷰 𑷱 (Bengali), all new in 18.0.** Those groups don't mix with Latin, and their marks get the non-spacing mark checks (base must be a letter of the group, no doubles, at most 4).
+- **New 18.0 modifier letters stay disallowed** instead of mapping to plain letters: Latin subscripts ₝ ₞ ₟ (w y z), Armenian modifiers ՘ ֋ ֌ (է ի յ) and 𝚦 (ss). The older subscript letters were already disallowed. So is ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE.
 - **ı (dotless i) stays disallowed** ([rules/disallow/latin.ts](../rules/disallow/latin.ts)). It's a classic i spoof.
 
 ### CM whitelist
@@ -51,7 +57,7 @@ Fenced: ’ (11,394 names), ⁄ (520), ・ (54), and since Unicode 18 ־ HEBREW 
 - **Across groups (whole-script):** a lookalike in group A has a twin in group B. Each member is decided `primary`, `allow` (whole-script checked) or removed. This works well for Latin, Greek and Cyrillic.
 - **Within a group:** both lookalikes are valid in the same group. The only tool is removing one, and in CJK both are real, heavily used characters.
 
-The second case is the CJK problem. Unicode lists many of these pairs: Katakana vs Han (ロ/口, カ/力, エ/工, ー/一, ム/厶, ネ/礻), simplified vs traditional Han (户/戶, 吴/吳), CJK Radicals Supplement vs ideographs (⺁/厂, ⺝/月). Kana and Han share the Japanese group, so these sets end up **Unresolved** (631 in `output/log.txt`, 362 of them Japanese+Korean+Han) and are allowed by `defaultAllow`. Most have no lookalike in another group, so derive prunes them from the wholes.
+The second case is the CJK problem. Unicode lists many of these pairs: Katakana vs Han (ロ/口, カ/力, エ/工, ー/一, ム/厶, ネ/礻), simplified vs traditional Han (户/戶, 吴/吳), CJK Radicals Supplement vs ideographs (⺁/厂, ⺝/月). Kana and Han share the Japanese group, so these sets end up **Unresolved** (635 in `output/log.txt`, 363 of them Japanese+Korean+Han) and are allowed by `defaultAllow`. Most have no lookalike in another group, so derive prunes them from the wholes.
 
 What `confusables.txt` doesn't have is what registrations show: **Han and Bopomofo used as faux-Latin** (卂=A, 乃=B, 匚=C, 丂=S, 乇=E, 卄=H, ㄚ=Y, ㄒ=T, ㄥ=L, ㄖ=O, ㄩ=U, 几=N, 尺=R, 爪=M, 山=W, …). Every Bopomofo break follows this pattern.
 
@@ -90,7 +96,7 @@ These behaviors come only from report text, so they were checked against the 18.
 - **UTS-39 also** makes "nonspacing mark" explicitly Mn + Me, as derive already did. Its joining-control change doesn't apply, because ZWJ/ZWNJ are disallowed outside emoji.
 - **UTS-46 rev 36 and UAX-15 rev 58:** no changes. UAX-24 is explanatory. UTS-51 revises FE0F guidance, which doesn't apply because emoji are matched without FE0F.
 - **UAX-31** adds three Excluded scripts (Jurchen, Proto-Cuneiform, Seal), which become restricted groups. Derive enforces the tables: every Limited Use or Excluded script must be restricted or disallowed, and only Recommended scripts can identify a group.
-- **Script_Extensions 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu, and is pinned to Tamil until reviewed. Vedic U+1CF5/1CF6 lost Devanagari, which has no effect.
+- **Script_Extensions 17 → 18:** U+0B83 TAMIL SIGN VISARGA gained Kannada, Malayalam and Telugu, and follows it (see Decisions). Vedic U+1CF5/1CF6 lost Devanagari, which has no effect.
 
 ## Bugs fixed in the port
 

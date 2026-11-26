@@ -91,6 +91,11 @@ export default [
 		0x1B121, // (𛄡) KATAKANA LETTER ARCHAIC YE
 		0x1B122, // (𛄢) KATAKANA LETTER ARCHAIC WU
 	]},
+	// 1B130..1B16F Small Kana Extension: 1/10 denied
+	{block: 'Small Kana Extension', cps: [
+		// 20261126: new in 18.0, reviewed: archaic
+		0x1B168, // (𛅨) KATAKANA LETTER SMALL ARCHAIC YE
+	]},
 	// 1D300..1D35F Tai Xuan Jing Symbols: 87/87 denied
 	{block: 'Tai Xuan Jing Symbols'},
 ] satisfies Rule[];
