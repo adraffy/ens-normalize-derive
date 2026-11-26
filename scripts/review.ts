@@ -11,6 +11,7 @@
 import {existsSync, mkdirSync, writeFileSync} from 'node:fs';
 import {parseArgs} from 'node:util';
 import unreviewed, {AGE, REVIEWED} from '../rules/disallow/unreviewed.ts';
+import {chartGlyphs} from '../src/chart-glyphs.ts';
 import {type DeriveOutput, derive} from '../src/derive.ts';
 import {describer} from '../src/describe.ts';
 import {loadLabels} from '../src/labels.ts';
@@ -211,23 +212,32 @@ async function writeHTML() {
 	const blocks = (cps: CodePoint[], fn: (cp: CodePoint) => ReviewChar): ReviewBlock[] =>
 		[...groupBy(cps, (cp) => unicode.requireChar(cp).block)].map(([b, v]) => ({name: b.name, start: hexCp(b.cp0), chars: v.map(fn)}));
 	// code charts (official glyphs), cached next to the page
+	// and each character's glyph cropped from it
 	const withCharts = async (v: ReviewBlock[]) => {
-		for (const b of v) b.chart = await downloadChart(b.start);
+		for (const b of v) {
+			b.chart = await downloadChart(b.start);
+			if (!b.chart) continue;
+			const glyphs = await chartGlyphs(
+				new URL(b.chart, CACHE),
+				b.chars.map((c) => parseInt(c.hex, 16)),
+			);
+			for (const c of b.chars) {
+				c.glyph = glyphs.get(parseInt(c.hex, 16));
+				if (c.glyph) c.sample = undefined; // fonts can't show it in context yet
+			}
+		}
 		return v;
 	};
+	const mapped = new Map(mappedPending.map(([x, ys]) => [x, {char: reviewChar(x), target: d.seq(ys), targetDisplay: d.str(ys)}]));
 
 	const html = renderReviewHTML({
 		version,
 		age: AGE,
 		reports,
 		pending: await withCharts(blocks(pending, (cp) => reviewChar(cp, validOpen.get(cp)))),
-		mappings: mappedPending.map(([x, ys]) => ({char: reviewChar(x), target: d.seq(ys), targetDisplay: d.str(ys)})),
-		mappingCharts: await withCharts(
-			blocks(
-				mappedPending.map(([x]) => x),
-				(cp) => reviewChar(cp, [], false),
-			),
-		),
+		mappings: [...mapped.values()],
+		// the same chars, so they get glyphs too
+		mappingCharts: await withCharts(blocks([...mapped.keys()], (cp) => mapped.get(cp)!.char)),
 		summary: [
 			[`new in ${AGE}`, fresh.length],
 			['pending review', pending.length],

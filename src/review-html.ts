@@ -18,6 +18,8 @@ export interface ReviewChar {
 	nfd?: string;
 	/** the character in context (eg. on a base letter) */
 	sample?: string;
+	/** reference glyph cropped from the code chart (PNG data URI) */
+	glyph?: string;
 	/** confusables.txt: the prototype and the other characters with that prototype */
 	confusable?: {proto: string; protoValid: boolean; others: {display: string; hex: string; name: string; valid: boolean}[]};
 	/** registered labels containing it (raw, before normalization) */
@@ -70,7 +72,8 @@ function tags(c: ReviewChar): string {
 	return v.join('');
 }
 
-function card(c: ReviewChar, block: string): string {
+/** `glyphs`: hex => chart glyph, for lookalikes that fonts can't show either */
+function card(c: ReviewChar, block: string, glyphs: Map<string, string>): string {
 	const rows: string[] = [];
 	if (c.nfd) rows.push(`<div class="row"><b>NFD</b> ${esc(c.nfd)}</div>`);
 	if (c.confusable) {
@@ -79,7 +82,7 @@ function card(c: ReviewChar, block: string): string {
 			.slice(0, MAX)
 			.map(
 				(o) =>
-					`<span class="look${o.valid ? ' valid' : ''}" title="${esc(`${o.hex} ${o.name}${o.valid ? ' (valid)' : ''}`)}">${esc(o.display)}</span>`,
+					`<span class="look${o.valid ? ' valid' : ''}" title="${esc(`${o.hex} ${o.name}${o.valid ? ' (valid)' : ''}`)}">${glyphs.has(o.hex) ? `<img src="${glyphs.get(o.hex)}" alt="${esc(o.display)}">` : esc(o.display)}</span>`,
 			);
 		rows.push(
 			`<div class="row"><b>Looks like</b> <span class="look proto${c.confusable.protoValid ? ' valid' : ''}" title="confusables.txt prototype${c.confusable.protoValid ? ' (valid)' : ''}">${esc(c.confusable.proto)}</span>${others.join('')}${c.confusable.others.length > MAX ? `<span class="count"> +${c.confusable.others.length - MAX} more</span>` : ''}</div>`,
@@ -91,7 +94,7 @@ function card(c: ReviewChar, block: string): string {
 	}
 	return `<label class="card" data-hex="${c.hex}" data-block="${esc(block)}" data-line="${esc(c.line)}">
 <input type="checkbox" class="pick">
-<div class="glyphs"><div class="glyph">${esc(c.display)}</div>${c.sample ? `<div class="sample" title="in context">${esc(c.sample)}</div>` : ''}</div>
+<div class="glyphs">${c.glyph ? `<img class="ref" src="${c.glyph}" alt="${esc(c.display)}" title="code chart glyph">` : `<div class="glyph">${esc(c.display)}</div>`}${c.sample ? `<div class="sample" title="in context">${esc(c.sample)}</div>` : ''}</div>
 <div class="info"><div class="name"><code>${c.hex}</code> ${esc(c.name)}</div><div class="tags">${tags(c)}</div>${rows.join('')}</div>
 </label>`;
 }
@@ -110,12 +113,16 @@ function tile(c: ReviewChar): string {
 
 export function renderReviewHTML(data: ReviewData): string {
 	const total = data.pending.reduce((n, b) => n + b.chars.length, 0);
+	const glyphs = new Map<string, string>();
+	for (const c of [...data.pending.flatMap((b) => b.chars), ...data.mappings.map((m) => m.char)]) {
+		if (c.glyph) glyphs.set(c.hex, c.glyph);
+	}
 	const pending = data.pending
 		.map(
 			(b) => `<section class="block" data-block="${esc(b.name)}">
 <h3><label><input type="checkbox" class="pick-block"> ${esc(b.name)}</label> <span class="count">${b.chars.length}</span> ${chartLink(b)}</h3>
 ${chartView(b)}
-<div class="cards">${b.chars.map((c) => card(c, b.name)).join('\n')}</div>
+<div class="cards">${b.chars.map((c) => card(c, b.name, glyphs)).join('\n')}</div>
 </section>`,
 		)
 		.join('\n');
@@ -125,7 +132,7 @@ ${chartView(b)}
 <p class="note">The source is new in ${esc(data.age)} and maps to characters that are already valid. Allowing the source makes it normalize to the target.</p>
 ${data.mappingCharts.map(chartView).join('\n')}
 <div class="cards">${data.mappings
-				.map((m) => card({...m.char, sample: `→ ${m.targetDisplay}`, nfd: m.char.nfd ? `${m.char.nfd}` : undefined}, 'Mappings'))
+				.map((m) => card({...m.char, sample: `→ ${m.targetDisplay}`, nfd: m.char.nfd ? `${m.char.nfd}` : undefined}, 'Mappings', glyphs))
 				.join('\n')}</div>
 </section>`
 		: '';
@@ -202,6 +209,7 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .pick { margin-top: 4px; flex: none; }
 .glyphs { flex: none; width: 88px; text-align: center; }
 .glyph { font: 48px/1.3 var(--glyph-font); }
+img.ref { display: block; height: 72px; margin: 0 auto 4px; background: #fff; border-radius: 6px; }
 .sample { font: 22px/1.3 var(--glyph-font); color: var(--muted); white-space: nowrap; overflow: hidden; }
 .info { min-width: 0; flex: 1; }
 .name { font-weight: 600; overflow-wrap: anywhere; }
@@ -212,6 +220,7 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .row { font-size: 13px; margin-top: 2px; overflow-wrap: anywhere; }
 .row b { color: var(--muted); font-weight: 500; margin-right: 4px; }
 .look { font: 20px var(--glyph-font); padding: 0 4px; border-radius: 4px; }
+.look img { height: 26px; vertical-align: middle; background: #fff; border-radius: 3px; }
 .look.proto { outline: 1px dashed var(--muted); }
 .look.valid { background: var(--warn-bg); color: var(--warn); }
 .label { display: inline-block; margin: 0 4px 0 0; padding: 0 4px; border: 1px solid var(--line); border-radius: 4px; font-family: var(--glyph-font); }
@@ -230,7 +239,7 @@ textarea { width: 100%; height: 200px; font: 12px ui-monospace, monospace; backg
 <body>
 <main>
 <h1>Unicode ${esc(data.age)} review</h1>
-<p class="note">Unicode ${esc(data.version)}. Generated by <code>bun run review --html</code>. Tick the characters to allow, copy the lines into <code>REVIEWED</code> in <code>rules/disallow/unreviewed.ts</code>, then run <code>bun run derive</code>. Glyphs use your fonts, which rarely cover a new Unicode version yet: open <b>Code chart</b> above each block for the official glyphs.</p>
+<p class="note">Unicode ${esc(data.version)}. Generated by <code>bun run review --html</code>. Tick the characters to allow, copy the lines into <code>REVIEWED</code> in <code>rules/disallow/unreviewed.ts</code>, then run <code>bun run derive</code>. Fonts rarely cover a new Unicode version yet, so glyphs are cropped from the official code charts (open <b>Code chart</b> above a block for the whole chart).</p>
 <div class="top">
 <div><h2>Summary</h2><table>${summary}</table></div>
 <div><h2>Reports</h2><table>${reports}</table></div>
