@@ -3,7 +3,7 @@
 		"name": "version",
 		"unicode": "18.0.0 (2026-11-25T20:48:52.431Z)",
 		"cldr": "48.2 (2026-03-28T19:59:34.849Z)",
-		"spec_hash": "1ccd8beb31c5b16d73eaf5158becf869fdee937a07c9bc019fe12dc85fb95462",
+		"spec_hash": "6484f679d3f5c09afb4a2390a5fefd1e248808423f14d21717603882348dc47d",
 		"nf_hash": "5656c9138a6daf981ff512be766d31ccbf254edd4b59bea29a5d0cb647fecbe3"
 	},
 	{
@@ -699,7 +699,7 @@
 	},
 	{
 		"name": "⃃",
-		"comment": "Reviewed 18.0: UAE DIRHAM SIGN, Arabic extra only (rules/scripts.ts)"
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN, Arabic only (rules/scripts.ts)"
 	},
 	{
 		"name": "ب⃃",
@@ -709,11 +709,6 @@
 		"name": "a⃃",
 		"error": true,
 		"comment": "Reviewed 18.0: UAE DIRHAM SIGN is not Latin"
-	},
-	{
-		"name": "ب⃃ً",
-		"error": true,
-		"comment": "Reviewed 18.0: UAE DIRHAM SIGN is an Arabic extra, so a mark cannot follow it"
 	},
 	{
 		"name": "⃂",
@@ -62455,7 +62450,7 @@
 		"name": "﵋"
 	},
 	{
-		"name": "ࡼ"
+		"name": "ࡽ"
 	},
 	{
 		"name": "﮺"
@@ -62467,13 +62462,13 @@
 		"name": "ظ"
 	},
 	{
-		"name": "ﹳ"
+		"name": "﷿"
 	},
 	{
-		"name": "𐹾"
+		"name": "𐹽"
 	},
 	{
-		"name": "ݳ"
+		"name": "ݴ"
 	},
 	{
 		"name": "र"
@@ -66630,9 +66625,9 @@
 		"name": "𽜒"
 	},
 	{
-		"name": "û۞",
+		"name": "ûۥ",
 		"error": true,
-		"comment": "illegal mixture: Latin + Arabic \"۞\"‎ {6DE}"
+		"comment": "illegal mixture: Latin + Arabic \"ۥ\"‎ {6E5}"
 	},
 	{
 		"name": "ॐ슺",
@@ -176150,27 +176145,27 @@
 		"norm": "شمخقࣱ"
 	},
 	{
-		"name": "ﶨ𐹳𐹤٦𐻍ﭗ",
-		"norm": "سخى𐹳𐹤٦𐻍پ"
+		"name": "ﶨ𐹲𐹣٦𐻍ﭗ",
+		"norm": "سخى𐹲𐹣٦𐻍پ"
 	},
 	{
-		"name": "ؼ𐻩ݫࣾ𐹶𐻬ݔࣉۥ"
+		"name": "ؼ𐻨ݫࣾ𐹵𐻫ݔࣉۥ"
 	},
 	{
-		"name": "𐻴ݬ﯊࢈ې𐻶﯊𞹵ݭﻞﵻࡸ",
+		"name": "𐻴ݬ﯉࢈ې𐻶﯉𞹵ݭﻞﵻࡸ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹳ﶟﶧ𐹯ذ࢟ࣥ",
-		"norm": "ݟٓلخميىًؒ𐹳تجيجمى𐹯ذ࢟ࣥ"
+		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ࢟ࣥ",
+		"norm": "ݟٓلخميىًؒ𐹲تجيجمى𐹮ذ࢟ࣥ"
 	},
 	{
-		"name": "ړࢴ﵄󠄚ࢽﱘݺ𐻹ّ۬𐻲𐻇ٓ󠇁ڐﲅﶙ𐹡",
-		"norm": "ړࢴ﵄ࢽيمݺّ𐻲𐻹۬𐻇ٓڐلمنجى𐹡"
+		"name": "ړࢴ﵃󠄚ࢽﱘݺ𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
+		"norm": "ړࢴ﵃ࢽيمݺّ𐻲𐻹۬𐻆ٓڐلمنجى𐹠"
 	},
 	{
-		"name": "󠆵؇اﱶ𐻍ۍ𐹥﯈ﰼﰼݓ﯃صﶎ✴️𐻹ࢗࡾ𐻳ث",
+		"name": "󠆵؇اﱶ𐻍ۍ𐹤﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳ث",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"✴ + ◌𐻹\""
 	},
@@ -180945,32 +180940,32 @@
 		"comment": "illegal mixture: Restricted[Xpeo] + Arabic \"ش\"‎ {634}"
 	},
 	{
-		"name": "ﶨ𐹳𐹤٦𐻍ﭗം",
+		"name": "ﶨ𐹲𐹣٦𐻍ﭗം",
 		"error": true,
 		"comment": "illegal placement: unsupported combining mark: \"پ + ◌ം\""
 	},
 	{
-		"name": "ؼ𐻩ݫࣾネ𐹶𐻬ݔࣉۥ",
+		"name": "ؼ𐻨ݫࣾネ𐹵𐻫ݔࣉۥ",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Japanese \"ネ\"‎ {30CD}"
 	},
 	{
-		"name": "𐻴ݬ﯊࢈ې𐻶﯊𞹵ݭ𐍉ﻞﵻࡸ",
+		"name": "𐻴ݬ﯉࢈ې𐻶﯉𞹵ݭ𐍉ﻞﵻࡸ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹳ﶟﶧ𐹯ذ ࢟ࣥ",
+		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ ࢟ࣥ",
 		"error": true,
 		"comment": "disallowed character: \" \"‎ {20}"
 	},
 	{
-		"name": "ړࢴ﵄󠄚ࢽﱘݺ𑐑𐻹ّ۬𐻲𐻇ٓ󠇁ڐﲅﶙ𐹡",
+		"name": "ړࢴ﵃󠄚ࢽﱘݺ𑐑𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Newa] \"𑐑\"‎ {11411}"
 	},
 	{
-		"name": "󠆵؇اﱶ𐻍ۍ𐹥﯈ﰼﰼݓ﯃صﶎ✴️𐻹ࢗࡾ𐻳𑫌ث",
+		"name": "󠆵؇اﱶ𐻍ۍ𐹤﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳𑫌ث",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"✴ + ◌𐻹\""
 	},

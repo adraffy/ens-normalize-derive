@@ -395,8 +395,7 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 				for (const x of change.remove) if (!current.includes(x)) throw new Error(`Not present: ${x}`);
 				abbrs = current.filter((x) => !change.remove.includes(x));
 			}
-			// an explicit [] leaves the char with no script: it joins only groups that list it in `extra`
-			if (!abbrs.length && !Array.isArray(change)) throw new Error(`Empty`);
+			if (!abbrs.length) throw new Error(`Empty`);
 			const scripts = [...new Set(abbrs.toSorted().map((x) => unicode.requireScript(x)))];
 			log.log(`${desc.cp(cp)} [${char.getExtended().map((x) => x.abbr)} => ${scripts.map((x) => x.abbr)}]`);
 			char.extended = scripts; // replace
@@ -472,14 +471,11 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	}
 	for (const cp of valid) {
 		const scripts = unicode.requireChar(cp).getExtended();
-		let joined = false;
 		for (const g of groups) {
 			if (scripts.some((s) => g.testScripts.has(s) || g.restScripts.has(s)) || g.extraSet.has(cp)) {
 				g.validSet.add(cp);
-				joined = true;
 			}
 		}
-		if (!scripts.length && !joined) throw new Error(`No script and no group lists it in extra: ${desc.cp(cp)}`);
 	}
 	log.table(
 		['Valid', 'Name', 'Test', 'Rest', 'Extra'],

@@ -13188,7 +13188,7 @@ Removed Valid: 2E (.) FULL STOP
 303 (◌̃) COMBINING TILDE [Glag,Latn,Sunu,Syrc,Thai => Glag,Latn,Sunu,Syrc]
 307 (◌̇) COMBINING DOT ABOVE [Copt,Dupl,Hebr,Latn,Perm,Syrc,Tale,Tfng,Todr => Copt,Dupl,Latn,Perm,Syrc,Tale,Tfng,Todr]
 308 (◌̈) COMBINING DIAERESIS [Armn,Cyrl,Dupl,Goth,Grek,Hebr,Latn,Perm,Syrc,Tale,Tfng => Cyrl,Dupl,Goth,Grek,Latn,Perm,Syrc,Tale,Tfng]
-20C3 (⃃) UAE DIRHAM SIGN [Zyyy => ]
+20C3 (⃃) UAE DIRHAM SIGN [Zyyy => Arab]
 ==== Create Groups ====
 Disallowed Script: [Brai] Braille
 Disallowed Script: [Lina] Linear A [X]
@@ -13203,7 +13203,7 @@ Valid  | Name       | Test      | Rest      | Extra
   1000 | Latin      | Latn      | Zyyy      | π                         
    837 | Cyrillic   | Cyrl      | Zyyy      |                           
    826 | Greek      | Grek      | Zyyy      |                           
-   478 | Arabic     | Arab      |           | -⃃                        
+   478 | Arabic     | Arab      |           | -                         
    109 | Devanagari | Deva      |           |                           
     86 | Hebrew     | Hebr      |           | ₪                         
     83 | Thai       | Thai      |           | ฿                         
@@ -18001,7 +18001,7 @@ Non-Confusable Non-Unique: 99
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
   1 |    710 |     0 |    710 |      0 | 0/0  | Common    
   2 |    792 |    55 |     81 |    711 | 0/51 | Latin     
-  3 |    467 |   444 |    465 |      2 |      | Arabic    
+  3 |    467 |   444 |    466 |      1 |      | Arabic    
   4 | 102859 |     0 | 102123 |    736 | 0/0  | Han       
   5 |    109 |    99 |    109 |      0 |      | Devanagari
   6 | 114384 | 11525 |  11527 | 102857 | 0/0  | Korean    
