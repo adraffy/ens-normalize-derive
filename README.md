@@ -55,7 +55,7 @@ bun scripts/emoji-new.ts            # emoji new in the current release
 
 ## Validation
 
-[src/ensip15.ts](src/ensip15.ts) is a small, unoptimized ENSIP-15 implementation that runs straight on `output/spec.json` + `output/nf.json`. It mirrors ens-normalize.js step for step, error messages included. `bun run parity` proves it: on [baseline/1.11.1](baseline/1.11.1/) it reproduces `@adraffy/ens-normalize@1.11.1` exactly over every known label (normalize, beautify, label types). The only accepted difference is the clearer `unsupported combining mark` message, listed in the file's header.
+[src/ensip15.ts](src/ensip15.ts) is a small, unoptimized ENSIP-15 implementation that runs straight on `output/spec.json` + `output/nf.json`. It mirrors ens-normalize.js step for step, error messages included, plus the two Unicode 18 changes in [docs/implementers.md](docs/implementers.md). `bun run parity` proves it: on [baseline/1.11.1](baseline/1.11.1/) it reproduces `@adraffy/ens-normalize@1.11.1` exactly over every known label (normalize, beautify, label types). The only accepted difference is the clearer `unsupported combining mark` message, listed in the file's header.
 
 That means a new spec can be validated before any library is built:
 
@@ -138,6 +138,9 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 | `src/select.ts`      | rule selectors (block / gc / script / prop / name / age / cps)                          |
 | `src/describe.ts`    | character descriptions for logs and rule comments                                       |
 | `src/ensip15.ts`     | reference ENSIP-15 implementation over `spec.json` (see Validation)                     |
+| `src/confuse.ts`     | builds confusable sets from `confusables.txt` + `rules/confuse.ts`                      |
+| `src/labels.ts`      | known labels (pinned, cached) and per-codepoint usage                                   |
+| `src/review-html.ts` | the `bun run review --html` page; `src/chart-glyphs.ts` crops code chart glyphs         |
 | `validate/custom.ts` | hand-written tests                                                                      |
 | `src/ucd.ts`         | data file parsers (`UnicodeSpec`)                                                       |
 | `src/nf.ts`          | reference NFC/NFD, checked against `NormalizationTest.txt` on every derive              |

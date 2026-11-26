@@ -31,7 +31,7 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 - **12,671 are valid.** 12,623 are in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels. The other 48 were reviewed: Arabic Extended-C (39 letters and marks), two Hebrew points, two Oriya signs, 𑬊 (Devanagari), 𑷰 𑷱 (Bengali), ⃃ UAE DIRHAM SIGN (Arabic only) and the Han ideograph 𫠞. Except Han, those groups don't mix with Latin, and their marks get the non-spacing mark checks.
 - **9 new emoji.**
-- **327 are not valid.** None is waiting for review. They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 239 are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE, 🆮 TOMOBIKI SYMBOL, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, seven modifier and ligature letters that would map to plain letters (Latin subscripts ₝ ₞ ₟, Armenian modifiers ՘ ֋ ֌, 𝚦 → ss), and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
+- **327 are not valid,** and none is waiting for review ([rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts) lists the 48 that were allowed). 239 are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ₏ MODIFIER LETTER HIGH AND LOW VERTICAL LINE, 🆮 TOMOBIKI SYMBOL, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, seven modifier and ligature letters that would map to plain letters (Latin subscripts ₝ ₞ ₟, Armenian modifiers ՘ ֋ ֌, 𝚦 → ss), and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 
 **Disallowed although valid in 1.11.1** (428 characters):
 
@@ -76,4 +76,4 @@ Results: `丅` is a T confusable (4 BROKEN labels). Some short labels mixing a l
 
 - **Data:** same file shapes as 1.11.1, so `spec.json` and `nf.json` are drop-in replacements.
 - **Code:** the combining mark rule and message above.
-- **Tests:** `output/tests.json` (44,958 tests) has cases for every change on this page. [adraffy/ens-normalize.ts#4](https://github.com/adraffy/ens-normalize.ts/pull/4) is the Unicode 18 build of ens-normalize.ts.
+- **Tests:** `output/tests.json` (44,946 tests) has cases for every change on this page. [adraffy/ens-normalize.ts#4](https://github.com/adraffy/ens-normalize.ts/pull/4) is the Unicode 18 build of ens-normalize.ts.

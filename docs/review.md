@@ -19,7 +19,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **丅 is not protected.** It's archaic and used only as a faux-Latin T (三丅卄 = "ETH"). Unicode 18 made it a T confusable, and none of its 4 labels is registered in ENSv2. 丫 is kept valid: it's real Chinese, with 3 active registrations.
 - **Common group:** labels without a letter are typed Common instead of Latin. See [groups.md](groups.md).
 - **Combining marks:** in groups without a whitelist, a mark must follow a primary character, and a mark outside the label's group gets the `unsupported combining mark` message. See [implementers.md](implementers.md).
-- **Inert confusables are pruned.** 1,148 confused characters had no lookalike in another group and ended the whole-script check early.
+- **Inert confusables are pruned.** 1,154 confused characters had no lookalike in another group and ended the whole-script check early.
 - **Group order** is fixed in [rules/group-order.ts](../rules/group-order.ts) rather than regenerated from registration counts, so it's part of the spec. It's the 1.11.1 order with Common first, except Myanmar and Gujarati are swapped. They share no characters, so the swap changes nothing.
 - **ӕ stays valid.** Upstream's custom test `тӕ` relies on it. On its own, `ӕ` is a whole-script confusable.
 - **İ keeps its UTS-46 mapping** to `i` + U+0307. That never composes and U+0307 isn't valid in Latin, so `İ` labels fail with `unsupported combining mark: "i + ◌̇"` (20 registered labels). That is the intended result.
@@ -57,7 +57,7 @@ Fenced: ’ (11,394 names), ⁄ (520), ・ (54), and since Unicode 18 ־ HEBREW 
 - **Across groups (whole-script):** a lookalike in group A has a twin in group B. Each member is decided `primary`, `allow` (whole-script checked) or removed. This works well for Latin, Greek and Cyrillic.
 - **Within a group:** both lookalikes are valid in the same group. The only tool is removing one, and in CJK both are real, heavily used characters.
 
-The second case is the CJK problem. Unicode lists many of these pairs: Katakana vs Han (ロ/口, カ/力, エ/工, ー/一, ム/厶, ネ/礻), simplified vs traditional Han (户/戶, 吴/吳), CJK Radicals Supplement vs ideographs (⺁/厂, ⺝/月). Kana and Han share the Japanese group, so these sets end up **Unresolved** (631 in `output/log.txt`, 362 of them Japanese+Korean+Han) and are allowed by `defaultAllow`. Most have no lookalike in another group, so derive prunes them from the wholes.
+The second case is the CJK problem. Unicode lists many of these pairs: Katakana vs Han (ロ/口, カ/力, エ/工, ー/一, ム/厶, ネ/礻), simplified vs traditional Han (户/戶, 吴/吳), CJK Radicals Supplement vs ideographs (⺁/厂, ⺝/月). Kana and Han share the Japanese group, so these sets end up **Unresolved** (635 in `output/log.txt`, 363 of them Japanese+Korean+Han) and are allowed by `defaultAllow`. Most have no lookalike in another group, so derive prunes them from the wholes.
 
 What `confusables.txt` doesn't have is what registrations show: **Han and Bopomofo used as faux-Latin** (卂=A, 乃=B, 匚=C, 丂=S, 乇=E, 卄=H, ㄚ=Y, ㄒ=T, ㄥ=L, ㄖ=O, ㄩ=U, 几=N, 尺=R, 爪=M, 山=W, …). Every Bopomofo break follows this pattern.
 
