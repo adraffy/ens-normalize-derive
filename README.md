@@ -22,6 +22,7 @@ bun install
 bun run derive              # data/ + rules/ => output/
 bun run check               # exit 1 if output/ is stale
 bun run review              # new characters waiting for a decision (--all for everything new)
+bun run review --html       # ... as a page with glyphs, code charts, lookalikes and checkboxes (.cache/review.html)
 bun test                    # NF conformance + output/ is up to date
 bun run lint                # biome + check every `0x…, // (c) NAME` rule annotation against the UCD
 bun run format              # biome (rules/ is lint-only: hand-written uppercase hex and comments are kept)
@@ -111,7 +112,7 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 ```
 
 - [rules/disallow/](rules/disallow/): one file per area (latin, phonetic, symbols, math-arrows, music, cjk, scripts, …), one entry per block. A block that is mostly disallowed is written as `{block, except}`, so characters Unicode adds to it later are disallowed automatically.
-- [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable.
+- [rules/disallow/unreviewed.ts](rules/disallow/unreviewed.ts): every character new in this Unicode version, in a script used by an unrestricted group, is disallowed until it is listed in `REVIEWED`. `bun run review` prints the pending characters, grouped by block and ready to paste, plus the mappings that allowing them would enable. With `--html` it writes `.cache/review.html`: each character in context with its lookalikes from `confusables.txt`, the registered labels that contain it, and the official code chart for its block (fonts rarely cover a new Unicode version yet). Tick the characters to allow and copy the lines.
 - [rules/confuse.ts](rules/confuse.ts): edits over Unicode's `confusables.txt`, which is read live. `primary`/`allow` decide members; `split`/`join` reshape sets. [output/confusables.txt](output/confusables.txt) shows every resulting set and what happened to each member.
 - [rules/chars-escape.ts](rules/chars-escape.ts): derived from properties (it replaced the hand list and `unprintables`).
 - [rules/scripts.ts](rules/scripts.ts) `SCRIPT_EXTENSIONS`: replace a character's Script_Extensions (`[cp, ['Zyyy']]`) or remove scripts from it (`[cp, {remove: ['Hebr']}]`). Derive checks that removed scripts are actually present, and checks the script lists against UAX-31.
@@ -122,7 +123,7 @@ Character sets that follow Unicode structure are written as [selectors](src/sele
 
 1. `bun run download:unicode <v>` and `bun run download:cldr`, then point `current` in `data/releases.json` at them and move the old one to `prior`.
 2. In `rules/disallow/unreviewed.ts`, bump `AGE` and empty `REVIEWED`. Read the Modifications sections `bun run review` lists and update `rules/reports.ts`. Add new scripts to `rules/scripts.ts` (derive fails on unassigned scripts).
-3. `bun run review`: paste the characters you allow into `REVIEWED`, then `bun run derive`.
+3. `bun run review` (or `--html`): paste the characters you allow into `REVIEWED`, then `bun run derive`.
 4. `bun run make-tests` (fix any FAILED/REVIEW lines), then `bun run registrations --expiry`. BROKEN and CHANGED must be empty or explicitly accepted. Add tests for the release's decisions to `validate/custom.ts`.
 5. `bun scripts/test-ts.ts ../ens-normalize.ts` to check the library build.
 

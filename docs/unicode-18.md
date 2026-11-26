@@ -29,7 +29,7 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 **New in Unicode 18** (13,007 characters):
 
-- **12,623 are valid,** all in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (235), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels.
+- **12,623 are valid,** all in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels.
 - **9 new emoji.**
 - **375 are not valid.** 143 are letters and symbols in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, currency signs, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 144 more are disallowed by block rules (Musical Symbols, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 

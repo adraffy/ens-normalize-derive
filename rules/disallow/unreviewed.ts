@@ -10,6 +10,7 @@ import {SCRIPT_GROUPS} from '../scripts.ts';
 // Unreviewed characters can't break registrations: they weren't normalizable before.
 //
 // review:  `bun run review` lists what's pending and prints lines to paste into REVIEWED
+//          `bun run review --html` does the same as a page with glyphs and code charts
 // upgrade: bump AGE and empty REVIEWED
 
 export const AGE = '18.0';
