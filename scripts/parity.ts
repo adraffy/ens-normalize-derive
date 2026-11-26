@@ -5,6 +5,7 @@
 //
 // Compares ENSIP15(baseline/<v>/spec.json + nf.json) with @adraffy/ens-normalize@<v> over every known
 // label: normalize + beautify (output or error message) and the per-label group type of ens_split.
+// Known differences (see the header of src/ensip15.ts) are counted but don't fail.
 
 import {parseArgs} from 'node:util';
 import {ens_beautify, ens_normalize, ens_split} from '@adraffy/ens-normalize';
@@ -29,8 +30,13 @@ const run = (f: (s: string) => string, s: string) => {
 	}
 };
 
+// 20261126: a combining mark outside the group is "unsupported combining mark", not an illegal mixture
+const known = (a: string, b: string) =>
+	a.startsWith('Error: illegal placement: unsupported combining mark: ') && b.startsWith('Error: illegal mixture: ');
+
 const t0 = performance.now();
 const bad = new Map<string, number>();
+let knownCount = 0;
 let shown = 0;
 for (const label of labels) {
 	const checks: [string, string, string][] = [
@@ -49,11 +55,16 @@ for (const label of labels) {
 	];
 	for (const [what, a, b] of checks) {
 		if (a === b) continue;
+		if (known(a, b)) {
+			knownCount++;
+			continue;
+		}
 		bad.set(what, (bad.get(what) ?? 0) + 1);
 		if (shown++ < 20) console.log(`mismatch ${what} ${JSON.stringify(label)}\n  ref: ${a}\n  lib: ${b}`);
 	}
 }
 const secs = ((performance.now() - t0) / 1000).toFixed(1);
 console.log(`${labels.length} labels in ${secs}s vs @adraffy/ens-normalize@${BASELINE_VERSION}`);
+if (knownCount) console.log(`${knownCount} known differences (unsupported combining mark)`);
 console.log(bad.size ? `MISMATCH ${[...bad].map(([k, n]) => `${k}=${n}`).join(' ')}` : 'exact match');
 process.exit(bad.size ? 1 : 0);

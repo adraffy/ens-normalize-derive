@@ -114,7 +114,7 @@ Fenced today: ’ (11,394 names), ⁄ (520), ・ (54), none at the start, end, o
 
 All 34 BROKEN labels (Bopomofo + Han) have **no entry in the ENSv2 ETHRegistry**, so none is registered. They lapsed before the v2 migration. **No active registration breaks.**
 
-Current totals vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅), CHANGED 0, ALLOWED 5 (new emoji), MESSAGE 678. 610 of those messages come from the new Common group: `$٠٠` now reads "Common + Arabic" instead of "Latin + Arabic". Common also retypes about 60,000 valid labels from Latin to Common (`€100`, `💎100`) without changing any normalization. See [groups.md](groups.md).
+Current totals vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅), CHANGED 0, ALLOWED 5 (new emoji), MESSAGE 690. 610 of those messages come from the new Common group: `$٠٠` now reads "Common + Arabic" instead of "Latin + Arabic". 37 are a combining mark outside the label's group, which now reads `unsupported combining mark: "i + ◌̇"` instead of an illegal mixture naming an unrelated group (`İzmir`, `x̂`). Common also retypes about 60,000 valid labels from Latin to Common (`€100`, `💎100`) without changing any normalization. See [groups.md](groups.md).
 
 ## 1. Registration impact of Unicode 18 (needs a decision)
 

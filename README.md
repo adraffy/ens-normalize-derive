@@ -49,7 +49,7 @@ bun scripts/emoji-new.ts            # emoji new in the current release
 
 ## Validation
 
-[src/ensip15.ts](src/ensip15.ts) is a small, unoptimized ENSIP-15 implementation that runs straight on `output/spec.json` + `output/nf.json`. It mirrors ens-normalize.js step for step, error messages included. `bun run parity` proves it: on [baseline/1.11.1](baseline/1.11.1/) it reproduces `@adraffy/ens-normalize@1.11.1` exactly over every known label (normalize, beautify, label types).
+[src/ensip15.ts](src/ensip15.ts) is a small, unoptimized ENSIP-15 implementation that runs straight on `output/spec.json` + `output/nf.json`. It mirrors ens-normalize.js step for step, error messages included. `bun run parity` proves it: on [baseline/1.11.1](baseline/1.11.1/) it reproduces `@adraffy/ens-normalize@1.11.1` exactly over every known label (normalize, beautify, label types). The only accepted difference is the clearer `unsupported combining mark` message, listed in the file's header.
 
 That means a new spec can be validated before any library is built:
 

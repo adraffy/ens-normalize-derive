@@ -741,6 +741,26 @@
 		"comment": "Inherited: Thai mark on a Thai letter, then ฿"
 	},
 	{
+		"name": "x̂",
+		"error": true,
+		"comment": "Unsupported mark: no precomposed x̂"
+	},
+	{
+		"name": "İzmir",
+		"error": true,
+		"comment": "Unsupported mark: İ maps to i + COMBINING DOT ABOVE"
+	},
+	{
+		"name": "abً",
+		"error": true,
+		"comment": "Unsupported mark: Arabic mark on Latin"
+	},
+	{
+		"name": "ა́",
+		"error": true,
+		"comment": "Unsupported mark: COMBINING ACUTE isn't Georgian"
+	},
+	{
 		"name": "бот",
 		"comment": "Confusable: Cyrillic word vs new Coptic lookalikes"
 	},
@@ -73641,22 +73661,22 @@
 	{
 		"name": "à.א̈",
 		"error": true,
-		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"א̈\"‎: illegal placement: unsupported combining mark: \"א + ◌̈\""
 	},
 	{
 		"name": "à.א̈",
 		"error": true,
-		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"א̈\"‎: illegal placement: unsupported combining mark: \"א + ◌̈\""
 	},
 	{
 		"name": "À.א̈",
 		"error": true,
-		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"א̈\"‎: illegal placement: unsupported combining mark: \"א + ◌̈\""
 	},
 	{
 		"name": "À.א̈",
 		"error": true,
-		"comment": "Invalid label \"א̈\"‎: illegal mixture: Hebrew + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"א̈\"‎: illegal placement: unsupported combining mark: \"א + ◌̈\""
 	},
 	{
 		"name": "xn--0ca.xn--ssa73l",
@@ -73751,22 +73771,22 @@
 	{
 		"name": "à̈.א",
 		"error": true,
-		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"à̈\"‎: illegal placement: unsupported combining mark: \"à + ◌̈\""
 	},
 	{
 		"name": "à̈.א",
 		"error": true,
-		"comment": "Invalid label \"à̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"à̈\"‎: illegal placement: unsupported combining mark: \"à + ◌̈\""
 	},
 	{
 		"name": "À̈.א",
 		"error": true,
-		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"À̈\"‎: illegal placement: unsupported combining mark: \"à + ◌̈\""
 	},
 	{
 		"name": "À̈.א",
 		"error": true,
-		"comment": "Invalid label \"À̈\"‎: illegal mixture: Latin + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "Invalid label \"À̈\"‎: illegal placement: unsupported combining mark: \"à + ◌̈\""
 	},
 	{
 		"name": "xn--0ca81i.xn--4db",
@@ -73819,17 +73839,17 @@
 	{
 		"name": "a्b",
 		"error": true,
-		"comment": "illegal mixture: Latin + Devanagari \"◌्\"‎ {94D}"
+		"comment": "illegal placement: unsupported combining mark: \"a + ◌्\""
 	},
 	{
 		"name": "A्B",
 		"error": true,
-		"comment": "illegal mixture: Latin + Devanagari \"◌्\"‎ {94D}"
+		"comment": "illegal placement: unsupported combining mark: \"a + ◌्\""
 	},
 	{
 		"name": "A्b",
 		"error": true,
-		"comment": "illegal mixture: Latin + Devanagari \"◌्\"‎ {94D}"
+		"comment": "illegal placement: unsupported combining mark: \"a + ◌्\""
 	},
 	{
 		"name": "xn--ab-fsf604u",
@@ -75932,7 +75952,7 @@
 	{
 		"name": "𣳔̃.𑓂",
 		"error": true,
-		"comment": "Invalid label \"𣳔̃\"‎: illegal mixture: Han + Restricted[Glag] \"◌̃\"‎ {303}"
+		"comment": "Invalid label \"𣳔̃\"‎: illegal placement: unsupported combining mark: \"𣳔 + ◌̃\""
 	},
 	{
 		"name": "xn--nsa95820a.xn--wz1d",
@@ -76092,12 +76112,12 @@
 	{
 		"name": "繱𑖿.i.",
 		"error": true,
-		"comment": "Invalid label \"繱𑖿\"‎: illegal mixture: Han + Restricted[Sidd] \"◌𑖿\"‎ {115BF}"
+		"comment": "Invalid label \"繱𑖿\"‎: illegal placement: unsupported combining mark: \"繱 + ◌𑖿\""
 	},
 	{
 		"name": "繱𑖿.I.",
 		"error": true,
-		"comment": "Invalid label \"繱𑖿\"‎: illegal mixture: Han + Restricted[Sidd] \"◌𑖿\"‎ {115BF}"
+		"comment": "Invalid label \"繱𑖿\"‎: illegal placement: unsupported combining mark: \"繱 + ◌𑖿\""
 	},
 	{
 		"name": "xn--1ug6928ac48e.i.",
@@ -76167,17 +76187,17 @@
 	{
 		"name": "ss۫.",
 		"error": true,
-		"comment": "Invalid label \"ss۫\"‎: illegal mixture: Latin + Arabic \"◌۫\"‎ {6EB}"
+		"comment": "Invalid label \"ss۫\"‎: illegal placement: unsupported combining mark: \"s + ◌۫\""
 	},
 	{
 		"name": "SS۫.",
 		"error": true,
-		"comment": "Invalid label \"SS۫\"‎: illegal mixture: Latin + Arabic \"◌۫\"‎ {6EB}"
+		"comment": "Invalid label \"SS۫\"‎: illegal placement: unsupported combining mark: \"s + ◌۫\""
 	},
 	{
 		"name": "Ss۫.",
 		"error": true,
-		"comment": "Invalid label \"Ss۫\"‎: illegal mixture: Latin + Arabic \"◌۫\"‎ {6EB}"
+		"comment": "Invalid label \"Ss۫\"‎: illegal placement: unsupported combining mark: \"s + ◌۫\""
 	},
 	{
 		"name": "xn--ss-59d.xn--1ug",
@@ -76807,12 +76827,12 @@
 	{
 		"name": "ݥဵ𐫔ە.𐦬𑋪Ⴃ",
 		"error": true,
-		"comment": "Invalid label \"ݥဵ𐫔ە\"‎: illegal mixture: Arabic + Myanmar \"◌ဵ\"‎ {1035}"
+		"comment": "Invalid label \"ݥဵ𐫔ە\"‎: illegal placement: unsupported combining mark: \"ݥ + ◌ဵ\""
 	},
 	{
 		"name": "ݥဵ𐫔ە.𐦬𑋪ⴃ",
 		"error": true,
-		"comment": "Invalid label \"ݥဵ𐫔ە\"‎: illegal mixture: Arabic + Myanmar \"◌ဵ\"‎ {1035}"
+		"comment": "Invalid label \"ݥဵ𐫔ە\"‎: illegal placement: unsupported combining mark: \"ݥ + ◌ဵ\""
 	},
 	{
 		"name": "xn--llb10as9tqp5y.xn--ukj7371e21f",
@@ -76827,12 +76847,12 @@
 	{
 		"name": "١᭄-킼.᮪ؖ٬≯",
 		"error": true,
-		"comment": "Invalid label \"١᭄-킼\"‎: illegal mixture: Arabic + Restricted[Bali] \"◌᭄\"‎ {1B44}"
+		"comment": "Invalid label \"١᭄-킼\"‎: illegal placement: unsupported combining mark: \"١ + ◌᭄\""
 	},
 	{
 		"name": "١᭄-킼.᮪ؖ٬≯",
 		"error": true,
-		"comment": "Invalid label \"١᭄-킼\"‎: illegal mixture: Arabic + Restricted[Bali] \"◌᭄\"‎ {1B44}"
+		"comment": "Invalid label \"١᭄-킼\"‎: illegal placement: unsupported combining mark: \"١ + ◌᭄\""
 	},
 	{
 		"name": "xn----9pc551nk39n.xn--4fb6o571degg",
@@ -79432,12 +79452,12 @@
 	{
 		"name": "😮ݤ𑈵𞀖.💅‍",
 		"error": true,
-		"comment": "Invalid label \"😮ݤ𑈵𞀖\"‎: illegal mixture: Arabic + Restricted[Khoj] \"◌𑈵\"‎ {11235}"
+		"comment": "Invalid label \"😮ݤ𑈵𞀖\"‎: illegal placement: unsupported combining mark: \"ݤ + ◌𑈵\""
 	},
 	{
 		"name": "😮ݤ𑈵𞀖.💅‍",
 		"error": true,
-		"comment": "Invalid label \"😮ݤ𑈵𞀖\"‎: illegal mixture: Arabic + Restricted[Khoj] \"◌𑈵\"‎ {11235}"
+		"comment": "Invalid label \"😮ݤ𑈵𞀖\"‎: illegal placement: unsupported combining mark: \"ݤ + ◌𑈵\""
 	},
 	{
 		"name": "xn--opb4277kuc7elqsa.xn--kr8h",
@@ -82648,7 +82668,7 @@
 	{
 		"name": "󠄽-.-්",
 		"error": true,
-		"comment": "Invalid label \"-්\"‎: illegal mixture: Common + Sinhala \"◌්\"‎ {DCA}"
+		"comment": "Invalid label \"-්\"‎: illegal placement: unsupported combining mark: \"- + ◌්\""
 	},
 	{
 		"name": "-.xn----ptf",
@@ -82818,7 +82838,7 @@
 	{
 		"name": "ܣ֣.ハイツ",
 		"error": true,
-		"comment": "Invalid label \"ܣ֣\"‎: illegal mixture: Restricted[Syrc] + Hebrew \"◌֣\"‎ {5A3}"
+		"comment": "Invalid label \"ܣ֣\"‎: illegal placement: unsupported combining mark: \"ܣ + ◌֣\""
 	},
 	{
 		"name": "𞷥󠆀≮.⵿-",
@@ -85147,12 +85167,12 @@
 	{
 		"name": "٨ﲌ٨ᩝ.‍",
 		"error": true,
-		"comment": "Invalid label \"٨ﲌ٨ᩝ\"‎: illegal mixture: Arabic + Restricted[Lana] \"◌ᩝ\"‎ {1A5D}"
+		"comment": "Invalid label \"٨ﲌ٨ᩝ\"‎: illegal placement: unsupported combining mark: \"٨ + ◌ᩝ\""
 	},
 	{
 		"name": "٨نم٨ᩝ.‍",
 		"error": true,
-		"comment": "Invalid label \"٨نم٨ᩝ\"‎: illegal mixture: Arabic + Restricted[Lana] \"◌ᩝ\"‎ {1A5D}"
+		"comment": "Invalid label \"٨نم٨ᩝ\"‎: illegal placement: unsupported combining mark: \"٨ + ◌ᩝ\""
 	},
 	{
 		"name": "xn--hhbb5hc956w.",
@@ -86937,12 +86957,12 @@
 	{
 		"name": "ٽृ.𞤓‍",
 		"error": true,
-		"comment": "Invalid label \"ٽृ\"‎: illegal mixture: Arabic + Devanagari \"◌ृ\"‎ {943}"
+		"comment": "Invalid label \"ٽृ\"‎: illegal placement: unsupported combining mark: \"ٽ + ◌ृ\""
 	},
 	{
 		"name": "ٽृ.𞤵‍",
 		"error": true,
-		"comment": "Invalid label \"ٽृ\"‎: illegal mixture: Arabic + Devanagari \"◌ृ\"‎ {943}"
+		"comment": "Invalid label \"ٽृ\"‎: illegal placement: unsupported combining mark: \"ٽ + ◌ृ\""
 	},
 	{
 		"name": "xn--2ib43l.xn--te6h",
@@ -86952,12 +86972,12 @@
 	{
 		"name": "ٽृ.𞤵",
 		"error": true,
-		"comment": "Invalid label \"ٽृ\"‎: illegal mixture: Arabic + Devanagari \"◌ृ\"‎ {943}"
+		"comment": "Invalid label \"ٽृ\"‎: illegal placement: unsupported combining mark: \"ٽ + ◌ृ\""
 	},
 	{
 		"name": "ٽृ.𞤓",
 		"error": true,
-		"comment": "Invalid label \"ٽृ\"‎: illegal mixture: Arabic + Devanagari \"◌ृ\"‎ {943}"
+		"comment": "Invalid label \"ٽृ\"‎: illegal placement: unsupported combining mark: \"ٽ + ◌ृ\""
 	},
 	{
 		"name": "xn--2ib43l.xn--1ugy711p",
@@ -86972,7 +86992,7 @@
 	{
 		"name": "٤੍-.󥜽္񦦐",
 		"error": true,
-		"comment": "Invalid label \"٤੍-\"‎: illegal mixture: Arabic + Gurmukhi \"◌੍\"‎ {A4D}"
+		"comment": "Invalid label \"٤੍-\"‎: illegal placement: unsupported combining mark: \"٤ + ◌੍\""
 	},
 	{
 		"name": "xn----gqc711a.xn--9jd88234f3qm0b",
@@ -88705,17 +88725,17 @@
 	{
 		"name": "ss꫶ᢥ.⊶ⴡⴖ",
 		"error": true,
-		"comment": "Invalid label \"ss꫶ᢥ\"‎: illegal mixture: Latin + Restricted[Mtei] \"◌꫶\"‎ {AAF6}"
+		"comment": "Invalid label \"ss꫶ᢥ\"‎: illegal placement: unsupported combining mark: \"s + ◌꫶\""
 	},
 	{
 		"name": "SS꫶ᢥ.⊶ჁႶ",
 		"error": true,
-		"comment": "Invalid label \"SS꫶ᢥ\"‎: illegal mixture: Latin + Restricted[Mtei] \"◌꫶\"‎ {AAF6}"
+		"comment": "Invalid label \"SS꫶ᢥ\"‎: illegal placement: unsupported combining mark: \"s + ◌꫶\""
 	},
 	{
 		"name": "Ss꫶ᢥ.⊶Ⴡⴖ",
 		"error": true,
-		"comment": "Invalid label \"Ss꫶ᢥ\"‎: illegal mixture: Latin + Restricted[Mtei] \"◌꫶\"‎ {AAF6}"
+		"comment": "Invalid label \"Ss꫶ᢥ\"‎: illegal placement: unsupported combining mark: \"s + ◌꫶\""
 	},
 	{
 		"name": "xn--ss-4ep585bkm5p.xn--ifh802b6a",
@@ -89315,7 +89335,7 @@
 	{
 		"name": "璛᜴گ.-",
 		"error": true,
-		"comment": "Invalid label \"璛᜴گ\"‎: illegal mixture: Han + Restricted[Hano] \"◌᜴\"‎ {1734}"
+		"comment": "Invalid label \"璛᜴گ\"‎: illegal placement: unsupported combining mark: \"璛 + ◌᜴\""
 	},
 	{
 		"name": "xn--ikb175frt4e.-",
@@ -89335,12 +89355,12 @@
 	{
 		"name": "󠆰ࢡ੍샕.𐹲휁",
 		"error": true,
-		"comment": "Invalid label \"◌{E01B0}ࢡ੍샕\"‎: illegal mixture: Arabic + Gurmukhi \"◌੍\"‎ {A4D}"
+		"comment": "Invalid label \"◌{E01B0}ࢡ੍샕\"‎: illegal placement: unsupported combining mark: \"ࢡ + ◌੍\""
 	},
 	{
 		"name": "󠆰ࢡ੍샕.𐹲휁",
 		"error": true,
-		"comment": "Invalid label \"◌{E01B0}ࢡ੍샕\"‎: illegal mixture: Arabic + Gurmukhi \"◌੍\"‎ {A4D}"
+		"comment": "Invalid label \"◌{E01B0}ࢡ੍샕\"‎: illegal placement: unsupported combining mark: \"ࢡ + ◌੍\""
 	},
 	{
 		"name": "xn--qyb07fj857a.xn--728bv72h",
@@ -91088,7 +91108,7 @@
 	{
 		"name": "𐫄്.꫶",
 		"error": true,
-		"comment": "Invalid label \"𐫄്\"‎: illegal mixture: Restricted[Mani] + Malayalam \"◌്\"‎ {D4D}"
+		"comment": "Invalid label \"𐫄്\"‎: illegal placement: unsupported combining mark: \"𐫄 + ◌്\""
 	},
 	{
 		"name": "xn--wxc7880k.xn--2v9a",
@@ -92160,7 +92180,7 @@
 	{
 		"name": "-𑈶8..7.𰛢󠎭",
 		"error": true,
-		"comment": "Invalid label \"-𑈶8\"‎: illegal mixture: Common + Restricted[Khoj] \"◌𑈶\"‎ {11236}"
+		"comment": "Invalid label \"-𑈶8\"‎: illegal placement: unsupported combining mark: \"- + ◌𑈶\""
 	},
 	{
 		"name": "xn---8-bv5o..7.xn--c35nf1622b",
@@ -94792,7 +94812,7 @@
 	{
 		"name": "ꗷ𑆀.ݝ𐩒",
 		"error": true,
-		"comment": "Invalid label \"ꗷ𑆀\"‎: illegal mixture: Restricted[Vaii] + Restricted[Shrd] \"◌𑆀\"‎ {11180}"
+		"comment": "Invalid label \"ꗷ𑆀\"‎: illegal placement: unsupported combining mark: \"ꗷ + ◌𑆀\""
 	},
 	{
 		"name": "xn--ju8a625r.xn--hpb0073k",
@@ -96462,12 +96482,12 @@
 	{
 		"name": "攌꯭.ᢖ-ⴘ",
 		"error": true,
-		"comment": "Invalid label \"攌꯭\"‎: illegal mixture: Han + Restricted[Mtei] \"◌꯭\"‎ {ABED}"
+		"comment": "Invalid label \"攌꯭\"‎: illegal placement: unsupported combining mark: \"攌 + ◌꯭\""
 	},
 	{
 		"name": "攌꯭.ᢖ-Ⴘ",
 		"error": true,
-		"comment": "Invalid label \"攌꯭\"‎: illegal mixture: Han + Restricted[Mtei] \"◌꯭\"‎ {ABED}"
+		"comment": "Invalid label \"攌꯭\"‎: illegal placement: unsupported combining mark: \"攌 + ◌꯭\""
 	},
 	{
 		"name": "xn--1ug592ykp6b.xn----mck373i",
@@ -97235,17 +97255,17 @@
 	{
 		"name": "ss်.b.",
 		"error": true,
-		"comment": "Invalid label \"ss်\"‎: illegal mixture: Latin + Myanmar \"◌်\"‎ {103A}"
+		"comment": "Invalid label \"ss်\"‎: illegal placement: unsupported combining mark: \"s + ◌်\""
 	},
 	{
 		"name": "SS်.B.",
 		"error": true,
-		"comment": "Invalid label \"SS်\"‎: illegal mixture: Latin + Myanmar \"◌်\"‎ {103A}"
+		"comment": "Invalid label \"SS်\"‎: illegal placement: unsupported combining mark: \"s + ◌်\""
 	},
 	{
 		"name": "Ss်.b.",
 		"error": true,
-		"comment": "Invalid label \"Ss်\"‎: illegal mixture: Latin + Myanmar \"◌်\"‎ {103A}"
+		"comment": "Invalid label \"Ss်\"‎: illegal placement: unsupported combining mark: \"s + ◌်\""
 	},
 	{
 		"name": "xn--ss-f4j585j.b.",
@@ -97290,7 +97310,7 @@
 	{
 		"name": "SS်.b.",
 		"error": true,
-		"comment": "Invalid label \"SS်\"‎: illegal mixture: Latin + Myanmar \"◌်\"‎ {103A}"
+		"comment": "Invalid label \"SS်\"‎: illegal placement: unsupported combining mark: \"s + ◌်\""
 	},
 	{
 		"name": "୍‌𙶵𞻘。‍",
@@ -97360,17 +97380,17 @@
 	{
 		"name": "ی𐨿.ß྄𑍬",
 		"error": true,
-		"comment": "Invalid label \"ی𐨿\"‎: illegal mixture: Arabic + Restricted[Khar] \"◌𐨿\"‎ {10A3F}"
+		"comment": "Invalid label \"ی𐨿\"‎: illegal placement: unsupported combining mark: \"ی + ◌𐨿\""
 	},
 	{
 		"name": "ی𐨿.SS྄𑍬",
 		"error": true,
-		"comment": "Invalid label \"ی𐨿\"‎: illegal mixture: Arabic + Restricted[Khar] \"◌𐨿\"‎ {10A3F}"
+		"comment": "Invalid label \"ی𐨿\"‎: illegal placement: unsupported combining mark: \"ی + ◌𐨿\""
 	},
 	{
 		"name": "ی𐨿.ss྄𑍬",
 		"error": true,
-		"comment": "Invalid label \"ی𐨿\"‎: illegal mixture: Arabic + Restricted[Khar] \"◌𐨿\"‎ {10A3F}"
+		"comment": "Invalid label \"ی𐨿\"‎: illegal placement: unsupported combining mark: \"ی + ◌𐨿\""
 	},
 	{
 		"name": "xn--clb2593k.xn--ss-toj6092t",
@@ -97395,7 +97415,7 @@
 	{
 		"name": "ی𐨿.Ss྄𑍬",
 		"error": true,
-		"comment": "Invalid label \"ی𐨿\"‎: illegal mixture: Arabic + Restricted[Khar] \"◌𐨿\"‎ {10A3F}"
+		"comment": "Invalid label \"ی𐨿\"‎: illegal placement: unsupported combining mark: \"ی + ◌𐨿\""
 	},
 	{
 		"name": "ی𐨿．Ss྄𑍬",
@@ -100916,17 +100936,17 @@
 	{
 		"name": "ss𑓃",
 		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Tirh] \"◌𑓃\"‎ {114C3}"
+		"comment": "illegal placement: unsupported combining mark: \"s + ◌𑓃\""
 	},
 	{
 		"name": "SS𑓃",
 		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Tirh] \"◌𑓃\"‎ {114C3}"
+		"comment": "illegal placement: unsupported combining mark: \"s + ◌𑓃\""
 	},
 	{
 		"name": "Ss𑓃",
 		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Tirh] \"◌𑓃\"‎ {114C3}"
+		"comment": "illegal placement: unsupported combining mark: \"s + ◌𑓃\""
 	},
 	{
 		"name": "︒‌ヶ䒩.ꡪ",
@@ -103331,7 +103351,7 @@
 	{
 		"name": "ᢌ.-࡚",
 		"error": true,
-		"comment": "Invalid label \"-࡚\"‎: illegal mixture: Common + Restricted[Mand] \"◌࡚\"‎ {85A}"
+		"comment": "Invalid label \"-࡚\"‎: illegal placement: unsupported combining mark: \"- + ◌࡚\""
 	},
 	{
 		"name": "xn--59e.xn----5jd",
@@ -104633,7 +104653,7 @@
 	{
 		"name": "𐫜𑌼.婀",
 		"error": true,
-		"comment": "Invalid label \"𐫜𑌼\"‎: illegal mixture: Restricted[Mani] + Tamil \"◌𑌼\"‎ {1133C}"
+		"comment": "Invalid label \"𐫜𑌼\"‎: illegal placement: unsupported combining mark: \"𐫜 + ◌𑌼\""
 	},
 	{
 		"name": "xn--1ugx063g1if.xn--q0s",
@@ -104943,7 +104963,7 @@
 	{
 		"name": "𐫀.ډ𑌀",
 		"error": true,
-		"comment": "Invalid label \"ډ𑌀\"‎: illegal mixture: Arabic + Restricted[Gran] \"◌𑌀\"‎ {11300}"
+		"comment": "Invalid label \"ډ𑌀\"‎: illegal placement: unsupported combining mark: \"ډ + ◌𑌀\""
 	},
 	{
 		"name": "xn--pw9c.xn--fjb8658k",
@@ -105911,11 +105931,6 @@
 		"comment": "illegal mixture: Common + Restricted[Olck] \"᱐\"‎ {1C50}"
 	},
 	{
-		"name": "11ِ1",
-		"error": true,
-		"comment": "illegal mixture: Common + Arabic \"◌ِ\"‎ {650}"
-	},
-	{
 		"name": "17᱐8",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Olck] \"᱐\"‎ {1C50}"
@@ -106144,11 +106159,6 @@
 		"name": "_۹۹۹",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٩\"‎ {669}"
-	},
-	{
-		"name": "aci̇",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "ξ٠٠٠",
@@ -106996,11 +107006,6 @@
 		"comment": "illegal mixture: Common + Arabic \"٠\"‎ {660}"
 	},
 	{
-		"name": "7777ً",
-		"error": true,
-		"comment": "illegal mixture: Common + Arabic \"◌ً\"‎ {64B}"
-	},
-	{
 		"name": "9٩9٩9",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٩\"‎ {669}"
@@ -107244,21 +107249,6 @@
 		"name": "_٩٩٩٩",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٩\"‎ {669}"
-	},
-	{
-		"name": "coi̇n",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "defi̇",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "fi̇fa",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "ξ٠٠٠٠",
@@ -107604,11 +107594,6 @@
 		"name": "ㄎㄧㄤ起來",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Bopo] + Han \"起\"‎ {8D77}"
-	},
-	{
-		"name": "ㄐׁׁ2ּ",
-		"error": true,
-		"comment": "illegal mixture: Restricted[Bopo] + Hebrew \"◌ׁ\"‎ {5C1}"
 	},
 	{
 		"name": "ㄧ0000",
@@ -108032,11 +108017,6 @@
 		"comment": "illegal mixture: Common + Arabic \"٤\"‎ {664}"
 	},
 	{
-		"name": "4̅2̅0̅",
-		"error": true,
-		"comment": "illegal mixture: Common + Restricted[Glag] \"◌̅\"‎ {305}"
-	},
-	{
 		"name": "500٥٠٠",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٥\"‎ {665}"
@@ -108165,31 +108145,6 @@
 		"name": "_٩٩٩٩٩",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٩\"‎ {669}"
-	},
-	{
-		"name": "coi̇ns",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "epi̇aş",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "i̇hsan",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "i̇zmir",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "pari̇s",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "בן-דוד",
@@ -108450,11 +108405,6 @@
 		"comment": "illegal mixture: Common + Arabic \"٠\"‎ {660}"
 	},
 	{
-		"name": "juli̇en",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "תל-אביב",
 		"error": true,
 		"comment": "illegal mixture: Hebrew + Common \"-\"‎ {2D}"
@@ -108608,26 +108558,6 @@
 		"comment": "illegal mixture: Common + Arabic \"ع\"‎ {639}"
 	},
 	{
-		"name": "bi̇tcoin",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "i̇brahim",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "spoti̇fy",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "twi̇tter",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "קוהן-כהן",
 		"error": true,
 		"comment": "illegal mixture: Hebrew + Common \"-\"‎ {2D}"
@@ -108691,11 +108621,6 @@
 		"comment": "illegal mixture: Common + Arabic \"ا\"‎ {627}"
 	},
 	{
-		"name": "1̆̈2̆̈3̆̈",
-		"error": true,
-		"comment": "illegal mixture: Common + Restricted[Tfng] \"◌̆\"‎ {306}"
-	},
-	{
 		"name": "_الإمارات",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"ا\"‎ {627}"
@@ -108704,16 +108629,6 @@
 		"name": "_مُحَمَّد",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"م\"‎ {645}"
-	},
-	{
-		"name": "i̇stanbul",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
-		"name": "vi̇tali̇k",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "٩٩٩’sclub",
@@ -108756,11 +108671,6 @@
 		"comment": "illegal mixture: Common + Arabic \"ع\"‎ {639}"
 	},
 	{
-		"name": "i̇nstagram",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "ㄒ乇尺爪丨几卂ㄒㄖ尺",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Bopo] + Han \"乇\"‎ {4E47}"
@@ -108779,11 +108689,6 @@
 		"name": "$٠١٢٣٤٥٦٧٨٩",
 		"error": true,
 		"comment": "illegal mixture: Common + Arabic \"٠\"‎ {660}"
-	},
-	{
-		"name": "i̇mmutablex",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "مُحَمَّد786",
@@ -108811,19 +108716,9 @@
 		"comment": "illegal mixture: Common + Restricted[Bopo] \"ㄣ\"‎ {3123}"
 	},
 	{
-		"name": "volkani̇mirzeoglu",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
-	},
-	{
 		"name": "乃ㄖ尺乇ᗪ卂卩乇ㄚ卂匚卄ㄒ匚ㄥㄩ乃",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Bopo] \"ㄖ\"‎ {3116}"
-	},
-	{
-		"name": "receptayyi̇perdoğan",
-		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Syrc] \"◌̇\"‎ {307}"
 	},
 	{
 		"name": "निरन्तरान्धकारित-दिगन्तर-कन्दलदमन्द-सुधारस-बिन्दु-सान्द्रतर-घनाघन-वृन्द-सन्देहकर-स्यन्दमान-मकरन्द-बिन्दु-बन्धुरतर-माकन्द-तरु-कुल-तल्प-कल्प-मृदुल-सिकता-जाल-जटिल-मूल-तल-मरुवक-मिलदलघु-लघु-लय-कलित-रमणीय-पानीय-शालिका-बालिका-करार-विन्द-गलन्तिका-गलदेला-लवङ्ग-पाटल-घनसार-कस्तूरिकातिसौरभ-मेदुर-लघुतर-मधुर-शीतलतर-सलिलधारा-निराकरिष्णु-तदीय-विमल-विलोचन-मयूख-रेखापसारित-पिपासायास-पथिक-लोकान्",
@@ -155573,6 +155468,11 @@
 		"comment": "disallowed character: \"∙\"‎ {2219}"
 	},
 	{
+		"name": "volkani̇mirzeoglu",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"i + ◌̇\""
+	},
+	{
 		"name": "⠼⠚⠼⠃⠼⠚",
 		"error": true,
 		"comment": "disallowed character: \"⠼\"‎ {283C}"
@@ -158886,6 +158786,11 @@
 		"name": "└།๑‿๑།┘",
 		"error": true,
 		"comment": "disallowed character: \"└\"‎ {2514}"
+	},
+	{
+		"name": "juli̇en",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"i + ◌̇\""
 	},
 	{
 		"name": "6̷̡̛̛̛̝̲̯̬̘̯̲̼̬̬̗̠͌͒̾͂̂̔̿́̎͋̆̍̓̈́̆̒̿́̿̓̓͆̈͊̉̎͆́͗̾͆̂̇̀͒̈́̚͘6̸̧̧͍͎̦͓͉̥̍͋͗̿͌͂́̔̐̉͂̌̎̈̆̏̔̄̚6̴̨̧̧̨̨̛̛̥̳̥͈̞͇̩͔̱͕̝͙͕͖̪͍̙̩̗̙̜̖̼̯̬̼̟͙̞̪̝̲̲̟̗̉͌̂̏̈́͛̈́͑̊̉͗̏̍͐͊̀͗͆̄́̃͛̈́̔̇͂͘͜͠͠͠",
@@ -162811,6 +162716,11 @@
 		"name": "6‚915",
 		"error": true,
 		"comment": "disallowed character: \"‚\"‎ {201A}"
+	},
+	{
+		"name": "ㄐׁׁ2ּ",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"ㄐ + ◌ׁ\""
 	},
 	{
 		"name": "@6000",
@@ -172455,7 +172365,7 @@
 	{
 		"name": "凸•̀•́凸",
 		"error": true,
-		"comment": "illegal mixture: Han + Restricted[Cher] \"◌̀\"‎ {300}"
+		"comment": "illegal placement: unsupported combining mark: \"• + ◌̀\""
 	},
 	{
 		"name": "☰0700",
@@ -173698,6 +173608,11 @@
 		"comment": "disallowed character: \"#\"‎ {23}"
 	},
 	{
+		"name": "i̇mmutablex",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"i + ◌̇\""
+	},
+	{
 		"name": "mr_jones",
 		"error": true,
 		"comment": "underscore allowed only at start"
@@ -174291,6 +174206,11 @@
 		"name": "🦖‍➡🦖‍➡",
 		"error": true,
 		"comment": "disallowed character: {200D}"
+	},
+	{
+		"name": "i̇hsan",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"i + ◌̇\""
 	},
 	{
 		"name": "@8000",
@@ -176415,7 +176335,7 @@
 	{
 		"name": "ле́нин",
 		"error": true,
-		"comment": "illegal mixture: Cyrillic + Restricted[Cher] \"◌́\"‎ {301}"
+		"comment": "illegal placement: unsupported combining mark: \"е + ◌́\""
 	},
 	{
 		"name": "☰0069",
@@ -176955,7 +176875,7 @@
 	{
 		"name": "росси́я",
 		"error": true,
-		"comment": "illegal mixture: Cyrillic + Restricted[Cher] \"◌́\"‎ {301}"
+		"comment": "illegal placement: unsupported combining mark: \"и + ◌́\""
 	},
 	{
 		"name": "⠻⠻⠻⠻",
@@ -177596,6 +177516,11 @@
 		"name": "@garyvee",
 		"error": true,
 		"comment": "disallowed character: \"@\"‎ {40}"
+	},
+	{
+		"name": "i̇zmir",
+		"error": true,
+		"comment": "illegal placement: unsupported combining mark: \"i + ◌̇\""
 	},
 	{
 		"name": "#1004",
@@ -178820,7 +178745,7 @@
 	{
 		"name": "зи́мний",
 		"error": true,
-		"comment": "illegal mixture: Cyrillic + Restricted[Cher] \"◌́\"‎ {301}"
+		"comment": "illegal placement: unsupported combining mark: \"и + ◌́\""
 	},
 	{
 		"name": "",
@@ -184578,7 +184503,7 @@
 	{
 		"name": "◨🆡▜݉⚄𝐃🖄",
 		"error": true,
-		"comment": "illegal mixture: Common + Restricted[Syrc] \"◌݉\"‎ {749}"
+		"comment": "illegal placement: unsupported combining mark: \"▜ + ◌݉\""
 	},
 	{
 		"name": "g𞋇🖶⬔🖪☛❆ⅸ🖜à",
@@ -184593,7 +184518,7 @@
 	{
 		"name": "⛁🆇🃆👨‍🔧↓🂩𝓂𝖟𑼷⬤🀐p𝋌v",
 		"error": true,
-		"comment": "illegal mixture: Latin + Restricted[Kawi] \"◌𑼷\"‎ {11F37}"
+		"comment": "illegal placement: unsupported combining mark: \"z + ◌𑼷\""
 	},
 	{
 		"name": "🧑🏽‍🏫◎ï-ż🆡󠆘❃⏷ᝍ☫✥🗩◺𝓶🕈",
@@ -184688,12 +184613,12 @@
 	{
 		"name": "घढ़ख़०ऋॊ󠄾ुᜲॗ",
 		"error": true,
-		"comment": "illegal mixture: Devanagari + Restricted[Hano] \"◌ᜲ\"‎ {1732}"
+		"comment": "illegal placement: unsupported combining mark: \"ऋ + ◌ᜲ\""
 	},
 	{
 		"name": "𐴋ाीॡॷकॄ🧑🏽‍🎤ठफ़",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Rohg] + Devanagari \"◌ा\"‎ {93E}"
+		"comment": "illegal placement: unsupported combining mark: \"𐴋 + ◌ा\""
 	},
 	{
 		"name": "ॏढक़स🧒🏾ऒऌपत𐊹९झळड़य़",
@@ -184708,7 +184633,7 @@
 	{
 		"name": "कघज़ठ󠅖ज़ྭ०पआूटॖःढ़ऴॅऐआऩषड़",
 		"error": true,
-		"comment": "illegal mixture: Devanagari + Tibetan \"◌ྭ\"‎ {FAD}"
+		"comment": "illegal placement: unsupported combining mark: \"ज + ◌ྭ\""
 	},
 	{
 		"name": "𝔨𤡌𨚮ⶆ",
@@ -184872,7 +184797,7 @@
 	{
 		"name": "ธ𑠮็อ󠄣วธุต🧁️อกซัำ",
 		"error": true,
-		"comment": "illegal mixture: Thai + Restricted[Dogr] \"◌𑠮\"‎ {1182E}"
+		"comment": "illegal placement: unsupported combining mark: \"ธ + ◌𑠮\""
 	},
 	{
 		"name": "🧑🏼‍❤𑘷️‍🧑🏽งพำำถต๘ำหำ",
@@ -184947,7 +184872,7 @@
 	{
 		"name": "󠅛ண𑌼𑿍ண𑿀𑌻ௗంஊொ𑿜𑿨ேி𑿯🫍️௦",
 		"error": true,
-		"comment": "illegal mixture: Tamil + Telugu \"◌ం\"‎ {C02}"
+		"comment": "illegal placement: unsupported combining mark: \"𑿀 + ◌ం\""
 	},
 	{
 		"name": "🚵🏾ொௗ𐠚ஹு🦸🏻‍♂️ஐ🚢️லஉ🟪️𑿔யஅ",
@@ -184957,7 +184882,7 @@
 	{
 		"name": "⚶ੱ🇷🇼",
 		"error": true,
-		"comment": "illegal mixture: Common + Gurmukhi \"◌ੱ\"‎ {A71}"
+		"comment": "illegal placement: unsupported combining mark: \"⚶ + ◌ੱ\""
 	},
 	{
 		"name": "🦸‍♀️ฟ󠅢♛",
@@ -184967,7 +184892,7 @@
 	{
 		"name": "α👦🏼♫🖂ྭ←⚤🕄🙉️",
 		"error": true,
-		"comment": "illegal mixture: Greek + Tibetan \"◌ྭ\"‎ {FAD}"
+		"comment": "illegal placement: unsupported combining mark: \"🖂 + ◌ྭ\""
 	},
 	{
 		"name": "🂷⛾㏴㊿◪ᛡ↓󠄧㎂⌦🕱🀔𝚲",
@@ -185007,7 +184932,7 @@
 	{
 		"name": "༰࿋༕དྷ𛲠̈ཏ󠆞ྰྵ࿊ཀྵད",
 		"error": true,
-		"comment": "illegal mixture: Tibetan + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "illegal placement: unsupported combining mark: \"ད + ◌̈\""
 	},
 	{
 		"name": "🧑🏼‍🦼😼️ཟཋ༗ཉ༶ྕ𐑰ཡྛཻ",
@@ -185282,7 +185207,7 @@
 	{
 		"name": "៛᧦ឳ៳៩ឋ𐍶🐂️ភ",
 		"error": true,
-		"comment": "illegal mixture: Khmer + Restricted[Perm] \"◌𐍶\"‎ {10376}"
+		"comment": "illegal placement: unsupported combining mark: \"ឋ + ◌𐍶\""
 	},
 	{
 		"name": "᧦ួ𐔼ប󠆪󠆒៨ៀ󠅞៛ៜបថ",
@@ -185367,7 +185292,7 @@
 	{
 		"name": "൘൙ഡഌ︈ൔ󠄋൪ദഀٕബ🦔️ഫഘ൞ഷ󠇧",
 		"error": true,
-		"comment": "illegal mixture: Malayalam + Arabic \"◌ٕ\"‎ {655}"
+		"comment": "illegal placement: unsupported combining mark: \"ദ + ◌ٕ\""
 	},
 	{
 		"name": "𐢨󠄕ആ👇🏿ൽൡഴ൛ൃഺഔ൴ൌഒ്൲ൂൣഐഏൣ",
@@ -185426,7 +185351,7 @@
 	{
 		"name": "෯පඥ෯𑐷𑇣𑇥ආසඵඓු𑇢",
 		"error": true,
-		"comment": "illegal mixture: Sinhala + Restricted[Newa] \"◌𑐷\"‎ {11437}"
+		"comment": "illegal placement: unsupported combining mark: \"෯ + ◌𑐷\""
 	},
 	{
 		"name": "ඝඞ෯ඃ𑇮𑇯ෳඇ󠅮෬𑇮වඵතඍы",
@@ -185451,7 +185376,7 @@
 	{
 		"name": "௶󠇇ୣ୷ୄଡ଼ଓ",
 		"error": true,
-		"comment": "illegal mixture: Tamil + Oriya \"◌ୣ\"‎ {B63}"
+		"comment": "illegal placement: unsupported combining mark: \"௶ + ◌ୣ\""
 	},
 	{
 		"name": "୷଼ୋଢ଼ଡ଼ୃ𐩿󠆰ଢ଼ଠ",
@@ -185521,7 +185446,7 @@
 	{
 		"name": "ࡢ🤦🏽ܦ܌ୁܙ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Syrc] + Oriya \"◌ୁ\"‎ {B41}"
+		"comment": "illegal placement: unsupported combining mark: \"܌ + ◌ୁ\""
 	},
 	{
 		"name": "󠆲ࡧܙ𐿦ܤܢܚܐܭ🫱🏿‍🫲🏼",
@@ -185566,7 +185491,7 @@
 	{
 		"name": "ߤ𑶎󠆷ߧ߮߇ߑߥߝߌߟߑ🦀️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nkoo] + Restricted[Gong] \"◌𑶎\"‎ {11D8E}"
+		"comment": "illegal placement: unsupported combining mark: \"ߤ + ◌𑶎\""
 	},
 	{
 		"name": "ߔ𐌚ߣ߲߱ߝ߱߰ߋߋߒ߭🚴🏿‍♀️",
@@ -185636,7 +185561,7 @@
 	{
 		"name": "ᗷୁᕻᐐᘅᕉᐴᙖ󠇁ᓧᑖᖥᙁ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Oriya \"◌ୁ\"‎ {B41}"
+		"comment": "illegal placement: unsupported combining mark: \"ᗷ + ◌ୁ\""
 	},
 	{
 		"name": "ᗌᒙᓚᑈᕪᘘᗺ󠅣ᓭᐤⶾ🇹🇫🇺🇿🚶🏽‍♀️",
@@ -185646,7 +185571,7 @@
 	{
 		"name": "ᗣᣘᙡᐓᘠᐌᔅᕮᓨᕾᣌᐟᢻ󠄶ᗬᒩंᑩᑽ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cans] + Devanagari \"◌ं\"‎ {902}"
+		"comment": "illegal placement: unsupported combining mark: \"ᒩ + ◌ं\""
 	},
 	{
 		"name": "ᗚᙘᔣᒛᖰᖯᗜ𐿶ᕌᣒᣮᣬᑵ󠅇ᓉᑥᘁᒄᔪᖔᐚᗐ",
@@ -185676,7 +185601,7 @@
 	{
 		"name": "ᛝ𑏉󠇈ᛜᛁᛞᚽᛦᛙᚴᛈᛋᛢᚣᛴ🕵🏽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Runr] + Restricted[Tutg] \"◌𑏉\"‎ {113C9}"
+		"comment": "illegal placement: unsupported combining mark: \"ᛝ + ◌𑏉\""
 	},
 	{
 		"name": "ᚼᚲᛡ󠄒ᛉ멬ᚠᛢ🙎🏽‍♀️❤️‍🔥🙏️",
@@ -185736,7 +185661,7 @@
 	{
 		"name": "ᤑ᩶ᤏᤕ💄️ᤑ󠇦ᤎᤉ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Limb] + Restricted[Lana] \"◌᩶\"‎ {1A76}"
+		"comment": "illegal placement: unsupported combining mark: \"ᤑ + ◌᩶\""
 	},
 	{
 		"name": "ᤛᤁᤦᤉᤖ᥉⚽️ᤧᤂᤷᤌ𑤘",
@@ -185841,7 +185766,7 @@
 	{
 		"name": "ㄐㄆ󠅄･᜔ㄑㄤ･ㆲㆠ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Bopo] + Restricted[Tglg] \"◌᜔\"‎ {1714}"
+		"comment": "illegal placement: unsupported combining mark: \"・ + ◌᜔\""
 	},
 	{
 		"name": "ㄕㄑ･ㆿㆧㆺㄦㆼ･𐌞󠄺ㄥ󠆿",
@@ -185866,7 +185791,7 @@
 	{
 		"name": "ꊂꅷꍒ𑧞",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Nand] \"◌𑧞\"‎ {119DE}"
+		"comment": "illegal placement: unsupported combining mark: \"ꍒ + ◌𑧞\""
 	},
 	{
 		"name": "ꏘ𑂖･ꂯ･･ꊍ",
@@ -185910,12 +185835,12 @@
 	{
 		"name": "ꨙꩀ👩🏻‍🎤꩓ꩃꨙୁ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cham] + Oriya \"◌ୁ\"‎ {B41}"
+		"comment": "illegal placement: unsupported combining mark: \"ꨙ + ◌ୁ\""
 	},
 	{
 		"name": "🔮️꩙ꨵ󠅹࡛ꨑꨃꨘꨜꨘꨲꨗ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cham] + Restricted[Mand] \"◌࡛\"‎ {85B}"
+		"comment": "illegal placement: unsupported combining mark: \"꩙ + ◌࡛\""
 	},
 	{
 		"name": "꩔🌮️𑰏ꩍ🇬🇭ꨏ🧑🏾‍❤️‍💋‍🧑🏼",
@@ -186020,7 +185945,7 @@
 	{
 		"name": "𐰏𐰍𖬰𐰝𐰅𐰼𐱁𐰂𐰂𐰦𐰤𐰍𐱀",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Orkh] + Restricted[Hmng] \"◌𖬰\"‎ {16B30}"
+		"comment": "illegal placement: unsupported combining mark: \"𐰍 + ◌𖬰\""
 	},
 	{
 		"name": "𐰃🇮🇳𐰨𐰆𐰣𐰯🇱🇷𐱃𔒠🧚🏿󠇟𐰅𐰭",
@@ -186095,12 +186020,12 @@
 	{
 		"name": "ᚌᚆꤪᚅᚃᚂᚄᚑᚇᚁ👨🏼‍🔬ᚊ👬🏼",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Kali] \"◌ꤪ\"‎ {A92A}"
+		"comment": "illegal placement: unsupported combining mark: \"ᚆ + ◌ꤪ\""
 	},
 	{
 		"name": "󠇟ᚁᚕᚋꤪᚉ󠆱ᚑᚂᚗ᚜ᚄᚑ👨🏾‍🦰ᚒᚅ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Ogam] + Restricted[Kali] \"◌ꤪ\"‎ {A92A}"
+		"comment": "illegal placement: unsupported combining mark: \"ᚋ + ◌ꤪ\""
 	},
 	{
 		"name": "ᚄ󠇐ᚂ󠅝ᚊᚖ𑰌ᚊᚉ󠄿🧎🏾‍♂️‍➡️ᚙᚋᚉᚑ",
@@ -186120,7 +186045,7 @@
 	{
 		"name": "ᜏᜟᜈꥒᜇ🕹️ᜈᜀᜟ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tglg] + Restricted[Rjng] \"◌ꥒ\"‎ {A952}"
+		"comment": "illegal placement: unsupported combining mark: \"ᜈ + ◌ꥒ\""
 	},
 	{
 		"name": "👩🏼‍🤝‍👩🏻ᜓᜒ𖫛ᜒᜄᜓ",
@@ -186180,7 +186105,7 @@
 	{
 		"name": "ⵄⴷⴴꤪ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tfng] + Restricted[Kali] \"◌ꤪ\"‎ {A92A}"
+		"comment": "illegal placement: unsupported combining mark: \"ⴴ + ◌ꤪ\""
 	},
 	{
 		"name": "ギⵯ󠇧ⵋⴶ☃️",
@@ -186225,7 +186150,7 @@
 	{
 		"name": "ꗋꔣꕫ󠇚ꖇꔩꔬꗙంꖬ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Vaii] + Telugu \"◌ం\"‎ {C02}"
+		"comment": "illegal placement: unsupported combining mark: \"ꗙ + ◌ం\""
 	},
 	{
 		"name": "ꕿ𑘁ꗬꕔꗆꘂꖏ🙇️🇨🇻ꕳꖢ",
@@ -186290,7 +186215,7 @@
 	{
 		"name": "𐌎𑲚𐌈𐌐𐌑𐌉🧆️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Ital] + Restricted[Marc] \"◌𑲚\"‎ {11C9A}"
+		"comment": "illegal placement: unsupported combining mark: \"𐌎 + ◌𑲚\""
 	},
 	{
 		"name": "𐌓𐌓𐌃𐌭𐏏𐌕𐌇𐌟𐌉𐌍",
@@ -186325,7 +186250,7 @@
 	{
 		"name": "󠄈𐎿𐏐𐎯𐨅𐎣𐏊",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Xpeo] + Restricted[Khar] \"◌𐨅\"‎ {10A05}"
+		"comment": "illegal placement: unsupported combining mark: \"𐎯 + ◌𐨅\""
 	},
 	{
 		"name": "𐎬𐼉𐎩𐎩𐎩𐏉🧕🏼𐎦𐎢",
@@ -186360,7 +186285,7 @@
 	{
 		"name": "𐐍𐐆󠄸𐐭𐐍ੱ𐐳",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Gurmukhi \"◌ੱ\"‎ {A71}"
+		"comment": "illegal placement: unsupported combining mark: \"𐐵 + ◌ੱ\""
 	},
 	{
 		"name": "𑂖𐐐𐐿𐐰𐐣𐐗𐐅𐐘𐑂𐐱",
@@ -186385,7 +186310,7 @@
 	{
 		"name": "𐐳𐐒𐍶𐑋󠄇𐐫𐐩𐐖𐐩📤️𐐨𐐶𐑉𐐪𐐮𐐽𐐴󠆅𐐶𐑎🦮️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Dsrt] + Restricted[Perm] \"◌𐍶\"‎ {10376}"
+		"comment": "illegal placement: unsupported combining mark: \"𐐺 + ◌𐍶\""
 	},
 	{
 		"name": "𐦝𐦊🏃🏿‍➡𑧞️",
@@ -186525,7 +186450,7 @@
 	{
 		"name": "ᝁ꛱꛱ꛙ꛰𖨚𖥊𖢎𖦸𖣥𖡢𖣩󠅄𖦬𖣸𖣰𖤭󠆸ꛔꚼ꛰꛰",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Buhd] + Restricted[Bamu] \"◌꛱\"‎ {A6F1}"
+		"comment": "illegal placement: unsupported combining mark: \"ᝁ + ◌꛱\""
 	},
 	{
 		"name": "🦹🏼‍♀ꓙ️",
@@ -186740,7 +186665,7 @@
 	{
 		"name": "𑄤𑄾𑄲᮫",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cakm] + Restricted[Sund] \"◌᮫\"‎ {1BAB}"
+		"comment": "illegal placement: unsupported combining mark: \"𑄾 + ◌᮫\""
 	},
 	{
 		"name": "𒉉၄𑄈၀𑄻𑄹👯🏿‍♀️",
@@ -186810,7 +186735,7 @@
 	{
 		"name": "ꤤ꤃꤀ﬞ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Kali] + Hebrew \"◌ﬞ\"‎ {FB1E}"
+		"comment": "illegal placement: unsupported combining mark: \"꤀ + ◌ﬞ\""
 	},
 	{
 		"name": "ꤠꤟꤠ꤫ꤕᕡꤘ",
@@ -186940,7 +186865,7 @@
 	{
 		"name": "ࡕࡀࡆ󠆡ࡋࡎ󠄾ࡕࡔࡉࡔࡕ࡚ࡌ𑧞ࡗࡃࡎࡔ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Mand] + Restricted[Nand] \"◌𑧞\"‎ {119DE}"
+		"comment": "illegal placement: unsupported combining mark: \"ࡌ + ◌𑧞\""
 	},
 	{
 		"name": "ࡐࡁ࡙ࡐࡘࡃࡀࡂ࡛࡙ࡒ🧑𐰿🏻‍🦼‍➡️ࡀ࡚󠄯",
@@ -187010,7 +186935,7 @@
 	{
 		"name": "󠄡ꯎ𑐸𑐩𑐃󠆞𑑕𑑄𑐖𑑂𑐦𑐁𑑂𑐲𑐹𑐳𑐏🏡️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Mtei] + Restricted[Newa] \"◌𑐸\"‎ {11438}"
+		"comment": "illegal placement: unsupported combining mark: \"ꯎ + ◌𑐸\""
 	},
 	{
 		"name": "𑑒𑐜𐔦𑐭𑐧𑑑𑐿𑑀𑐤𑑒𑐜𑐓𑑙𑐷𑐥🤽🏾𑐧𑑅󠆿𑑃𑐭",
@@ -187025,7 +186950,7 @@
 	{
 		"name": "᱐󠄶ᱭ᱘ᱯᱦ𑐷",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Olck] + Restricted[Newa] \"◌𑐷\"‎ {11437}"
+		"comment": "illegal placement: unsupported combining mark: \"ᱦ + ◌𑐷\""
 	},
 	{
 		"name": "ᱮ᱐𐤮ᱹ󠅷ᱷᱰ󠅜᱐᱒",
@@ -187195,7 +187120,7 @@
 	{
 		"name": "ᮔᮬ᮹ం",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sund] + Telugu \"◌ం\"‎ {C02}"
+		"comment": "illegal placement: unsupported combining mark: \"᮹ + ◌ం\""
 	},
 	{
 		"name": "ᮣᮞᮾᮻ᮰᳄೫",
@@ -187215,7 +187140,7 @@
 	{
 		"name": "ᮝ᮶ᤴᮟᮽᮬ✍️󠅱👩🏿‍🫯‍👩🏾",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sund] + Restricted[Limb] \"◌ᤴ\"‎ {1934}"
+		"comment": "illegal placement: unsupported combining mark: \"᮶ + ◌ᤴ\""
 	},
 	{
 		"name": "𞠢ᮜᮢ᳂ᮇᮑᮤᮦ󠇏᮰🇯🇴󠇩ᮋᮅ󠄔ᮓᮬᮇ",
@@ -187245,7 +187170,7 @@
 	{
 		"name": "ꠍ১𖽴🩺️ꠠꠚꠞꠧ৬꠆ꠦꠃ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sylo] + Restricted[Plrd] \"◌𖽴\"‎ {16F74}"
+		"comment": "illegal placement: unsupported combining mark: \"১ + ◌𖽴\""
 	},
 	{
 		"name": "🤷🏼ꠜ󠆲꠬𐼖󠅁ꠗꠑꠚꠌ꠆ꠓ꠩🚙️",
@@ -187335,7 +187260,7 @@
 	{
 		"name": "𞋜𞋠૾𞋥",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Wcho] + Gujarati \"◌૾\"‎ {AFE}"
+		"comment": "illegal placement: unsupported combining mark: \"𞋠 + ◌૾\""
 	},
 	{
 		"name": "𞋵𞋿🧓️𞋈𞋪ᯜ",
@@ -187530,7 +187455,7 @@
 	{
 		"name": "𖫩𖫦𖫘𖫙𖫐𖫴𖫰󠄔𖫣󠆦𖫕ꤪ🧍‍♂️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Bass] + Restricted[Kali] \"◌ꤪ\"‎ {A92A}"
+		"comment": "illegal placement: unsupported combining mark: \"𖫕 + ◌ꤪ\""
 	},
 	{
 		"name": "󠅟𖫜𖫲🧑🏻‍🐰‍🧑🏿𖫕𖫫🙆🏽‍♂𑫘️𖫑",
@@ -187545,12 +187470,12 @@
 	{
 		"name": "𑱄𑰿𑈴𑰂",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Bhks] + Restricted[Khoj] \"◌𑈴\"‎ {11234}"
+		"comment": "illegal placement: unsupported combining mark: \"𑱄 + ◌𑈴\""
 	},
 	{
 		"name": "𑱦𑱦𑰹𑘷𑱫🙋🏽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Bhks] + Restricted[Modi] \"◌𑘷\"‎ {11637}"
+		"comment": "illegal placement: unsupported combining mark: \"𑱦 + ◌𑘷\""
 	},
 	{
 		"name": "𑰘𑰸𑱃𑰀𑰮𑱑𑰼𑰜𑘁𑱔",
@@ -187570,7 +187495,7 @@
 	{
 		"name": "👩🏻‍💼𑰫𑰍𑰐𑰎ൣ𑰰󠄑𑰗𑰛𑰸𑰹𑰸𑰤𑰱󠆨",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Bhks] + Malayalam \"◌ൣ\"‎ {D63}"
+		"comment": "illegal placement: unsupported combining mark: \"𑰎 + ◌ൣ\""
 	},
 	{
 		"name": "𑰻𑱦𑰽𑰵𑰱🫷🏼𑱀𑰳𖻊𑱑𑰨𑰹𑰵𑰥𑰚𑰕𑰵𑰟👨🏽𑰎",
@@ -187685,7 +187610,7 @@
 	{
 		"name": "𒿰݉𒿚𒿍",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cpmn] + Restricted[Syrc] \"◌݉\"‎ {749}"
+		"comment": "illegal placement: unsupported combining mark: \"𒿰 + ◌݉\""
 	},
 	{
 		"name": "𒿢𒾸𒿭󠄭󠄯ᨋ🥁️",
@@ -187834,7 +187759,7 @@
 	{
 		"name": "𑋙𛲞𛰚𛰴𛱼𛰭𛰵̈🫶️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sind] + Restricted[Dupl] \"◌𛲞\"‎ {1BC9E}"
+		"comment": "illegal placement: unsupported combining mark: \"𑋙 + ◌𛲞\""
 	},
 	{
 		"name": "𛰕𛱄𛲞𛰐𛱨𛰹𛲞𐭝𛱈𛰺𛲀𛱦𛲓",
@@ -187998,7 +187923,7 @@
 	{
 		"name": "ⲅ𑍢𑿐𑌃",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Copt] + Restricted[Gran] \"◌𑍢\"‎ {11362}"
+		"comment": "illegal placement: unsupported combining mark: \"ⲅ + ◌𑍢\""
 	},
 	{
 		"name": "🤽🏼𑍴𑌪௩𐔃𑌝",
@@ -188033,7 +187958,7 @@
 	{
 		"name": "󠆎ᜡ𞀧ᜦ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Hano] + Restricted[Glag] \"◌𞀧\"‎ {1E027}"
+		"comment": "illegal placement: unsupported combining mark: \"ᜡ + ◌𞀧\""
 	},
 	{
 		"name": "ᜨᜳ🧖‍ᱷ♀️",
@@ -188048,12 +187973,12 @@
 	{
 		"name": "𐤥ᜳᜨᜰᜮᜲᜲ᜴ᜫᜬ󠇄󠅊ᜫ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Lydi] + Restricted[Hano] \"◌ᜳ\"‎ {1733}"
+		"comment": "illegal placement: unsupported combining mark: \"𐤥 + ◌ᜳ\""
 	},
 	{
 		"name": "Ꮡ᜴ᜦᜫᜤᜳ󠆨ᜨᜲᜥ󠅋ᜪ᜴ᜲᜱᜨ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Cher] + Restricted[Hano] \"◌᜴\"‎ {1734}"
+		"comment": "illegal placement: unsupported combining mark: \"Ꮡ + ◌᜴\""
 	},
 	{
 		"name": "ᜦᜠᜤ↔️ᜩ𑅘ᜫ󠇗ᜯᜬᜰᜩᜡ👨‍🦲ᜢ󠅶",
@@ -188113,7 +188038,7 @@
 	{
 		"name": "󠄠𔒿ٕ𔐑𔖫𔓝󠄐𔗐𔒠𔑕",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Hluw] + Arabic \"◌ٕ\"‎ {655}"
+		"comment": "illegal placement: unsupported combining mark: \"𔒿 + ◌ٕ\""
 	},
 	{
 		"name": "𔒔𔒇𔘡𔗐𔓸𔓦𔕰𔓝𔑝𔐢𔓙𔑥ꤑ",
@@ -188256,7 +188181,7 @@
 	{
 		"name": "𐨕𐨞🤰🏼󠄞𐨤𛲢𑧞𐨓󠇒󠆠𐨿𐨑",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Khar] + Restricted[Nand] \"◌𑧞\"‎ {119DE}"
+		"comment": "illegal placement: unsupported combining mark: \"𐨤 + ◌𑧞\""
 	},
 	{
 		"name": "𐨚𐨀𐨢𐨂𐨭𐨸𞛗𐨁𐨪𐨲𐨌𐨑𐨆󠄘𐨢𐨨",
@@ -188366,7 +188291,7 @@
 	{
 		"name": "𑂇𑂉𑂸७१२𑂊७𑂗𑶎𑂎󠅑𑂕𑂃𑂪𑂱",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Kthi] + Restricted[Gong] \"◌𑶎\"‎ {11D8E}"
+		"comment": "illegal placement: unsupported combining mark: \"𑂗 + ◌𑶎\""
 	},
 	{
 		"name": "𑂉𑂁𑂨ꨀ५𑂴𑂶𑂻०𑂣३𑂞𑂃६𑂢😩️𑂹𑂲",
@@ -188421,7 +188346,7 @@
 	{
 		"name": "𐤰𑐷𐤰𐤤𐤸𐤵𐤤",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Lydi] + Restricted[Newa] \"◌𑐷\"‎ {11437}"
+		"comment": "illegal placement: unsupported combining mark: \"𐤰 + ◌𑐷\""
 	},
 	{
 		"name": "𐤡𐤳𖣫𐤹𐤿𐤱𐤲🪄️🧎🏾‍♀️‍➡️",
@@ -188470,7 +188395,7 @@
 	{
 		"name": "𑻧𑻦𑻲𑻬𑻡𑻤𑻡𑻯𑻵𑻠𑻬𑻵ྤ𑻩𑻦𑻮",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Maka] + Tibetan \"◌ྤ\"‎ {FA4}"
+		"comment": "illegal placement: unsupported combining mark: \"𑻬 + ◌ྤ\""
 	},
 	{
 		"name": "𑻵𑻶𐳿𑻥𑻵󠇪🥯️𑻦︅𑻴𑻵𑻣𑻭𑻶🔯️𑻦🏉️",
@@ -188665,7 +188590,7 @@
 	{
 		"name": "𐧞︃𑧞𐦨𐧰𐧝🇵🇦",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Merc] + Restricted[Nand] \"◌𑧞\"‎ {119DE}"
+		"comment": "illegal placement: unsupported combining mark: \"𐧞 + ◌𑧞\""
 	},
 	{
 		"name": "𐦧𐦴𐦫𐦽𑀫𐧭𐧞𐧄𐧒💽️",
@@ -188675,7 +188600,7 @@
 	{
 		"name": "𐦿𐦧𐦽𐧷𐦬𐦩𐧚𐦥𐧻𐧞𐧬𐧲݉",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Merc] + Restricted[Syrc] \"◌݉\"‎ {749}"
+		"comment": "illegal placement: unsupported combining mark: \"𐧲 + ◌݉\""
 	},
 	{
 		"name": "󠇃𐦶𐧆𐧹𐦱𐦡𐧒▫️𐦾𐧏𐧧𐧁𐿂𐧾𐦨",
@@ -188690,7 +188615,7 @@
 	{
 		"name": "𐦳𐦼𐧝𐦵𐧅𐦲𐦭𐧳𐧉󠇚𐧻𐧄󠇏𐦦︆ం🥤️🤼🏽‍♀️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Merc] + Telugu \"◌ం\"‎ {C02}"
+		"comment": "illegal placement: unsupported combining mark: \"𐦦 + ◌ం\""
 	},
 	{
 		"name": "𑘺👩🏻‍❤️‍👩🏽𞀧",
@@ -188720,7 +188645,7 @@
 	{
 		"name": "𑘑𑘯🦏️𑘄𑙕𑘫𑘫𑘽𑘩𑘆𑘤𑘟𑘪𑘸𑙑݉𑙗𑘁",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Modi] + Restricted[Syrc] \"◌݉\"‎ {749}"
+		"comment": "illegal placement: unsupported combining mark: \"𑙑 + ◌݉\""
 	},
 	{
 		"name": "𑙓𐥕𑘜◽️𑘓𑘆𑘚𑘗𑘐𑘤𑘐𑘽𑙓👩🏽‍🤝‍👩🏻𑘺",
@@ -188775,7 +188700,7 @@
 	{
 		"name": "𞓤𞓓𑶎𞓘𞓮𞓯𞓐𞓤𞓮🤽🏽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Nagm] + Restricted[Gong] \"◌𑶎\"‎ {11D8E}"
+		"comment": "illegal placement: unsupported combining mark: \"𞓓 + ◌𑶎\""
 	},
 	{
 		"name": "𞓔🧑ꯎ🏻‍❤️‍🧑🏽𞓠𞓘𞓦",
@@ -188945,7 +188870,7 @@
 	{
 		"name": "𐒜󠅢𐒇𐒎𐒉𐒊ྭ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Osma] + Tibetan \"◌ྭ\"‎ {FAD}"
+		"comment": "illegal placement: unsupported combining mark: \"𐒊 + ◌ྭ\""
 	},
 	{
 		"name": "𐒅𑂖𐒂𐒌𐒎𐒤𛲢𐒂󠄼𐒡",
@@ -189040,7 +188965,7 @@
 	{
 		"name": "𐡴𐡣𐡾𐡶𐡬𐡯𐡰𐡩𐡼𐡽𐡨🤶🏾𐡮𐡫𐡨𐡤𐡷૾𐡴𐡢𐡾",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Palm] + Gujarati \"◌૾\"‎ {AFE}"
+		"comment": "illegal placement: unsupported combining mark: \"𐡷 + ◌૾\""
 	},
 	{
 		"name": "𑫆👨🏽‍🦽𐌞",
@@ -189140,7 +189065,7 @@
 	{
 		"name": "ꡱꡝꡍ󠇧ꡣꡌꡉꡐꡈ✨️ꡪꡊꡏꡘ🔜️ꡑ𐨅",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Phag] + Restricted[Khar] \"◌𐨅\"‎ {10A05}"
+		"comment": "illegal placement: unsupported combining mark: \"ꡑ + ◌𐨅\""
 	},
 	{
 		"name": "𐪉ꡝꡕꡀꡚꡈꡀꡥꡎꡠ᠏ꡋꡭꡣꡢꡏꡢꡎ👩🏽‍❤️‍💋‍👨🏼",
@@ -189165,7 +189090,7 @@
 	{
 		"name": "𐭿𐭫𐭯𐭮𐭺𐭤𐭬𐭹𖄮𐭫󠆾𐭨𐭽",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Phli] + Restricted[Gukh] \"◌𖄮\"‎ {1612E}"
+		"comment": "illegal placement: unsupported combining mark: \"𐭹 + ◌𖄮\""
 	},
 	{
 		"name": "𐭢𐭨󠅤𐭯𐭻𐭻󠆕𐭯𐭽👨‍🍼󠆋𐭥ы𐭩",
@@ -189190,7 +189115,7 @@
 	{
 		"name": "𐮜𐮑𐮪𑼷𐮎𐮀𐮀",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Phlp] + Restricted[Kawi] \"◌𑼷\"‎ {11F37}"
+		"comment": "illegal placement: unsupported combining mark: \"𐮪 + ◌𑼷\""
 	},
 	{
 		"name": "𐍶𐮏𐮂𐮐𐮋𐮩𐮫𐮑𐮌𐮉",
@@ -189330,7 +189255,7 @@
 	{
 		"name": "𐩡🖼️𐩤᮫𐩻𐩣",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sarb] + Restricted[Sund] \"◌᮫\"‎ {1BAB}"
+		"comment": "illegal placement: unsupported combining mark: \"𐩤 + ◌᮫\""
 	},
 	{
 		"name": "𐩠🧍🏿‍♂ꯎ️𐩨𐩹𐩯",
@@ -189340,7 +189265,7 @@
 	{
 		"name": "𐩰𐩬𐩬𐩳𐩣𐩪𐩰𐨅𐩯𐩲𐩴🧛🏼‍♀️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sarb] + Restricted[Khar] \"◌𐨅\"‎ {10A05}"
+		"comment": "illegal placement: unsupported combining mark: \"𐩰 + ◌𐨅\""
 	},
 	{
 		"name": "𐩼𐩭𐩢𐧮𐩷𐩣𐩯𐩹𐩣𐩲𐩦𐩭🧚🏻‍♀️",
@@ -189380,7 +189305,7 @@
 	{
 		"name": "𐑵󠄶𐑢𐑺󠅾𐑰𐑚𐑪𐑸𐑡󠅓𐑲̈➰️𐑶",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Shaw] + Restricted[Syrc] \"◌̈\"‎ {308}"
+		"comment": "illegal placement: unsupported combining mark: \"𐑲 + ◌̈\""
 	},
 	{
 		"name": "𐑳𑃕𐑴👨🏻‍❤️‍💋‍👨🏽𐑠𐑱𐑫𐑲𐑦𐑤",
@@ -189573,7 +189498,7 @@
 	{
 		"name": "𐼗︉᩶𐼟𐼁𐼒𐼟",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sogo] + Restricted[Lana] \"◌᩶\"‎ {1A76}"
+		"comment": "illegal placement: unsupported combining mark: \"𐼗 + ◌᩶\""
 	},
 	{
 		"name": "𐼋𐼂𐼢𐼒󠄊𐼃👱🏾𑍦𐼖",
@@ -189693,7 +189618,7 @@
 	{
 		"name": "︌𑚏𑚏𑚁𑚉𑛈𑚲𑚖𑚎𐨅𑛆𑚢𑚲𑚷🧑🏽‍🦳",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Takr] + Restricted[Khar] \"◌𐨅\"‎ {10A05}"
+		"comment": "illegal placement: unsupported combining mark: \"𑚎 + ◌𐨅\""
 	},
 	{
 		"name": "𑚈𑚐𖫛⏲️𑚕𑚢𑚍𑚹🚣️𑚩𑛂𑚌𑚎𑚖𑚴𑚠𑚃",
@@ -189703,7 +189628,7 @@
 	{
 		"name": "𑚡𑚏𑚢𑚨𑚱𑚐𑚍𑚵🌨️𑚄𑚮𑏉𑚶👨🏿‍🌾𑚀󠇧𑚟🎅🏼",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Takr] + Restricted[Tutg] \"◌𑏉\"‎ {113C9}"
+		"comment": "illegal placement: unsupported combining mark: \"𑚄 + ◌𑏉\""
 	},
 	{
 		"name": "𗄶󠆆𗐄𑼋",
@@ -189803,12 +189728,12 @@
 	{
 		"name": "𖪊𖪯𖩹𖫃𑠵𖫂𖪴𖪌𖪍𖪨𖪇𖪗𖪅𖪃🪋️𖪁𖪞𖩶",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tnsa] + Restricted[Dogr] \"◌𑠵\"‎ {11835}"
+		"comment": "illegal placement: unsupported combining mark: \"𖫃 + ◌𑠵\""
 	},
 	{
 		"name": "𖪦𖪫👩🏾‍❤️‍👨🏻𖪫𖽴𖪄𖪽𖪉𖪶𖫃𖪴𖪏𖪞𖪏𖫀",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tnsa] + Restricted[Plrd] \"◌𖽴\"‎ {16F74}"
+		"comment": "illegal placement: unsupported combining mark: \"𖪫 + ◌𖽴\""
 	},
 	{
 		"name": "󠅦𞊜𐖦𞊞",
@@ -189823,7 +189748,7 @@
 	{
 		"name": "𞊡𞊦𞊧𞊮𞊘️𞊑𞊩𑓃𞊮",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Toto] + Restricted[Tirh] \"◌𑓃\"‎ {114C3}"
+		"comment": "illegal placement: unsupported combining mark: \"𞊩 + ◌𑓃\""
 	},
 	{
 		"name": "𞊖󠄆𞊔󠄵𞊛𞊒𞊭👩🏻‍🦯𑿁󠄎",
@@ -189868,7 +189793,7 @@
 	{
 		"name": "𐎜𐎓𐎌𐎙𐎌𐎟𑖳𐎁𐎕𐎍󠇟𐎔𐎏󠅥𐎋𐎊",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Ugar] + Restricted[Sidd] \"◌𑖳\"‎ {115B3}"
+		"comment": "illegal placement: unsupported combining mark: \"𐎟 + ◌𑖳\""
 	},
 	{
 		"name": "𐎇𐎟𐎇𐎇𐎋𐎔𐎃🦹🏻‍♂️𐎈🤲🏼𐎉𐑑𐎗𐎏",
@@ -190043,7 +189968,7 @@
 	{
 		"name": "𐵹𐵜𐶎𐵷𐵷𑏉𐵱󠆍𐵭𐵲𐵣𐵩𐵉☝🏻𐵰",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Gara] + Restricted[Tutg] \"◌𑏉\"‎ {113C9}"
+		"comment": "illegal placement: unsupported combining mark: \"𐵷 + ◌𑏉\""
 	},
 	{
 		"name": "𐵅𐵮󠆖𐵳𐶏𐵩𐵩𐵪𐵿𐵞𐵽𐵫᧓𐵹𐵻𐶁𐵱𐵲𐵈",
@@ -190068,7 +189993,7 @@
 	{
 		"name": "𐖚𖄥𖄆𖄛𖄸𖄘𖄓𖄂𖄴𖄗",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Vith] + Restricted[Gukh] \"◌𖄥\"‎ {16125}"
+		"comment": "illegal placement: unsupported combining mark: \"𐖚 + ◌𖄥\""
 	},
 	{
 		"name": "𖄁𖄥𖄟𖄐𖄳ㆨ𖄘𖄱𖄛𖄣𖄚𖄆𖄖",
@@ -190103,7 +190028,7 @@
 	{
 		"name": "𖵬𖵋𖵁𖵸𖵈ୁ𖵴󠄏󠄭𖵖",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Krai] + Oriya \"◌ୁ\"‎ {B41}"
+		"comment": "illegal placement: unsupported combining mark: \"𖵈 + ◌ୁ\""
 	},
 	{
 		"name": "🥶️𖵷𖵱𐌹𖵱𖵃𖵢𖵓𖵒𖵬𖵱𖵹",
@@ -190158,7 +190083,7 @@
 	{
 		"name": "𞗩𞗯𞗮𞗧𞗮𞗙𞗯𞗲𞗫࡛󠄖𞗹𞗫𞗖𞗶𞗯𞗬𞗯𞗦𞗿𞗯🇸🇻",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Onao] + Restricted[Mand] \"◌࡛\"‎ {85B}"
+		"comment": "illegal placement: unsupported combining mark: \"𞗫 + ◌࡛\""
 	},
 	{
 		"name": "𑯄𑯸ㆨ̀",
@@ -190193,12 +190118,12 @@
 	{
 		"name": "𑯚́𑯉𑯒̃̀𑯒̀𑯊𑯅𑯟𑯒𑯑́̃𑯆̀𖄮𑯇𑯋𑯆̃",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Sunu] + Restricted[Gukh] \"◌𖄮\"‎ {1612E}"
+		"comment": "illegal placement: unsupported combining mark: \"𑯆 + ◌𖄮\""
 	},
 	{
 		"name": "𐗝́ౄ𐗯",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Todr] + Telugu \"◌ౄ\"‎ {C44}"
+		"comment": "illegal placement: unsupported combining mark: \"𐗝 + ◌ౄ\""
 	},
 	{
 		"name": "𐗄̄𐗔𐗢𐗳ര̇",
@@ -190493,7 +190418,7 @@
 	{
 		"name": "𾩠🇦🇿𾾸𽝉𽁑𾙆𿦆𿒀𾖔𾸲ୁ⁠",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Seal] + Oriya \"◌ୁ\"‎ {B41}"
+		"comment": "illegal placement: unsupported combining mark: \"𾸲 + ◌ୁ\""
 	},
 	{
 		"name": "𾖮󠇃𽵽🧑🏽‍🦰𽙕𐡽𽅶𾟒󠆐𾲌𽺪𽋟𿈴",

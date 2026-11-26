@@ -209,6 +209,12 @@ export default [
 	{name: 'ก฿\u{E31}', error: true, comment: 'Inherited: Thai mark on ฿ (a Thai extra)'},
 	{name: 'ก\u{E31}฿', comment: 'Inherited: Thai mark on a Thai letter, then ฿'},
 
+	// a combining mark outside the label's group: "unsupported combining mark" (message only, was illegal mixture)
+	{name: 'x\u{302}', error: true, comment: 'Unsupported mark: no precomposed x̂'},
+	{name: 'İzmir', error: true, comment: 'Unsupported mark: İ maps to i + COMBINING DOT ABOVE'},
+	{name: 'ab\u{64B}', error: true, comment: 'Unsupported mark: Arabic mark on Latin'},
+	{name: 'ა\u{301}', error: true, comment: "Unsupported mark: COMBINING ACUTE isn't Georgian"},
+
 	// confusables synced with Unicode 18 (rules/confuse.ts): registered names stay valid
 	{name: 'бот', comment: 'Confusable: Cyrillic word vs new Coptic lookalikes'},
 	{name: 'сша', comment: 'Confusable: Unicode 18 moved ш into the w set (restored)'},

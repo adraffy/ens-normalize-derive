@@ -50,7 +50,7 @@ Every script must be accounted for exactly once. It is either the `test` of a gr
 The groups with `cm: true` are Common, Latin, Cyrillic, Greek, Han, Japanese and Korean. In these groups, a character survives only if its NFD contains no combining mark, or it is listed in [rules/cm.ts](../rules/cm.ts). Every whitelist entry is a precomposed letter (`é`, `ガ`), so in practice:
 
 - `e + ◌́` is fine: the label is NFC'd first and composes to `é`, which is whitelisted.
-- `x + ◌̂` fails: it doesn't compose, and bare marks aren't members of these groups.
+- `x + ◌̂` fails with `unsupported combining mark: "x + ◌̂"`: it doesn't compose, and bare marks aren't members of these groups.
 - Accented letters not on the whitelist (`ẹ`, `ơ`) are purged from the group, and from the spec entirely if no other group keeps them.
 
 The format also supports base + mark sequences without a precomposed form (`spec.groups[].cm`), but no rule uses them today, so every `cm` array is empty.
@@ -91,8 +91,8 @@ For each label (after mapping, NFC and emoji tokenizing):
 2. **Placement.** No leading combining mark, or combining mark right after an emoji. Fenced characters (apostrophe ’, fraction slash ⁄, katakana middle dot ・, maqaf ־) can't lead, trail, or touch each other.
 3. **Determine the group.** Start from all groups in priority order. For each distinct character, keep only the groups that contain it, and stop once one group remains. The first remaining group is the label's group, which becomes its `type`.
    - If no group contains the character at all: `disallowed character`.
-   - If some group contains it but none of the remaining ones does: `illegal mixture: <first remaining group> + <first group where the character is primary> "x"`.
-4. **Check the group.** Every character must be in that group. In groups without a CM whitelist, every combining mark must follow a primary character, and the nonspacing-mark checks apply.
+   - If some group contains it but none of the remaining ones does: `illegal mixture: <first remaining group> + <first group where the character is primary> "x"`. If that character is a combining mark, the error is `illegal placement: unsupported combining mark: "<base> + <mark>"` instead (new after 1.11.1, same outcome).
+4. **Check the group.** Every character must be in that group (same errors as step 3). In groups without a CM whitelist, every combining mark must follow a primary character, and the nonspacing-mark checks apply.
 5. **Whole-script confusable check.** Walk the distinct characters:
    - A character in exactly one group and in no whole is **unique**: no other group can spell this label, so the check passes.
    - A **confused** character narrows the candidate groups to the other groups that hold a lookalike of it. These are the groups of its whole's other members, minus its own. If none remain, the check passes.
@@ -103,27 +103,27 @@ For each label (after mapping, NFC and emoji tokenizing):
 
 All of these come from `output/spec.json`:
 
-| label        | result                                        | why                                                                  |
-| ------------ | --------------------------------------------- | -------------------------------------------------------------------- |
-| `raffy`      | ASCII                                         | fast path                                                            |
-| `café`       | Latin                                         | é is whitelisted                                                     |
-| `€100`       | Common                                        | no letters: only shared characters                                   |
-| `💎100`      | Common                                        | emoji are skipped; the rest is shared                                |
-| `ab日`       | Han                                           | a-z are extras of Han, Korean and Japanese. Han is first in priority |
-| `ラーメンab` | Japanese                                      | katakana narrows to Japanese                                         |
-| `ξabc`       | Latin                                         | ξ is Common through the scx override                                 |
-| `аbc`        | illegal mixture: Cyrillic + Latin "b"         | no group has both                                                    |
-| `аре`        | whole-script confusable: Cyrillic/Latin       | а р е all have Latin twins                                           |
-| `αβγ`        | whole-script confusable: Greek/Latin          | same, against Latin                                                  |
-| `привет`     | Cyrillic                                      | every letter is confusable, but no one group has twins for all six   |
-| `ㄐㄐㄐ`     | Restricted[Bopo]                              | Limited Use script                                                   |
-| `中ㄐ`       | illegal mixture: Han + Restricted[Bopo] "ㄐ"  | restricted groups don't mix                                          |
-| `x̂`          | illegal mixture: Latin + Restricted[Cher] "◌̂" | no precomposed form. See the quirk below                             |
-| `'ab`        | illegal placement: leading apostrophe         | fenced                                                               |
+| label        | result                                       | why                                                                  |
+| ------------ | -------------------------------------------- | -------------------------------------------------------------------- |
+| `raffy`      | ASCII                                        | fast path                                                            |
+| `café`       | Latin                                        | é is whitelisted                                                     |
+| `€100`       | Common                                       | no letters: only shared characters                                   |
+| `💎100`      | Common                                       | emoji are skipped; the rest is shared                                |
+| `ab日`       | Han                                          | a-z are extras of Han, Korean and Japanese. Han is first in priority |
+| `ラーメンab` | Japanese                                     | katakana narrows to Japanese                                         |
+| `ξabc`       | Latin                                        | ξ is Common through the scx override                                 |
+| `аbc`        | illegal mixture: Cyrillic + Latin "b"        | no group has both                                                    |
+| `аре`        | whole-script confusable: Cyrillic/Latin      | а р е all have Latin twins                                           |
+| `αβγ`        | whole-script confusable: Greek/Latin         | same, against Latin                                                  |
+| `привет`     | Cyrillic                                     | every letter is confusable, but no one group has twins for all six   |
+| `ㄐㄐㄐ`     | Restricted[Bopo]                             | Limited Use script                                                   |
+| `中ㄐ`       | illegal mixture: Han + Restricted[Bopo] "ㄐ" | restricted groups don't mix                                          |
+| `x̂`          | unsupported combining mark: "x + ◌̂"          | no precomposed form, and bare marks aren't in Latin                  |
+| `'ab`        | illegal placement: leading apostrophe        | fenced                                                               |
 
-## Quirks
+## Changed error messages
 
-- **Odd group in CM errors.** `x̂` names Cherokee because U+0302's script set includes `Cher`, and Cherokee (restricted, no CM whitelist) is the first group where the bare mark is primary. 1.11.1 reports the same. 35 registered labels hit this, mostly Turkish: `İ` maps (UTS-46) to `i` + U+0307, so `İzmir` fails with `illegal mixture: Latin + Restricted[Syrc] "◌̇"`. The message would be clearer if it said "unsupported combining mark".
+- **Unsupported combining marks.** A bare mark that isn't in the label's group used to be an illegal mixture naming the first group where the mark is primary. That group was usually unrelated: `x̂` named Cherokee, and `İzmir` (`İ` maps to `i` + U+0307 under UTS-46) named Hebrew in 1.11.1 and Syriac now. Both are now `illegal placement: unsupported combining mark: "x + ◌̂"`, naming the mark's base. Only the message changed: 37 registered labels, mostly Turkish. (`ı`, dotless i, is separately disallowed in [rules/disallow/latin.ts](../rules/disallow/latin.ts).)
 
 ## Where to change things
 
