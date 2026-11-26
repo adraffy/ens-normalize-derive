@@ -3,7 +3,7 @@
 		"name": "version",
 		"unicode": "18.0.0 (2026-11-25T20:48:52.431Z)",
 		"cldr": "48.2 (2026-03-28T19:59:34.849Z)",
-		"spec_hash": "925a274af874e5d513fe56e752c13e44fb55e9e9debb55e79bf0a2a7eb4e6f6e",
+		"spec_hash": "c13d060aedbd60dce315414fc7c01f90e7081048710fcd39bdb9971d957bea8c",
 		"nf_hash": "5656c9138a6daf981ff512be766d31ccbf254edd4b59bea29a5d0cb647fecbe3"
 	},
 	{
@@ -636,19 +636,37 @@
 		"comment": "Non-whitelisted CM: composes to ȧ"
 	},
 	{
-		"name": "⃃",
-		"error": true,
-		"comment": "Unreviewed 18.0: UAE DIRHAM SIGN"
-	},
-	{
 		"name": "𐻉",
 		"error": true,
 		"comment": "Unreviewed 18.0: Arabic Extended-C"
 	},
 	{
+		"name": "⃃",
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN, Arabic only (rules/scripts.ts)"
+	},
+	{
+		"name": "ب⃃",
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN with Arabic"
+	},
+	{
+		"name": "a⃃",
+		"error": true,
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN is not Latin"
+	},
+	{
+		"name": "⃂",
+		"error": true,
+		"comment": "Reviewed 18.0: RUFIYAA SIGN disallowed"
+	},
+	{
+		"name": "⃄",
+		"error": true,
+		"comment": "Reviewed 18.0: OMANI RIAL SIGN disallowed"
+	},
+	{
 		"name": "𛅨",
 		"error": true,
-		"comment": "Unreviewed 18.0: small archaic kana"
+		"comment": "Reviewed 18.0: small archaic katakana ye disallowed"
 	},
 	{
 		"name": "⹠",
@@ -28694,16 +28712,6 @@
 		"name": "₻",
 		"error": true,
 		"comment": "disallowed character: \"₻\"‎ {20BB}"
-	},
-	{
-		"name": "⃂",
-		"error": true,
-		"comment": "disallowed character: \"⃂\"‎ {20C2}"
-	},
-	{
-		"name": "⃄",
-		"error": true,
-		"comment": "disallowed character: \"⃄\"‎ {20C4}"
 	},
 	{
 		"name": "⃐",
@@ -62601,7 +62609,7 @@
 		"name": "ࡰ"
 	},
 	{
-		"name": "ࣂ"
+		"name": "ࣃ"
 	},
 	{
 		"name": "ػ"
@@ -66775,9 +66783,9 @@
 		"name": "𽜒"
 	},
 	{
-		"name": "ûۋ",
+		"name": "ûی",
 		"error": true,
-		"comment": "illegal mixture: Latin + Arabic \"ۋ\"‎ {6CB}"
+		"comment": "illegal mixture: Latin + Arabic \"ی\"‎ {6CC}"
 	},
 	{
 		"name": "ऽ슺",
@@ -176230,15 +176238,15 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𐹨ࣲﻬ𐹤࣪د",
-		"norm": "𐹨ࣲه𐹤࣪د"
+		"name": "𐹨ࣲﻬ𐹤࣪ذ",
+		"norm": "𐹨ࣲه𐹤࣪ذ"
 	},
 	{
-		"name": "ݙ𞺮ﵩ﮲ﶔﯢڈی🇧🇬",
-		"norm": "ݙسشجي﮲هممۉڈی🇧🇬"
+		"name": "ݙ𞺮ﵩ﮲ﶔﯢډی🇧🇬",
+		"norm": "ݙسشجي﮲هممۉډی🇧🇬"
 	},
 	{
-		"name": "ًﶵ🍯️ػ࢙ݓࣀﲫڵ࢞۵",
+		"name": "ًﶵ🍯️ػ࢙ݓࣁﲫڵ࢞۶",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
@@ -176247,12 +176255,12 @@
 		"norm": "ثࣽء﵈ڄࢗ﯄ٍࢡ﵄﵌ضي𐹷ںࣀ"
 	},
 	{
-		"name": "ﱔ﯌پ𞹮ࢎࢫ﷉🍖️ٹࢗﭱۓࣵﱮࢍ󠆙ࡿ",
-		"norm": "هي﯌پسࢎࢫ﷉🍖ٹࢗڦۓࣵبىࢍࡿ"
+		"name": "ﱔ﯌پ𞹮࢏ࢫ﷉🍖️ٹࢗﭱۓࣵﱮࢎ󠆙ࢀ",
+		"norm": "هي﯌پس࢏ࢫ﷉🍖ٹࢗڦۓࣵبىࢎࢀ"
 	},
 	{
-		"name": "ﳂ󠆞𐹹ﰠ﵁ﶜۇﴯ𐹸ﺧڿ﯏ࣀ𞺆ظﺌْࣺࣾةٕ",
-		"norm": "قح𐹹صح﵁يممۇشخ𐹸خڿ﯏ࣀزظئْࣺࣾةٕ"
+		"name": "ﳂ󠆞𐹹ﰠ﵁ﶜۇﴯ𐹸ﺧۀ﯏ࣁ𞺆ظﺌْࣺࣾةٕ",
+		"norm": "قح𐹹صح﵁يممۇشخ𐹸خۀ﯏ࣁزظئْࣺࣾةٕ"
 	},
 	{
 		"name": "𲽌𧚇󠆅",
@@ -181012,17 +181020,17 @@
 		"comment": "illegal placement: unsupported combining mark: \"𐒇 + ◌𐻿\""
 	},
 	{
-		"name": "𐹨ࣲ𑆟ﻬ𐹤࣪د",
+		"name": "𐹨ࣲ𑆟ﻬ𐹤࣪ذ",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Shrd] \"𑆟\"‎ {1119F}"
 	},
 	{
-		"name": "ݙ𞺮ﵩ﮲𔘓ﶔﯢڈی🇧🇬",
+		"name": "ݙ𞺮ﵩ﮲𔘓ﶔﯢډی🇧🇬",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Hluw] \"𔘓\"‎ {14613}"
 	},
 	{
-		"name": "ًﶵ🍯️𐫠ػ࢙ݓࣀﲫڵ࢞۵",
+		"name": "ًﶵ🍯️𐫠ػ࢙ݓࣁﲫڵ࢞۶",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
@@ -181032,12 +181040,12 @@
 		"comment": "illegal mixture: Common + Arabic \"ث\"‎ {62B}"
 	},
 	{
-		"name": "ﱔ﯌پ𖬽𞹮ࢎࢫ﷉🍖️ٹࢗﭱۓࣵﱮࢍ󠆙ࡿ",
+		"name": "ﱔ﯌پ𖬽𞹮࢏ࢫ﷉🍖️ٹࢗﭱۓࣵﱮࢎ󠆙ࢀ",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Hmng] \"𖬽\"‎ {16B3D}"
 	},
 	{
-		"name": "ﳂ𐮏󠆞𐹹ﰠ﵁ﶜۇﴯ𐹸ﺧڿ﯏ࣀ𞺆ظﺌْࣺࣾةٕ",
+		"name": "ﳂ𐮏󠆞𐹹ﰠ﵁ﶜۇﴯ𐹸ﺧۀ﯏ࣁ𞺆ظﺌْࣺࣾةٕ",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Phlp] \"𐮏\"‎ {10B8F}"
 	},
@@ -181297,9 +181305,9 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "চ👐🏼ঙࢬ৭৮ৣ়🤰🏼",
+		"name": "চ👐🏼ঙࢳ৭৮ৣ়🤰🏼",
 		"error": true,
-		"comment": "illegal mixture: Bengali + Arabic \"ࢬ\"‎ {8AC}"
+		"comment": "illegal mixture: Bengali + Arabic \"ࢳ\"‎ {8B3}"
 	},
 	{
 		"name": "২ৠ২্৪ু𑆟🧑🏿‍❤️‍🧑🏻",
@@ -182281,7 +182289,7 @@
 		"comment": "illegal mixture: Restricted[Yiii] + Restricted[Cakm] \"𑄎\"‎ {1110E}"
 	},
 	{
-		"name": "ࢫꋚ󠄽････ꐓ･ꁖꄴ･ꄴ",
+		"name": "ࢬꋚ󠄽････ꐓ･ꁖꄴ･ꄴ",
 		"error": true,
 		"comment": "illegal placement: middle dot + middle dot"
 	},
@@ -183830,9 +183838,9 @@
 		"comment": "illegal placement: emoji + combining mark: \"🇦🇩 + ◌𑜣\""
 	},
 	{
-		"name": "𑜓𑜁𑜢𑜅𑝀󠅼𑜦🙍🏾‍♀️𑜸𑜪𑜟👆🏽ࢬ𑜑",
+		"name": "𑜓𑜁𑜢𑜅𑝀󠅼𑜦🙍🏾‍♀️𑜸𑜪𑜟👆🏽ࢳ𑜑",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Ahom] + Arabic \"ࢬ\"‎ {8AC}"
+		"comment": "illegal mixture: Restricted[Ahom] + Arabic \"ࢳ\"‎ {8B3}"
 	},
 	{
 		"name": "𑜝𑝁𑜥𑜁𑗁𑜔𑜡𑜇𑜚𑝃𑜔𑜺𑜖󠅂𑜻💰️𑜰𑜢𑜢𑜥𑝄",
@@ -184636,9 +184644,9 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𑽋𑼃󠄞𑼂𑼩ࢬ𑼯𑼇𑼛𑽀𑼜𑼰𑼝𑼱𑽓𑼙𑼗𑽗𑼟𑼫𑼏𑼶",
+		"name": "𑽋𑼃󠄞𑼂𑼩ࢳ𑼯𑼇𑼛𑽀𑼜𑼰𑼝𑼱𑽓𑼙𑼗𑽗𑼟𑼫𑼏𑼶",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Kawi] + Arabic \"ࢬ\"‎ {8AC}"
+		"comment": "illegal mixture: Restricted[Kawi] + Arabic \"ࢳ\"‎ {8B3}"
 	},
 	{
 		"name": "𐨯𛰪𐨨𐩂",
@@ -185907,7 +185915,7 @@
 		"comment": "illegal mixture: Malayalam + Restricted[Sora] \"𑃗\"‎ {110D7}"
 	},
 	{
-		"name": "🧑‍🩰ࢫ𑃔𑃠𑃝𑃘𑃸𑃰",
+		"name": "🧑‍🩰ࢬ𑃔𑃠𑃝𑃘𑃸𑃰",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Sora] \"𑃔\"‎ {110D4}"
 	},
@@ -186711,7 +186719,7 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𐥍𐥐𐥆𐥇𐥃𐥄🕵🏿‍ࢬ♀️",
+		"name": "𐥍𐥐𐥆𐥇𐥃𐥄🕵🏿‍ࢳ♀️",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
@@ -186796,9 +186804,9 @@
 		"comment": "illegal mixture: Restricted[Tols] + Restricted[Xsux] \"𒑒\"‎ {12452}"
 	},
 	{
-		"name": "𑶷𑷆𑶴𑷕𑶿︀𑷐🐪️︈𑷋󠄣𑷈𑷠𑷧𑷊𑷌ࢬ𑷚",
+		"name": "𑶷𑷆𑶴𑷕𑶿︀𑷐🐪️︈𑷋󠄣𑷈𑷠𑷧𑷊𑷌ࢳ𑷚",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Tols] + Arabic \"ࢬ\"‎ {8AC}"
+		"comment": "illegal mixture: Restricted[Tols] + Arabic \"ࢳ\"‎ {8B3}"
 	},
 	{
 		"name": "𑶴💁🏽‍♂️𑷩𑶺𑷦󠆼𑷔🤳🏽ㆲ󠄠🇸🇴𑷨💉️𑷚󠅷",

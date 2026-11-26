@@ -19,7 +19,7 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 | section of `spec.json` | 1.11.1 → 18                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------- |
-| valid (in some group)  | +12,623, −428                                                                                              |
+| valid (in some group)  | +12,624, −428                                                                                              |
 | emoji                  | +19 sequences: 🛙 🪋 🪌 🪍 🫌 🫝 🫫 🫹 🫺, plus skin tones of 🫹 🫺                                        |
 | mapped                 | −6 (targets now disallowed: Ҥ Ҵ, three Tibetan vowel signs, Georgian Mtavruli U+1CB9). None added.         |
 | ignored                | unchanged                                                                                                  |
@@ -29,9 +29,9 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 **New in Unicode 18** (13,007 characters):
 
-- **12,623 are valid,** all in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels.
+- **12,624 are valid.** 12,623 are in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels. The other is ⃃ UAE DIRHAM SIGN, reviewed and valid in Arabic only.
 - **9 new emoji.**
-- **375 are not valid.** 53 are letters, marks and signs in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 234 more are disallowed by block rules (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
+- **374 are not valid.** 49 are letters, marks and signs in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, one Han ideograph, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 237 more are disallowed by rules: the reviewed ⃂ RUFIYAA SIGN, ⃄ OMANI RIAL SIGN and 𛅨 small archaic katakana ye, and whole blocks (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 
 **Disallowed although valid in 1.11.1** (428 characters):
 

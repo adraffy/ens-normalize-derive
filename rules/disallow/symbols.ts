@@ -8,7 +8,7 @@ export default [
 	{block: 'Vedic Extensions', except: [
 		0x1CFA, // (ᳺ) VEDIC SIGN DOUBLE ANUSVARA ANTARGOMUKHA
 	]},
-	// 20A0..20CF Currency Symbols: 12/34 denied
+	// 20A0..20CF Currency Symbols: 14/37 denied
 	{block: 'Currency Symbols', cps: [
 		// currency (dead)
 		0x20AF, // (₯) DRACHMA SIGN
@@ -23,6 +23,9 @@ export default [
 		0x20B6, // (₶) LIVRE TOURNOIS SIGN
 		0x20B7, // (₷) SPESMILO SIGN
 		0x20BB, // (₻) NORDIC MARK SIGN
+		// 20261126: new in 18.0, reviewed
+		0x20C2, // (⃂) RUFIYAA SIGN
+		0x20C4, // (⃄) OMANI RIAL SIGN
 	]},
 	// 2100..214F Letterlike Symbols: 21/80 denied
 	{block: 'Letterlike Symbols', cps: [

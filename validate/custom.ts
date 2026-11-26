@@ -180,9 +180,13 @@ export default [
 	{name: 'a\u{307}', error: true, comment: 'Non-whitelisted CM: composes to ȧ'},
 
 	// new 18.0 characters are disallowed until reviewed (rules/disallow/unreviewed.ts)
-	{name: '\u{20C3}', error: true, comment: 'Unreviewed 18.0: UAE DIRHAM SIGN'},
 	{name: '𐻉', error: true, comment: 'Unreviewed 18.0: Arabic Extended-C'},
-	{name: '𛅨', error: true, comment: 'Unreviewed 18.0: small archaic kana'},
+	{name: '\u{20C3}', comment: 'Reviewed 18.0: UAE DIRHAM SIGN, Arabic only (rules/scripts.ts)'},
+	{name: 'ب\u{20C3}', comment: 'Reviewed 18.0: UAE DIRHAM SIGN with Arabic'},
+	{name: 'a\u{20C3}', error: true, comment: 'Reviewed 18.0: UAE DIRHAM SIGN is not Latin'},
+	{name: '\u{20C2}', error: true, comment: 'Reviewed 18.0: RUFIYAA SIGN disallowed'},
+	{name: '\u{20C4}', error: true, comment: 'Reviewed 18.0: OMANI RIAL SIGN disallowed'},
+	{name: '𛅨', error: true, comment: 'Reviewed 18.0: small archaic katakana ye disallowed'},
 	{name: '⹠', error: true, comment: 'Unreviewed 18.0: new punctuation'},
 	{name: '🫝', comment: 'Emoji: 17.0'},
 

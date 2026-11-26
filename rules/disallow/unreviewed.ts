@@ -16,7 +16,10 @@ import {SCRIPT_GROUPS} from '../scripts.ts';
 export const AGE = '18.0';
 
 // reviewed and allowed (paste from `bun run review`)
-export const REVIEWED: CodePoint[] = [];
+export const REVIEWED: CodePoint[] = [
+	// Currency Symbols
+	0x20C3, // (⃃) UAE DIRHAM SIGN (Arabic only, see rules/scripts.ts)
+];
 
 const GROUP_SCRIPTS = [...new Set(['Zinh', ...SCRIPT_GROUPS.flatMap((g) => [...g.test, ...(g.rest ?? [])])])].sort();
 

@@ -5452,6 +5452,9 @@ Add Mapped: 27 (') APOSTROPHE => 2019 (’) RIGHT SINGLE QUOTATION MARK
 ==== Add Ignored Characters ====
 ==== Add Valid Characters ====
 ==== Remove Disallowed Characters ====
+*** 20C2 (RUFIYAA SIGN) selected twice: cps(14) block=Currency Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 20C4 (OMANI RIAL SIGN) selected twice: cps(14) block=Currency Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 1B168 (KATAKANA LETTER SMALL ARCHAIC YE) selected twice: cps(1) block=Small Kana Extension + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 Rule: cps(61) block=Basic Latin [61/61]
 Removed Valid: 00 ({00}) NULL
 Removed Valid: 01 ({01}) START OF HEADING
@@ -6020,6 +6023,8 @@ Removed Mapped: 1B125 (𛄥) KATAKANA DIGRAPH TOTE => [30C8 30C6] (トテ) KATAK
 Removed Mapped: 1B126 (𛄦) KATAKANA DIGRAPH YORI => [30E8 30EA] (ヨリ) KATAKANA LETTER YO + KATAKANA LETTER RI
 Removed Valid: 1B127 (𛄧) KATAKANA LETTER ALTERNATE NE
 Removed Valid: 1B128 (𛄨) KATAKANA LETTER ALTERNATE WI
+Rule: cps(1) block=Small Kana Extension [1/1]
+Removed Valid: 1B168 (𛅨) KATAKANA LETTER SMALL ARCHAIC YE
 Rule: block=Tai Xuan Jing Symbols [87/87]
 Removed Valid: 1D300 (𝌀) MONOGRAM FOR EARTH
 Removed Valid: 1D301 (𝌁) DIGRAM FOR HEAVENLY EARTH
@@ -10941,7 +10946,7 @@ Removed Valid: 1CF6 (ᳶ) VEDIC SIGN UPADHMANIYA
 Removed Valid: 1CF7 (◌᳷) VEDIC SIGN ATIKRAMA
 Removed Valid: 1CF8 (◌᳸) VEDIC TONE RING ABOVE
 Removed Valid: 1CF9 (◌᳹) VEDIC TONE DOUBLE RING ABOVE
-Rule: cps(12) block=Currency Symbols [12/12]
+Rule: cps(14) block=Currency Symbols [14/14]
 Removed Valid: 20AF (₯) DRACHMA SIGN
 Removed Valid: 20A0 (₠) EURO-CURRENCY SIGN
 Removed Valid: 20A2 (₢) CRUZEIRO SIGN
@@ -10954,6 +10959,8 @@ Removed Valid: 20B3 (₳) AUSTRAL SIGN
 Removed Valid: 20B6 (₶) LIVRE TOURNOIS SIGN
 Removed Valid: 20B7 (₷) SPESMILO SIGN
 Removed Valid: 20BB (₻) NORDIC MARK SIGN
+Removed Valid: 20C2 (⃂) RUFIYAA SIGN
+Removed Valid: 20C4 (⃄) OMANI RIAL SIGN
 Rule: cps(21) block=Letterlike Symbols [21/21]
 Removed Valid: 2125 (℥) OUNCE SIGN
 Removed Valid: 2114 (℔) L B BAR SYMBOL
@@ -13155,7 +13162,7 @@ Removed Valid: 1FBED (🯭) BOTTOM LEFT JUSTIFIED UPPER RIGHT QUARTER BLACK CIRC
 Removed Valid: 1FBEE (🯮) BOTTOM RIGHT JUSTIFIED UPPER LEFT QUARTER BLACK CIRCLE
 Removed Valid: 1FBEF (🯯) TOP LEFT JUSTIFIED LOWER RIGHT QUARTER BLACK CIRCLE
 Removed Valid: 1FBFA (🯺) ALARM BELL SYMBOL
-Rule: new in 18.0: unreviewed [60/384]
+Rule: new in 18.0: unreviewed [56/383]
 Removed Mapped: 558 (՘) MODIFIER LETTER ARMENIAN SMALL EH => 567 (է) ARMENIAN SMALL LETTER EH
 Removed Mapped: 58B (֋) MODIFIER LETTER ARMENIAN SMALL INI => 56B (ի) ARMENIAN SMALL LETTER INI
 Removed Mapped: 58C (֌) MODIFIER LETTER ARMENIAN SMALL YI => 575 (յ) ARMENIAN SMALL LETTER YI
@@ -13167,9 +13174,6 @@ Removed Valid: 208F (₏) MODIFIER LETTER HIGH AND LOW VERTICAL LINE
 Removed Mapped: 209D (₝) LATIN SUBSCRIPT SMALL LETTER W => 77 (w) LATIN SMALL LETTER W
 Removed Mapped: 209E (₞) LATIN SUBSCRIPT SMALL LETTER Y => 79 (y) LATIN SMALL LETTER Y
 Removed Mapped: 209F (₟) LATIN SUBSCRIPT SMALL LETTER Z => 7A (z) LATIN SMALL LETTER Z
-Removed Valid: 20C2 (⃂) RUFIYAA SIGN
-Removed Valid: 20C3 (⃃) UAE DIRHAM SIGN
-Removed Valid: 20C4 (⃄) OMANI RIAL SIGN
 Removed Valid: 10EC9 (𐻉) ARABIC SMALL BASELINE FATHA
 Removed Valid: 10ECA (𐻊) ARABIC SMALL BASELINE DOTLESS HEAD OF KHAH
 Removed Valid: 10ECB (◌𐻋) ARABIC NORTHEAST POINTING ARROWHEAD ABOVE
@@ -13212,7 +13216,6 @@ Removed Valid: 10EF9 (◌𐻹) ARABIC MARK CROWN
 Removed Valid: 11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA
 Removed Valid: 11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE
 Removed Valid: 11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
-Removed Valid: 1B168 (𛅨) KATAKANA LETTER SMALL ARCHAIC YE
 Removed Mapped: 1D6A6 (𝚦) MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S => [73 73] (ss) LATIN SMALL LETTER S + LATIN SMALL LETTER S
 Removed Valid: 1F1AE (🆮) TOMOBIKI SYMBOL
 Removed Valid: 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
@@ -13223,6 +13226,7 @@ Removed Valid: 2E (.) FULL STOP
 307 (◌̇) COMBINING DOT ABOVE [Copt,Dupl,Hebr,Latn,Perm,Syrc,Tale,Tfng,Todr => Copt,Dupl,Latn,Perm,Syrc,Tale,Tfng,Todr]
 308 (◌̈) COMBINING DIAERESIS [Armn,Cyrl,Dupl,Goth,Grek,Hebr,Latn,Perm,Syrc,Tale,Tfng => Cyrl,Dupl,Goth,Grek,Latn,Perm,Syrc,Tale,Tfng]
 B83 (ஃ) TAMIL SIGN VISARGA [Knda,Mlym,Taml,Telu => Taml]
+20C3 (⃃) UAE DIRHAM SIGN [Zyyy => Arab]
 ==== Create Groups ====
 Disallowed Script: [Brai] Braille
 Disallowed Script: [Lina] Linear A [X]
@@ -13237,7 +13241,7 @@ Valid  | Name       | Test      | Rest      | Extra
   1000 | Latin      | Latn      | Zyyy      | π                         
    837 | Cyrillic   | Cyrl      | Zyyy      |                           
    826 | Greek      | Grek      | Zyyy      |                           
-   438 | Arabic     | Arab      |           | -                         
+   439 | Arabic     | Arab      |           | -                         
    108 | Devanagari | Deva      |           |                           
     84 | Hebrew     | Hebr      |           | ₪                         
     83 | Thai       | Thai      |           | ฿                         
@@ -17453,9 +17457,9 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Fastpath ASCII
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
-Valid: 155544
+Valid: 155545
 Multi: 103047
-Unique: 52497
+Unique: 52498
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 ==== Prune Inert Confusables ====
@@ -18028,7 +18032,7 @@ Non-Confusable Non-Unique: 99
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
   1 |    710 |     0 |    710 |      0 | 0/0  | Common    
   2 |    792 |    55 |     81 |    711 | 0/51 | Latin     
-  3 |    427 |   404 |    426 |      1 |      | Arabic    
+  3 |    428 |   405 |    427 |      1 |      | Arabic    
   4 | 102858 |     0 | 102122 |    736 | 0/0  | Han       
   5 |    108 |    98 |    108 |      0 |      | Devanagari
   6 | 114383 | 11525 |  11527 | 102856 | 0/0  | Korean    
@@ -18203,10 +18207,11 @@ Optimized: 2211 => 579
 CM(2580) => NSM(2103) => 1103
 Per Group Max: 60
 ==== Review: New in 18.0.0 ====
+20C3 (⃃) UAE DIRHAM SIGN [Arabic]
 Restricted Xsux: 159
 Restricted Pcun: 235
 Restricted Kits: 5
 Restricted Tang: 2
 Restricted Jurc: 965
 Restricted Seal: 11328
-New Valid: 12623
+New Valid: 12624

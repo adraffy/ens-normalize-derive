@@ -4,7 +4,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 
 ## Open
 
-- **53 new 18.0 characters wait for review** (`bun run review`): Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, ₏ and the 🆮 Tomobiki symbol. Each one allowed goes into `REVIEWED` in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts). U+0B83 TAMIL SIGN VISARGA, whose Script_Extensions grew in 18.0, is also pinned to Tamil until reviewed.
+- **49 new 18.0 characters wait for review** (`bun run review`, or `--html` for a page with glyphs): Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, one Han ideograph, ₏ and the 🆮 Tomobiki symbol. Each one allowed goes into `REVIEWED` in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts). U+0B83 TAMIL SIGN VISARGA, whose Script_Extensions grew in 18.0, is also pinned to Tamil until reviewed.
 - **Same-group confusables** (see [below](#confusables-cjk-and-faux-latin)): Katakana vs Han, simplified vs traditional Han, and Han/Bopomofo used as faux-Latin. The whole-script check can't express them.
 - **`spec.json` `unicode`** embeds the download timestamp (`"18.0.0 (2026-11-25T…)"`), so re-downloading identical data changes the spec hash. The version alone would do.
 - **The ENSIP-15 text** doesn't describe the combining mark base rule or the unsupported combining mark message yet ([implementers.md](implementers.md)).
@@ -24,6 +24,8 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **Group order** is fixed in [rules/group-order.ts](../rules/group-order.ts) rather than regenerated from registration counts, so it's part of the spec. It's the 1.11.1 order with Common first, except Myanmar and Gujarati are swapped. They share no characters, so the swap changes nothing.
 - **ӕ stays valid.** Upstream's custom test `тӕ` relies on it. On its own, `ӕ` is a whole-script confusable.
 - **İ keeps its UTS-46 mapping** to `i` + U+0307. That never composes and U+0307 isn't valid in Latin, so `İ` labels fail with `unsupported combining mark: "i + ◌̇"` (20 registered labels). That is the intended result.
+- **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid in Arabic only ([rules/scripts.ts](../rules/scripts.ts) overrides its Script_Extensions, so it isn't shared with every group). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
+- **𛅨 small archaic katakana ye (new in 18.0) is disallowed.**
 - **ı (dotless i) stays disallowed** ([rules/disallow/latin.ts](../rules/disallow/latin.ts)). It's a classic i spoof.
 
 ### CM whitelist
