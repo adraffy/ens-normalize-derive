@@ -680,9 +680,10 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	}
 
 	// this should be last so we don't need to recover toggled mappings
-	// TODO: add another section like this lower in the process that
-	// can account for examples like "İ" [130] => "i + ◌̇ " [69 307]
-	// since both 69 and 307 are valid but not NFC
+	// a mapping is removed only if its target has a character that is never valid (eg. Ď => ď), so the
+	// source becomes a disallowed character instead: every label using it was already invalid.
+	// note: "İ" [130] => "i + ◌̇" [69 307] stays: both are valid somewhere, and labels using it fail
+	//   later with "unsupported combining mark". Intended, so no extra pass for non-NFC targets.
 	log.section('Remove Invalid Mappings');
 	for (const [x, ys] of mapped) {
 		if (!ys.every((cp) => valid.has(cp))) {

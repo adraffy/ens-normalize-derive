@@ -6,7 +6,12 @@ Started as a Bun + TypeScript port of [`ens-normalize.js/derive`](https://github
 
 Goal: a normalization scheme that **doesn't break existing registrations** ([adraffy/ens-labels](https://github.com/adraffy/ens-labels)) but tries to stop confusables.
 
-See [docs/review.md](docs/review.md) for findings from the port (Unicode 18 registration impact, bugs, and suggestions for chars-disallow and CJK confusables), [docs/groups.md](docs/groups.md) for how script groups are built and checked, and [docs/implementers.md](docs/implementers.md) for what other ENSIP-15 implementations must change for Unicode 18.
+Docs:
+
+- [docs/unicode-18.md](docs/unicode-18.md): what changed since the last release (1.11.1, Unicode 17) and what it does to registered names
+- [docs/implementers.md](docs/implementers.md): what other ENSIP-15 implementations must change for Unicode 18
+- [docs/groups.md](docs/groups.md): how script groups are built, and how a label is checked against them
+- [docs/review.md](docs/review.md): open questions, decisions, and findings from the port
 
 ## Commands
 
@@ -84,9 +89,9 @@ Restore the checkout's own data afterwards with `bun run download` there.
 2. **Emoji**: RGI sequences, then single emoji (with FE0F handling). [rules/emoji.ts](rules/emoji.ts) demotes or disables some. Emoji characters are removed from the text sets.
 3. **Characters**: [chars-mapped](rules/chars-mapped.ts), [chars-ignored](rules/chars-ignored.ts), [chars-valid](rules/chars-valid.ts) are added, then the [disallow rules](rules/disallow/) are removed.
 4. **Script groups** ([rules/scripts.ts](rules/scripts.ts), explained in [docs/groups.md](docs/groups.md)): each valid char joins every group whose test/rest scripts cover its script extensions. Limited Use and Excluded scripts become single-script _restricted_ groups.
-5. **Combining marks**: Latin-like and CJK groups only allow the sequences in [rules/cm.ts](rules/cm.ts). Other groups drop chars that decompose into duplicate NSMs.
+5. **Combining marks**: Common, Latin, Greek, Cyrillic and the CJK groups only allow the precomposed letters in [rules/cm.ts](rules/cm.ts). Other groups drop chars that decompose into duplicate NSMs.
 6. **Confusables** ([src/confuse.ts](src/confuse.ts): `confusables.txt` edited by [rules/confuse.ts](rules/confuse.ts)): per group, a confusable is removed, kept (`primary`), or kept but whole-script checked (`allow`). This produces `wholes`.
-7. Leftovers are pruned and invariants asserted, then the payloads are written.
+7. Leftovers are pruned (including confusables with no lookalike in another group) and invariants asserted, then the payloads are written.
 
 `output/log.txt` records every decision and is committed, so rule changes show up as a readable diff. Its **Review: New in X** section lists every character new in the current Unicode version that ended up valid.
 

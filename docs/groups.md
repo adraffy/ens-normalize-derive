@@ -125,7 +125,7 @@ All of these come from `output/spec.json`:
 
 ## Changed error messages
 
-- **Unsupported combining marks.** A bare mark that isn't in the label's group used to be an illegal mixture naming the first group where the mark is primary. That group was usually unrelated: `x̂` named Cherokee, and `İzmir` (`İ` maps to `i` + U+0307 under UTS-46) named Hebrew in 1.11.1 and Syriac now. Both are now `illegal placement: unsupported combining mark: "x + ◌̂"`, naming the mark's base. Only the message changed: 37 registered labels, mostly Turkish. (`ı`, dotless i, is separately disallowed in [rules/disallow/latin.ts](../rules/disallow/latin.ts).)
+- **Unsupported combining marks.** A bare mark that isn't in the label's group used to be an illegal mixture naming the first group where the mark is primary. That group was usually unrelated: `x̂` named Cherokee, and `İzmir` (`İ` maps to `i` + U+0307 under UTS-46) named Hebrew in 1.11.1 and Syriac now. Both are now `illegal placement: unsupported combining mark: "x + ◌̂"`, naming the mark's base. Only the message changed, for 37 registered labels: 20 Turkish `İ`, 9 Cyrillic vowels with a stress accent (`и́`), and a few others. (`ı`, dotless i, is separately disallowed in [rules/disallow/latin.ts](../rules/disallow/latin.ts).)
 
 ## Where to change things
 

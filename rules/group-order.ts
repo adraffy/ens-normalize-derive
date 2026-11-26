@@ -6,7 +6,8 @@
 // Every unrestricted group must be listed; restricted groups that aren't listed keep their
 // rules/scripts.ts order. `bun run group-stats` shows registrations per group for reference.
 //
-// 20261125: fixed at the 1.11.x order (registration counts from 2026-05-20, 3,411,559 labels).
+// 20261125: fixed at the 1.11.x order (registration counts from 2026-05-20, 3,411,559 labels),
+//   except Myanmar and Gujarati are swapped: they share no characters, so nothing depends on it.
 //   ASCII (89.26%) and Emoji (2.43%) are fast-path label types, not groups.
 export default [
 	'Common',     //  (20261126: new, ~60000 labels that were Latin; a subset of Latin so it must come first)
