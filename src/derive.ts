@@ -837,6 +837,52 @@ export function derive({unicode, rules, log = new Logger(), created = new Date()
 	}
 	log.checked(`Wholes are Valid`);
 
+	// a confused cp only matters if another group (outside its extent) holds a lookalike. With none, the
+	// whole-script check stops at it, an accidental exemption: eg. Han-internal sets made those Han
+	// chars end the check early, unlike any other Han char. Prune them, then assert none are left.
+	// complements() mirrors src/ensip15.ts (and ens-normalize.js) exactly.
+	const complements = (w: Whole) => {
+		const extents: {groups: Set<ScriptGroup>; cps: CodePoint[]}[] = [];
+		for (const cp of sortedCps([...w.valid, ...w.map.keys()])) {
+			const gs = groups.filter((g) => g.validSet.has(cp));
+			let ext = extents.find((x) => gs.some((g) => x.groups.has(g)));
+			if (!ext) {
+				ext = {groups: new Set(), cps: []};
+				extents.push(ext);
+			}
+			ext.cps.push(cp);
+			for (const g of gs) ext.groups.add(g);
+		}
+		const union = extents.flatMap((x) => [...x.groups]);
+		const map = new Map<CodePoint, ScriptGroup[]>();
+		for (const {groups, cps} of extents) {
+			const complement = union.filter((g) => !groups.has(g));
+			for (const cp of cps) map.set(cp, complement);
+		}
+		return map;
+	};
+	log.section('Prune Inert Confusables');
+	{
+		let pruned = 0;
+		for (const w of wholes) {
+			if (!w.map.size) continue;
+			const comp = complements(w);
+			const inert = [...w.map.keys()].filter((cp) => !comp.get(cp)!.length);
+			if (!inert.length) continue;
+			for (const cp of inert) w.map.delete(cp);
+			pruned += inert.length;
+			log.log(`[${w.target}] ${inert.map((cp) => desc.cp(cp)).join(' ')}`);
+		}
+		log.log(`Pruned: ${pruned}`);
+	}
+	for (const w of wholes) {
+		const comp = complements(w);
+		for (const cp of w.map.keys()) {
+			if (!comp.get(cp)!.length) throw new Error(`Confusable has no lookalike in another group: ${desc.cp(cp)}`);
+		}
+	}
+	log.checked('Confusables have a Lookalike Group');
+
 	const confusedWhole = wholes.flatMap((w) => [...w.map.keys()]);
 	const confusedValid = wholes.flatMap((w) => w.valid);
 	log.log(`Confusable: ${confusedWhole.length}`);

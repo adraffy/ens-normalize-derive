@@ -7,7 +7,7 @@ A label is valid only if every character belongs to a single **group**: roughly 
 
 This page covers how [src/derive.ts](../src/derive.ts) builds the groups into `spec.json`, then how a label is checked against them ([src/ensip15.ts](../src/ensip15.ts), which mirrors ens-normalize.js).
 
-Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, plus 847 wholes.
+Current numbers (Unicode 18): 171 groups, 28 unrestricted and 143 restricted, plus 292 wholes (959 checked characters).
 
 ## Building the groups
 
@@ -76,6 +76,8 @@ Each confusable set (Unicode's `confusables.txt` as edited by [rules/confuse.ts]
 | no decisions, 2+ members in this group       | `defaultAllow` decides: checked, or removed |
 
 A set without decisions whose only unrestricted member is X makes X primary automatically. ASCII is never confusable (an invariant). Each resolved set becomes a **whole**: its `valid` (primary) members, plus its `confused` members, each tagged with the groups where it is checked. [output/confusables.txt](../output/confusables.txt) lists what happened to every member in every group.
+
+**Inert confusables are pruned.** A confused member only matters if some _other_ group holds one of its lookalikes (the label-check step 5 below). When every member of a set lands in the same groups, there's nobody to confuse it with, and leaving it in would make the check stop early at that character, an accidental exemption. For example, `∞` was in a set of shared characters, so `α∞` passed while `α1` failed. Derive drops these members (1,148 in Unicode 18, mostly Han-internal sets such as 户/戶) and asserts that every remaining confused character has a lookalike group. `output/log.txt` lists them under **Prune Inert Confusables**. Lookalikes inside one group need a different mechanism (see [review.md](review.md)).
 
 ### 5. Pruning, primary/secondary, order
 
