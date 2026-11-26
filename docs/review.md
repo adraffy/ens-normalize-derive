@@ -26,6 +26,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 - **İ keeps its UTS-46 mapping** to `i` + U+0307. That never composes and U+0307 isn't valid in Latin, so `İ` labels fail with `unsupported combining mark: "i + ◌̇"` (20 registered labels). That is the intended result.
 - **New 18.0 currency signs:** ⃃ UAE DIRHAM SIGN is valid in Arabic only ([rules/scripts.ts](../rules/scripts.ts) overrides its Script_Extensions, so it isn't shared with every group). ⃂ RUFIYAA SIGN and ⃄ OMANI RIAL SIGN are disallowed.
 - **𛅨 small archaic katakana ye (new in 18.0) is disallowed.**
+- **New 18.0 modifier letters stay disallowed** instead of mapping to plain letters: Latin subscripts ₝ ₞ ₟ (w y z), Armenian modifiers ՘ ֋ ֌ (է ի յ) and 𝚦 (ss). The older subscript letters were already disallowed.
 - **ı (dotless i) stays disallowed** ([rules/disallow/latin.ts](../rules/disallow/latin.ts)). It's a classic i spoof.
 
 ### CM whitelist

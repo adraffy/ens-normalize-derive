@@ -5452,9 +5452,16 @@ Add Mapped: 27 (') APOSTROPHE => 2019 (’) RIGHT SINGLE QUOTATION MARK
 ==== Add Ignored Characters ====
 ==== Add Valid Characters ====
 ==== Remove Disallowed Characters ====
+*** 558 (MODIFIER LETTER ARMENIAN SMALL EH) selected twice: cps(13) block=Armenian + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 58B (MODIFIER LETTER ARMENIAN SMALL INI) selected twice: cps(13) block=Armenian + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 58C (MODIFIER LETTER ARMENIAN SMALL YI) selected twice: cps(13) block=Armenian + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 209D (LATIN SUBSCRIPT SMALL LETTER W) selected twice: cps(22) block=Superscripts and Subscripts + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 209E (LATIN SUBSCRIPT SMALL LETTER Y) selected twice: cps(22) block=Superscripts and Subscripts + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 209F (LATIN SUBSCRIPT SMALL LETTER Z) selected twice: cps(22) block=Superscripts and Subscripts + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 *** 20C2 (RUFIYAA SIGN) selected twice: cps(14) block=Currency Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 *** 20C4 (OMANI RIAL SIGN) selected twice: cps(14) block=Currency Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 *** 1B168 (KATAKANA LETTER SMALL ARCHAIC YE) selected twice: cps(1) block=Small Kana Extension + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 1D6A6 (MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S) selected twice: cps(1) block=Mathematical Alphanumeric Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 Rule: cps(61) block=Basic Latin [61/61]
 Removed Valid: 00 ({00}) NULL
 Removed Valid: 01 ({01}) START OF HEADING
@@ -8426,6 +8433,8 @@ Removed Valid: 2BFC (⯼) DOUBLED SYMBOL
 Removed Valid: 2BFD (⯽) PASSED SYMBOL
 Removed Valid: 2BFE (⯾) REVERSED RIGHT ANGLE
 Removed Valid: 2BFF (⯿) HELLSCHREIBER PAUSE SYMBOL
+Rule: cps(1) block=Mathematical Alphanumeric Symbols [1/1]
+Removed Mapped: 1D6A6 (𝚦) MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S => [73 73] (ss) LATIN SMALL LETTER S + LATIN SMALL LETTER S
 Rule: block=Miscellaneous Symbols and Arrows Extended [29/29]
 Removed Valid: 1DB00 (𝬀) LEIBNIZIAN EQUALS SIGN
 Removed Valid: 1DB01 (𝬁) LEIBNIZIAN EQUALS SIGN WITH DOUBLE VERTICALS
@@ -10045,7 +10054,7 @@ Removed Mapped: 1DBC (ᶼ) MODIFIER LETTER SMALL Z WITH RETROFLEX HOOK => 290 (�
 Removed Mapped: 1DBD (ᶽ) MODIFIER LETTER SMALL Z WITH CURL => 291 (ʑ) LATIN SMALL LETTER Z WITH CURL
 Removed Mapped: 1DBE (ᶾ) MODIFIER LETTER SMALL EZH => 292 (ʒ) LATIN SMALL LETTER EZH
 Removed Mapped: 1DBF (ᶿ) MODIFIER LETTER SMALL THETA => 3B8 (θ) GREEK SMALL LETTER THETA
-Rule: cps(19) block=Superscripts and Subscripts [19/19]
+Rule: cps(22) block=Superscripts and Subscripts [22/22]
 Removed Mapped: 2090 (ₐ) LATIN SUBSCRIPT SMALL LETTER A => 61 (a) LATIN SMALL LETTER A
 Removed Mapped: 2091 (ₑ) LATIN SUBSCRIPT SMALL LETTER E => 65 (e) LATIN SMALL LETTER E
 Removed Mapped: 2095 (ₕ) LATIN SUBSCRIPT SMALL LETTER H => 68 (h) LATIN SMALL LETTER H
@@ -10058,6 +10067,9 @@ Removed Mapped: 209A (ₚ) LATIN SUBSCRIPT SMALL LETTER P => 70 (p) LATIN SMALL 
 Removed Mapped: 209B (ₛ) LATIN SUBSCRIPT SMALL LETTER S => 73 (s) LATIN SMALL LETTER S
 Removed Mapped: 209C (ₜ) LATIN SUBSCRIPT SMALL LETTER T => 74 (t) LATIN SMALL LETTER T
 Removed Mapped: 2093 (ₓ) LATIN SUBSCRIPT SMALL LETTER X => 78 (x) LATIN SMALL LETTER X
+Removed Mapped: 209D (₝) LATIN SUBSCRIPT SMALL LETTER W => 77 (w) LATIN SMALL LETTER W
+Removed Mapped: 209E (₞) LATIN SUBSCRIPT SMALL LETTER Y => 79 (y) LATIN SMALL LETTER Y
+Removed Mapped: 209F (₟) LATIN SUBSCRIPT SMALL LETTER Z => 7A (z) LATIN SMALL LETTER Z
 Removed Mapped: 2080 (₀) SUBSCRIPT ZERO => 30 (0) DIGIT ZERO
 Removed Mapped: 2081 (₁) SUBSCRIPT ONE => 31 (1) DIGIT ONE
 Removed Mapped: 2071 (ⁱ) SUPERSCRIPT LATIN SMALL LETTER I => 69 (i) LATIN SMALL LETTER I
@@ -10284,7 +10296,7 @@ Removed Mapped: FE15 (︕) PRESENTATION FORM FOR VERTICAL EXCLAMATION MARK => 21
 Removed Mapped: FE16 (︖) PRESENTATION FORM FOR VERTICAL QUESTION MARK => 3F (?) QUESTION MARK
 Removed Mapped: FE17 (︗) PRESENTATION FORM FOR VERTICAL LEFT WHITE LENTICULAR BRACKET => 3016 (〖) LEFT WHITE LENTICULAR BRACKET
 Removed Mapped: FE18 (︘) PRESENTATION FORM FOR VERTICAL RIGHT WHITE LENTICULAR BRAKCET => 3017 (〗) RIGHT WHITE LENTICULAR BRACKET
-Rule: cps(10) block=Armenian [10/10]
+Rule: cps(13) block=Armenian [13/13]
 Removed Valid: 589 (։) ARMENIAN FULL STOP
 Removed Valid: 55E (՞) ARMENIAN QUESTION MARK
 Removed Valid: 55B (՛) ARMENIAN EMPHASIS MARK
@@ -10295,6 +10307,9 @@ Removed Valid: 559 (ՙ) ARMENIAN MODIFIER LETTER LEFT HALF RING
 Removed Valid: 55A (՚) ARMENIAN APOSTROPHE
 Removed Valid: 58A (֊) ARMENIAN HYPHEN
 Removed Valid: 560 (ՠ) ARMENIAN SMALL LETTER TURNED AYB
+Removed Mapped: 558 (՘) MODIFIER LETTER ARMENIAN SMALL EH => 567 (է) ARMENIAN SMALL LETTER EH
+Removed Mapped: 58B (֋) MODIFIER LETTER ARMENIAN SMALL INI => 56B (ի) ARMENIAN SMALL LETTER INI
+Removed Mapped: 58C (֌) MODIFIER LETTER ARMENIAN SMALL YI => 575 (յ) ARMENIAN SMALL LETTER YI
 Rule: cps(6) block=Hebrew [6/6]
 Removed Valid: 5C3 (׃) HEBREW PUNCTUATION SOF PASUQ
 Removed Valid: 5C6 (׆) HEBREW PUNCTUATION NUN HAFUKHA
@@ -13162,18 +13177,12 @@ Removed Valid: 1FBED (🯭) BOTTOM LEFT JUSTIFIED UPPER RIGHT QUARTER BLACK CIRC
 Removed Valid: 1FBEE (🯮) BOTTOM RIGHT JUSTIFIED UPPER LEFT QUARTER BLACK CIRCLE
 Removed Valid: 1FBEF (🯯) TOP LEFT JUSTIFIED LOWER RIGHT QUARTER BLACK CIRCLE
 Removed Valid: 1FBFA (🯺) ALARM BELL SYMBOL
-Rule: new in 18.0: unreviewed [56/383]
-Removed Mapped: 558 (՘) MODIFIER LETTER ARMENIAN SMALL EH => 567 (է) ARMENIAN SMALL LETTER EH
-Removed Mapped: 58B (֋) MODIFIER LETTER ARMENIAN SMALL INI => 56B (ի) ARMENIAN SMALL LETTER INI
-Removed Mapped: 58C (֌) MODIFIER LETTER ARMENIAN SMALL YI => 575 (յ) ARMENIAN SMALL LETTER YI
+Rule: new in 18.0: unreviewed [49/383]
 Removed Valid: 5C8 (◌׈) HEBREW POINT SHEVA NA MUDGASH
 Removed Valid: 5C9 (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH
 Removed Valid: B53 (◌୓) ORIYA SIGN DOT ABOVE
 Removed Valid: B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE
 Removed Valid: 208F (₏) MODIFIER LETTER HIGH AND LOW VERTICAL LINE
-Removed Mapped: 209D (₝) LATIN SUBSCRIPT SMALL LETTER W => 77 (w) LATIN SMALL LETTER W
-Removed Mapped: 209E (₞) LATIN SUBSCRIPT SMALL LETTER Y => 79 (y) LATIN SMALL LETTER Y
-Removed Mapped: 209F (₟) LATIN SUBSCRIPT SMALL LETTER Z => 7A (z) LATIN SMALL LETTER Z
 Removed Valid: 10EC9 (𐻉) ARABIC SMALL BASELINE FATHA
 Removed Valid: 10ECA (𐻊) ARABIC SMALL BASELINE DOTLESS HEAD OF KHAH
 Removed Valid: 10ECB (◌𐻋) ARABIC NORTHEAST POINTING ARROWHEAD ABOVE
@@ -13216,7 +13225,6 @@ Removed Valid: 10EF9 (◌𐻹) ARABIC MARK CROWN
 Removed Valid: 11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA
 Removed Valid: 11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE
 Removed Valid: 11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
-Removed Mapped: 1D6A6 (𝚦) MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S => [73 73] (ss) LATIN SMALL LETTER S + LATIN SMALL LETTER S
 Removed Valid: 1F1AE (🆮) TOMOBIKI SYMBOL
 Removed Valid: 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
 Removed Valid: 2E (.) FULL STOP

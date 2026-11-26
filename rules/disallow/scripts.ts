@@ -4,7 +4,7 @@ import type {Rule} from '../../src/select.ts';
 // {block, except}: the whole block is disallowed except the listed characters (new characters are disallowed too)
 // {block, cps}: only the listed characters are disallowed (block is checked)
 export default [
-	// 530..58F Armenian: 9/91 denied
+	// 530..58F Armenian: 13/94 denied
 	{block: 'Armenian', cps: [
 		// scripted stops
 		0x589, // (։) ARMENIAN FULL STOP
@@ -23,6 +23,10 @@ export default [
 		0x58A, // (֊) ARMENIAN HYPHEN
 		// 20261125: unused by registrations (rotated)
 		0x560, // (ՠ) ARMENIAN SMALL LETTER TURNED AYB
+		// 20261126: new in 18.0, reviewed: modifier letters (they'd map to the plain letter)
+		0x558, // (՘) MODIFIER LETTER ARMENIAN SMALL EH
+		0x58B, // (֋) MODIFIER LETTER ARMENIAN SMALL INI
+		0x58C, // (֌) MODIFIER LETTER ARMENIAN SMALL YI
 	]},
 	// 590..5FF Hebrew: 6/88 denied
 	{block: 'Hebrew', cps: [

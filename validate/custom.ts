@@ -187,6 +187,9 @@ export default [
 	{name: '\u{20C2}', error: true, comment: 'Reviewed 18.0: RUFIYAA SIGN disallowed'},
 	{name: '\u{20C4}', error: true, comment: 'Reviewed 18.0: OMANI RIAL SIGN disallowed'},
 	{name: '𛅨', error: true, comment: 'Reviewed 18.0: small archaic katakana ye disallowed'},
+	{name: 'a\u{209D}', error: true, comment: 'Reviewed 18.0: LATIN SUBSCRIPT SMALL LETTER W disallowed (not mapped to w)'},
+	{name: '\u{1D6A6}', error: true, comment: 'Reviewed 18.0: long s ligature disallowed (not mapped to ss)'},
+	{name: 'ա\u{558}', error: true, comment: 'Reviewed 18.0: Armenian modifier letter disallowed (not mapped)'},
 	{name: '⹠', error: true, comment: 'Unreviewed 18.0: new punctuation'},
 	{name: '🫝', comment: 'Emoji: 17.0'},
 

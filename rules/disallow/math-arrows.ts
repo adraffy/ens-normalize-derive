@@ -90,6 +90,11 @@ export default [
 		0x2BCE, // (⯎) WHITE FOUR POINTED CUSP
 		0x2BD0, // (⯐) SQUARE POSITION INDICATOR
 	]},
+	// 1D400..1D7FF Mathematical Alphanumeric Symbols: 1/997 denied
+	{block: 'Mathematical Alphanumeric Symbols', cps: [
+		// 20261126: new in 18.0, reviewed: a ligature that would map to "ss"
+		0x1D6A6, // (𝚦) MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S
+	]},
 	// 1DB00..1DBFF Miscellaneous Symbols and Arrows Extended: new in 18.0, all denied
 	{block: 'Miscellaneous Symbols and Arrows Extended'},
 	// 1F800..1F8FF Supplemental Arrows-C: 136/171 denied

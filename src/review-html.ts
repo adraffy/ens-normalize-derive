@@ -57,7 +57,8 @@ export interface ReviewData {
 	summary: [string, number, string?][];
 	/** new characters decided by other rules, read only */
 	other: {title: string; note: string; blocks: ReviewBlock[]}[];
-	emoji: {form: string; name: string}[];
+	/** image: sample from unicode.org's emoji charts (PNG data URI) */
+	emoji: {form: string; name: string; image?: string}[];
 }
 
 const ESC: Record<string, string> = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'};
@@ -153,8 +154,11 @@ ${o.blocks
 		)
 		.join('\n');
 	const emoji = data.emoji.length
-		? `<details><summary>New emoji <span class="count">${data.emoji.length}</span></summary><div class="tiles">${data.emoji
-				.map((e) => `<span class="tile" title="${esc(e.name)}">${esc(e.form)}</span>`)
+		? `<details open><summary>New emoji <span class="count">${data.emoji.length}</span></summary><div class="tiles">${data.emoji
+				.map(
+					(e) =>
+						`<span class="tile" title="${esc(e.name)}">${e.image ? `<img src="${e.image}" alt="${esc(e.form)}">` : esc(e.form)}</span>`,
+				)
 				.join('')}</div></details>`
 		: '';
 	const reports = data.reports
@@ -228,6 +232,7 @@ details { margin: 12px 0; }
 summary { cursor: pointer; font-weight: 600; font-size: 15px; }
 .tiles { margin: 8px 0; }
 .tiles-head { font-size: 13px; margin: 8px 0 4px; }
+.tile img { height: 32px; vertical-align: middle; }
 .tile { display: inline-block; min-width: 40px; text-align: center; font: 26px/1.5 var(--glyph-font); border: 1px solid var(--line); border-radius: 4px; margin: 0 4px 4px 0; background: var(--card); }
 details.chart { margin: 0 0 8px; }
 details.chart summary { font-size: 13px; font-weight: normal; color: var(--muted); }

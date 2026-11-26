@@ -669,6 +669,21 @@
 		"comment": "Reviewed 18.0: small archaic katakana ye disallowed"
 	},
 	{
+		"name": "a₝",
+		"error": true,
+		"comment": "Reviewed 18.0: LATIN SUBSCRIPT SMALL LETTER W disallowed (not mapped to w)"
+	},
+	{
+		"name": "𝚦",
+		"error": true,
+		"comment": "Reviewed 18.0: long s ligature disallowed (not mapped to ss)"
+	},
+	{
+		"name": "ա՘",
+		"error": true,
+		"comment": "Reviewed 18.0: Armenian modifier letter disallowed (not mapped)"
+	},
+	{
 		"name": "⹠",
 		"error": true,
 		"comment": "Unreviewed 18.0: new punctuation"
@@ -53417,11 +53432,6 @@
 		"name": "𝍸",
 		"error": true,
 		"comment": "disallowed character: \"𝍸\"‎ {1D378}"
-	},
-	{
-		"name": "𝚦",
-		"error": true,
-		"comment": "disallowed character: \"𝚦\"‎ {1D6A6}"
 	},
 	{
 		"name": "𝬀",

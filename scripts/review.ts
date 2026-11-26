@@ -8,7 +8,7 @@
 // Derives twice: with and without rules/disallow/unreviewed.ts. The difference is exactly what
 // allowing would enable. To allow a character, paste its line into REVIEWED in that file.
 
-import {existsSync, mkdirSync, writeFileSync} from 'node:fs';
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {parseArgs} from 'node:util';
 import unreviewed, {AGE, REVIEWED} from '../rules/disallow/unreviewed.ts';
 import {chartGlyphs} from '../src/chart-glyphs.ts';
@@ -230,6 +230,7 @@ async function writeHTML() {
 	};
 	const mapped = new Map(mappedPending.map(([x, ys]) => [x, {char: reviewChar(x), target: d.seq(ys), targetDisplay: d.str(ys)}]));
 
+	const emojiImages = await emojiSamples();
 	const html = renderReviewHTML({
 		version,
 		age: AGE,
@@ -268,7 +269,12 @@ async function writeHTML() {
 				})),
 			},
 		],
-		emoji: newEmoji.map((x) => ({form: String(x.form ?? ''), name: String(x.name)})),
+		emoji: newEmoji.map((x) => {
+			const form = String(x.form ?? '');
+			// skin tone variants aren't pictured: use the base emoji's
+			const image = emojiImages.get(form) ?? emojiImages.get(form.replace(/[\u{1F3FB}-\u{1F3FF}\u{FE0F}]/gu, ''));
+			return {form, name: String(x.name), image};
+		}),
 	});
 	const file = new URL('review.html', CACHE);
 	writeFileSync(file, html);
@@ -290,6 +296,27 @@ async function downloadChart(start: string): Promise<string | undefined> {
 		writeFileSync(file, await res.bytes());
 	}
 	return name;
+}
+
+/** new emoji => sample image (PNG data URI), from unicode.org's "emoji released" chart for AGE */
+async function emojiSamples(): Promise<Map<string, string>> {
+	const file = new URL(`emoji-released-${AGE}.html`, CACHE);
+	if (!existsSync(file)) {
+		const url = `https://www.unicode.org/emoji/charts-${AGE}/emoji-released.html`;
+		const res = await fetch(url);
+		if (!res.ok) {
+			console.log(`*** emoji samples: HTTP ${res.status} ${url}`);
+			return new Map();
+		}
+		writeFileSync(file, await res.bytes());
+	}
+	// <img alt='&#x1F6D9;' class='imga' src='data:image/png;base64,...'>
+	const map = new Map<string, string>();
+	for (const [, alt, src] of readFileSync(file, 'utf8').matchAll(/<img alt='([^']*)' class='imga' src='(data:image\/png;base64,[^']*)'/g)) {
+		const form = alt!.replace(/&#x([0-9A-F]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16))).replace(/\u{FE0F}/gu, '');
+		map.set(form, src!);
+	}
+	return map;
 }
 
 // the character in context: a mark on a typical base letter, a letter between two of them
