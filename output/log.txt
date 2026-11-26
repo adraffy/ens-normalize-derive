@@ -13188,7 +13188,6 @@ Removed Valid: 2E (.) FULL STOP
 303 (◌̃) COMBINING TILDE [Glag,Latn,Sunu,Syrc,Thai => Glag,Latn,Sunu,Syrc]
 307 (◌̇) COMBINING DOT ABOVE [Copt,Dupl,Hebr,Latn,Perm,Syrc,Tale,Tfng,Todr => Copt,Dupl,Latn,Perm,Syrc,Tale,Tfng,Todr]
 308 (◌̈) COMBINING DIAERESIS [Armn,Cyrl,Dupl,Goth,Grek,Hebr,Latn,Perm,Syrc,Tale,Tfng => Cyrl,Dupl,Goth,Grek,Latn,Perm,Syrc,Tale,Tfng]
-20C3 (⃃) UAE DIRHAM SIGN [Zyyy => Arab]
 ==== Create Groups ====
 Disallowed Script: [Brai] Braille
 Disallowed Script: [Lina] Linear A [X]
@@ -13196,14 +13195,14 @@ Disallowed Script: [Linb] Linear B [X]
 Disallowed Script: [Sgnw] SignWriting [X]
 [✓] UAX-31 script kinds
 Valid  | Name       | Test      | Rest      | Extra                     
-103073 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-114390 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-102863 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
-   710 | Common     | Zyyy      |           |                           
-  1000 | Latin      | Latn      | Zyyy      | π                         
-   837 | Cyrillic   | Cyrl      | Zyyy      |                           
-   826 | Greek      | Grek      | Zyyy      |                           
-   478 | Arabic     | Arab      |           | -                         
+103074 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+114391 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+102864 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
+   711 | Common     | Zyyy      |           |                           
+  1001 | Latin      | Latn      | Zyyy      | π                         
+   838 | Cyrillic   | Cyrl      | Zyyy      |                           
+   827 | Greek      | Grek      | Zyyy      |                           
+   477 | Arabic     | Arab      |           | -                         
    109 | Devanagari | Deva      |           |                           
     86 | Hebrew     | Hebr      |           | ₪                         
     83 | Thai       | Thai      |           | ฿                         
@@ -17424,8 +17423,8 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
 Valid: 155592
-Multi: 103049
-Unique: 52543
+Multi: 103050
+Unique: 52542
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 ==== Prune Inert Confusables ====
@@ -17999,19 +17998,19 @@ Non-Confusable Non-Unique: 99
 [✓] Ordered by rules/group-order.ts
 ==== Group Summary ====
 Ord | Valid  | Uniqu | Primar | Second | CM   | Group     
-  1 |    710 |     0 |    710 |      0 | 0/0  | Common    
-  2 |    792 |    55 |     81 |    711 | 0/51 | Latin     
-  3 |    467 |   444 |    466 |      1 |      | Arabic    
-  4 | 102859 |     0 | 102123 |    736 | 0/0  | Han       
+  1 |    711 |     0 |    711 |      0 | 0/0  | Common    
+  2 |    793 |    55 |     81 |    712 | 0/51 | Latin     
+  3 |    466 |   443 |    465 |      1 |      | Arabic    
+  4 | 102860 |     0 | 102123 |    737 | 0/0  | Han       
   5 |    109 |    99 |    109 |      0 |      | Devanagari
-  6 | 114384 | 11525 |  11527 | 102857 | 0/0  | Korean    
-  7 | 103066 |   207 |    209 | 102857 | 0/58 | Japanese  
-  8 |    812 |   102 |    102 |    710 | 0/8  | Cyrillic  
+  6 | 114385 | 11525 |  11527 | 102858 | 0/0  | Korean    
+  7 | 103067 |   207 |    209 | 102858 | 0/58 | Japanese  
+  8 |    813 |   102 |    102 |    711 | 0/8  | Cyrillic  
   9 |     86 |    85 |     85 |      1 |      | Hebrew    
  10 |     83 |    82 |     82 |      1 |      | Thai      
  11 |     92 |    82 |     92 |      0 |      | Bengali   
  12 |    125 |   103 |    125 |      0 |      | Tamil     
- 13 |    745 |    34 |     35 |    710 | 0/11 | Greek     
+ 13 |    746 |    34 |     35 |    711 | 0/11 | Greek     
  14 |    167 |   167 |    167 |      0 |      | Tibetan   
  15 |     73 |    63 |     73 |      0 |      | Gurmukhi  
  16 |     80 |    80 |     80 |      0 |      | Lao       
@@ -18180,7 +18179,7 @@ Per Group Max: 75
 5C9 (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH [Hebrew]
 B53 (◌୓) ORIYA SIGN DOT ABOVE [Oriya]
 B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE [Oriya]
-20C3 (⃃) UAE DIRHAM SIGN [Arabic]
+20C3 (⃃) UAE DIRHAM SIGN [Common,Latin,Han,Korean,Japanese,Cyrillic,Greek]
 10EC9 (𐻉) ARABIC SMALL BASELINE FATHA [Arabic]
 10ECA (𐻊) ARABIC SMALL BASELINE DOTLESS HEAD OF KHAH [Arabic]
 10ECB (◌𐻋) ARABIC NORTHEAST POINTING ARROWHEAD ABOVE [Arabic]

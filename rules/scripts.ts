@@ -92,9 +92,6 @@ export const SCRIPT_EXTENSIONS = [
 	[0x303, {remove: ['Thai']}], // (◌̃) COMBINING TILDE
 	[0x307, {remove: ['Hebr']}], // (◌̇) COMBINING DOT ABOVE
 	[0x308, {remove: ['Armn', 'Hebr']}], // (◌̈) COMBINING DIAERESIS
-
-	// 20261126: new in 18.0, the UAE dirham is written with Arabic, not shared with every group
-	[0x20C3, ['Arab']], // (⃃) UAE DIRHAM SIGN
 ] satisfies [CodePoint, string[] | {remove: string[]}][];
 
 export const DISALLOWED_SCRIPTS = [

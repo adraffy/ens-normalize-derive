@@ -3,7 +3,7 @@
 		"name": "version",
 		"unicode": "18.0.0 (2026-11-25T20:48:52.431Z)",
 		"cldr": "48.2 (2026-03-28T19:59:34.849Z)",
-		"spec_hash": "6484f679d3f5c09afb4a2390a5fefd1e248808423f14d21717603882348dc47d",
+		"spec_hash": "b7fd265461b6d4a560fb68387aa6211252a4ac17fe65e3d1475571417e39461a",
 		"nf_hash": "5656c9138a6daf981ff512be766d31ccbf254edd4b59bea29a5d0cb647fecbe3"
 	},
 	{
@@ -698,17 +698,17 @@
 		"comment": "Reviewed 18.0: MODIFIER LETTER HIGH AND LOW VERTICAL LINE disallowed"
 	},
 	{
-		"name": "⃃",
-		"comment": "Reviewed 18.0: UAE DIRHAM SIGN, Arabic only (rules/scripts.ts)"
+		"name": "⃃100",
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN, Common like other currency signs"
+	},
+	{
+		"name": "aed⃃",
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN with Latin"
 	},
 	{
 		"name": "ب⃃",
-		"comment": "Reviewed 18.0: UAE DIRHAM SIGN with Arabic"
-	},
-	{
-		"name": "a⃃",
 		"error": true,
-		"comment": "Reviewed 18.0: UAE DIRHAM SIGN is not Latin"
+		"comment": "Reviewed 18.0: UAE DIRHAM SIGN is not in Arabic (no Common there)"
 	},
 	{
 		"name": "⃂",
@@ -62450,7 +62450,7 @@
 		"name": "﵋"
 	},
 	{
-		"name": "ࡽ"
+		"name": "ࡼ"
 	},
 	{
 		"name": "﮺"
@@ -62462,13 +62462,13 @@
 		"name": "ظ"
 	},
 	{
-		"name": "﷿"
+		"name": "ﹳ"
 	},
 	{
-		"name": "𐹽"
+		"name": "𐹾"
 	},
 	{
-		"name": "ݴ"
+		"name": "ݳ"
 	},
 	{
 		"name": "र"
@@ -66625,9 +66625,9 @@
 		"name": "𽜒"
 	},
 	{
-		"name": "ûۥ",
+		"name": "û۞",
 		"error": true,
-		"comment": "illegal mixture: Latin + Arabic \"ۥ\"‎ {6E5}"
+		"comment": "illegal mixture: Latin + Arabic \"۞\"‎ {6DE}"
 	},
 	{
 		"name": "ॐ슺",
@@ -176084,117 +176084,117 @@
 		"comment": "disallowed character: \"@\"‎ {40}"
 	},
 	{
-		"name": "𜳴🆩⚄",
-		"norm": "4🆩⚄"
+		"name": "𜳴🆨⚃",
+		"norm": "4🆨⚃"
 	},
 	{
-		"name": "◑𝋍🗹✶₉¬",
-		"norm": "◑𝋍🗹✶9¬"
+		"name": "◐𝋍🗹✲₉¬",
+		"norm": "◐𝋍🗹✲9¬"
 	},
 	{
-		"name": "﹎∂🃍㋁🃛🖧◖🃝㎡",
-		"norm": "_∂🃍2月🃛🖧◖🃝m2"
+		"name": "﹎↯🃍㋁🃛🖧◖🃝㎡",
+		"norm": "_↯🃍2月🃛🖧◖🃝m2"
 	},
 	{
-		"name": "𝋦🅽🃧✘⅜🂶₹♱🂬√🙒㏧",
-		"norm": "𝋦🅽🃧✘3⁄8🂶₹♱🂬√🙒8日"
+		"name": "𝋦🅽🃧✘⅜🂵₹♰🂫∑🙒㏧",
+		"norm": "𝋦🅽🃧✘3⁄8🂵₹♰🂫∑🙒8日"
 	},
 	{
-		"name": "〄🆝🛊₈🃬󠄡＿㏳⑫𜳸🗪⛂▙⅝🪚️",
+		"name": "⸙🆝🛊₈🃫󠄡＿㏳⑫𜳸🗪⛁▓⅝🪚️",
 		"error": true,
 		"comment": "underscore allowed only at start"
 	},
 	{
-		"name": "🕮🂧◧⯆𜳰⑩︈󠄁🆃👳🏿🯴🛇◁󠇭𝟸⬖㍦",
-		"norm": "🕮🂧◧⯆010🆃👳🏿4🛇◁2⬖14点"
+		"name": "🕮🂧◧⯅𜳰⑩︈󠄁🆃👳🏿🯴🛇▽󠇭𝟸⬖㍦",
+		"norm": "🕮🂧◧⯅010🆃👳🏿4🛇▽2⬖14点"
 	},
 	{
-		"name": "🅺³㋅♢〠🎔㏭―☧♄㉎🉡🀦🤽🏿‍♂️🧖🏽‍♀️",
-		"norm": "🅺36月♢〠🎔14日-☧♄㉎🉡🀦🤽🏿‍♂🧖🏽‍♀"
+		"name": "🅹³㋅♡〠🎔㏭―☥♄㉎🉡🀦🤽🏿‍♂️🧖🏽‍♀️",
+		"norm": "🅹36月♡〠🎔14日-☥♄㉎🉡🀦🤽🏿‍♂🧖🏽‍♀"
 	},
 	{
-		"name": "🛪🖧ć"
+		"name": "🛪🖧ĉ"
 	},
 	{
-		"name": "𝋋🚶🏻‍➡️",
-		"norm": "𝋋🚶🏻‍➡"
+		"name": "𝋊🚶🏻‍➡️",
+		"norm": "𝋊🚶🏻‍➡"
 	},
 	{
-		"name": "🦵🏻⚁𝔸𝋳🃧⚝󠅷𝋨",
-		"norm": "🦵🏻⚁a𝋳🃧⚝𝋨"
+		"name": "🦵🏻⚁𝔸𝋲🃧⚚󠅷𝋨",
+		"norm": "🦵🏻⚁a𝋲🃧⚚𝋨"
 	},
 	{
-		"name": "󠄽𝋉󠄒⯈🀫☻󠅝←🀏❉𝘜🪄️",
-		"norm": "𝋉⯈🀫☻←🀏❉u🪄"
+		"name": "󠄽𝋈󠄒⯈🀫☻󠅝℞🀎❉𝘜🪄️",
+		"norm": "𝋈⯈🀫☻℞🀎❉u🪄"
 	},
 	{
-		"name": "ă󠄑🃘🗪⬖🆝🂠🀆♢Ⓟ𝟵▥🀇㏡🆣",
+		"name": "ą󠄑🃘🗪⬖🆝🂠🀅♢Ⓟ𝟵▤🀇㏡🆣",
 		"error": true,
 		"comment": "illegal mixture: Latin + Han \"日\"‎ {65E5}"
 	},
 	{
-		"name": "▚⌕🀘⛛🀈🗗𝑸𝋲z⛿à㊹𝐑⛐◧₾ū😁️",
-		"norm": "▚⌕🀘⛛🀈🗗q𝋲z⛿à44r⛐◧₾ū😁"
+		"name": "▙⌐🀘⛚🀈🗗𝑸𝋱z⛿à㊹𝐑⛐◧₾ū😁️",
+		"norm": "▙⌐🀘⛚🀈🗗q𝋱z⛿à44r⛐◧₾ū😁"
 	},
 	{
-		"name": "ę𝖵⌖₪☖⸙5¥𝐨⚳🆌▒⁔𝖢🀘🪖️✟▁𝙘󠆅",
-		"norm": "ęv⌖₪☖⸙5¥o⚳🆌▒⁔c🀘🪖✟▁c"
+		"name": "ę𝖵⌕₪☖⸙5¥𝐨⚳🆌░⁔𝖢🀗🪖️✟⏿𝙘󠆅",
+		"norm": "ęv⌕₪☖⸙5¥o⚳🆌░⁔c🀗🪖✟⏿c"
 	},
 	{
 		"name": "ﵫ𞹒ࣱ",
 		"norm": "شمخقࣱ"
 	},
 	{
-		"name": "ﶨ𐹲𐹣٦𐻍ﭗ",
-		"norm": "سخى𐹲𐹣٦𐻍پ"
+		"name": "ﶨ𐹲𐹤٦𐻍ﭗ",
+		"norm": "سخى𐹲𐹤٦𐻍پ"
 	},
 	{
-		"name": "ؼ𐻨ݫࣾ𐹵𐻫ݔࣉۥ"
+		"name": "ؼ𐻨ݪࣾ𐹵𐻫ݔࣈۥ"
 	},
 	{
-		"name": "𐻴ݬ﯉࢈ې𐻶﯉𞹵ݭﻞﵻࡸ",
+		"name": "𐻴ݬ﯊ࢇې𐻶﯊𞹵ݭﻞﵻࡸ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ࢟ࣥ",
-		"norm": "ݟٓلخميىًؒ𐹲تجيجمى𐹮ذ࢟ࣥ"
+		"name": "ݞٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ࢟ࣥ",
+		"norm": "ݞٓلخميىًؒ𐹲تجيجمى𐹮ذ࢟ࣥ"
 	},
 	{
-		"name": "ړࢴ﵃󠄚ࢽﱘݺ𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
-		"norm": "ړࢴ﵃ࢽيمݺّ𐻲𐻹۬𐻆ٓڐلمنجى𐹠"
+		"name": "ړࢳ﵃󠄚ࢼﱘݺ𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
+		"norm": "ړࢳ﵃ࢼيمݺّ𐻲𐻹۬𐻆ٓڐلمنجى𐹠"
 	},
 	{
-		"name": "󠆵؇اﱶ𐻍ۍ𐹤﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳ث",
+		"name": "󠆵؇اﱶ𐻍ی𐹥﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳ث",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"✴ + ◌𐻹\""
 	},
 	{
-		"name": "𢊒𱊵憼"
+		"name": "𢊒𱊶憼"
 	},
 	{
-		"name": "桊𤼸𢮄𫦓癀󠆸",
-		"norm": "桊𤼸𢮄𫦓癀"
+		"name": "桊𤼹𢮅𫦓癀󠆸",
+		"norm": "桊𤼹𢮅𫦓癀"
 	},
 	{
-		"name": "𧓄冷𢡼㊼締𲹎𧜷𫲸𥌗",
-		"norm": "𧓄冷𢡼47締𲹎𧜷𫲸𥌗"
+		"name": "𧓄冷𢡼㊼締𲹏𧜷𫲹𥌗",
+		"norm": "𧓄冷𢡼47締𲹏𧜷𫲹𥌗"
 	},
 	{
-		"name": "𭐜󠅼𧳂𰮍螻🤟🏾𪂢𤠫𢑤𲦼𬶆",
-		"norm": "𭐜𧳂𰮍螻🤟🏾𪂢𤠫𢑤𲦼𬶆"
+		"name": "𭐝󠅼𧳂𰮎螻🤟🏾𪂣𤠫𢑥𲦽𬶇",
+		"norm": "𭐝𧳂𰮎螻🤟🏾𪂣𤠫𢑥𲦽𬶇"
 	},
 	{
-		"name": "侀𦣁𦧐👩🏽‍🐰‍👩🏾𱔞㊎㎵🃠⾕",
-		"norm": "侀𦣁𦧐👩🏽‍🐰‍👩🏾𱔞金nv🃠谷"
+		"name": "侀𦣁𦧑👩🏽‍🐰‍👩🏾𱔟㊎㎵🃠⾕",
+		"norm": "侀𦣁𦧑👩🏽‍🐰‍👩🏾𱔟金nv🃠谷"
 	},
 	{
-		"name": "𥡜帴礏㻐𪎒𠩸𬴞𣾻𣧅󠅹𪊋𪱋𬣱ⓑ㪐𳍕𦞽𠈴",
-		"norm": "𥡜帴礏㻐𪎒𠩸𬴞𣾻𣧅𪊋𪱋𬣱b㪐𳍕𦞽𠈴"
+		"name": "𥡝帵礏㻐𪎒𠩹𬴟𣾻𣧆󠅹𪊌𪱋𬣱ⓑ㪐𳍖𦞾𠈴",
+		"norm": "𥡝帵礏㻐𪎒𠩹𬴟𣾻𣧆𪊌𪱋𬣱b㪐𳍖𦞾𠈴"
 	},
 	{
-		"name": "𦥋𧆙聆👿️𦓗󠆻𰦱𤤕𪧁𧮨𣀿𡩹𝑃󠆜齑𫃮襤𝗹尢𨚰",
-		"norm": "𦥋𧆙聆👿𦓗𰦱𤤕𪧁𧮨𣀿𡩹p齑𫃮襤l尢𨚰"
+		"name": "𦥌𧆙聆👿️𦓗󠆻𰦱𤤕𪧂𧮨𣀿𡩹𝑃󠆜齑𫃯襤𝗹尢𨚱",
+		"norm": "𦥌𧆙聆👿𦓗𰦱𤤕𪧂𧮨𣀿𡩹p齑𫃯襤l尢𨚱"
 	},
 	{
 		"name": "ज़आं",
@@ -176226,88 +176226,88 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𩣵𤖀𡫽"
+		"name": "𩣵𤕿𡫼"
 	},
 	{
-		"name": "𧑕穨🥇️𬇁𢪩",
-		"norm": "𧑕穨🥇𬇁𢪩"
+		"name": "𧑕穧🥇️𬇀𢪨",
+		"norm": "𧑕穧🥇𬇀𢪨"
 	},
 	{
-		"name": "柺層䪉𠰕𝘦亗𣅘󠇨𰶏",
-		"norm": "柺層䪉𠰕e亗𣅘𰶏"
+		"name": "柹層䪈𠰕𝘦亖𣅗󠇨𰶏",
+		"norm": "柹層䪈𠰕e亖𣅗𰶏"
 	},
 	{
-		"name": "캊慄𣺺📹️－㉰𦾓𢁍𤵙尋馏",
-		"norm": "캊慄𣺺📹-다𦾓𢁍𤵙尋馏"
+		"name": "캊慄𣺺📹️－㉰𦾓𢁌𤵙尊馏",
+		"norm": "캊慄𣺺📹-다𦾓𢁌𤵙尊馏"
 	},
 	{
-		"name": "🦹🏻‍♂️𝗠𱤯𩺞𤩵䦛檡岏𭨷㮝𥯑",
-		"norm": "🦹🏻‍♂m𱤯𩺞𤩵䦛檡岏𭨷㮝𥯑"
+		"name": "🦹🏻‍♂️𝗠𱤯𩺝𤩴䦚檡岎𭨷㮝𥯐",
+		"norm": "🦹🏻‍♂m𱤯𩺝𤩴䦚檡岎𭨷㮝𥯐"
 	},
 	{
-		"name": "㊻𛲣𨓿炭켿鯪𩻏𭡘㎙𳊑𬔹𧊤𱶄𧆠🖬𠨋뤤㉶",
-		"norm": "46𨓿炭켿鯪𩻏𭡘fm𳊑𬔹𧊤𱶄𧆠🖬𠨋뤤자"
+		"name": "㊻𛲣𨓾炭켿鯪𩻏𭡘㎙𳊑𬔹𧊤𱶄𧆠🖫𠨋뤤㉶",
+		"norm": "46𨓾炭켿鯪𩻏𭡘fm𳊑𬔹𧊤𱶄𧆠🖫𠨋뤤자"
 	},
 	{
-		"name": "𝓪宅𢁨𥌁𩑦𝖗𳉣𪗏𡿛L🦒️👰️𮡤𣀊𣟱娍㏱ℐ鉫",
-		"norm": "a宅𢁨𥌁𩑦r𳉣𪗏𡿛l🦒👰𮡤𣀊𣟱娍18日i鉫"
+		"name": "𝓪宅𢁧𥌁𩑥𝖗𳉣𪗏𡿚L🦒️👰️𮡤𣀊𣟰娌㏱ℐ鉫",
+		"norm": "a宅𢁧𥌁𩑥r𳉣𪗏𡿚l🦒👰𮡤𣀊𣟰娌18日i鉫"
 	},
 	{
 		"name": "𦝊󠇈𪼎",
 		"norm": "𦝊𪼎"
 	},
 	{
-		"name": "𩬘🧑‍🚒杞𩇟",
-		"norm": "𩬘🧑‍🚒杞𩇟"
+		"name": "𩬗🧑‍🚒杞𩇟",
+		"norm": "𩬗🧑‍🚒杞𩇟"
 	},
 	{
-		"name": "𱭾蕼𠤎𧇥萝𫂨𱹔👩‍🎤"
+		"name": "𱭾蕻𠤍𧇥萜𫂨𱹔👩‍🎤"
 	},
 	{
 		"name": "👨🏼‍🦽‍➡️🤛🏿𪭢🚣🏼",
 		"norm": "👨🏼‍🦽‍➡🤛🏿𪭢🚣🏼"
 	},
 	{
-		"name": "年㓚𮉃𭀜𱃀鼘𧒔𲣋𮷶󠄜㌵🤳🏿𝐹𦰶",
-		"norm": "年㓚𮉃𭀜𱃀鼘𧒔𲣋𮷶フラン🤳🏿f𦰶"
+		"name": "年㓙𮉃𭀛𱃀鼗𧒔𲣋𮷵󠄜㌵🤳🏿𝐹𦰶",
+		"norm": "年㓙𮉃𭀛𱃀鼗𧒔𲣋𮷵フラン🤳🏿f𦰶"
 	},
 	{
-		"name": "𰧇瞦𬼍塚󠇅𧥜𩥑𱲪🧑🏽‍🎨啹𦔼䚁𦡎睄駗",
-		"norm": "𰧇瞦𬼍塚𧥜𩥑𱲪🧑🏽‍🎨啹𦔼䚁𦡎睄駗"
+		"name": "𰧇瞦𬼌塚󠇅𧥜𩥐𱲪🧑🏽‍🎨啸𦔻䚀𦡍睃駗",
+		"norm": "𰧇瞦𬼌塚𧥜𩥐𱲪🧑🏽‍🎨啸𦔻䚀𦡍睃駗"
 	},
 	{
-		"name": "𲱰陼𳍩𰪝𱪯𤟹轊𩍴𨎎𬵂硝燐👨🏿‍🍳霛𲨞霠𥘚檲",
-		"norm": "𲱰陼𳍩𰪝𱪯𤟹轊𩍴𨎎𬵂硝燐👨🏿‍🍳霛𲨞霠𥘚檲"
+		"name": "𲱰陼𳍩𰪝𱪯𤟸轉𩍴𨎍𬵂硜燐👨🏿‍🍳霚𲨞霟𥘙檱",
+		"norm": "𲱰陼𳍩𰪝𱪯𤟸轉𩍴𨎍𬵂硜燐👨🏿‍🍳霚𲨞霟𥘙檱"
 	},
 	{
-		"name": "ԩ𝋱🗢"
+		"name": "ԯ𝋱🗢"
 	},
 	{
 		"name": "🕀🖦ѓ︊󠆅❀",
 		"norm": "🕀🖦ѓ❀"
 	},
 	{
-		"name": "③฿▜⬒⛆🅸һ🖲️",
+		"name": "③฿▛⧫⛃🅸һ🖲️",
 		"error": true,
 		"comment": "whole-script confusable: Cyrillic/Latin"
 	},
 	{
-		"name": "🃡🃚🛔🄯﹣й㍹🗪🙓🇮🇨↯",
+		"name": "🃡🃙🛔🄯﹣й㍹🗪🙓🇮🇨↓",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Latin \"d\"‎ {64}"
 	},
 	{
-		"name": "🂴•ХӠ⚣▷🆧⯅Ӆ▤⟠ҙ🆥🔓️",
-		"norm": "🂴•хӡ⚣▷🆧⯅ӆ▤⟠ҙ🆥🔓"
+		"name": "🂴•ХӠ⚣△🆧⯄Ӆ▣⟁ҙ🆥🔓️",
+		"norm": "🂴•хӡ⚣△🆧⯄ӆ▣⟁ҙ🆥🔓"
 	},
 	{
-		"name": "Ђ󠆜𝋐🇲🇳㏤🖧㋃🖉Ԡ🂸⅑󠆑♡⚤❆🃘𝋫",
+		"name": "Ђ󠆜𝋏🇲🇳㏤🖧㋃🖉Ԡ🂸⅑󠆑♞⚣❅🃘𝋪",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Han \"日\"‎ {65E5}"
 	},
 	{
-		"name": "🐗️⬔¬▣𝋭￪❃✒️🀟󠄔㏻♰🃵🚶🏾‍♀️‍➡️",
-		"norm": "🐗⬔¬▣𝋭↑❃✒🀟28日♰🃵🚶🏾‍♀‍➡"
+		"name": "🐗️⬓¬▟𝋭￪❂✒️🀞󠄔㏻♬🃵🚶🏾‍♀️‍➡️",
+		"norm": "🐗⬓¬▟𝋭↑❂✒🀞28日♬🃵🚶🏾‍♀‍➡"
 	},
 	{
 		"name": "דדױ"
@@ -176434,26 +176434,26 @@
 		"norm": "⯎𝋩🖷ζ2🧑🏽‍🦰"
 	},
 	{
-		"name": "ί🙒🙬㍢🀞-𝝥⬖✀",
+		"name": "ί🙒🙬㍢🀞-𝝥⬖⛿",
 		"error": true,
 		"comment": "illegal mixture: Greek + Han \"点\"‎ {70B9}"
 	},
 	{
-		"name": "㏁󠆨🃓🀪🕈📼️▂⯃℞🃅🃭",
+		"name": "㏁󠆨🃓🀪🕈📼️▁⯃℞🃄🃭",
 		"error": true,
 		"comment": "illegal mixture: Latin + Greek \"ω\"‎ {3C9}"
 	},
 	{
-		"name": "🧏🏿‍♂️󠆯𝜂▣η６🃫🖎𝟰𝜺⚃",
-		"norm": "🧏🏿‍♂η▣η6🃫🖎4ε⚃"
+		"name": "🧏🏿‍♂️󠆯𝜂▟η６🃫🖎𝟰𝜺⚂",
+		"norm": "🧏🏿‍♂η▟η6🃫🖎4ε⚂"
 	},
 	{
-		"name": "➚󠆍𝞐👩‍🦱🤚🏼6ΰ𝝅◿𝋉🂪🏏️₭₴",
-		"norm": "➚α👩‍🦱🤚🏼6ΰπ◿𝋉🂪🏏₭₴"
+		"name": "➚󠆍𝞐👩‍🦱🤚🏼6ΰ𝝅◿𝋈🂩🏏️₭₴",
+		"norm": "➚α👩‍🦱🤚🏼6ΰπ◿𝋈🂩🏏₭₴"
 	},
 	{
-		"name": "µα✬🂳🃱₫🖄η𝝡🛲𝛡❃⯀◧⚿⛨🦩️🕱⁸⛟",
-		"norm": "μα✬🂳🃱₫🖄ημ🛲π❃⯀◧⚿⛨🦩🕱8⛟"
+		"name": "µα✫🂳🃱₫🖄η𝝡🛲𝛡❃⯀◥⚿⛨🦩️🕱⁸⛛",
+		"norm": "μα✫🂳🃱₫🖄ημ🛲π❃⯀◥⚿⛨🦩🕱8⛛"
 	},
 	{
 		"name": "ྤཌྷཌྷ",
@@ -180865,72 +180865,72 @@
 		"norm": "𿅰𾀥𾩪𾕁𽨟𾶊𾩸𿔨🇮🇹𾸉𿪮𿓂𾞯𿘖𾼘𽱗𽱱𾱅𾞭"
 	},
 	{
-		"name": "𜳴ᤀ🆩⚄",
+		"name": "𜳴ᤀ🆨⚃",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Limb] \"ᤀ\"‎ {1900}"
 	},
 	{
-		"name": "◑𝋍🗹✶𐭆₉¬",
+		"name": "◐𝋍🗹✲𐭆₉¬",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Prti] \"𐭆\"‎ {10B46}"
 	},
 	{
-		"name": "﹎∂🃍㋁🃛🖧𖫩◖🃝㎡",
+		"name": "﹎↯🃍㋁🃛🖧𖫩◖🃝㎡",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Bass] \"𖫩\"‎ {16AE9}"
 	},
 	{
-		"name": "𝋦🅽🃧✘⅜🂶₹♱🂬√🙒𔑇㏧",
+		"name": "𝋦🅽🃧✘⅜🂵₹♰🂫∑🙒𔑇㏧",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Hluw] \"𔑇\"‎ {14447}"
 	},
 	{
-		"name": "࠙〄🆝🛊₈🃬󠄡＿㏳⑫𜳸🗪⛂▙⅝🪚️",
+		"name": "࠙⸙🆝🛊₈🃫󠄡＿㏳⑫𜳸🗪⛁▓⅝🪚️",
 		"error": true,
 		"comment": "underscore allowed only at start"
 	},
 	{
-		"name": "🕮🂧ᜳ◧⯆𜳰⑩︈󠄁🆃👳🏿🯴🛇◁󠇭𝟸⬖㍦",
+		"name": "🕮🂧ᜳ◧⯅𜳰⑩︈󠄁🆃👳🏿🯴🛇▽󠇭𝟸⬖㍦",
 		"error": true,
 		"comment": "illegal placement: unsupported combining mark: \"🂧 + ◌ᜳ\""
 	},
 	{
-		"name": "🅺³㋅♢〠🎔㏭𞡮―☧♄㉎🉡🀦🤽🏿‍♂️🧖🏽‍♀️",
+		"name": "🅹³㋅♡〠🎔㏭𞡮―☥♄㉎🉡🀦🤽🏿‍♂️🧖🏽‍♀️",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Mend] \"𞡮\"‎ {1E86E}"
 	},
 	{
-		"name": "🛪🖧ć𐔿",
+		"name": "🛪🖧ĉ𐔿",
 		"error": true,
 		"comment": "illegal mixture: Latin + Restricted[Aghb] \"𐔿\"‎ {1053F}"
 	},
 	{
-		"name": "𝋋🚶🏻ן‍➡️",
+		"name": "𝋊🚶🏻ן‍➡️",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "᧚🦵🏻⚁𝔸𝋳🃧⚝󠅷𝋨",
+		"name": "᧚🦵🏻⚁𝔸𝋲🃧⚚󠅷𝋨",
 		"error": true,
 		"comment": "illegal mixture: Restricted[Talu] + Common \"⚁\"‎ {2681}"
 	},
 	{
-		"name": "󠄽𝋉󠄒⯈🀫𑣍☻󠅝←🀏❉𝘜🪄️",
+		"name": "󠄽𝋈󠄒⯈🀫𑣍☻󠅝℞🀎❉𝘜🪄️",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Wara] \"𑣍\"‎ {118CD}"
 	},
 	{
-		"name": "ă󠄑🃘🗪⬖🆝🂠🀆♢Ⓟ𝟵᧠▥🀇㏡🆣",
+		"name": "ą󠄑🃘🗪⬖🆝🂠🀅♢Ⓟ𝟵᧠▤🀇㏡🆣",
 		"error": true,
 		"comment": "illegal mixture: Latin + Khmer \"᧠\"‎ {19E0}"
 	},
 	{
-		"name": "▚⌕🀘⛛🀈ꥆ🗗𝑸𝋲z⛿à㊹𝐑⛐◧₾ū😁️",
+		"name": "▙⌐🀘⛚🀈ꥆ🗗𝑸𝋱z⛿à㊹𝐑⛐◧₾ū😁️",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Rjng] \"ꥆ\"‎ {A946}"
 	},
 	{
-		"name": "ę𝖵⌖₪☖⸙5¥𝐨⚳🆌▒⁔𝖢🀘𑪆🪖️✟▁𝙘󠆅",
+		"name": "ę𝖵⌕₪☖⸙5¥𝐨⚳🆌░⁔𝖢🀗𑪆🪖️✟⏿𝙘󠆅",
 		"error": true,
 		"comment": "illegal mixture: Latin + Restricted[Soyo] \"𑪆\"‎ {11A86}"
 	},
@@ -180940,67 +180940,67 @@
 		"comment": "illegal mixture: Restricted[Xpeo] + Arabic \"ش\"‎ {634}"
 	},
 	{
-		"name": "ﶨ𐹲𐹣٦𐻍ﭗം",
+		"name": "ﶨ𐹲𐹤٦𐻍ﭗം",
 		"error": true,
 		"comment": "illegal placement: unsupported combining mark: \"پ + ◌ം\""
 	},
 	{
-		"name": "ؼ𐻨ݫࣾネ𐹵𐻫ݔࣉۥ",
+		"name": "ؼ𐻨ݪࣾネ𐹵𐻫ݔࣈۥ",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Japanese \"ネ\"‎ {30CD}"
 	},
 	{
-		"name": "𐻴ݬ﯉࢈ې𐻶﯉𞹵ݭ𐍉ﻞﵻࡸ",
+		"name": "𐻴ݬ﯊ࢇې𐻶﯊𞹵ݭ𐍉ﻞﵻࡸ",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "ݟٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ ࢟ࣥ",
+		"name": "ݞٓﶆﱙً󠆳󠅔ؒ𐹲ﶟﶧ𐹮ذ ࢟ࣥ",
 		"error": true,
 		"comment": "disallowed character: \" \"‎ {20}"
 	},
 	{
-		"name": "ړࢴ﵃󠄚ࢽﱘݺ𑐑𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
+		"name": "ړࢳ﵃󠄚ࢼﱘݺ𑐑𐻹ّ۬𐻲𐻆ٓ󠇁ڐﲅﶙ𐹠",
 		"error": true,
 		"comment": "illegal mixture: Arabic + Restricted[Newa] \"𑐑\"‎ {11411}"
 	},
 	{
-		"name": "󠆵؇اﱶ𐻍ۍ𐹤﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳𑫌ث",
+		"name": "󠆵؇اﱶ𐻍ی𐹥﯇ﰼﰼݓ﯂صﶎ✴️𐻹ࢗࡾ𐻳𑫌ث",
 		"error": true,
 		"comment": "illegal placement: emoji + combining mark: \"✴ + ◌𐻹\""
 	},
 	{
-		"name": "𢊒𱊵ᨗ憼",
+		"name": "𢊒𱊶ᨗ憼",
 		"error": true,
-		"comment": "illegal placement: unsupported combining mark: \"𱊵 + ◌ᨗ\""
+		"comment": "illegal placement: unsupported combining mark: \"𱊶 + ◌ᨗ\""
 	},
 	{
-		"name": "桊𤼸𢮄𫦓𔔕癀󠆸",
+		"name": "桊𤼹𢮅𫦓𔔕癀󠆸",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Hluw] \"𔔕\"‎ {14515}"
 	},
 	{
-		"name": "𧓄冷𞛖𢡼㊼締𲹎𧜷𫲸𥌗",
+		"name": "𧓄冷𞛖𢡼㊼締𲹏𧜷𫲹𥌗",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Tayo] \"𞛖\"‎ {1E6D6}"
 	},
 	{
-		"name": "𭐜󠅼𑒲𧳂𰮍螻🤟🏾𪂢𤠫𢑤𲦼𬶆",
+		"name": "𭐝󠅼𑒲𧳂𰮎螻🤟🏾𪂣𤠫𢑥𲦽𬶇",
 		"error": true,
-		"comment": "illegal placement: unsupported combining mark: \"𭐜 + ◌𑒲\""
+		"comment": "illegal placement: unsupported combining mark: \"𭐝 + ◌𑒲\""
 	},
 	{
-		"name": "侀𦣁𦧐👩🏽‍🐰‍👩𑚠🏾𱔞㊎㎵🃠⾕",
+		"name": "侀𦣁𦧑👩🏽‍🐰‍👩𑚠🏾𱔟㊎㎵🃠⾕",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "𥡜帴ᯞ礏㻐𪎒𠩸𬴞𣾻𣧅󠅹𪊋𪱋𬣱ⓑ㪐𳍕𦞽𠈴",
+		"name": "𥡝帵ᯞ礏㻐𪎒𠩹𬴟𣾻𣧆󠅹𪊌𪱋𬣱ⓑ㪐𳍖𦞾𠈴",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Batk] \"ᯞ\"‎ {1BDE}"
 	},
 	{
-		"name": "𦥋𧆙聆👿️𦓗󠆻𰦱𤤕𪧁𧮨𣀿𡩹𝑃󠆜齑𐮍𫃮襤𝗹尢𨚰",
+		"name": "𦥌𧆙聆👿️𦓗󠆻𰦱𤤕𪧂𧮨𣀿𡩹𝑃󠆜齑𐮍𫃯襤𝗹尢𨚱",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Phlp] \"𐮍\"‎ {10B8D}"
 	},
@@ -181040,38 +181040,38 @@
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𩣵𤖀ꡬ𡫽",
+		"name": "𩣵𤕿ꡬ𡫼",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Phag] \"ꡬ\"‎ {A86C}"
 	},
 	{
-		"name": "𧑕穨🥇️𐗰𬇁𢪩",
+		"name": "𧑕穧🥇️𐗰𬇀𢪨",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Todr] \"𐗰\"‎ {105F0}"
 	},
 	{
-		"name": "च柺層䪉𠰕𝘦亗𣅘󠇨𰶏",
+		"name": "च柹層䪈𠰕𝘦亖𣅗󠇨𰶏",
 		"error": true,
-		"comment": "illegal mixture: Devanagari + Han \"柺\"‎ {67FA}"
+		"comment": "illegal mixture: Devanagari + Han \"柹\"‎ {67F9}"
 	},
 	{
-		"name": "캊慄𣺺📹️－㉰𦾓𢁍𤵙𐭭尋馏",
+		"name": "캊慄𣺺📹️－㉰𦾓𢁌𤵙𐭭尊馏",
 		"error": true,
 		"comment": "illegal mixture: Korean + Restricted[Phli] \"𐭭\"‎ {10B6D}"
 	},
 	{
-		"name": "🦹🏻‍♂️𝗠𱤯𩺞𤩵䦛檡岏𭨷㮝𥯑𑒲",
+		"name": "🦹🏻‍♂️𝗠𱤯𩺝𤩴䦚檡岎𭨷㮝𥯐𑒲",
 		"error": true,
-		"comment": "illegal placement: unsupported combining mark: \"𥯑 + ◌𑒲\""
+		"comment": "illegal placement: unsupported combining mark: \"𥯐 + ◌𑒲\""
 	},
 	{
-		"name": "㊻𛲣𨓿𖪆炭켿鯪𩻏𭡘㎙𳊑𬔹𧊤𱶄𧆠🖬𠨋뤤㉶",
+		"name": "㊻𛲣𨓾𖪆炭켿鯪𩻏𭡘㎙𳊑𬔹𧊤𱶄𧆠🖫𠨋뤤㉶",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Tnsa] \"𖪆\"‎ {16A86}"
 	},
 	{
-		"name": "𝓪宅𢁨𥌁🀟𩑦𝖗𳉣𪗏𡿛L🦒️👰️𮡤𣀊𣟱娍㏱ℐ鉫",
-		"norm": "a宅𢁨𥌁🀟𩑦r𳉣𪗏𡿛l🦒👰𮡤𣀊𣟱娍18日i鉫"
+		"name": "𝓪宅𢁧𥌁🀞𩑥𝖗𳉣𪗏𡿚L🦒️👰️𮡤𣀊𣟰娌㏱ℐ鉫",
+		"norm": "a宅𢁧𥌁🀞𩑥r𳉣𪗏𡿚l🦒👰𮡤𣀊𣟰娌18日i鉫"
 	},
 	{
 		"name": "𦝊󠇈𪼎ᨲ",
@@ -181079,12 +181079,12 @@
 		"comment": "illegal mixture: Han + Restricted[Lana] \"ᨲ\"‎ {1A32}"
 	},
 	{
-		"name": "𩬘🧑‍🚒杞᧠𩇟",
+		"name": "𩬗🧑‍🚒杞᧠𩇟",
 		"error": true,
 		"comment": "illegal mixture: Han + Khmer \"᧠\"‎ {19E0}"
 	},
 	{
-		"name": "𱭾蕼𠤎𧇥𑱴萝𫂨𱹔👩‍🎤",
+		"name": "𱭾蕻𠤍𧇥𑱴萜𫂨𱹔👩‍🎤",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Marc] \"𑱴\"‎ {11C74}"
 	},
@@ -181094,22 +181094,22 @@
 		"comment": "illegal mixture: Han + Restricted[Bamu] \"𖢪\"‎ {168AA}"
 	},
 	{
-		"name": "年㓚𮉃𭀜𱃀鼘𧒔𲣋𮷶󠄜㌵🤳🏿꣖𝐹𦰶",
+		"name": "年㓙𮉃𭀛𱃀鼗𧒔𲣋𮷵󠄜㌵🤳🏿꣖𝐹𦰶",
 		"error": true,
 		"comment": "illegal mixture: Japanese + Restricted[Saur] \"꣖\"‎ {A8D6}"
 	},
 	{
-		"name": "𞗮𰧇瞦𬼍塚󠇅𧥜𩥑𱲪🧑🏽‍🎨啹𦔼䚁𦡎睄駗",
+		"name": "𞗮𰧇瞦𬼌塚󠇅𧥜𩥐𱲪🧑🏽‍🎨啸𦔻䚀𦡍睃駗",
 		"error": true,
 		"comment": "illegal placement: leading combining mark"
 	},
 	{
-		"name": "𲱰陼𳍩𰪝𱪯𤟹轊ꫲ𩍴𨎎𬵂硝燐👨🏿‍🍳霛𲨞霠𥘚檲",
+		"name": "𲱰陼𳍩𰪝𱪯𤟸轉ꫲ𩍴𨎍𬵂硜燐👨🏿‍🍳霚𲨞霟𥘙檱",
 		"error": true,
 		"comment": "illegal mixture: Han + Restricted[Mtei] \"ꫲ\"‎ {AAF2}"
 	},
 	{
-		"name": "ԩ𑐯𝋱🗢",
+		"name": "ԯ𑐯𝋱🗢",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Restricted[Newa] \"𑐯\"‎ {1142F}"
 	},
@@ -181119,27 +181119,27 @@
 		"comment": "illegal mixture: Common + Restricted[Gonm] \"𑴬\"‎ {11D2C}"
 	},
 	{
-		"name": "③฿▜𐫃⬒⛆🅸һ🖲️",
+		"name": "③฿▛𐫃⧫⛃🅸һ🖲️",
 		"error": true,
 		"comment": "illegal mixture: Common + Restricted[Mani] \"𐫃\"‎ {10AC3}"
 	},
 	{
-		"name": "🃡🃚🛔🄯﹣й㍹ᨲ🗪🙓🇮🇨↯",
+		"name": "🃡🃙🛔🄯﹣й㍹ᨲ🗪🙓🇮🇨↓",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Latin \"d\"‎ {64}"
 	},
 	{
-		"name": "🂴•ХӠ⚣▷🆧⯅Ӆ▤⟠ҙ🆥ࡌ🔓️",
+		"name": "🂴•ХӠ⚣△🆧⯄Ӆ▣⟁ҙ🆥ࡌ🔓️",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Restricted[Mand] \"ࡌ\"‎ {84C}"
 	},
 	{
-		"name": "Ђ󠆜𝋐🇲🇳㏤🖧㋃𞓚🖉Ԡ🂸⅑󠆑♡⚤❆🃘𝋫",
+		"name": "Ђ󠆜𝋏🇲🇳㏤🖧㋃𞓚🖉Ԡ🂸⅑󠆑♞⚣❅🃘𝋪",
 		"error": true,
 		"comment": "illegal mixture: Cyrillic + Han \"日\"‎ {65E5}"
 	},
 	{
-		"name": "🐗️⬔¬▣𝋭￪❃✒️🀟󠄔㏻♰🃵🚶𑷁🏾‍♀️‍➡️",
+		"name": "🐗️⬓¬▟𝋭￪❂✒️🀞󠄔㏻♬🃵🚶𑷁🏾‍♀️‍➡️",
 		"error": true,
 		"comment": "disallowed character: \"🏾\"‎ {1F3FE}"
 	},
@@ -181159,7 +181159,7 @@
 		"comment": "illegal mixture: Hebrew + Restricted[Cher] \"Ꮚ\"‎ {13CA}"
 	},
 	{
-		"name": "שכתזּ👩🏻‍❤️‍💋🀟‍👨🏻",
+		"name": "שכתזּ👩🏻‍❤️‍💋🀞‍👨🏻",
 		"error": true,
 		"comment": "disallowed character: {200D}"
 	},
@@ -181294,27 +181294,27 @@
 		"comment": "illegal mixture: Japanese + Greek \"ζ\"‎ {3B6}"
 	},
 	{
-		"name": "ί🙒🙬㍢𔔕🀞-𝝥⬖✀",
+		"name": "ί🙒🙬㍢𔔕🀞-𝝥⬖⛿",
 		"error": true,
 		"comment": "illegal mixture: Greek + Han \"点\"‎ {70B9}"
 	},
 	{
-		"name": "㏁󠆨🃓𐧄🀪🕈📼️▂⯃℞🃅🃭",
+		"name": "㏁󠆨🃓𐧄🀪🕈📼️▁⯃℞🃄🃭",
 		"error": true,
 		"comment": "illegal mixture: Latin + Greek \"ω\"‎ {3C9}"
 	},
 	{
-		"name": "🧏🏿‍♂️󠆯𝜂▣η６🃫🖎𝟰𑫌𝜺⚃",
+		"name": "🧏🏿‍♂️󠆯𝜂▟η６🃫🖎𝟰𑫌𝜺⚂",
 		"error": true,
 		"comment": "illegal mixture: Greek + Restricted[Pauc] \"𑫌\"‎ {11ACC}"
 	},
 	{
-		"name": "➚󠆍𝞐👩‍🦱🤚🏼6ΰ𝝅◿𝋉🂪𓪡🏏️₭₴",
+		"name": "➚󠆍𝞐👩‍🦱🤚🏼6ΰ𝝅◿𝋈🂩𓪡🏏️₭₴",
 		"error": true,
 		"comment": "illegal mixture: Greek + Restricted[Egyp] \"𓪡\"‎ {13AA1}"
 	},
 	{
-		"name": "µα✬🂳🃱₫🖄η𝝡🛲𝛡❃𖄜⯀◧⚿⛨🦩️🕱⁸⛟",
+		"name": "µα✫🂳🃱₫🖄η𝝡🛲𝛡❃𖄜⯀◥⚿⛨🦩️🕱⁸⛛",
 		"error": true,
 		"comment": "illegal mixture: Greek + Restricted[Gukh] \"𖄜\"‎ {1611C}"
 	},
@@ -182374,9 +182374,9 @@
 		"comment": "illegal mixture: Restricted[Xsux] + Restricted[Pcun] \"𒗝\"‎ {125DD}"
 	},
 	{
-		"name": "𒌖𒑪𒈹𒑀𒕒🀡𒉣",
+		"name": "𒌖𒑪𒈹𒑀𒕒🀠𒉣",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Xsux] + Common \"🀡\"‎ {1F021}"
+		"comment": "illegal mixture: Restricted[Xsux] + Common \"🀠\"‎ {1F020}"
 	},
 	{
 		"name": "𒌳𒕚󠅐𒀥𒙚󠇡𘊲𒎃𒔏𒑸",
@@ -182757,9 +182757,9 @@
 		"norm": "🦵🏿𐗰"
 	},
 	{
-		"name": "𑀃𑁂🀡𑁴𑁉𑀸🫳️",
+		"name": "𑀃𑁂🀠𑁴𑁉𑀸🫳️",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Brah] + Common \"🀡\"‎ {1F021}"
+		"comment": "illegal mixture: Restricted[Brah] + Common \"🀠\"‎ {1F020}"
 	},
 	{
 		"name": "👯🏽‍♂️𑀞𑀿ፗ𑁰𑁮",
@@ -183046,9 +183046,9 @@
 		"comment": "disallowed character: {200D}"
 	},
 	{
-		"name": "➗️ᯟᯗ🀡᯲ᯝᯓ᯾ᯡᯪ✍🏾",
+		"name": "➗️ᯟᯗ🀠᯲ᯝᯓ᯾ᯡᯪ✍🏾",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Batk] + Common \"🀡\"‎ {1F021}"
+		"comment": "illegal mixture: Restricted[Batk] + Common \"🀠\"‎ {1F020}"
 	},
 	{
 		"name": "ᯁᯄᯰᯨᯝ᯿ᯆᯍᯯᯬ🏊𐑪🏻‍♂️",
@@ -184994,9 +184994,9 @@
 		"comment": "illegal mixture: Restricted[Osge] + Restricted[Merc] \"𐧣\"‎ {109E3}"
 	},
 	{
-		"name": "𐧟🀡𐧅𐧩𐧭𐦤𐧡",
+		"name": "𐧟🀠𐧅𐧩𐧭𐦤𐧡",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Merc] + Common \"🀡\"‎ {1F021}"
+		"comment": "illegal mixture: Restricted[Merc] + Common \"🀠\"‎ {1F020}"
 	},
 	{
 		"name": "𐦦𐧓𐧪𐧥𐦷󠅶𐧲🧍🏿𐤪",
@@ -185474,9 +185474,9 @@
 		"comment": "illegal mixture: Restricted[Phag] + Restricted[Cprt] \"𐠢\"‎ {10822}"
 	},
 	{
-		"name": "ꡧꡊꡱꡨꡝ👩🏽‍🦲🧤️ꡤꡯ🀟ꡣꡍ︀ꡭꡣꡦ󠇝ꡰ",
+		"name": "ꡧꡊꡱꡨꡝ👩🏽‍🦲🧤️ꡤꡯ🀞ꡣꡍ︀ꡭꡣꡦ󠇝ꡰ",
 		"error": true,
-		"comment": "illegal mixture: Restricted[Phag] + Common \"🀟\"‎ {1F01F}"
+		"comment": "illegal mixture: Restricted[Phag] + Common \"🀞\"‎ {1F01E}"
 	},
 	{
 		"name": "ⳉ𐭰𐭽𐭰",
