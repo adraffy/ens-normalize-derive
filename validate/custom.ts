@@ -201,6 +201,14 @@ export default [
 	{name: 'ஃ', comment: 'Script_Extensions: TAMIL SIGN VISARGA in Tamil'},
 	{name: 'కஃ', error: true, comment: 'Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)'},
 
+	// a combining mark's base must be one of its group's own characters (UAX-24 inherited script)
+	{name: 'ب\u{64B}-ب', comment: 'Inherited: Arabic mark on an Arabic letter'},
+	{name: 'ب-\u{64B}ب', error: true, comment: 'Inherited: Arabic mark on hyphen (an Arabic extra)'},
+	{name: 'א₪\u{5BC}', error: true, comment: 'Inherited: Hebrew mark on ₪ (a Hebrew extra)'},
+	{name: '₪\u{5BC}א', error: true, comment: 'Inherited: Hebrew mark on leading ₪'},
+	{name: 'ก฿\u{E31}', error: true, comment: 'Inherited: Thai mark on ฿ (a Thai extra)'},
+	{name: 'ก\u{E31}฿', comment: 'Inherited: Thai mark on a Thai letter, then ฿'},
+
 	// confusables synced with Unicode 18 (rules/confuse.ts): registered names stay valid
 	{name: 'бот', comment: 'Confusable: Cyrillic word vs new Coptic lookalikes'},
 	{name: 'сша', comment: 'Confusable: Unicode 18 moved ш into the w set (restored)'},

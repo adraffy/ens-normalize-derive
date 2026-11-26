@@ -61,7 +61,7 @@ Other groups keep their marks. Instead, derive removes any character whose NFD r
 
 - In the seven whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. No group has `Zinh` in `rest`. Latin, Cyrillic and Greek used to have it, but it only added bare marks that the whitelist then purged, and removing it left `spec.json` unchanged.
 - In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 595 marks are `Zinh` only, and none is valid as a bare mark anywhere.
-- The one gap is a mark on a group's `extra` character. `ب-ًب` (an Arabic mark on a hyphen), `₪ּא` and `ก฿ั` are valid, even though the mark's base isn't Arabic, Hebrew or Thai. No registered label does this, so the library could add a positional check (a mark's base must be primary) without breaking anything.
+- That leaves marks on a group's `extra` characters, which membership alone would allow: `ب-ًب` (an Arabic mark on a hyphen), `₪ּא`, `ก฿ั`. So in groups without a whitelist, a mark's base (the character before it, after NFC) must be **primary** in the group: `illegal placement: combining mark on non-Arabic: "- + ◌ً"`. This is the one positional rule, and it's new after 1.11.1. Only Arabic `-`, Hebrew `₪` and Thai `฿` are affected, and no registered label uses them that way.
 
 ### 4. Confusables → wholes
 
@@ -80,7 +80,7 @@ A set without decisions whose only unrestricted member is X makes X primary auto
 ### 5. Pruning, primary/secondary, order
 
 - Characters that end up in no group (and aren't part of one) are disallowed. Empty groups are dropped.
-- In `spec.json` each group splits its characters into **primary** (script set intersects `test`) and **secondary** (came in through `rest`/`extra`). Primary only affects error messages (below).
+- In `spec.json` each group splits its characters into **primary** (script set intersects `test`) and **secondary** (came in through `rest`/`extra`). Primary decides which group an "illegal mixture" error names, and which characters a combining mark may follow (below).
 - Groups are ordered by [rules/group-order.ts](../rules/group-order.ts), a fixed priority with Common, then Latin, first. Restricted groups come after all unrestricted ones, in `RESTRICTED_SCRIPTS` order unless listed. The order is part of the output, because it decides which group names a label.
 
 ## Checking a label
@@ -92,7 +92,7 @@ For each label (after mapping, NFC and emoji tokenizing):
 3. **Determine the group.** Start from all groups in priority order. For each distinct character, keep only the groups that contain it, and stop once one group remains. The first remaining group is the label's group, which becomes its `type`.
    - If no group contains the character at all: `disallowed character`.
    - If some group contains it but none of the remaining ones does: `illegal mixture: <first remaining group> + <first group where the character is primary> "x"`.
-4. **Check the group.** Every character must be in that group. Groups without a CM whitelist also get the nonspacing-mark checks.
+4. **Check the group.** Every character must be in that group. In groups without a CM whitelist, every combining mark must follow a primary character, and the nonspacing-mark checks apply.
 5. **Whole-script confusable check.** Walk the distinct characters:
    - A character in exactly one group and in no whole is **unique**: no other group can spell this label, so the check passes.
    - A **confused** character narrows the candidate groups to the other groups that hold a lookalike of it. These are the groups of its whole's other members, minus its own. If none remain, the check passes.

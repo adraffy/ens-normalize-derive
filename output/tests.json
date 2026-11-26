@@ -713,6 +713,34 @@
 		"comment": "Script_Extensions: TAMIL SIGN VISARGA not in Telugu (18.0 change pinned)"
 	},
 	{
+		"name": "بً-ب",
+		"comment": "Inherited: Arabic mark on an Arabic letter"
+	},
+	{
+		"name": "ب-ًب",
+		"error": true,
+		"comment": "Inherited: Arabic mark on hyphen (an Arabic extra)"
+	},
+	{
+		"name": "א₪ּ",
+		"error": true,
+		"comment": "Inherited: Hebrew mark on ₪ (a Hebrew extra)"
+	},
+	{
+		"name": "₪ּא",
+		"error": true,
+		"comment": "Inherited: Hebrew mark on leading ₪"
+	},
+	{
+		"name": "ก฿ั",
+		"error": true,
+		"comment": "Inherited: Thai mark on ฿ (a Thai extra)"
+	},
+	{
+		"name": "กั฿",
+		"comment": "Inherited: Thai mark on a Thai letter, then ฿"
+	},
+	{
 		"name": "бот",
 		"comment": "Confusable: Cyrillic word vs new Coptic lookalikes"
 	},
@@ -180015,7 +180043,8 @@
 	},
 	{
 		"name": "ไฑ󠇒ำ฿็ำฺ๗ัจพ",
-		"norm": "ไฑํา฿็ําฺ๗ัจพ"
+		"error": true,
+		"comment": "illegal placement: combining mark on non-Thai: \"฿ + ◌็\""
 	},
 	{
 		"name": "ธ็อ󠄣วธุต🧁️อกซัำ",
