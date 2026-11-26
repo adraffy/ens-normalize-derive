@@ -41,7 +41,7 @@ How it was migrated:
    - ᄋ is made primary.
    - Two sets that Unicode merged ({ш ⲽ}, {ᩅ ᪀ ᪐}) are restored.
 
-Result: whole-script checked characters go from 1,190 to 2,108 (+522 Han, +270 restricted). Seven characters become invalid (the six unregistered ones plus 丅). Registrations vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅, none active in ENSv2), CHANGED 0.
+Result: whole-script checked characters go from 1,190 to 2,108 (+522 Han, +270 restricted), then to 959 after pruning the 1,148 that have no lookalike in another group (see [groups.md](groups.md#4-confusables--wholes)). The pruning changes no registered label. Seven characters become invalid (the six unregistered ones plus 丅). Registrations vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅, none active in ENSv2), CHANGED 0.
 
 Still unsolved: confusables _within_ one group, such as Katakana vs Han in the Japanese group (ム/厶) and simplified vs traditional Han (户/戶). The whole-script model only compares across groups, and Unicode lists many of these pairs. Handling them needs a different mechanism (a per-group rule).
 

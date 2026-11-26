@@ -21,7 +21,7 @@ Take `output/spec.json`, `output/nf.json`, `output/tests.json` and `output/nf-te
 - **Mixture messages.** An illegal mixture names the first group still in the running, then the first group where the conflicting character is primary. Both can now be Common: `$٠٠` reads `illegal mixture: Common + Arabic "٠"` instead of `Latin + Arabic`. That accounts for 610 of the changed messages, all from the data.
 - **Combining marks.** Common has `cm: []`, so it's a whitelist group like Latin: no bare marks, and no non-spacing-mark checks.
 
-The whole-script confusable check needs no change either. Which characters are "unique" (in one group and no whole) is computed from the groups, so it stays correct as long as you derive it from the data rather than a hardcoded list.
+The whole-script confusable check needs no change either. Wholes are now smaller (292, down from 490 in 1.11.1): derive prunes confused characters that have no lookalike in another group, which used to end the check early (`α∞` now fails like `α1`). That is data only. Which characters are "unique" (in one group and no whole) is computed from the groups, so it stays correct as long as you derive it from the data rather than a hardcoded list.
 
 ## 2. Combining mark base
 

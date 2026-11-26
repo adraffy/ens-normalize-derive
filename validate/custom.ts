@@ -215,6 +215,13 @@ export default [
 	{name: 'ab\u{64B}', error: true, comment: 'Unsupported mark: Arabic mark on Latin'},
 	{name: 'ა\u{301}', error: true, comment: "Unsupported mark: COMBINING ACUTE isn't Georgian"},
 
+	// a confusable with no lookalike in another group is pruned: it no longer ends the whole-script check early
+	{name: '∞', comment: 'Inert confusable: ∞ alone is Common'},
+	{name: '\u{3B1}∞', error: true, comment: 'Inert confusable: α∞ is Greek/Latin, like α1'},
+	{name: '\u{430}∞', error: true, comment: 'Inert confusable: а∞ is Cyrillic/Latin, like а1'},
+	{name: '\u{B90}\u{BEE}', error: true, comment: 'Inert confusable: Tamil digit 8 is shared with Grantha'},
+	{name: '\u{101D}\u{1041}', error: true, comment: 'Inert confusable: Myanmar digit 1 is shared with Chakma'},
+
 	// confusables synced with Unicode 18 (rules/confuse.ts): registered names stay valid
 	{name: 'бот', comment: 'Confusable: Cyrillic word vs new Coptic lookalikes'},
 	{name: 'сша', comment: 'Confusable: Unicode 18 moved ш into the w set (restored)'},
