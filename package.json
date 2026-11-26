@@ -19,7 +19,7 @@
 		"download:unicode": "bun scripts/download-unicode.ts",
 		"download:cldr": "bun scripts/download-cldr.ts",
 		"names": "bun scripts/names.ts",
-		"unicode-diff": "bun scripts/unicode-diff.ts",
+		"diff": "bun scripts/diff.ts",
 		"test": "bun test",
 		"lint": "biome check . && bun scripts/lint-rules.ts",
 		"format": "biome check --write .",
