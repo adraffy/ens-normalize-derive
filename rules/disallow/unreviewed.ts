@@ -20,6 +20,11 @@ export const REVIEWED: CodePoint[] = [
 	// Currency Symbols
 	0x20C3, // (⃃) UAE DIRHAM SIGN (Arabic only, see rules/scripts.ts)
 	// 20261126: scripts that don't mix with Latin (marks get the group's non-spacing mark checks)
+	// Devanagari Extended-A
+	0x11B0A, // (𑬊) DEVANAGARI LETTER ALTERNATE DDDA
+	// Bengali Supplement
+	0x11DF0, // (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE
+	0x11DF1, // (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
 	// Hebrew
 	0x5C8, // (◌׈) HEBREW POINT SHEVA NA MUDGASH
 	0x5C9, // (◌׉) HEBREW POINT DAGESH HAZAQ MUDGASH
@@ -66,6 +71,9 @@ export const REVIEWED: CodePoint[] = [
 	0x10EF7, // (◌𐻷) ARABIC SMALL HIGH HEH INITIAL FORM
 	0x10EF8, // (◌𐻸) ARABIC SMALL HIGH WORD KABBIR
 	0x10EF9, // (◌𐻹) ARABIC MARK CROWN
+	// 20261126: one more Extension D ideograph, like the other 222
+	// CJK Unified Ideographs Extension D
+	0x2B81E, // (𫠞) CJK Ideograph Extension D-2B81E [223/223]
 ];
 
 const GROUP_SCRIPTS = [...new Set(['Zinh', ...SCRIPT_GROUPS.flatMap((g) => [...g.test, ...(g.rest ?? [])])])].sort();

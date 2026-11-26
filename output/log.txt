@@ -5463,6 +5463,7 @@ Add Mapped: 27 (') APOSTROPHE => 2019 (’) RIGHT SINGLE QUOTATION MARK
 *** 20C4 (OMANI RIAL SIGN) selected twice: cps(14) block=Currency Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 *** 1B168 (KATAKANA LETTER SMALL ARCHAIC YE) selected twice: cps(1) block=Small Kana Extension + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 *** 1D6A6 (MATHEMATICAL ITALIC SMALL LIGATURE LONG S WITH DESCENDER S) selected twice: cps(1) block=Mathematical Alphanumeric Symbols + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
+*** 1F1AE (TOMOBIKI SYMBOL) selected twice: cps(34) block=Enclosed Alphanumeric Supplement + script=Arab|Armn|Beng|Cyrl|Deva|Ethi|Geor|Grek|Gujr|Guru|Hang|Hani|Hebr|Hira|Kana|Khmr|Knda|Laoo|Latn|Mlym|Mymr|Orya|Sinh|Taml|Telu|Thaa|Thai|Tibt|Zinh|Zyyy age=18.0
 Rule: cps(61) block=Basic Latin [61/61]
 Removed Valid: 00 ({00}) NULL
 Removed Valid: 01 ({01}) START OF HEADING
@@ -9655,7 +9656,7 @@ Removed Valid: 1ED3A (𞴺) OTTOMAN SIYAQ ALTERNATE NUMBER TWO THOUSAND
 Removed Valid: 1ED3B (𞴻) OTTOMAN SIYAQ ALTERNATE NUMBER TEN THOUSAND
 Removed Valid: 1ED3C (𞴼) OTTOMAN SIYAQ FRACTION ONE HALF
 Removed Valid: 1ED3D (𞴽) OTTOMAN SIYAQ FRACTION ONE SIXTH
-Rule: cps(33) block=Enclosed Alphanumeric Supplement [33/33]
+Rule: cps(34) block=Enclosed Alphanumeric Supplement [34/34]
 Removed Valid: 1F18A (🆊) CROSSED NEGATIVE SQUARED LATIN CAPITAL LETTER P
 Removed Valid: 1F10B (🄋) DINGBAT CIRCLED SANS-SERIF DIGIT ZERO
 Removed Valid: 1F10C (🄌) DINGBAT NEGATIVE CIRCLED SANS-SERIF DIGIT ZERO
@@ -9689,6 +9690,7 @@ Removed Valid: 1F10D (🄍) CIRCLED ZERO WITH SLASH
 Removed Valid: 1F10E (🄎) CIRCLED ANTICLOCKWISE ARROW
 Removed Valid: 1F10F (🄏) CIRCLED DOLLAR SIGN WITH OVERLAID BACKSLASH
 Removed Valid: 1F16E (🅮) CIRCLED C WITH OVERLAID BACKSLASH
+Removed Valid: 1F1AE (🆮) TOMOBIKI SYMBOL
 Rule: block=IPA Extensions [96/96]
 Removed Valid: 250 (ɐ) LATIN SMALL LETTER TURNED A
 Removed Valid: 251 (ɑ) LATIN SMALL LETTER ALPHA
@@ -13179,12 +13181,7 @@ Removed Valid: 1FBED (🯭) BOTTOM LEFT JUSTIFIED UPPER RIGHT QUARTER BLACK CIRC
 Removed Valid: 1FBEE (🯮) BOTTOM RIGHT JUSTIFIED UPPER LEFT QUARTER BLACK CIRCLE
 Removed Valid: 1FBEF (🯯) TOP LEFT JUSTIFIED LOWER RIGHT QUARTER BLACK CIRCLE
 Removed Valid: 1FBFA (🯺) ALARM BELL SYMBOL
-Rule: new in 18.0: unreviewed [5/340]
-Removed Valid: 11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA
-Removed Valid: 11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE
-Removed Valid: 11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
-Removed Valid: 1F1AE (🆮) TOMOBIKI SYMBOL
-Removed Valid: 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
+Rule: new in 18.0: unreviewed [0/336]
 Removed Valid: 2E (.) FULL STOP
 ==== Apply ScriptExt ====
 3BE (ξ) GREEK SMALL LETTER XI [Grek => Zyyy]
@@ -13200,18 +13197,18 @@ Disallowed Script: [Linb] Linear B [X]
 Disallowed Script: [Sgnw] SignWriting [X]
 [✓] UAX-31 script kinds
 Valid  | Name       | Test      | Rest      | Extra                     
-103072 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-114389 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
-102862 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
+103073 | Japanese   | Kana+Hira | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+114390 | Korean     | Hang      | Hani+Zyyy | abcdefghijklmnopqrstuvwxyz
+102863 | Han        | Hani      | Zyyy      | abcdefghijklmnopqrstuvwxyz
    710 | Common     | Zyyy      |           |                           
   1000 | Latin      | Latn      | Zyyy      | π                         
    837 | Cyrillic   | Cyrl      | Zyyy      |                           
    826 | Greek      | Grek      | Zyyy      |                           
    478 | Arabic     | Arab      |           | -                         
-   108 | Devanagari | Deva      |           |                           
+   109 | Devanagari | Deva      |           |                           
     86 | Hebrew     | Hebr      |           | ₪                         
     83 | Thai       | Thai      |           | ฿                         
-    90 | Bengali    | Beng      |           |                           
+    92 | Bengali    | Beng      |           |                           
     61 | Thaana     | Thaa      |           |                           
     73 | Gurmukhi   | Guru      |           |                           
    125 | Tamil      | Taml      |           |                           
@@ -14045,7 +14042,7 @@ Auto-Override: 9AA (প) BENGALI LETTER PA [Bengali vs Tirh]
 Auto-Override: 9AC (ব) BENGALI LETTER BA [Bengali vs Tirh]
 Auto-Override: 9AE (ম) BENGALI LETTER MA [Bengali vs Tirh]
 Auto-Override: 9AF (য) BENGALI LETTER YA [Bengali vs Tirh]
-Unresolved: [Bengali] 9B0 (র) BENGALI LETTER RA vs 9F0 (ৰ) BENGALI LETTER RA WITH MIDDLE DIAGONAL
+Unresolved: [Bengali] 9B0 (র) BENGALI LETTER RA vs 9F0 (ৰ) BENGALI LETTER RA WITH MIDDLE DIAGONAL vs 11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA
 Auto-Override: 9B2 (ল) BENGALI LETTER LA [Bengali vs Tirh]
 Auto-Override: 9B7 (ষ) BENGALI LETTER SSA [Bengali vs Tirh]
 Auto-Override: 9B8 (স) BENGALI LETTER SA [Bengali vs Tirh]
@@ -14469,6 +14466,7 @@ Unresolved: [Japanese,Korean,Han] 68B2 (梲) CJK Ideograph-68B2 [6835/20992] vs 
 Unresolved: [Japanese,Korean,Han] 699D (榝) CJK Ideograph-699D [7070/20992] vs 6A27 (樧) CJK Ideograph-6A27 [7208/20992]
 Unresolved: [Japanese,Korean,Han] 2ACDD (𪳝) CJK Ideograph Extension C-2ACDD [1502/4160] vs 69F1 (槱) CJK Ideograph-69F1 [7154/20992]
 Unresolved: [Japanese,Korean,Han] 237EC (𣟬) CJK Ideograph Extension B-237EC [14317/42720] vs 6B04 (欄) CJK Ideograph-6B04 [7429/20992]
+Unresolved: [Japanese,Korean,Han] 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223] vs 6B25 (欥) CJK Ideograph-6B25 [7462/20992]
 Unresolved: [Japanese,Korean,Han] 2ECC3 (𮳃) CJK Ideograph Extension I-2ECC3 [212/622] vs 6C4A (汊) CJK Ideograph-6C4A [7755/20992]
 Unresolved: [Japanese,Korean,Han] 6CAB (沫) CJK Ideograph-6CAB [7852/20992] vs 6CAC (沬) CJK Ideograph-6CAC [7853/20992]
 Unresolved: [Japanese,Korean,Han] 23D40 (𣵀) CJK Ideograph Extension B-23D40 [15681/42720] vs 6D85 (涅) CJK Ideograph-6D85 [8070/20992]
@@ -17426,9 +17424,9 @@ Removed Mapping: 1F248 (🉈) TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-655
 [✓] Fastpath ASCII
 [✓] Groups Names are A-Z
 ==== Find Unique Characters ====
-Valid: 155588
-Multi: 103047
-Unique: 52541
+Valid: 155592
+Multi: 103048
+Unique: 52544
 [✓] Matching Groups have Same CM Style
 [✓] Wholes are Valid
 ==== Prune Inert Confusables ====
@@ -17814,6 +17812,7 @@ Unique: 52541
 [699D] 699D (榝) CJK Ideograph-699D [7070/20992] 6A27 (樧) CJK Ideograph-6A27 [7208/20992]
 [69F1] 69F1 (槱) CJK Ideograph-69F1 [7154/20992] 2ACDD (𪳝) CJK Ideograph Extension C-2ACDD [1502/4160]
 [6B04] 6B04 (欄) CJK Ideograph-6B04 [7429/20992] 237EC (𣟬) CJK Ideograph Extension B-237EC [14317/42720]
+[2B81E] 6B25 (欥) CJK Ideograph-6B25 [7462/20992] 2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]
 [2ECC3] 6C4A (汊) CJK Ideograph-6C4A [7755/20992] 2ECC3 (𮳃) CJK Ideograph Extension I-2ECC3 [212/622]
 [6CAB] 6CAB (沫) CJK Ideograph-6CAB [7852/20992] 6CAC (沬) CJK Ideograph-6CAC [7853/20992]
 [6D85] 6D85 (涅) CJK Ideograph-6D85 [8070/20992] 23D40 (𣵀) CJK Ideograph Extension B-23D40 [15681/42720]
@@ -17989,9 +17988,9 @@ Unique: 52541
 [2ED73] 2ED73 (𮵳) CJK Ideograph Extension I-2ED73 [388/622] 2ED76 (𮵶) CJK Ideograph Extension I-2ED76 [391/622]
 [2EDB5] 2EDB5 (𮶵) CJK Ideograph Extension I-2EDB5 [454/622] 32A8F (𲪏) CJK Ideograph Extension J-32A8F [1760/4298]
 [2EE1B] 2EE1B (𮸛) CJK Ideograph Extension I-2EE1B [556/622] 2EE1C (𮸜) CJK Ideograph Extension I-2EE1C [557/622]
-Pruned: 1152
+Pruned: 1154
 [✓] Confusables have a Lookalike Group
-Confusable: 962
+Confusable: 964
 Not Confusable: 184
 Non-Confusable Non-Unique: 99
 ==== Compress Wholes ====
@@ -18004,14 +18003,14 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
   1 |    710 |     0 |    710 |      0 | 0/0  | Common    
   2 |    792 |    55 |     81 |    711 | 0/51 | Latin     
   3 |    467 |   444 |    466 |      1 |      | Arabic    
-  4 | 102858 |     0 | 102122 |    736 | 0/0  | Han       
-  5 |    108 |    98 |    108 |      0 |      | Devanagari
-  6 | 114383 | 11525 |  11527 | 102856 | 0/0  | Korean    
-  7 | 103065 |   207 |    209 | 102856 | 0/58 | Japanese  
+  4 | 102859 |     0 | 102123 |    736 | 0/0  | Han       
+  5 |    109 |    99 |    109 |      0 |      | Devanagari
+  6 | 114384 | 11525 |  11527 | 102857 | 0/0  | Korean    
+  7 | 103066 |   207 |    209 | 102857 | 0/58 | Japanese  
   8 |    812 |   102 |    102 |    710 | 0/8  | Cyrillic  
   9 |     86 |    85 |     85 |      1 |      | Hebrew    
  10 |     83 |    82 |     82 |      1 |      | Thai      
- 11 |     90 |    80 |     90 |      0 |      | Bengali   
+ 11 |     92 |    82 |     92 |      0 |      | Bengali   
  12 |    125 |   104 |    125 |      0 |      | Tamil     
  13 |    745 |    34 |     35 |    710 | 0/11 | Greek     
  14 |    167 |   167 |    167 |      0 |      | Tibetan   
@@ -18175,7 +18174,7 @@ Ord | Valid  | Uniqu | Primar | Second | CM   | Group
 ==== NFC Quick Check ====
 Optimized: 2211 => 596
 ==== Compute NSM from Groups w/o CM Whitelist ====
-CM(2580) => NSM(2103) => 1122
+CM(2580) => NSM(2103) => 1123
 Per Group Max: 75
 ==== Review: New in 18.0.0 ====
 5C8 (◌׈) HEBREW POINT SHEVA NA MUDGASH [Hebrew]
@@ -18222,10 +18221,14 @@ B54 (◌୔) ORIYA SIGN DOUBLE DOT ABOVE [Oriya]
 10EF7 (◌𐻷) ARABIC SMALL HIGH HEH INITIAL FORM [Arabic]
 10EF8 (◌𐻸) ARABIC SMALL HIGH WORD KABBIR [Arabic]
 10EF9 (◌𐻹) ARABIC MARK CROWN [Arabic]
+11B0A (𑬊) DEVANAGARI LETTER ALTERNATE DDDA [Devanagari]
+11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE [Bengali]
+11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA [Bengali]
+2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223] [Han,Korean,Japanese]
 Restricted Xsux: 159
 Restricted Pcun: 235
 Restricted Kits: 5
 Restricted Tang: 2
 Restricted Jurc: 965
 Restricted Seal: 11328
-New Valid: 12667
+New Valid: 12671

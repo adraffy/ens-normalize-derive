@@ -42,7 +42,7 @@ export default [
 	{block: 'Indic Siyaq Numbers'},
 	// 1ED00..1ED4F Ottoman Siyaq Numbers: 61/61 denied
 	{block: 'Ottoman Siyaq Numbers'},
-	// 1F100..1F1FF Enclosed Alphanumeric Supplement: 33/158 denied
+	// 1F100..1F1FF Enclosed Alphanumeric Supplement: 34/159 denied
 	{block: 'Enclosed Alphanumeric Supplement', cps: [
 		// exclaim/question mark
 		0x1F18A, // (🆊) CROSSED NEGATIVE SQUARED LATIN CAPITAL LETTER P
@@ -82,5 +82,7 @@ export default [
 		0x1F10E, // (🄎) CIRCLED ANTICLOCKWISE ARROW
 		0x1F10F, // (🄏) CIRCLED DOLLAR SIGN WITH OVERLAID BACKSLASH
 		0x1F16E, // (🅮) CIRCLED C WITH OVERLAID BACKSLASH
+		// 20261126: new in 18.0, reviewed: shared symbol, would be valid next to Latin
+		0x1F1AE, // (🆮) TOMOBIKI SYMBOL
 	]},
 ] satisfies Rule[];

@@ -180,7 +180,12 @@ export default [
 	{name: 'a\u{307}', error: true, comment: 'Non-whitelisted CM: composes to ȧ'},
 
 	// new 18.0 characters are disallowed until reviewed (rules/disallow/unreviewed.ts)
-	{name: '\u{11B0A}', error: true, comment: 'Unreviewed 18.0: Devanagari Extended-A'},
+	{name: 'क\u{11B0A}', comment: 'Reviewed 18.0: Devanagari alternate ddda'},
+	{name: 'ব\u{11DF0}', comment: 'Reviewed 18.0: Bengali combining anusvara above'},
+	{name: 'ব\u{11DF1}', comment: 'Reviewed 18.0: Bengali alternate bargiya ba'},
+	{name: '\u{11DF1}', error: true, comment: 'Reviewed 18.0: Bengali alternate bargiya ba alone looks Tirhuta'},
+	{name: '中\u{2B81E}', comment: 'Reviewed 18.0: Extension D ideograph'},
+	{name: '\u{1F1AE}', error: true, comment: 'Reviewed 18.0: TOMOBIKI SYMBOL disallowed'},
 	{name: 'ب\u{10ED9}ب', comment: 'Reviewed 18.0: Arabic Extended-C crown letter'},
 	{name: 'ب\u{10ECB}', comment: 'Reviewed 18.0: Arabic Extended-C mark on an Arabic letter'},
 	{name: 'ب\u{10ECB}\u{10ECB}', error: true, comment: 'Reviewed 18.0: Arabic Extended-C mark doubled'},

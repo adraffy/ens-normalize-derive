@@ -673,7 +673,7 @@
 	309 (◌̉) COMBINING HOOK ABOVE	Tfng: allowed, whole-script checked
 	7AA (◌ު) THAANA UBUFILI	Thaana: allowed, whole-script checked
 	8F8 (◌ࣸ) ARABIC RIGHT ARROWHEAD ABOVE	Arabic: allowed, whole-script checked
-[30A] ◌̊ ◌֯ ◌ْ ◌ް ◌ࠬ ◌ఄ ◌ഀ ◌ํ ◌ໍ ◌ཾ ◌ံ ◌ំ ◌ᩴ ◌ᮀ ◌ꠋ ◌𐻎 ◌𑌀 ◌𑑄 ◌𑓀 ◌𑨸 ◌𑪖 ◌𑰽 ◌𑲵 ◌𑶕 ◌𞄳
+[30A] ◌̊ ◌֯ ◌ْ ◌ް ◌ࠬ ◌ఄ ◌ഀ ◌ํ ◌ໍ ◌ཾ ◌ံ ◌ំ ◌ᩴ ◌ᮀ ◌ꠋ ◌𐻎 ◌𑌀 ◌𑑄 ◌𑓀 ◌𑨸 ◌𑪖 ◌𑰽 ◌𑲵 ◌𑶕 ◌𑷰 ◌𞄳
 	30A (◌̊) COMBINING RING ABOVE	Syrc: allowed, whole-script checked (unresolved); Dupl: allowed, whole-script checked
 	5AF (◌֯) HEBREW MARK MASORA CIRCLE	Hebrew: allowed, whole-script checked
 	652 (◌ْ) ARABIC SUKUN	Syrc: allowed, whole-script checked (unresolved); Arabic: allowed, whole-script checked (unresolved)
@@ -698,6 +698,7 @@
 	11C3D (◌𑰽) BHAIKSUKI SIGN ANUSVARA	Bhks: allowed, whole-script checked
 	11CB5 (◌𑲵) MARCHEN SIGN ANUSVARA	Marc: allowed, whole-script checked
 	11D95 (◌𑶕) GUNJALA GONDI SIGN ANUSVARA	Gong: allowed, whole-script checked
+	11DF0 (◌𑷰) BENGALI SIGN COMBINING ANUSVARA ABOVE	Bengali: allowed, whole-script checked
 	1E133 (◌𞄳) NYIAKENG PUACHUE HMONG TONE-V	Hmnp: allowed, whole-script checked
 [301 301] ◌̋ ◌ً ◌ާ ◌ࣰ
 	30B (◌̋) COMBINING DOUBLE ACUTE ACCENT	Cher: allowed, whole-script checked; Osge: allowed, whole-script checked
@@ -1144,10 +1145,11 @@
 [9AF] য 𑒨
 	9AF (য) BENGALI LETTER YA	Bengali: valid (auto)
 	114A8 (𑒨) TIRHUTA LETTER YA	Tirh: allowed, whole-script checked
-[9B0] র ৰ 𑒫
+[9B0] র ৰ 𑒫 𑷱
 	9B0 (র) BENGALI LETTER RA	Bengali: allowed, whole-script checked (unresolved)
 	9F0 (ৰ) BENGALI LETTER RA WITH MIDDLE DIAGONAL	Bengali: allowed, whole-script checked (unresolved)
 	114AB (𑒫) TIRHUTA LETTER VA	Tirh: allowed, whole-script checked
+	11DF1 (𑷱) BENGALI LETTER ALTERNATE BARGIYA BA	Bengali: allowed, whole-script checked (unresolved)
 [9B2] ল 𑒝
 	9B2 (ল) BENGALI LETTER LA	Bengali: valid (auto)
 	1149D (𑒝) TIRHUTA LETTER NNA	Tirh: allowed, whole-script checked
@@ -2634,6 +2636,9 @@
 [6B04] 欄 𣟬
 	6B04 (欄) CJK Ideograph-6B04 [7429/20992]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
 	237EC (𣟬) CJK Ideograph Extension B-237EC [14317/42720]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
+[2B81E] 欥 𫠞
+	6B25 (欥) CJK Ideograph-6B25 [7462/20992]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
+	2B81E (𫠞) CJK Ideograph Extension D-2B81E [223/223]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
 [2ECC3] 汊 𮳃
 	6C4A (汊) CJK Ideograph-6C4A [7755/20992]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
 	2ECC3 (𮳃) CJK Ideograph Extension I-2ECC3 [212/622]	Japanese: allowed, whole-script checked (unresolved); Korean: allowed, whole-script checked (unresolved); Han: allowed, whole-script checked (unresolved)
