@@ -92,9 +92,9 @@ Duplicates removed: `chars-valid` `$` and `_` (IDNA-valid since 16.0). 850 `conf
 
 ### CM whitelist
 
-- All 128 entries are precomposed characters. The sequence half of the mechanism (base + mark with no precomposed form) is never used, so every group's `cm` in `spec.json` is empty. In practice the whitelist is a list of allowed accented letters.
+- All 114 entries are precomposed characters. The sequence half of the mechanism (base + mark with no precomposed form) is never used, so every group's `cm` in `spec.json` is empty. In practice the whitelist is a list of allowed accented letters.
 - Unused entries: ǹ, ΐ ϋ, ѓ ӣ ќ ӯ, ヷヸヹヺヾ, ぢゔゞ (harmless).
-- **Added (applied):** ī ė ț ș į ų ÿ ř ň ť ď ľ ő ű. These were the gaps that blocked registered names. With them, **311 currently invalid registered labels become valid**, and their uppercase forms gain IDNA mappings. ț resolves as the primary against Cherokee Ꮏ. ș and ş are both valid; UTS-39 doesn't list them as confusable.
+- **Considered and rejected:** ī ė ț ș į ų ÿ ř ň ť ď ľ ő ű. Whitelisting them would have made 311 invalid registered labels valid, but most of those labels are ASCII words with one letter swapped for an accented twin: ėth, mėta, monėy (72 of 79 ė labels), biťcoin, ďegen, mcdonalďs, crÿpto, crypțo, fīrst. ď ť ľ are worse, because their caron renders like an apostrophe and ’ is valid (ďegen vs d’egen). Registration count measures demand from spoofers as much as from speakers, so it isn't a reason to whitelist. They were added in e3415a6 and reverted before release, so nothing breaks.
 - Not added: ı (dotless i, 595 labels). It's a classic i-confusable and needs a confusable decision, not a whitelist entry. ǎ stays out by the existing breve-over-caron rule (ă). ǔ was already whitelisted.
 
 ### Fencing
@@ -114,7 +114,7 @@ Fenced today: ’ (11,394 names), ⁄ (520), ・ (54), none at the start, end, o
 
 All 34 BROKEN labels (Bopomofo + Han) have **no entry in the ENSv2 ETHRegistry**, so none is registered. They lapsed before the v2 migration. **No active registration breaks.**
 
-Current totals vs 1.11.1: BROKEN 34, CHANGED 0, ALLOWED 316, MESSAGE 48.
+Current totals vs 1.11.1: BROKEN 38 (34 Bopo + 4 丅), CHANGED 0, ALLOWED 5 (new emoji), MESSAGE 68.
 
 ## 1. Registration impact of Unicode 18 (needs a decision)
 

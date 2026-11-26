@@ -535,9 +535,6 @@
 [1A9] ∑ ⵉ
 	2211 (∑) N-ARY SUMMATION	Japanese: valid (auto); Korean: valid (auto); Han: valid (auto); Latin: valid (auto); Cyrillic: valid (auto); Greek: valid (auto)
 	2D49 (ⵉ) TIFINAGH LETTER YI	Tfng: allowed, whole-script checked
-[74 326] ț Ꮏ
-	21B (ț) LATIN SMALL LETTER T WITH COMMA BELOW	Latin: valid (auto)
-	13BF (Ꮏ) CHEROKEE LETTER HNA	Cher: allowed, whole-script checked
 [1B1] ᘮ ᘴ
 	162E (ᘮ) CANADIAN SYLLABICS CARRIER LHU	Cans: allowed, whole-script checked (unresolved)
 	1634 (ᘴ) CANADIAN SYLLABICS CARRIER TLHU	Cans: allowed, whole-script checked (unresolved)

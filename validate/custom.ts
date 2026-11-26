@@ -154,11 +154,23 @@ export default [
 	{name: '\u{30FB}a', error: true, comment: 'Fenced: leading middle dot'},
 	{name: 'a\u{2044}b', comment: 'Fenced: fraction slash'},
 
-	// whitelisted accented Latin (Latvian, Lithuanian, Romanian, Czech, Slovak, Hungarian)
-	{name: 'īėțșįųÿřňťďľőű', comment: 'Exemplars: Latn (2026)'},
-	{name: 'ĪĖȚȘĮŲŸŘŇŤĎĽŐŰ', norm: 'īėțșįųÿřňťďľőű', comment: 'Exemplars: Latn (2026) uppercase'},
-	{name: 'ș', comment: 'Romanian comma-below (cedilla ş is also valid)'},
-	{name: 'ţ', error: true, comment: 'T with cedilla: use ț'},
+	// accented Latin that is NOT whitelisted: registered uses are mostly ASCII spoofs (rules/cm.ts)
+	{name: 'ėth', error: true, comment: 'Not whitelisted: e with dot above (spoof of eth)'},
+	{name: 'ďegen', error: true, comment: 'Not whitelisted: d with caron (renders like d’, and ’ is valid)'},
+	{name: 'biťcoin', error: true, comment: 'Not whitelisted: t with caron (renders like t’)'},
+	{name: 'ľudmila', error: true, comment: 'Not whitelisted: l with caron (renders like l’)'},
+	{name: 'fīrst', error: true, comment: 'Not whitelisted: i with macron'},
+	{name: 'nįck', error: true, comment: 'Not whitelisted: i with ogonek'},
+	{name: 'crÿpto', error: true, comment: 'Not whitelisted: y with diaeresis'},
+	{name: 'crypțo', error: true, comment: 'Not whitelisted: t with comma below'},
+	{name: 'iași', error: true, comment: 'Not whitelisted: s with comma below'},
+	{name: 'třump', error: true, comment: 'Not whitelisted: r with caron'},
+	{name: 'plzeň', error: true, comment: 'Not whitelisted: n with caron'},
+	{name: 'gergő', error: true, comment: 'Not whitelisted: o with double acute'},
+	{name: 'művészet', error: true, comment: 'Not whitelisted: u with double acute'},
+	{name: 'lietuvių', error: true, comment: 'Not whitelisted: u with ogonek'},
+	{name: 'ş', comment: 'Whitelisted: s with cedilla'},
+	{name: 'ţ', error: true, comment: 'Not whitelisted: t with cedilla'},
 	{name: 'ǎ', error: true, comment: 'A with caron: breve ă instead'},
 	{name: 'ı', error: true, comment: 'Dotless i: confusable with i'},
 

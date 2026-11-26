@@ -8,6 +8,9 @@ export const CM_WHITELIST = [
 	//   Irish, Danish, Croatian, Dutch, Polish, Italian
 	// 20221202: relaxed slightly, added some more variants
 	//   TODO: breve/caron equivalence mapping? "agu"
+	// 20261125: rejected ī ė ț ș į ų ÿ ř ň ť ď ľ ő ű: most registered uses swap one letter of an
+	//   ASCII word (ėth, mėta, biťcoin, ďegen), and ď ť ľ render like letter + apostrophe (’ is valid)
+	//   registration counts measure spoofers as much as speakers, so they aren't a reason to add
 
 	'à', // E0 (à) LATIN SMALL LETTER A WITH GRAVE
 	'á', // E1 (á) LATIN SMALL LETTER A WITH ACUTE
@@ -25,7 +28,6 @@ export const CM_WHITELIST = [
 	'č', // 10D (č) LATIN SMALL LETTER C WITH CARON
 	'ç', // E7 (ç) LATIN SMALL LETTER C WITH CEDILLA
 
-	'ď', // 10F (ď) LATIN SMALL LETTER D WITH CARON (20261125: added for czech/slovak, 6 labels)
 
 	//'đ', // 111 (đ) LATIN SMALL LETTER D WITH STROKE (vietnamese)
 
@@ -37,7 +39,6 @@ export const CM_WHITELIST = [
 	'ë', // EB (ë) LATIN SMALL LETTER E WITH DIAERESIS
 	'ě', // 11B (ě) LATIN SMALL LETTER E WITH CARON
 	'ę', // 119 (ę) LATIN SMALL LETTER E WITH OGONEK (20221202: added for polish)
-	'ė', // 117 (ė) LATIN SMALL LETTER E WITH DOT ABOVE (20261125: added for lithuanian, 79 labels)
 
 	'ğ', // 11F (ğ) LATIN SMALL LETTER G WITH BREVE (20221202: added for turkish/azer)
 
@@ -46,17 +47,13 @@ export const CM_WHITELIST = [
 	'î', // EE (î) LATIN SMALL LETTER I WITH CIRCUMFLEX
 	'ï', // EF (ï) LATIN SMALL LETTER I WITH DIAERESIS
 	'ǐ', // 1D0 (ǐ) LATIN SMALL LETTER I WITH CARON
-	'ī', // 12B (ī) LATIN SMALL LETTER I WITH MACRON (20261125: added for latvian/pinyin, 113 labels)
-	'į', // 12F (į) LATIN SMALL LETTER I WITH OGONEK (20261125: added for lithuanian, 18 labels)
 
-	'ľ', // 13E (ľ) LATIN SMALL LETTER L WITH CARON (20261125: added for slovak, 3 labels)
 
 	//[NOT COMPOSED] 'ł', // 142 (ł) LATIN SMALL LETTER L WITH STROKE
 
 	'ǹ', // 1F9 (ǹ) LATIN SMALL LETTER N WITH GRAVE
 	'ń', // 144 (ń) LATIN SMALL LETTER N WITH ACUTE
 	'ñ', // F1 (ñ) LATIN SMALL LETTER N WITH TILDE
-	'ň', // 148 (ň) LATIN SMALL LETTER N WITH CARON (20261125: added for czech/slovak, 5 labels)
 
 	'ò', // F2 (ò) LATIN SMALL LETTER O WITH GRAVE
 	'ó', // F3 (ó) LATIN SMALL LETTER O WITH ACUTE
@@ -65,19 +62,14 @@ export const CM_WHITELIST = [
 	'ö', // F6 (ö) LATIN SMALL LETTER O WITH DIAERESIS
 	'ǒ', // 1D2 (ǒ) LATIN SMALL LETTER O WITH CARON
 	'ō', // 14D (ō) LATIN SMALL LETTER O WITH MACRON (20221029: added for dutch)
-	'ő', // 151 (ő) LATIN SMALL LETTER O WITH DOUBLE ACUTE (20261125: added for hungarian, 10 labels)
 
-	'ř', // 159 (ř) LATIN SMALL LETTER R WITH CARON (20261125: added for czech, 12 labels)
 	//[NOT COMPOSED] 'ø', // F8 (ø) LATIN SMALL LETTER O WITH STROKE
 	//'ơ', // 1A1 (ơ) LATIN SMALL LETTER O WITH HORN (vietnamese)
 
 	'š', // 161 (š) LATIN SMALL LETTER S WITH CARON
 	'ś', // 15B (ś) LATIN SMALL LETTER S WITH ACUTE (20221202: added for polish)
 	'ş', // 15F (ş) LATIN SMALL LETTER S WITH CEDILLA (20221202: added for azur/kurd/)
-	'ș', // 219 (ș) LATIN SMALL LETTER S WITH COMMA BELOW (20261125: added for romanian, 31 labels)
 
-	'ť', // 165 (ť) LATIN SMALL LETTER T WITH CARON (20261125: added for czech/slovak, 2 labels)
-	'ț', // 21B (ț) LATIN SMALL LETTER T WITH COMMA BELOW (20261125: added for romanian, 34 labels)
 
 	'ù', // F9 (ù) LATIN SMALL LETTER U WITH GRAVE
 	'ú', // FA (ú) LATIN SMALL LETTER U WITH ACUTE
@@ -85,12 +77,9 @@ export const CM_WHITELIST = [
 	'ü', // FC (ü) LATIN SMALL LETTER U WITH DIAERESIS
 	'ǔ', // 1D4 (ǔ) LATIN SMALL LETTER U WITH CARON
 	'ū', // 16B (ū) LATIN SMALL LETTER U WITH MACRON (20221029: added)
-	'ű', // 171 (ű) LATIN SMALL LETTER U WITH DOUBLE ACUTE (20261125: added for hungarian, 1 label)
-	'ų', // 173 (ų) LATIN SMALL LETTER U WITH OGONEK (20261125: added for lithuanian, 4 labels)
 	//'ư', // 1B0 (ư) LATIN SMALL LETTER U WITH HORN (vietnamese)
 
 	'ý', // FD (ý) LATIN SMALL LETTER Y WITH ACUTE
-	'ÿ', // FF (ÿ) LATIN SMALL LETTER Y WITH DIAERESIS (20261125: added, 13 labels)
 	'ỳ', // 1EF3 (ỳ) LATIN SMALL LETTER Y WITH GRAVE (20221202: added for welsh/viet)
 
 	'ž', // 17E (ž) LATIN SMALL LETTER Z WITH CARON

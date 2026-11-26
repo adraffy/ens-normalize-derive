@@ -7,7 +7,7 @@ A label is valid only if every character belongs to a single **group**: roughly 
 
 This page covers how [src/derive.ts](../src/derive.ts) builds the groups into `spec.json`, then how a label is checked against them ([src/ensip15.ts](../src/ensip15.ts), which mirrors ens-normalize.js).
 
-Current numbers (Unicode 18): 170 groups, 27 unrestricted and 143 restricted, plus 848 wholes.
+Current numbers (Unicode 18): 170 groups, 27 unrestricted and 143 restricted, plus 847 wholes.
 
 ## Building the groups
 
