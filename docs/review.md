@@ -4,7 +4,7 @@ Findings, decisions and open questions from porting `ens-normalize.js/derive` an
 
 ## Open
 
-- **143 new 18.0 characters wait for review** (`bun run review`): Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, currency signs and symbols. Each one allowed goes into `REVIEWED` in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts). U+0B83 TAMIL SIGN VISARGA, whose Script_Extensions grew in 18.0, is also pinned to Tamil until reviewed.
+- **53 new 18.0 characters wait for review** (`bun run review`): Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, ₏ and the 🆮 Tomobiki symbol. Each one allowed goes into `REVIEWED` in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts). U+0B83 TAMIL SIGN VISARGA, whose Script_Extensions grew in 18.0, is also pinned to Tamil until reviewed.
 - **Same-group confusables** (see [below](#confusables-cjk-and-faux-latin)): Katakana vs Han, simplified vs traditional Han, and Han/Bopomofo used as faux-Latin. The whole-script check can't express them.
 - **`spec.json` `unicode`** embeds the download timestamp (`"18.0.0 (2026-11-25T…)"`), so re-downloading identical data changes the spec hash. The version alone would do.
 - **The ENSIP-15 text** doesn't describe the combining mark base rule or the unsupported combining mark message yet ([implementers.md](implementers.md)).

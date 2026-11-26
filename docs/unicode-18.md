@@ -31,7 +31,7 @@ About 60,000 valid labels without a letter (`€100`, `💎100`) change type fro
 
 - **12,623 are valid,** all in restricted groups: the new scripts Seal (11,328), Jurchen (965) and Proto-Cuneiform (164), plus additions to Cuneiform (159), Khitan Small Script (5) and Tangut (2). Restricted groups can't mix with anything, so these can't affect existing labels.
 - **9 new emoji.**
-- **375 are not valid.** 143 are letters and symbols in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, currency signs, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 144 more are disallowed by block rules (Musical Symbols, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
+- **375 are not valid.** 53 are letters, marks and signs in scripts that unrestricted groups use (Arabic Extended-C, Hebrew, Oriya, Bengali, Devanagari, Kana, one Han ideograph, three currency signs, …). They wait for review in [rules/disallow/unreviewed.ts](../rules/disallow/unreviewed.ts); `bun run review` lists them. 234 more are disallowed by block rules (Musical Symbols Supplement, Miscellaneous Symbols Supplement, Miscellaneous Symbols and Arrows Extended, Supplemental Punctuation, Geometric Shapes Extended, Latin Extended-G digraphs, …). The other 88 are IDNA mappings whose targets aren't valid.
 
 **Disallowed although valid in 1.11.1** (428 characters):
 
