@@ -13,12 +13,12 @@ Current numbers (Unicode 18): 170 groups, 27 unrestricted and 143 restricted, pl
 
 ### 1. Script membership
 
-Every valid character has a set of scripts from Unicode's `Script_Extensions` (UAX-24). For most characters this is just its `Script`, but shared characters list every script that uses them. For example, U+0300 COMBINING GRAVE ACCENT has `Cher Copt Cyrl Grek Latn Perm Sunu Tale`. `Zyyy` (Common) and `Zinh` (Inherited) cover digits, punctuation and marks shared by everyone.
+Every valid character has a set of scripts from Unicode's `Script_Extensions` (UAX-24). For most characters this is just its `Script`, but shared characters list every script that uses them. For example, U+0300 COMBINING GRAVE ACCENT has `Cher Copt Cyrl Grek Latn Perm Sunu Tale`. `Zyyy` (Common) covers digits, punctuation and symbols, but not letters: a-z are `Latn`. `Zinh` (Inherited) covers marks that take the script of the letter they attach to.
 
 [rules/scripts.ts](../rules/scripts.ts) `SCRIPT_EXTENSIONS` overrides individual characters, either by replacing the set or by removing scripts from it:
 
 ```ts
-[0x3BE, ['Zyyy']],                    // ξ is usable everywhere (the ETH symbol)
+[0x3BE, ['Zyyy']],                    // ξ is usable wherever Common is (the ETH symbol)
 [0x307, {remove: ['Hebr']}],          // ◌̇ shouldn't leak into Hebrew, where marks aren't whitelisted
 ```
 
@@ -37,7 +37,7 @@ An unrestricted group is defined in `SCRIPT_GROUPS`:
 | `extra` | individual characters allowed regardless of script (a-z in CJK groups, π in Latin, ₪ in Hebrew) |
 | `cm`    | `true` means combining marks are only allowed via the whitelist (see step 3)                    |
 
-A character joins **every** group whose `test ∪ rest` intersects its script set, or whose `extra` lists it. Membership overlaps on purpose: `a` is in Latin and, via `extra`, in Han, Korean and Japanese. `1` is in every group that has `Zyyy`.
+A character joins **every** group whose `test ∪ rest` intersects its script set, or whose `extra` lists it. Membership overlaps on purpose: `a` is in Latin and, via `extra`, in Han, Korean and Japanese. `1` is in every group that has `Zyyy`. Only Latin, Han, Japanese, Korean, Cyrillic and Greek have it, so `ب1` (Arabic + ASCII digit) is an illegal mixture.
 
 Every script must be accounted for exactly once. It is either the `test` of a group, a **restricted** script, or a **disallowed** script. `Zinh` and `Zzzz` are excluded. Derive fails on a leftover or duplicate.
 
@@ -54,6 +54,12 @@ The groups with `cm: true` are Latin, Cyrillic, Greek, Han, Japanese and Korean.
 The format also supports base + mark sequences without a precomposed form (`spec.groups[].cm`), but no rule uses them today, so every `cm` array is empty.
 
 Other groups keep their marks. Instead, derive removes any character whose NFD repeats a nonspacing mark. At runtime the label is checked against UTS-39's optional detection: no repeated nonspacing mark in a run, and at most `nsm_max` (4) in a row.
+
+**Inherited marks are handled by membership, not position.** UAX-24 says a `Zinh` mark takes the script of its base. The groups never look at which character a mark follows. They only require the mark and the base to be in the same group, and that works out the same in practice:
+
+- In the six whitelisted groups, no bare mark survives. Marks only exist inside whitelisted precomposed letters. `Zinh` is in Latin, Cyrillic and Greek `rest` only so that the whitelist check can find those marks while building.
+- In every other group, a mark is valid only if its own `Script_Extensions` names the group's script. For example, `ა́` (Georgian + U+0301) is rejected because U+0301 isn't Georgian. 595 marks are `Zinh` only, and none is valid as a bare mark anywhere.
+- The one gap is a mark on a group's `extra` character. `ب-ًب` (an Arabic mark on a hyphen), `₪ּא` and `ก฿ั` are valid, even though the mark's base isn't Arabic, Hebrew or Thai. No registered label does this, so the library could add a positional check (a mark's base must be primary) without breaking anything.
 
 ### 4. Confusables → wholes
 
